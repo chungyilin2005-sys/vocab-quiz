@@ -1,0 +1,1858 @@
+[
+ {
+  "word": "**such as**",
+  "correctAnswer": "例如",
+  "options": [
+   "例如",
+   "以便",
+   "因此；本身",
+   "以致於"
+  ],
+  "pos": "介系詞片語",
+  "explanation": "such as 的常考義是「例如」。易混片語：so as to（以便）、as such（因此；本身）、such that（以致於）。曾在學測107當作選項出現。",
+  "example": "She sells environmentally friendly items **such as** reusable bottles, bamboo toothbrushes, and soy candles.（學測115·混合題）",
+  "exampleZh": "她販售環保商品，**例如**可重複使用的水瓶、竹牙刷和大豆蠟燭。",
+  "source": "學測111–115 出現 5 場、學測106–110 5 場、指考 6 場"
+ },
+ {
+  "word": "**according to**",
+  "correctAnswer": "根據",
+  "options": [
+   "根據",
+   "與…相反",
+   "靠近",
+   "由於"
+  ],
+  "pos": "介系詞片語",
+  "explanation": "according to 的常考義是「根據」。易混片語：contrary to（與…相反）、close to（靠近）、due to（由於）。",
+  "example": "**According to** the passage, which of the following is true about Shackleton and his Antarctic expedition?（學測115·閱讀測驗）",
+  "exampleZh": "**根據**文章，下列關於沙克爾頓和他的南極探險的敘述何者正確？",
+  "source": "學測111–115 出現 5 場、學測106–110 5 場、指考 6 場"
+ },
+ {
+  "word": "**due to**",
+  "correctAnswer": "由於；因為",
+  "options": [
+   "由於；因為",
+   "取決於；多達",
+   "在旁邊",
+   "在…之前"
+  ],
+  "pos": "介系詞片語",
+  "explanation": "due to 的常考義是「由於；因為」。易混片語：up to（取決於；多達）、next to（在旁邊）、prior to（在…之前）。曾在學測108當作正解出題。",
+  "example": "In the 19th century, the emperors began to establish a state monopoly, largely **due to** the rise of illegal production of low-quality vodka.（學測114·閱讀測驗）",
+  "exampleZh": "19 世紀時，沙皇開始建立國家專賣制度，主要是**由於**非法製造的劣質伏特加日益增加。",
+  "source": "學測111–115 出現 4 場、學測106–110 3 場、指考 4 場"
+ },
+ {
+  "word": "**refer to**",
+  "correctAnswer": "指；提及；參考",
+  "options": [
+   "指；提及；參考",
+   "比較喜歡",
+   "訴諸",
+   "對…起反應"
+  ],
+  "pos": "動詞片語",
+  "explanation": "refer to 的常考義是「指；提及；參考」。易混片語：prefer to（比較喜歡）、resort to（訴諸）、react to（對…起反應）。曾在學測107當作選項出現。",
+  "example": "What does “them” in the third paragraph **refer to**?（學測115·閱讀測驗）",
+  "exampleZh": "第三段中的「them」**指**的是什麼？",
+  "source": "學測111–115 出現 5 場、學測106–110 4 場、指考 5 場"
+ },
+ {
+  "word": "**as well**",
+  "correctAnswer": "也",
+  "options": [
+   "也",
+   "至今",
+   "照常",
+   "彷彿"
+  ],
+  "pos": "副詞片語",
+  "explanation": "as well 的常考義是「也」。易混片語：as yet（至今）、as usual（照常）、as if（彷彿）。曾在學測114當作正解出題。",
+  "example": "The amount people smile is culturally influenced **as well**.（學測115·篇章結構）",
+  "exampleZh": "人們微笑的頻率**也**受到文化影響。",
+  "source": "學測111–115 出現 4 場、學測106–110 3 場、指考 3 場"
+ },
+ {
+  "word": "**in fact**",
+  "correctAnswer": "事實上",
+  "options": [
+   "事實上",
+   "及時",
+   "總共",
+   "畢竟"
+  ],
+  "pos": "轉承語",
+  "explanation": "in fact 的常考義是「事實上」。易混片語：in time（及時）、in all（總共）、after all（畢竟）。",
+  "example": "**In fact**, you are giving your brain and your body some time to recharge and turn up refreshed.（學測115·文意選填）",
+  "exampleZh": "**事實上**，你是在給大腦和身體一些時間充電，讓自己恢復精神。",
+  "source": "學測111–115 出現 5 場、學測106–110 3 場、指考 2 場"
+ },
+ {
+  "word": "**serve as**",
+  "correctAnswer": "作為；充當",
+  "options": [
+   "作為；充當",
+   "把…視為",
+   "依照…行事",
+   "整理"
+  ],
+  "pos": "動詞片語",
+  "explanation": "serve as 的常考義是「作為；充當」。易混片語：see as（把…視為）、act on（依照…行事）、sort out（整理）。曾在學測108、指考109當作正解出題。",
+  "example": "Their hoops, often made of metal, were not merely toys for Greek children but **served as** exercise devices as well.（學測112·閱讀測驗）",
+  "exampleZh": "他們的圓環通常是金屬製的，對希臘孩子來說不只是玩具，**也被當作**運動器材使用。",
+  "source": "學測111–115 出現 1 場、學測106–110 3 場、指考 3 場"
+ },
+ {
+  "word": "**be able to**",
+  "correctAnswer": "能夠",
+  "options": [
+   "能夠",
+   "即將",
+   "應該",
+   "習慣於"
+  ],
+  "pos": "形容詞片語",
+  "explanation": "be able to 的常考義是「能夠」。易混片語：be about to（即將）、be supposed to（應該）、be used to（習慣於）。",
+  "example": "ants **are able to** improve the efficiency of their network and adapt to their ever-changing environment.（學測113·混合題）",
+  "exampleZh": "螞蟻**能夠**提升路網的效率，並適應不斷變化的環境。",
+  "source": "學測111–115 出現 3 場、學測106–110 3 場、指考 5 場"
+ },
+ {
+  "word": "**instead of**",
+  "correctAnswer": "代替；而不是",
+  "options": [
+   "代替；而不是",
+   "儘管",
+   "萬一",
+   "在…之前"
+  ],
+  "pos": "介系詞片語",
+  "explanation": "instead of 的常考義是「代替；而不是」。易混片語：in spite of（儘管）、in case of（萬一）、ahead of（在…之前）。曾在指考109補當作正解出題。",
+  "example": "**Instead of** the traditional bare pod-sized style, new chains now feature interior design that appeals to digitally connected travelers from around the world.（學測114·篇章結構）",
+  "exampleZh": "新的連鎖旅館**不再是**傳統簡陋的膠囊大小，**而是**以室內設計吸引來自世界各地、隨時連網的旅客。",
+  "source": "學測111–115 出現 3 場、學測106–110 1 場、指考 4 場"
+ },
+ {
+  "word": "**lead to**",
+  "correctAnswer": "導致",
+  "options": [
+   "導致",
+   "增加",
+   "由…帶領",
+   "反對"
+  ],
+  "pos": "動詞片語",
+  "explanation": "lead to 的常考義是「導致」。易混片語：add to（增加）、led by（由…帶領）、object to（反對）。曾在學測108當作選項出現。",
+  "example": "Soon, it can **lead to** dizziness, nausea, and vomiting.（學測114·綜合測驗）",
+  "exampleZh": "很快地，它可能**導致**頭暈、噁心和嘔吐。",
+  "source": "學測111–115 出現 1 場、學測106–110 4 場、指考 5 場"
+ },
+ {
+  "word": "**as well as**",
+  "correctAnswer": "以及；和…一樣",
+  "options": [
+   "以及；和…一樣",
+   "一…就",
+   "只要",
+   "就…而言"
+  ],
+  "pos": "連接詞片語",
+  "explanation": "as well as 的常考義是「以及；和…一樣」。易混片語：as soon as（一…就）、as long as（只要）、as far as（就…而言）。曾在學測106當作正解出題。",
+  "example": "They have also rung in times of celebration and of mourning, announcing such events as royal weddings and coronations of kings, **as well as** funerals of heads of state.（學測114·文意選填）",
+  "exampleZh": "這些鐘也曾在歡慶和哀悼的時刻響起，宣告皇室婚禮、國王加冕**以及**國家元首葬禮等大事。",
+  "source": "學測111–115 出現 2 場、學測106–110 2 場、指考 2 場"
+ },
+ {
+  "word": "**at least**",
+  "correctAnswer": "至少",
+  "options": [
+   "至少",
+   "終於",
+   "最多",
+   "起初"
+  ],
+  "pos": "副詞片語",
+  "explanation": "at least 的常考義是「至少」。易混片語：at last（終於）、at most（最多）、at first（起初）。曾在學測114當作選項出現。",
+  "example": "Others say the patients may need to engage in sports outside of their usual, main sport (that is, to cross-train), **at least** some of the time.（學測113·篇章結構）",
+  "exampleZh": "也有人說，病人可能需要從事平常主要運動以外的運動（也就是交叉訓練），**至少**有一部分時間是如此。",
+  "source": "學測111–115 出現 2 場、學測106–110 3 場、指考 3 場"
+ },
+ {
+  "word": "**base on**",
+  "correctAnswer": "以…為根據（be based on）",
+  "options": [
+   "以…為根據（be based on）",
+   "打賭",
+   "指望",
+   "總部設在"
+  ],
+  "pos": "動詞片語",
+  "explanation": "base on 的常考義是「以…為根據（be based on）」。易混片語：bet on（打賭）、bank on（指望）、based in（總部設在）。",
+  "example": "Thus, he proposed a signaling system **based on** the railway movable-arm signal: Arms extending horizontally commanded drivers to stop, whereas arms lowered to a 45-degree angle told drivers to move on, resembling a traffic director’s gestures.（學測114·閱讀測驗）",
+  "exampleZh": "因此，他提出一套**以**鐵路可動臂式號誌**為基礎**的信號系統：手臂水平伸出代表命令駕駛停車，手臂放低到 45 度角則代表可以前進，很像交通指揮員的手勢。",
+  "source": "學測111–115 出現 3 場、學測106–110 3 場、指考 2 場"
+ },
+ {
+  "word": "**engage in**",
+  "correctAnswer": "從事；參與",
+  "options": [
+   "從事；參與",
+   "沉溺於",
+   "相信",
+   "導致"
+  ],
+  "pos": "動詞片語",
+  "explanation": "engage in 的常考義是「從事；參與」。易混片語：indulge in（沉溺於）、believe in（相信）、result in（導致）。曾在學測106當作正解出題。",
+  "example": "Smiling is a gesture that many people **engage in** dozens of times a day without thought.（學測115·篇章結構）",
+  "exampleZh": "微笑是許多人一天不假思索就會**做**上幾十次的動作。",
+  "source": "學測111–115 出現 2 場、學測106–110 1 場、指考 2 場"
+ },
+ {
+  "word": "**in order to**",
+  "correctAnswer": "為了",
+  "options": [
+   "為了",
+   "井然有序",
+   "除了…之外還有",
+   "關於"
+  ],
+  "pos": "連接詞片語",
+  "explanation": "in order to 的常考義是「為了」。易混片語：in order（井然有序）、in addition to（除了…之外還有）、in regard to（關於）。",
+  "example": "**In order to** protect their branches from breakage, trees maintain “shyness gaps”—spaces large enough to prevent them from touching their neighbors.（學測112·綜合測驗）",
+  "exampleZh": "**為了**保護樹枝不被折斷，樹木會保持「羞避空隙」，也就是大到足以避免碰到鄰樹的空間。",
+  "source": "學測111–115 出現 2 場、學測106–110 3 場、指考 5 場"
+ },
+ {
+  "word": "**a variety of**",
+  "correctAnswer": "各式各樣的",
+  "options": [
+   "各式各樣的",
+   "一雙",
+   "一種…感",
+   "兩三個"
+  ],
+  "pos": "名詞片語",
+  "explanation": "a variety of 的常考義是「各式各樣的」。易混片語：a pair of（一雙）、a sense of（一種…感）、a couple of（兩三個）。",
+  "example": "Today, spiral staircases come in **a wide variety of** materials: steel, wood, concrete, and recently even glass.（學測115·閱讀測驗）",
+  "exampleZh": "如今，螺旋梯的材質**多種多樣**：鋼、木頭、混凝土，最近甚至還有玻璃。",
+  "source": "學測111–115 出現 4 場、學測106–110 1 場、指考 2 場"
+ },
+ {
+  "word": "**be similar to**",
+  "correctAnswer": "與…相似",
+  "options": [
+   "與…相似",
+   "優於",
+   "為…所熟悉",
+   "易受…影響"
+  ],
+  "pos": "形容詞片語",
+  "explanation": "be similar to 的常考義是「與…相似」。易混片語：be superior to（優於）、be familiar to（為…所熟悉）、be subject to（易受…影響）。曾在指考109補當作正解出題。",
+  "example": "Though no hoops were used, the movements of the ritual dances looked very **similar to** those in hooping.（學測112·閱讀測驗）",
+  "exampleZh": "雖然沒有使用圓環，但這些儀式舞蹈的動作和呼拉圈舞非常**相似**。",
+  "source": "學測111–115 出現 1 場、學測106–110 2 場、指考 4 場"
+ },
+ {
+  "word": "**cope with**",
+  "correctAnswer": "應付；處理",
+  "options": [
+   "應付；處理",
+   "與…競爭",
+   "遵守",
+   "與…合作"
+  ],
+  "pos": "動詞片語",
+  "explanation": "cope with 的常考義是「應付；處理」。易混片語：compete with（與…競爭）、comply with（遵守）、cooperate with（與…合作）。曾在學測109當作正解出題。",
+  "example": "Being associated with medieval castles and kings, spiral staircases gradually won popularity in European architecture, with new materials emerging to **cope with** customers’ needs.（學測115·閱讀測驗）",
+  "exampleZh": "由於和中世紀的城堡與國王有關聯，螺旋梯逐漸在歐洲建築中受到歡迎，也出現了新的材料來**因應**顧客的需求。",
+  "source": "學測111–115 出現 2 場、學測106–110 2 場、指考 1 場"
+ },
+ {
+  "word": "**give rise to**",
+  "correctAnswer": "引起；導致",
+  "options": [
+   "引起；導致",
+   "讓步",
+   "生下",
+   "屈服於"
+  ],
+  "pos": "動詞片語",
+  "explanation": "give rise to 的常考義是「引起；導致」。易混片語：give way to（讓步）、give birth to（生下）、give in to（屈服於）。曾在學測114當作正解出題。",
+  "example": "At the close of the 15th century, Europeans’ craze for spices **gave rise to** the Spice Route, a network of sea lanes joining Europe with the Far East, where most spices came from.（學測112·閱讀測驗）",
+  "exampleZh": "15 世紀末，歐洲人對香料的狂熱**催生**了香料之路，這是一個連接歐洲與遠東的海上航線網絡，而大多數香料正是來自遠東。",
+  "source": "學測111–115 出現 3 場、學測106–110 0 場、指考 2 場"
+ },
+ {
+  "word": "**call for**",
+  "correctAnswer": "需要；呼籲",
+  "options": [
+   "需要；呼籲",
+   "取消",
+   "拜訪",
+   "打電話"
+  ],
+  "pos": "動詞片語",
+  "explanation": "call for 的常考義是「需要；呼籲」。易混片語：call off（取消）、call on（拜訪）、call up（打電話）。曾在學測111當作正解出題。",
+  "example": "In 1582, Pope Gregory XIII ordered a new calendar, which **called for** New Year’s Day to be celebrated on January 1.（學測108·綜合測驗）",
+  "exampleZh": "1582 年，教宗額我略十三世頒布新曆法，**規定**元旦要在 1 月 1 日慶祝。",
+  "source": "學測111–115 出現 2 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**depend on**",
+  "correctAnswer": "依賴；取決於",
+  "options": [
+   "依賴；取決於",
+   "決定",
+   "老是想著",
+   "花費在"
+  ],
+  "pos": "動詞片語",
+  "explanation": "depend on 的常考義是「依賴；取決於」。易混片語：decide on（決定）、dwell on（老是想著）、spend on（花費在）。曾在學測115當作正解出題。",
+  "example": "Well, it **depends on** who and where we are, and what we’re doing.（學測112·文意選填）",
+  "exampleZh": "嗯，這**取決於**我們是誰、在哪裡，以及在做什麼。",
+  "source": "學測111–115 出現 2 場、學測106–110 2 場、指考 0 場"
+ },
+ {
+  "word": "**because of**",
+  "correctAnswer": "因為",
+  "options": [
+   "因為",
+   "代替",
+   "支持",
+   "不管"
+  ],
+  "pos": "介系詞片語",
+  "explanation": "because of 的常考義是「因為」。易混片語：instead of（代替）、in favor of（支持）、regardless of（不管）。",
+  "example": "Deer are attracted to railway lines **because of** a need for iron in their diets.（學測109·閱讀測驗）",
+  "exampleZh": "鹿會被鐵路吸引，**是因為**牠們的飲食需要鐵質。",
+  "source": "學測111–115 出現 2 場、學測106–110 3 場、指考 2 場"
+ },
+ {
+  "word": "**look out for**",
+  "correctAnswer": "留意；照顧",
+  "options": [
+   "留意；照顧",
+   "期待",
+   "尊敬",
+   "看不起"
+  ],
+  "pos": "動詞片語",
+  "explanation": "look out for 的常考義是「留意；照顧」。易混片語：look forward to（期待）、look up to（尊敬）、look down on（看不起）。曾在學測114、指考106當作選項出現。",
+  "example": "“Here everyone **looks out for** each other and the neighborhood,” she says.（學測115·混合題）",
+  "exampleZh": "她說：「這裡的每個人都會**互相照應**，也照顧整個街坊。」",
+  "source": "學測111–115 出現 3 場、學測106–110 0 場、指考 1 場"
+ },
+ {
+  "word": "**take over**",
+  "correctAnswer": "接管；接手",
+  "options": [
+   "接管；接手",
+   "起飛",
+   "長得像",
+   "開始從事"
+  ],
+  "pos": "動詞片語",
+  "explanation": "take over 的常考義是「接管；接手」。易混片語：take off（起飛）、take after（長得像）、take up（開始從事）。曾在學測110當作正解出題。",
+  "example": "In Barcelona, however, the birds are now threatening to **take over** the city’s historic center, pooping on monuments, buildings, and even tourists.（學測110·綜合測驗）",
+  "exampleZh": "然而在巴塞隆納，這些鴿子如今大有**占領**歷史城區之勢，在古蹟、建築，甚至遊客身上大便。",
+  "source": "學測111–115 出現 1 場、學測106–110 2 場、指考 0 場"
+ },
+ {
+  "word": "**associate with**",
+  "correctAnswer": "與…聯想在一起",
+  "options": [
+   "與…聯想在一起",
+   "同意",
+   "使熟悉",
+   "干擾"
+  ],
+  "pos": "動詞片語",
+  "explanation": "associate with 的常考義是「與…聯想在一起」。易混片語：agree with（同意）、acquaint with（使熟悉）、interfere with（干擾）。曾在指考109補當作選項出現。",
+  "example": "While in most cultures smiling is **associated with** positive emotions, in certain cultures the same person can be judged as less intelligent when smiling.（學測115·篇章結構）",
+  "exampleZh": "雖然在大多數文化中，微笑**讓人聯想到**正面情緒，但在某些文化中，同一個人微笑時反而可能被認為比較不聰明。",
+  "source": "學測111–115 出現 2 場、學測106–110 2 場、指考 1 場"
+ },
+ {
+  "word": "**be likely to**",
+  "correctAnswer": "可能",
+  "options": [
+   "可能",
+   "願意",
+   "渴望",
+   "害怕"
+  ],
+  "pos": "形容詞片語",
+  "explanation": "be likely to 的常考義是「可能」。易混片語：be willing to（願意）、be eager to（渴望）、be afraid to（害怕）。",
+  "example": "The defenders, living in the castles, were familiar with the stair pattern and could retreat up them very swiftly; while the attackers were much more **likely to** stumble and fall, particularly in the dimly lit confines of the staircase.（學測115·閱讀測驗）",
+  "exampleZh": "住在城堡裡的守軍熟悉樓梯的構造，可以非常迅速地往上撤退；而進攻者則**很可能**絆倒跌落，尤其是在樓梯間昏暗狹窄的空間裡。",
+  "source": "學測111–115 出現 2 場、學測106–110 2 場、指考 3 場"
+ },
+ {
+  "word": "**break down**",
+  "correctAnswer": "分解；故障；崩潰",
+  "options": [
+   "分解；故障；崩潰",
+   "爆發",
+   "闖入",
+   "分手"
+  ],
+  "pos": "動詞片語",
+  "explanation": "break down 的常考義是「分解；故障；崩潰」。易混片語：break out（爆發）、break in（闖入）、break up（分手）。曾在學測109當作正解出題。",
+  "example": "At the same time, organic matter like eggshells or coffee grounds in the sewage is **broken down** into smaller substances.（指考109·閱讀測驗）",
+  "exampleZh": "同時，污水中的蛋殼或咖啡渣等有機物會被**分解**成較小的物質。",
+  "source": "學測111–115 出現 0 場、學測106–110 2 場、指考 2 場"
+ },
+ {
+  "word": "**in addition**",
+  "correctAnswer": "此外",
+  "options": [
+   "此外",
+   "總之",
+   "相對地",
+   "簡言之"
+  ],
+  "pos": "轉承語",
+  "explanation": "in addition 的常考義是「此外」。易混片語：in conclusion（總之）、in contrast（相對地）、in short（簡言之）。",
+  "example": "**In addition**, studies show that the thrill and excitement linked with scary films can be therapeutic: It allows viewers to release bottled-up emotions and experience a sense of relief after the movie is over.（學測114·閱讀測驗）",
+  "exampleZh": "**此外**，研究顯示恐怖片帶來的刺激與興奮可能有療癒作用：它讓觀眾釋放壓抑的情緒，在電影結束後感到如釋重負。",
+  "source": "學測111–115 出現 1 場、學測106–110 3 場、指考 4 場"
+ },
+ {
+  "word": "**pass on**",
+  "correctAnswer": "傳遞；傳承",
+  "options": [
+   "傳遞；傳承",
+   "過世",
+   "經過",
+   "昏倒"
+  ],
+  "pos": "動詞片語",
+  "explanation": "pass on 的常考義是「傳遞；傳承」。易混片語：pass away（過世）、pass by（經過）、pass out（昏倒）。曾在學測113當作正解出題。",
+  "example": "The coastal peoples have long **passed on** knowledge from generation to generation through oral traditions, and totem poles were the traditional way of telling the story of an individual family or clan.（學測108·閱讀測驗）",
+  "exampleZh": "沿海民族長久以來透過口述傳統世代**傳承**知識，而圖騰柱是講述個別家族或氏族故事的傳統方式。",
+  "source": "學測111–115 出現 2 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**be equipped with**",
+  "correctAnswer": "配備有",
+  "options": [
+   "配備有",
+   "著迷於",
+   "忙於",
+   "認識"
+  ],
+  "pos": "形容詞片語",
+  "explanation": "be equipped with 的常考義是「配備有」。易混片語：be obsessed with（著迷於）、be occupied with（忙於）、be acquainted with（認識）。曾在學測113當作正解出題。",
+  "example": "Each capsule **is equipped with** a comfortable mattress, a small light, and sometimes a television or other entertainment options.（學測114·篇章結構）",
+  "exampleZh": "每個膠囊都**配備**一張舒適的床墊、一盞小燈，有時還有電視或其他娛樂設備。",
+  "source": "學測111–115 出現 2 場、學測106–110 0 場、指考 1 場"
+ },
+ {
+  "word": "**be known as**",
+  "correctAnswer": "被稱為",
+  "options": [
+   "被稱為",
+   "以…聞名",
+   "為…所知",
+   "被當作"
+  ],
+  "pos": "動詞片語",
+  "explanation": "be known as 的常考義是「被稱為」。易混片語：be known for（以…聞名）、be known to（為…所知）、be used as（被當作）。",
+  "example": "A capsule hotel, also **known as** a pod hotel, is a unique type of basic, affordable accommodation.（學測114·篇章結構）",
+  "exampleZh": "膠囊旅館**又稱為**艙式旅館，是一種獨特、基本又平價的住宿方式。",
+  "source": "學測111–115 出現 2 場、學測106–110 2 場、指考 2 場"
+ },
+ {
+  "word": "**except for**",
+  "correctAnswer": "除了…以外",
+  "options": [
+   "除了…以外",
+   "說明",
+   "換取",
+   "力求"
+  ],
+  "pos": "介系詞片語",
+  "explanation": "except for 的常考義是「除了…以外」。易混片語：account for（說明）、exchange for（換取）、aim for（力求）。曾在學測111、學測106當作選項出現。",
+  "example": "But due to their poor acoustic quality, all of the bells were replaced in 2013—**except for** Emmanuel, which retained its renowned, excellent sound.（學測114·文意選填）",
+  "exampleZh": "但由於音質不佳，所有的鐘在 2013 年都被換掉了，**只有**以絕佳音色聞名的「伊曼紐」保留了下來。",
+  "source": "學測111–115 出現 2 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**focus on**",
+  "correctAnswer": "專注於",
+  "options": [
+   "專注於",
+   "以…為食",
+   "不贊成",
+   "落在"
+  ],
+  "pos": "動詞片語",
+  "explanation": "focus on 的常考義是「專注於」。易混片語：feed on（以…為食）、frown on（不贊成）、fall on（落在）。",
+  "example": "Beyond World Owner Foting Mayaw opened this boutique in what he calls “the most fascinating area in Taiwan.” The shop **focuses on** selling various “good goods” that showcase the skill and spirit of neighborhood artisans.（學測115·混合題）",
+  "exampleZh": "Beyond World：店主 Foting Mayaw 在他口中「台灣最迷人的地區」開了這家精品店，**專門**販售展現在地工匠技藝與精神的各式「好物」。",
+  "source": "學測111–115 出現 3 場、學測106–110 0 場、指考 3 場"
+ },
+ {
+  "word": "**in other words**",
+  "correctAnswer": "換句話說",
+  "options": [
+   "換句話說",
+   "在其他方面",
+   "總之",
+   "引用…的話"
+  ],
+  "pos": "轉承語",
+  "explanation": "in other words 的常考義是「換句話說」。易混片語：in other ways（在其他方面）、in a word（總之）、in the words of（引用…的話）。曾在學測107當作正解出題。",
+  "source": "學測111–115 出現 1 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**turn out**",
+  "correctAnswer": "結果是；出席",
+  "options": [
+   "結果是；出席",
+   "繳交",
+   "拒絕",
+   "關掉"
+  ],
+  "pos": "動詞片語",
+  "explanation": "turn out 的常考義是「結果是；出席」。易混片語：turn in（繳交）、turn down（拒絕）、turn off（關掉）。曾在學測108當作選項出現。",
+  "example": "The scholar then developed an equation to find the most depressing day of the year, and it **turned out** to be the third Monday in January.（學測109·綜合測驗）",
+  "exampleZh": "這位學者接著發展出一條公式，找出一年中最令人沮喪的一天，**結果是**一月的第三個星期一。",
+  "source": "學測111–115 出現 1 場、學測106–110 3 場、指考 1 場"
+ },
+ {
+  "word": "**and yet**",
+  "correctAnswer": "然而",
+  "options": [
+   "然而",
+   "至今",
+   "等等",
+   "尚未"
+  ],
+  "pos": "轉承語",
+  "explanation": "and yet 的常考義是「然而」。易混片語：as yet（至今）、and so on（等等）、not yet（尚未）。曾在學測109當作正解出題。",
+  "example": "By 1955, he had completed an improved version of the product, with each square inch of material containing 300 hooks, which made it stay fastened **and yet** easy enough to pull apart when needed.（學測113·閱讀測驗）",
+  "exampleZh": "到了 1955 年，他完成了改良版產品，每平方英寸的材料含有 300 個鉤子，既能牢牢固定，**卻又**能在需要時輕鬆拉開。",
+  "source": "學測111–115 出現 1 場、學測106–110 1 場、指考 1 場"
+ },
+ {
+  "word": "**as a result of**",
+  "correctAnswer": "由於",
+  "options": [
+   "由於",
+   "事實上",
+   "通常",
+   "整體而言"
+  ],
+  "pos": "介系詞片語",
+  "explanation": "as a result of 的常考義是「由於」。易混片語：as a matter of fact（事實上）、as a rule（通常）、as a whole（整體而言）。曾在指考107當作正解出題。",
+  "example": "**As a result of** this privilege, Stroud was able to author two books on canaries and their diseases.（指考109·文意選填）",
+  "exampleZh": "**由於**這項特權，史特勞德得以撰寫兩本關於金絲雀及其疾病的書。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 2 場"
+ },
+ {
+  "word": "**as for**",
+  "correctAnswer": "至於",
+  "options": [
+   "至於",
+   "自…起",
+   "彷彿",
+   "如下"
+  ],
+  "pos": "介系詞片語",
+  "explanation": "as for 的常考義是「至於」。易混片語：as of（自…起）、as if（彷彿）、as follows（如下）。曾在學測109、指考109補當作選項出現。",
+  "example": "**As for** our neighbors, they liked to invite my father to dinner so that they could tell him stories about their children, parents, friends, and pets.（學測108·文意選填）",
+  "exampleZh": "**至於**我們的鄰居，他們喜歡邀我父親吃晚餐，好跟他聊他們的孩子、父母、朋友和寵物。",
+  "source": "學測111–115 出現 0 場、學測106–110 2 場、指考 3 場"
+ },
+ {
+  "word": "**be accompanied by**",
+  "correctAnswer": "伴隨著",
+  "options": [
+   "伴隨著",
+   "習慣於",
+   "被…吸引",
+   "被控"
+  ],
+  "pos": "形容詞片語",
+  "explanation": "be accompanied by 的常考義是「伴隨著」。易混片語：be accustomed to（習慣於）、be attracted by（被…吸引）、be accused of（被控）。曾在學測112當作正解出題。",
+  "example": "Usually a stye **is accompanied by** a swollen eye.（學測106·綜合測驗）",
+  "exampleZh": "針眼通常**伴隨著**眼睛腫脹。",
+  "source": "學測111–115 出現 1 場、學測106–110 1 場、指考 1 場"
+ },
+ {
+  "word": "**end up**",
+  "correctAnswer": "最後（落得）",
+  "options": [
+   "最後（落得）",
+   "加速",
+   "支持；備份",
+   "放棄"
+  ],
+  "pos": "動詞片語",
+  "explanation": "end up 的常考義是「最後（落得）」。易混片語：speed up（加速）、back up（支持；備份）、give up（放棄）。",
+  "example": "After centuries of technological advancements, it seems we’ve **ended up** right where we began in ancient times: with ourselves in the middle, and our destinations at the top.（學測115·閱讀測驗）",
+  "exampleZh": "經過幾個世紀的科技進步，我們似乎**最後**又回到了古代的起點：自己位在中央，目的地在上方。",
+  "source": "學測111–115 出現 2 場、學測106–110 2 場、指考 1 場"
+ },
+ {
+  "word": "**make up for**",
+  "correctAnswer": "彌補",
+  "options": [
+   "彌補",
+   "組成",
+   "有助於",
+   "理解"
+  ],
+  "pos": "動詞片語",
+  "explanation": "make up for 的常考義是「彌補」。易混片語：make up（組成）、make for（有助於）、make out（理解）。曾在學測114、學測112當作選項出現。",
+  "example": "Moreover, it is argued with increasing force that seed banks can neither **make up for** the practical knowledge of farmers on the ground, nor compete with their ingenuity.（指考107·閱讀測驗）",
+  "exampleZh": "此外，越來越多人強力主張，種子庫既無法**彌補**農民在田間的實務知識，也比不上他們的巧思。",
+  "source": "學測111–115 出現 2 場、學測106–110 0 場、指考 1 場"
+ },
+ {
+  "word": "**rather than**",
+  "correctAnswer": "而不是",
+  "options": [
+   "而不是",
+   "除了",
+   "超過",
+   "比…早"
+  ],
+  "pos": "連接詞片語",
+  "explanation": "rather than 的常考義是「而不是」。易混片語：other than（除了）、more than（超過）、sooner than（比…早）。",
+  "example": "One benefit of horror movies revolves around the concept of so-called “safe fear.” When watching a frightening film, people are in the comfort of their own home or theater seats **rather than** under the threat of any real danger.（學測114·閱讀測驗）",
+  "exampleZh": "恐怖片的好處之一和所謂「安全的恐懼」有關：看恐怖片時，人們舒舒服服地待在家裡或電影院座位上，**而不是**真的身處危險之中。",
+  "source": "學測111–115 出現 1 場、學測106–110 3 場、指考 2 場"
+ },
+ {
+  "word": "**result in**",
+  "correctAnswer": "導致",
+  "options": [
+   "導致",
+   "起因於",
+   "訴諸",
+   "辭去"
+  ],
+  "pos": "動詞片語",
+  "explanation": "result in 的常考義是「導致」。易混片語：result from（起因於）、resort to（訴諸）、resign from（辭去）。曾在學測109當作選項出現。",
+  "example": "The craze for hoops even **resulted in** dislocated backs and heart attacks, according to medical records.（學測112·閱讀測驗）",
+  "exampleZh": "根據醫療紀錄，對呼拉圈的狂熱甚至**導致**背部脫臼和心臟病發作。",
+  "source": "學測111–115 出現 1 場、學測106–110 2 場、指考 2 場"
+ },
+ {
+  "word": "**a number of**",
+  "correctAnswer": "一些；許多",
+  "options": [
+   "一些；許多",
+   "…的數量",
+   "四分之一",
+   "…的一員"
+  ],
+  "pos": "名詞片語",
+  "explanation": "a number of 的常考義是「一些；許多」。易混片語：the number of（…的數量）、a quarter of（四分之一）、a member of（…的一員）。",
+  "example": "Although all book towns have **a great number of** bookshops, that’s where the similarities end.（學測111·綜合測驗）",
+  "exampleZh": "雖然所有書鎮都有**大量的**書店，但相似之處也就到此為止。",
+  "source": "學測111–115 出現 2 場、學測106–110 1 場、指考 2 場"
+ },
+ {
+  "word": "**as a result**",
+  "correctAnswer": "因此；結果",
+  "options": [
+   "因此；結果",
+   "通常",
+   "整體而言",
+   "照常"
+  ],
+  "pos": "轉承語",
+  "explanation": "as a result 的常考義是「因此；結果」。易混片語：as a rule（通常）、as a whole（整體而言）、as usual（照常）。",
+  "example": "This means that ascenders would have their right hand tight against the narrowest part of the staircases, close to the central pole, and **as a result** were unable to use their sword effectively.（學測115·閱讀測驗）",
+  "exampleZh": "這表示往上爬的人，右手會緊貼著樓梯最窄的部分、靠近中央柱子，**因此**無法有效揮劍。",
+  "source": "學測111–115 出現 2 場、學測106–110 1 場、指考 2 場"
+ },
+ {
+  "word": "**be home to**",
+  "correctAnswer": "是…的所在地",
+  "options": [
+   "是…的所在地",
+   "接近",
+   "習慣於",
+   "對…開放"
+  ],
+  "pos": "形容詞片語",
+  "explanation": "be home to 的常考義是「是…的所在地」。易混片語：be close to（接近）、be used to（習慣於）、be open to（對…開放）。曾在學測110當作正解出題。",
+  "example": "But some mountain ranges of South America, Africa, and Indonesia are also **home to** glaciers and ice sheets.（學測110·綜合測驗）",
+  "exampleZh": "但南美洲、非洲和印尼的一些山脈，也**有**冰河和冰層分布。",
+  "source": "學測111–115 出現 0 場、學測106–110 2 場、指考 1 場"
+ },
+ {
+  "word": "**bring about**",
+  "correctAnswer": "導致；帶來",
+  "options": [
+   "導致；帶來",
+   "撫養；提出",
+   "帶回",
+   "引進"
+  ],
+  "pos": "動詞片語",
+  "explanation": "bring about 的常考義是「導致；帶來」。易混片語：bring up（撫養；提出）、bring back（帶回）、bring in（引進）。曾在學測112當作選項出現。",
+  "example": "For some people, even a five-minute nap can **bring about** surprisingly dramatic benefits.（學測115·文意選填）",
+  "exampleZh": "對某些人來說，即使只是五分鐘的小睡，也能**帶來**驚人的好處。",
+  "source": "學測111–115 出現 2 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**other than**",
+  "correctAnswer": "除了；不同於",
+  "options": [
+   "除了；不同於",
+   "而不是",
+   "超過",
+   "晚於"
+  ],
+  "pos": "介系詞片語",
+  "explanation": "other than 的常考義是「除了；不同於」。易混片語：rather than（而不是）、more than（超過）、later than（晚於）。曾在學測111當作正解出題。",
+  "example": "Another issue is the suitability of exposing feet on the street and places **other than** the beach.（學測109·閱讀測驗）",
+  "exampleZh": "另一個問題是，在海灘**以外的**街道和場所露出雙腳是否合宜。",
+  "source": "學測111–115 出現 1 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**regardless of**",
+  "correctAnswer": "不論；不管",
+  "options": [
+   "不論；不管",
+   "支持",
+   "負責",
+   "代替"
+  ],
+  "pos": "介系詞片語",
+  "explanation": "regardless of 的常考義是「不論；不管」。易混片語：in favor of（支持）、in charge of（負責）、instead of（代替）。曾在學測107當作正解出題。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 1 場"
+ },
+ {
+  "word": "**set up**",
+  "correctAnswer": "設立；建立",
+  "options": [
+   "設立；建立",
+   "出發",
+   "撥出",
+   "開始"
+  ],
+  "pos": "動詞片語",
+  "explanation": "set up 的常考義是「設立；建立」。易混片語：set off（出發）、set aside（撥出）、set in（開始）。曾在學測110當作選項出現。",
+  "example": "Some were even **set up** to allow people to call their loved ones lost in the COVID-19 pandemic.（學測113·文意選填）",
+  "exampleZh": "有些電話亭甚至是為了讓人們能打電話給在新冠疫情中逝去的親人而**設立**的。",
+  "source": "學測111–115 出現 2 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**as long as**",
+  "correctAnswer": "只要",
+  "options": [
+   "只要",
+   "一…就",
+   "就…而言",
+   "以及"
+  ],
+  "pos": "連接詞片語",
+  "explanation": "as long as 的常考義是「只要」。易混片語：as soon as（一…就）、as far as（就…而言）、as well as（以及）。曾在學測107當作選項出現。",
+  "example": "Like it or not, zoos will continue to exist **as long as** there is a demand for them.（學測114·混合題）",
+  "exampleZh": "不論喜歡與否，**只要**人們對動物園還有需求，動物園就會繼續存在。",
+  "source": "學測111–115 出現 1 場、學測106–110 1 場、指考 2 場"
+ },
+ {
+  "word": "**be familiar with**",
+  "correctAnswer": "熟悉",
+  "options": [
+   "熟悉",
+   "充滿",
+   "受夠了",
+   "滿意"
+  ],
+  "pos": "形容詞片語",
+  "explanation": "be familiar with 的常考義是「熟悉」。易混片語：be filled with（充滿）、be fed up with（受夠了）、be satisfied with（滿意）。曾在指考109補、指考106當作選項出現。",
+  "example": "The defenders, living in the castles, **were familiar with** the stair pattern and could retreat up them very swiftly; while the attackers were much more likely to stumble and fall, particularly in the dimly lit confines of the staircase.（學測115·閱讀測驗）",
+  "exampleZh": "住在城堡裡的守軍**熟悉**樓梯的構造，可以非常迅速地往上撤退；而進攻者則很可能絆倒跌落，尤其是在樓梯間昏暗狹窄的空間裡。",
+  "source": "學測111–115 出現 1 場、學測106–110 0 場、指考 2 場"
+ },
+ {
+  "word": "**differ from**",
+  "correctAnswer": "與…不同",
+  "options": [
+   "與…不同",
+   "受…之苦",
+   "源自",
+   "避免"
+  ],
+  "pos": "動詞片語",
+  "explanation": "differ from 的常考義是「與…不同」。易混片語：suffer from（受…之苦）、derive from（源自）、refrain from（避免）。",
+  "example": "Weinstein is not alone in his treatment of sports injury, but the specific advice can **differ from** specialist to specialist.（學測113·篇章結構）",
+  "exampleZh": "在運動傷害的治療方式上，Weinstein 並不是唯一這麼做的人，但具體的建議可能**因**專科醫師**而異**。",
+  "source": "學測111–115 出現 2 場、學測106–110 1 場、指考 1 場"
+ },
+ {
+  "word": "**get over**",
+  "correctAnswer": "克服；從…恢復",
+  "options": [
+   "克服；從…恢復",
+   "上車",
+   "相處",
+   "使被理解"
+  ],
+  "pos": "動詞片語",
+  "explanation": "get over 的常考義是「克服；從…恢復」。易混片語：get on（上車）、get along（相處）、get across（使被理解）。曾在學測112、學測110當作選項出現。",
+  "source": "學測111–115 出現 1 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**pick up**",
+  "correctAnswer": "撿起；學會；接人",
+  "options": [
+   "撿起；學會；接人",
+   "挑選",
+   "找碴",
+   "打包"
+  ],
+  "pos": "動詞片語",
+  "explanation": "pick up 的常考義是「撿起；學會；接人」。易混片語：pick out（挑選）、pick on（找碴）、pack up（打包）。",
+  "example": "Researchers believe that viewers are learning vicariously this way, **picking up** tips on how to handle threats in the real world.（學測114·閱讀測驗）",
+  "exampleZh": "研究人員認為，觀眾透過這種方式間接學習，**學到**如何應對現實世界中威脅的訣竅。",
+  "source": "學測111–115 出現 2 場、學測106–110 1 場、指考 1 場"
+ },
+ {
+  "word": "**point out**",
+  "correctAnswer": "指出",
+  "options": [
+   "指出",
+   "熄滅",
+   "傾訴",
+   "列印"
+  ],
+  "pos": "動詞片語",
+  "explanation": "point out 的常考義是「指出」。易混片語：put out（熄滅）、pour out（傾訴）、print out（列印）。",
+  "example": "As many psychologists now **point out**, this simple gesture is in fact far more complicated than it may appear.（學測115·篇章結構）",
+  "exampleZh": "正如許多心理學家現在**指出**的，這個簡單的動作其實比表面上複雜得多。",
+  "source": "學測111–115 出現 2 場、學測106–110 1 場、指考 1 場"
+ },
+ {
+  "word": "**rely on**",
+  "correctAnswer": "依賴",
+  "options": [
+   "依賴",
+   "反思",
+   "與…有關",
+   "評論"
+  ],
+  "pos": "動詞片語",
+  "explanation": "rely on 的常考義是「依賴」。易混片語：reflect on（反思）、relate to（與…有關）、remark on（評論）。",
+  "example": "At the time, sailors **relied on** the North Star to find their way across the Mediterranean and later the Atlantic.（學測115·閱讀測驗）",
+  "exampleZh": "當時，水手**依靠**北極星來找到橫越地中海、後來是大西洋的方向。",
+  "source": "學測111–115 出現 2 場、學測106–110 1 場、指考 1 場"
+ },
+ {
+  "word": "**suffer from**",
+  "correctAnswer": "受…之苦；罹患",
+  "options": [
+   "受…之苦；罹患",
+   "與…不同",
+   "避免",
+   "從…獲益"
+  ],
+  "pos": "動詞片語",
+  "explanation": "suffer from 的常考義是「受…之苦；罹患」。易混片語：differ from（與…不同）、refrain from（避免）、profit from（從…獲益）。",
+  "example": "The creation of the park was inspired by his daughter, Morgan, who **suffers from** severe cognitive delay and physical challenges.（學測110·閱讀測驗）",
+  "exampleZh": "這座樂園的創建靈感來自他的女兒 Morgan，她**患有**嚴重的認知發展遲緩和身體障礙。",
+  "source": "學測111–115 出現 0 場、學測106–110 4 場、指考 1 場"
+ },
+ {
+  "word": "**take part in**",
+  "correctAnswer": "參加",
+  "options": [
+   "參加",
+   "發生",
+   "以…為傲",
+   "照顧"
+  ],
+  "pos": "動詞片語",
+  "explanation": "take part in 的常考義是「參加」。易混片語：take place（發生）、take pride in（以…為傲）、take care of（照顧）。曾在學測107當作正解出題。",
+  "example": "The band also enables them to **take part in** electronic activities.（學測110·閱讀測驗）",
+  "exampleZh": "這個手環也讓他們能**參與**電子活動。",
+  "source": "學測111–115 出現 0 場、學測106–110 2 場、指考 0 場"
+ },
+ {
+  "word": "**appeal to**",
+  "correctAnswer": "吸引；呼籲",
+  "options": [
+   "吸引；呼籲",
+   "適用於",
+   "附加",
+   "增加"
+  ],
+  "pos": "動詞片語",
+  "explanation": "appeal to 的常考義是「吸引；呼籲」。易混片語：apply to（適用於）、append to（附加）、add to（增加）。",
+  "example": "Instead of the traditional bare pod-sized style, new chains now feature interior design that **appeals to** digitally connected travelers from around the world.（學測114·篇章結構）",
+  "exampleZh": "新的連鎖旅館不再是傳統簡陋的膠囊大小，而是以室內設計**吸引**來自世界各地、隨時連網的旅客。",
+  "source": "學測111–115 出現 1 場、學測106–110 2 場、指考 1 場"
+ },
+ {
+  "word": "**aside from**",
+  "correctAnswer": "除了…之外",
+  "options": [
+   "除了…之外",
+   "遠離",
+   "遠非",
+   "在…之內"
+  ],
+  "pos": "介系詞片語",
+  "explanation": "aside from 的常考義是「除了…之外」。易混片語：away from（遠離）、far from（遠非）、inside of（在…之內）。曾在學測107當作選項出現。",
+  "example": "**Aside from** handcrafted beer, the menu boasts hand-made gourmet pizzas such as the Yummy Duck n’ Cheese, loaded with roast duck and, yes, creamy delicious cheese.（學測115·混合題）",
+  "exampleZh": "**除了**手工啤酒，菜單上還有手作的精緻披薩，例如「美味鴨肉起司」，鋪滿了烤鴨，當然還有香濃美味的起司。",
+  "source": "學測111–115 出現 1 場、學測106–110 1 場、指考 1 場"
+ },
+ {
+  "word": "**be free of**",
+  "correctAnswer": "沒有；免於",
+  "options": [
+   "沒有；免於",
+   "喜歡",
+   "充滿",
+   "害怕"
+  ],
+  "pos": "形容詞片語",
+  "explanation": "be free of 的常考義是「沒有；免於」。易混片語：be fond of（喜歡）、be full of（充滿）、be fearful of（害怕）。曾在學測112當作正解出題。",
+  "source": "學測111–115 出現 1 場、學測106–110 0 場、指考 0 場"
+ },
+ {
+  "word": "**be related to**",
+  "correctAnswer": "與…有關",
+  "options": [
+   "與…有關",
+   "致力於",
+   "反對",
+   "對…上癮"
+  ],
+  "pos": "形容詞片語",
+  "explanation": "be related to 的常考義是「與…有關」。易混片語：be devoted to（致力於）、be opposed to（反對）、be addicted to（對…上癮）。曾在學測107當作選項出現。",
+  "example": "Although the okapi has striped markings resembling those of zebras', it **is most closely related to** the giraffe.（指考108·閱讀測驗）",
+  "exampleZh": "雖然霍加狓身上的條紋很像斑馬，但牠**和**長頸鹿的**關係最密切**。",
+  "source": "學測111–115 出現 0 場、學測106–110 2 場、指考 2 場"
+ },
+ {
+  "word": "**come across**",
+  "correctAnswer": "偶然遇見；被理解",
+  "options": [
+   "偶然遇見；被理解",
+   "進展",
+   "發生",
+   "過來"
+  ],
+  "pos": "動詞片語",
+  "explanation": "come across 的常考義是「偶然遇見；被理解」。易混片語：come along（進展）、come about（發生）、come over（過來）。曾在學測109、學測108當作選項出現。",
+  "source": "學測111–115 出現 0 場、學測106–110 2 場、指考 0 場"
+ },
+ {
+  "word": "**compete for**",
+  "correctAnswer": "爭取；競爭",
+  "options": [
+   "爭取；競爭",
+   "彌補",
+   "申請",
+   "照顧"
+  ],
+  "pos": "動詞片語",
+  "explanation": "compete for 的常考義是「爭取；競爭」。易混片語：compensate for（彌補）、apply for（申請）、care for（照顧）。曾在學測112當作正解出題。",
+  "source": "學測111–115 出現 1 場、學測106–110 0 場、指考 0 場"
+ },
+ {
+  "word": "**in addition to**",
+  "correctAnswer": "除了…之外還有",
+  "options": [
+   "除了…之外還有",
+   "回應",
+   "與…形成對比",
+   "關於"
+  ],
+  "pos": "介系詞片語",
+  "explanation": "in addition to 的常考義是「除了…之外還有」。易混片語：in response to（回應）、in contrast to（與…形成對比）、in regard to（關於）。曾在指考109補當作選項出現。",
+  "example": "**In addition to** the shallower seabeds, tide and wind pose further challenges for bringing ships into a port.（學測109·閱讀測驗）",
+  "exampleZh": "**除了**海床較淺**之外**，潮汐和風也讓引導船隻進港更加困難。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 4 場"
+ },
+ {
+  "word": "**in contrast**",
+  "correctAnswer": "相對地",
+  "options": [
+   "相對地",
+   "總之",
+   "共同",
+   "掌控中"
+  ],
+  "pos": "轉承語",
+  "explanation": "in contrast 的常考義是「相對地」。易混片語：in conclusion（總之）、in common（共同）、in control（掌控中）。曾在學測106當作選項出現。",
+  "example": "The coat is a chocolate to reddish brown, much **in contrast** with the white horizontal stripes and rings on the legs and white ankles.（指考108·閱讀測驗）",
+  "exampleZh": "牠的毛色是巧克力色到紅褐色，和腿上的白色橫紋、環紋以及白色腳踝形成鮮明**對比**。",
+  "source": "學測111–115 出現 0 場、學測106–110 2 場、指考 2 場"
+ },
+ {
+  "word": "**look into**",
+  "correctAnswer": "調查",
+  "options": [
+   "調查",
+   "照顧",
+   "看起來像",
+   "回顧"
+  ],
+  "pos": "動詞片語",
+  "explanation": "look into 的常考義是「調查」。易混片語：look after（照顧）、look like（看起來像）、look back（回顧）。曾在學測106當作正解出題。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 1 場"
+ },
+ {
+  "word": "**nothing but**",
+  "correctAnswer": "只不過；只有",
+  "options": [
+   "只不過；只有",
+   "絕不",
+   "幾乎",
+   "簡直就是"
+  ],
+  "pos": "副詞片語",
+  "explanation": "nothing but 的常考義是「只不過；只有」。易混片語：anything but（絕不）、all but（幾乎）、nothing less than（簡直就是）。曾在學測108、學測107當作選項出現。",
+  "source": "學測111–115 出現 0 場、學測106–110 2 場、指考 0 場"
+ },
+ {
+  "word": "**on behalf of**",
+  "correctAnswer": "代表",
+  "options": [
+   "代表",
+   "除…之外還",
+   "由於",
+   "根據"
+  ],
+  "pos": "介系詞片語",
+  "explanation": "on behalf of 的常考義是「代表」。易混片語：on top of（除…之外還）、on account of（由於）、on the basis of（根據）。曾在學測108、學測107當作選項出現。",
+  "source": "學測111–115 出現 0 場、學測106–110 2 場、指考 0 場"
+ },
+ {
+  "word": "**stay away from**",
+  "correctAnswer": "遠離",
+  "options": [
+   "遠離",
+   "熬夜",
+   "待在家",
+   "留下繼續"
+  ],
+  "pos": "動詞片語",
+  "explanation": "stay away from 的常考義是「遠離」。易混片語：stay up（熬夜）、stay in（待在家）、stay on（留下繼續）。",
+  "example": "Most meteoroids travel around the sun in space and **stay away from** the Earth.（指考110·綜合測驗）",
+  "exampleZh": "大多數流星體在太空中繞著太陽運行，**遠離**地球。",
+  "source": "學測111–115 出現 1 場、學測106–110 2 場、指考 1 場"
+ },
+ {
+  "word": "**with respect to**",
+  "correctAnswer": "關於",
+  "options": [
+   "關於",
+   "為了",
+   "除了",
+   "作為回報"
+  ],
+  "pos": "介系詞片語",
+  "explanation": "with respect to 的常考義是「關於」。易混片語：with a view to（為了）、with the exception of（除了）、in return for（作為回報）。曾在學測109、學測107當作選項出現。",
+  "source": "學測111–115 出現 0 場、學測106–110 2 場、指考 0 場"
+ },
+ {
+  "word": "**account for**",
+  "correctAnswer": "說明；佔（比例）",
+  "options": [
+   "說明；佔（比例）",
+   "依靠",
+   "指控",
+   "要求"
+  ],
+  "pos": "動詞片語",
+  "explanation": "account for 的常考義是「說明；佔（比例）」。易混片語：count on（依靠）、accuse of（指控）、ask for（要求）。曾在學測108當作選項出現。",
+  "example": "This meal has become known as “high tea.” Today, tea can be drunk at any time of the day, and **accounts for** over two-fifths of all beverages consumed in Britain—with the exception of water.（學測106·閱讀測驗）",
+  "exampleZh": "這一餐後來被稱為「high tea」。如今，人們一天中任何時間都可以喝茶，在英國所有飲料的消費量中，除了水以外，茶**占了**超過五分之二。",
+  "source": "學測111–115 出現 0 場、學測106–110 2 場、指考 1 場"
+ },
+ {
+  "word": "**attend to**",
+  "correctAnswer": "處理；照料",
+  "options": [
+   "處理；照料",
+   "附在",
+   "適應",
+   "證明"
+  ],
+  "pos": "動詞片語",
+  "explanation": "attend to 的常考義是「處理；照料」。易混片語：attach to（附在）、adapt to（適應）、attest to（證明）。曾在學測113當作選項出現。",
+  "example": "Many of his works—depictions of children at play and in school, farm girls **attending to** their work, hunters and their prey—have become classic images of nineteenth-century American life.（學測106·閱讀測驗）",
+  "exampleZh": "他有許多作品，例如描繪孩子玩耍和上學、農家女孩**忙著**做家事、獵人與獵物的畫面，都成了 19 世紀美國生活的經典意象。",
+  "source": "學測111–115 出現 1 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**by no means**",
+  "correctAnswer": "絕不",
+  "options": [
+   "絕不",
+   "當然可以",
+   "藉由",
+   "也許"
+  ],
+  "pos": "副詞片語",
+  "explanation": "by no means 的常考義是「絕不」。易混片語：by all means（當然可以）、by means of（藉由）、by any chance（也許）。曾在學測107當作選項出現。",
+  "example": "Taking a nap in the middle of the day is **by no means** unproductive.（學測115·文意選填）",
+  "exampleZh": "在白天小睡片刻**絕對不是**浪費時間。",
+  "source": "學測111–115 出現 1 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**check out**",
+  "correctAnswer": "查看；退房",
+  "options": [
+   "查看；退房",
+   "報到；入住",
+   "振作",
+   "放輕鬆"
+  ],
+  "pos": "動詞片語",
+  "explanation": "check out 的常考義是「查看；退房」。易混片語：check in（報到；入住）、cheer up（振作）、chill out（放輕鬆）。曾在學測106、指考107當作選項出現。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 1 場"
+ },
+ {
+  "word": "**far from**",
+  "correctAnswer": "遠非；一點也不",
+  "options": [
+   "遠非；一點也不",
+   "免於",
+   "除了",
+   "遙遠"
+  ],
+  "pos": "副詞片語",
+  "explanation": "far from 的常考義是「遠非；一點也不」。易混片語：free from（免於）、apart from（除了）、far away（遙遠）。曾在學測106當作選項出現。",
+  "example": "It may have got the baby to sleep, but its message is **far from** comforting: If he/she does not stop crying, the demon will eat him/her.（學測107·閱讀測驗）",
+  "exampleZh": "這首歌也許能哄寶寶入睡，但內容**一點也不**令人安心：如果寶寶不停止哭鬧，惡魔就會把他吃掉。",
+  "source": "學測111–115 出現 0 場、學測106–110 2 場、指考 1 場"
+ },
+ {
+  "word": "**go to great lengths**",
+  "correctAnswer": "竭盡全力",
+  "options": [
+   "竭盡全力",
+   "崩潰",
+   "開戰",
+   "走極端"
+  ],
+  "pos": "動詞片語",
+  "explanation": "go to great lengths 的常考義是「竭盡全力」。易混片語：go to pieces（崩潰）、go to war（開戰）、go to extremes（走極端）。曾在學測108當作正解出題。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**in spite of**",
+  "correctAnswer": "儘管",
+  "options": [
+   "儘管",
+   "萬一",
+   "代替",
+   "尋找"
+  ],
+  "pos": "介系詞片語",
+  "explanation": "in spite of 的常考義是「儘管」。易混片語：in case of（萬一）、in place of（代替）、in search of（尋找）。曾在學測109、指考107當作選項出現。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 1 場"
+ },
+ {
+  "word": "**keep track of**",
+  "correctAnswer": "記錄；掌握…的動態",
+  "options": [
+   "記錄；掌握…的動態",
+   "失去聯繫",
+   "跟上",
+   "保持聯絡"
+  ],
+  "pos": "動詞片語",
+  "explanation": "keep track of 的常考義是「記錄；掌握…的動態」。易混片語：lose track of（失去聯繫）、keep pace with（跟上）、keep in touch with（保持聯絡）。曾在學測114當作選項出現。",
+  "example": "Moreover, each visitor is offered the option to wear a GPS Adventure Band, which allows them to **keep track of** each other while in the park.（學測110·閱讀測驗）",
+  "exampleZh": "此外，每位遊客都可以選擇配戴 GPS 冒險手環，讓他們在園區內能**隨時掌握**彼此的**位置**。",
+  "source": "學測111–115 出現 1 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**let alone**",
+  "correctAnswer": "更不用說",
+  "options": [
+   "更不用說",
+   "不打擾",
+   "放手",
+   "使失望"
+  ],
+  "pos": "連接詞片語",
+  "explanation": "let alone 的常考義是「更不用說」。易混片語：leave alone（不打擾）、let go（放手）、let down（使失望）。曾在學測106當作正解出題。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**make do**",
+  "correctAnswer": "將就；湊合",
+  "options": [
+   "將就；湊合",
+   "成功",
+   "合理",
+   "理解"
+  ],
+  "pos": "動詞片語",
+  "explanation": "make do 的常考義是「將就；湊合」。易混片語：make it（成功）、make sense（合理）、make out（理解）。曾在學測106當作正解出題。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**not to mention**",
+  "correctAnswer": "更不用說",
+  "options": [
+   "更不用說",
+   "雖不至於",
+   "不僅",
+   "首先"
+  ],
+  "pos": "轉承語",
+  "explanation": "not to mention 的常考義是「更不用說」。易混片語：not to say（雖不至於）、not only（不僅）、to begin with（首先）。曾在學測110當作正解出題。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**put up with**",
+  "correctAnswer": "忍受",
+  "options": [
+   "忍受",
+   "搭建；張貼",
+   "延期",
+   "穿上"
+  ],
+  "pos": "動詞片語",
+  "explanation": "put up with 的常考義是「忍受」。易混片語：put up（搭建；張貼）、put off（延期）、put on（穿上）。曾在學測107、指考106當作選項出現。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 1 場"
+ },
+ {
+  "word": "**stem from**",
+  "correctAnswer": "源自",
+  "options": [
+   "源自",
+   "踩",
+   "避開",
+   "代表"
+  ],
+  "pos": "動詞片語",
+  "explanation": "stem from 的常考義是「源自」。易混片語：step on（踩）、steer clear of（避開）、stand for（代表）。曾在學測108當作正解出題。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**the rest of**",
+  "correctAnswer": "其餘的",
+  "options": [
+   "其餘的",
+   "…的結果",
+   "…的興起",
+   "…的根源"
+  ],
+  "pos": "名詞片語",
+  "explanation": "the rest of 的常考義是「其餘的」。易混片語：the result of（…的結果）、the rise of（…的興起）、the root of（…的根源）。",
+  "example": "On August 30, 1916, Shackleton finally got back to Elephant Island with a ship big enough to rescue **the rest of** his men.（學測115·閱讀測驗）",
+  "exampleZh": "1916 年 8 月 30 日，沙克爾頓終於帶著一艘夠大的船回到象島，救出**其餘的**隊員。",
+  "source": "學測111–115 出現 1 場、學測106–110 1 場、指考 2 場"
+ },
+ {
+  "word": "**a range of**",
+  "correctAnswer": "一系列的",
+  "options": [
+   "一系列的",
+   "…的比率",
+   "一線",
+   "一輪"
+  ],
+  "pos": "名詞片語",
+  "explanation": "a range of 的常考義是「一系列的」。易混片語：a rate of（…的比率）、a ray of（一線）、a round of（一輪）。",
+  "example": "They use **a range of** terms to describe it—stuck-song syndrome, sticky music, cognitive itch, or most commonly “earworm.” Earworms can run around our heads for several minutes to numerous hours.（學測108·閱讀測驗）",
+  "exampleZh": "他們用**各種**說法來形容它：歌曲卡住症候群、黏人的音樂、認知搔癢，最常見的是「耳蟲」。耳蟲可能在我們腦中盤旋幾分鐘到好幾個小時。",
+  "source": "學測111–115 出現 0 場、學測106–110 2 場、指考 2 場"
+ },
+ {
+  "word": "**deal with**",
+  "correctAnswer": "處理",
+  "options": [
+   "處理",
+   "老是想著",
+   "買賣",
+   "與…有關"
+  ],
+  "pos": "動詞片語",
+  "explanation": "deal with 的常考義是「處理」。易混片語：dwell on（老是想著）、deal in（買賣）、do with（與…有關）。",
+  "example": "Over the years, people have been curious about the way they **deal with** disturbances arising from the environment, and the operations underlying their responses as a group.（學測113·混合題）",
+  "exampleZh": "多年來，人們一直很好奇牠們如何**應對**來自環境的干擾，以及牠們群體反應背後的運作機制。",
+  "source": "學測111–115 出現 1 場、學測106–110 0 場、指考 3 場"
+ },
+ {
+  "word": "**get rid of**",
+  "correctAnswer": "擺脫；除去",
+  "options": [
+   "擺脫；除去",
+   "得到",
+   "厭倦",
+   "逃避"
+  ],
+  "pos": "動詞片語",
+  "explanation": "get rid of 的常考義是「擺脫；除去」。易混片語：get hold of（得到）、get tired of（厭倦）、get out of（逃避）。",
+  "example": "To even things out, the body will **get rid of** water by producing urine.（學測112·文意選填）",
+  "exampleZh": "為了維持平衡，身體會藉由排尿來**排除**水分。",
+  "source": "學測111–115 出現 1 場、學測106–110 1 場、指考 1 場"
+ },
+ {
+  "word": "**in case**",
+  "correctAnswer": "以防萬一",
+  "options": [
+   "以防萬一",
+   "在適當位置",
+   "徒勞",
+   "負責"
+  ],
+  "pos": "連接詞片語",
+  "explanation": "in case 的常考義是「以防萬一」。易混片語：in place（在適當位置）、in vain（徒勞）、in charge（負責）。曾在學測107當作選項出現。",
+  "source": "學測111–115 出現 0 場、學測106–110 2 場、指考 0 場"
+ },
+ {
+  "word": "**result from**",
+  "correctAnswer": "起因於",
+  "options": [
+   "起因於",
+   "導致",
+   "訴諸",
+   "避免"
+  ],
+  "pos": "動詞片語",
+  "explanation": "result from 的常考義是「起因於」。易混片語：result in（導致）、resort to（訴諸）、refrain from（避免）。",
+  "example": "Gaps in the treetops **resulting from** crown shyness may allow trees to increase their exposure to light and enhance photosynthesis.（學測112·綜合測驗）",
+  "exampleZh": "樹冠羞避在樹頂**形成的**空隙，可能讓樹木得到更多日照，進而增強光合作用。",
+  "source": "學測111–115 出現 1 場、學測106–110 1 場、指考 1 場"
+ },
+ {
+  "word": "**after all**",
+  "correctAnswer": "畢竟",
+  "options": [
+   "畢竟",
+   "最重要的是",
+   "總而言之",
+   "首先"
+  ],
+  "pos": "轉承語",
+  "explanation": "after all 的常考義是「畢竟」。易混片語：above all（最重要的是）、all in all（總而言之）、first of all（首先）。曾在學測114當作選項出現。",
+  "source": "學測111–115 出現 1 場、學測106–110 0 場、指考 0 場"
+ },
+ {
+  "word": "**aim at**",
+  "correctAnswer": "針對；以…為目標",
+  "options": [
+   "針對；以…為目標",
+   "抵達",
+   "嘲笑",
+   "盯著看"
+  ],
+  "pos": "動詞片語",
+  "explanation": "aim at 的常考義是「針對；以…為目標」。易混片語：arrive at（抵達）、laugh at（嘲笑）、stare at（盯著看）。曾在學測113當作選項出現。",
+  "source": "學測111–115 出現 1 場、學測106–110 0 場、指考 0 場"
+ },
+ {
+  "word": "**all in all**",
+  "correctAnswer": "總而言之",
+  "options": [
+   "總而言之",
+   "突然",
+   "一直",
+   "仍然"
+  ],
+  "pos": "轉承語",
+  "explanation": "all in all 的常考義是「總而言之」。易混片語：all at once（突然）、all along（一直）、all the same（仍然）。曾在學測115當作選項出現。",
+  "source": "學測111–115 出現 1 場、學測106–110 0 場、指考 0 場"
+ },
+ {
+  "word": "**build on**",
+  "correctAnswer": "以…為基礎",
+  "options": [
+   "以…為基礎",
+   "增強",
+   "引起",
+   "複習"
+  ],
+  "pos": "動詞片語",
+  "explanation": "build on 的常考義是「以…為基礎」。易混片語：build up（增強）、bring on（引起）、brush up on（複習）。曾在學測109當作選項出現。",
+  "example": "Every civilization is **built upon** rules and regulations.（指考109補·篇章結構）",
+  "exampleZh": "每個文明都**建立在**規則和規範**之上**。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 1 場"
+ },
+ {
+  "word": "**by far**",
+  "correctAnswer": "（最高級前）顯然；遠遠地",
+  "options": [
+   "（最高級前）顯然；遠遠地",
+   "到目前為止",
+   "大致上",
+   "到處"
+  ],
+  "pos": "副詞片語",
+  "explanation": "by far 的常考義是「（最高級前）顯然；遠遠地」。易混片語：so far（到目前為止）、by and large（大致上）、far and wide（到處）。曾在學測114當作選項出現。",
+  "source": "學測111–115 出現 1 場、學測106–110 0 場、指考 0 場"
+ },
+ {
+  "word": "**come up with**",
+  "correctAnswer": "想出",
+  "options": [
+   "想出",
+   "趕上",
+   "染上（疾病）",
+   "跟上"
+  ],
+  "pos": "動詞片語",
+  "explanation": "come up with 的常考義是「想出」。易混片語：catch up with（趕上）、come down with（染上（疾病））、keep up with（跟上）。",
+  "example": "By sharing knowledge and information, the different sectors are able to **come up with** improved processing and handling, through which creation of various innovative products was made possible.（學測113·閱讀測驗）",
+  "exampleZh": "透過分享知識與資訊，不同產業得以**想出**改良的加工與處理方式，因而能創造出各種創新產品。",
+  "source": "學測111–115 出現 1 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**contrary to**",
+  "correctAnswer": "與…相反",
+  "options": [
+   "與…相反",
+   "與…相比",
+   "根據",
+   "受…支配"
+  ],
+  "pos": "介系詞片語",
+  "explanation": "contrary to 的常考義是「與…相反」。易混片語：compared to（與…相比）、according to（根據）、subject to（受…支配）。曾在學測111當作選項出現。",
+  "source": "學測111–115 出現 1 場、學測106–110 0 場、指考 0 場"
+ },
+ {
+  "word": "**give up**",
+  "correctAnswer": "放棄",
+  "options": [
+   "放棄",
+   "贈送",
+   "散發",
+   "分發"
+  ],
+  "pos": "動詞片語",
+  "explanation": "give up 的常考義是「放棄」。易混片語：give away（贈送）、give off（散發）、give out（分發）。曾在學測109當作選項出現。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 1 場"
+ },
+ {
+  "word": "**give way to**",
+  "correctAnswer": "讓步；被…取代",
+  "options": [
+   "讓步；被…取代",
+   "引起",
+   "生下",
+   "優先考慮"
+  ],
+  "pos": "動詞片語",
+  "explanation": "give way to 的常考義是「讓步；被…取代」。易混片語：give rise to（引起）、give birth to（生下）、give priority to（優先考慮）。曾在學測112當作選項出現。",
+  "source": "學測111–115 出現 1 場、學測106–110 0 場、指考 0 場"
+ },
+ {
+  "word": "**in no time**",
+  "correctAnswer": "立刻；很快",
+  "options": [
+   "立刻；很快",
+   "及時",
+   "準時",
+   "免費"
+  ],
+  "pos": "副詞片語",
+  "explanation": "in no time 的常考義是「立刻；很快」。易混片語：in time（及時）、on time（準時）、at no cost（免費）。曾在學測112當作選項出現。",
+  "source": "學測111–115 出現 1 場、學測106–110 0 場、指考 0 場"
+ },
+ {
+  "word": "**in turn**",
+  "correctAnswer": "反過來；依序",
+  "options": [
+   "反過來；依序",
+   "作為回報",
+   "合拍",
+   "聯絡"
+  ],
+  "pos": "副詞片語",
+  "explanation": "in turn 的常考義是「反過來；依序」。易混片語：in return（作為回報）、in tune（合拍）、in touch（聯絡）。",
+  "example": "This **in turn** enriched subsequent rounds of conversation.（學測114·綜合測驗）",
+  "exampleZh": "這**反過來**也讓接下來幾輪的對話更加豐富。",
+  "source": "學測111–115 出現 1 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**look down upon**",
+  "correctAnswer": "看不起",
+  "options": [
+   "看不起",
+   "尊敬",
+   "回顧",
+   "期待"
+  ],
+  "pos": "動詞片語",
+  "explanation": "look down upon 的常考義是「看不起」。易混片語：look up to（尊敬）、look back on（回顧）、look forward to（期待）。曾在學測107當作選項出現。",
+  "example": "The first are social and political: In this view, “languages” are typically written, official, and prestigious, whereas “dialects” are mostly spoken, unofficial, and **looked down upon**.（指考110·文意選填）",
+  "exampleZh": "第一種是社會與政治上的標準：依照這個觀點，「語言」通常是書面的、官方的、有聲望的，而「方言」則多半是口語的、非官方的，而且**被看不起**。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 1 場"
+ },
+ {
+  "word": "**make sure**",
+  "correctAnswer": "確保",
+  "options": [
+   "確保",
+   "合理",
+   "取笑",
+   "騰出空間"
+  ],
+  "pos": "動詞片語",
+  "explanation": "make sure 的常考義是「確保」。易混片語：make sense（合理）、make fun of（取笑）、make room（騰出空間）。",
+  "example": "But whenever Dad insisted on going, she **made sure** that he brought a shopping list.（學測108·文意選填）",
+  "exampleZh": "但每當爸爸堅持要去，她都會**確保**他帶著購物清單。",
+  "source": "學測111–115 出現 0 場、學測106–110 2 場、指考 1 場"
+ },
+ {
+  "word": "**mix up**",
+  "correctAnswer": "混淆；搞混",
+  "options": [
+   "混淆；搞混",
+   "組成",
+   "修理",
+   "搞砸"
+  ],
+  "pos": "動詞片語",
+  "explanation": "mix up 的常考義是「混淆；搞混」。易混片語：make up（組成）、fix up（修理）、mess up（搞砸）。曾在學測109當作選項出現。",
+  "example": "Almost everyone sometimes **mixes up** the names of their family and friends.（指考109補·綜合測驗）",
+  "exampleZh": "幾乎每個人有時都會把家人和朋友的名字**搞混**。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 1 場"
+ },
+ {
+  "word": "**what is more**",
+  "correctAnswer": "更有甚者；而且",
+  "options": [
+   "更有甚者；而且",
+   "如果…會怎樣",
+   "更糟的是",
+   "那又怎樣"
+  ],
+  "pos": "轉承語",
+  "explanation": "what is more 的常考義是「更有甚者；而且」。易混片語：what if（如果…會怎樣）、what is worse（更糟的是）、so what（那又怎樣）。曾在學測115當作選項出現。",
+  "source": "學測111–115 出現 1 場、學測106–110 0 場、指考 0 場"
+ },
+ {
+  "word": "**answer for**",
+  "correctAnswer": "為…負責",
+  "options": [
+   "為…負責",
+   "要求",
+   "頂嘴",
+   "符合"
+  ],
+  "pos": "動詞片語",
+  "explanation": "answer for 的常考義是「為…負責」。易混片語：ask for（要求）、answer back（頂嘴）、answer to（符合）。曾在學測107當作選項出現。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**approve of**",
+  "correctAnswer": "贊成",
+  "options": [
+   "贊成",
+   "由…組成",
+   "處理掉",
+   "想到"
+  ],
+  "pos": "動詞片語",
+  "explanation": "approve of 的常考義是「贊成」。易混片語：consist of（由…組成）、dispose of（處理掉）、think of（想到）。曾在學測106當作選項出現。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**at most**",
+  "correctAnswer": "最多",
+  "options": [
+   "最多",
+   "至少",
+   "終於",
+   "起初"
+  ],
+  "pos": "副詞片語",
+  "explanation": "at most 的常考義是「最多」。易混片語：at least（至少）、at last（終於）、at first（起初）。曾在學測106當作選項出現。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**be critical of**",
+  "correctAnswer": "批評",
+  "options": [
+   "批評",
+   "能夠",
+   "意識到",
+   "是…的特色"
+  ],
+  "pos": "形容詞片語",
+  "explanation": "be critical of 的常考義是「批評」。易混片語：be capable of（能夠）、be conscious of（意識到）、be characteristic of（是…的特色）。曾在學測110當作選項出現。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**break off**",
+  "correctAnswer": "中斷；折斷",
+  "options": [
+   "中斷；折斷",
+   "闖入",
+   "打平",
+   "突破"
+  ],
+  "pos": "動詞片語",
+  "explanation": "break off 的常考義是「中斷；折斷」。易混片語：break into（闖入）、break even（打平）、break through（突破）。曾在學測106當作選項出現。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**bring out**",
+  "correctAnswer": "使顯現；推出",
+  "options": [
+   "使顯現；推出",
+   "撫養",
+   "降低",
+   "帶回"
+  ],
+  "pos": "動詞片語",
+  "explanation": "bring out 的常考義是「使顯現；推出」。易混片語：bring up（撫養）、bring down（降低）、bring back（帶回）。曾在學測108當作選項出現。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**come to an end**",
+  "correctAnswer": "結束",
+  "options": [
+   "結束",
+   "達成協議",
+   "甦醒",
+   "浮現腦海"
+  ],
+  "pos": "動詞片語",
+  "explanation": "come to an end 的常考義是「結束」。易混片語：come to an agreement（達成協議）、come to life（甦醒）、come to mind（浮現腦海）。曾在學測108當作選項出現。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**consist of**",
+  "correctAnswer": "由…組成",
+  "options": [
+   "由…組成",
+   "在於",
+   "堅持",
+   "處理掉"
+  ],
+  "pos": "動詞片語",
+  "explanation": "consist of 的常考義是「由…組成」。易混片語：consist in（在於）、insist on（堅持）、dispose of（處理掉）。",
+  "example": "It **consists of** a piece of rubber, plastic, leather, or woven material in the outline of a foot, with a strap holding the sandal to a wearer’s toes.（學測109·閱讀測驗）",
+  "exampleZh": "它**由**一片橡膠、塑膠、皮革或編織材料**構成**，形狀和腳一樣，再用一條帶子把涼鞋固定在穿著者的腳趾上。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 2 場"
+ },
+ {
+  "word": "**get away with**",
+  "correctAnswer": "做壞事而未受懲罰",
+  "options": [
+   "做壞事而未受懲罰",
+   "與…相處",
+   "逃離",
+   "繼續做"
+  ],
+  "pos": "動詞片語",
+  "explanation": "get away with 的常考義是「做壞事而未受懲罰」。易混片語：get along with（與…相處）、get away from（逃離）、get on with（繼續做）。曾在學測107當作選項出現。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**hold on to**",
+  "correctAnswer": "緊抓；保留",
+  "options": [
+   "緊抓；保留",
+   "延誤",
+   "抑制",
+   "堅持下去"
+  ],
+  "pos": "動詞片語",
+  "explanation": "hold on to 的常考義是「緊抓；保留」。易混片語：hold up（延誤）、hold back（抑制）、hold out（堅持下去）。曾在學測110當作選項出現。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**in case of**",
+  "correctAnswer": "萬一發生…",
+  "options": [
+   "萬一發生…",
+   "負責",
+   "代替",
+   "支持"
+  ],
+  "pos": "介系詞片語",
+  "explanation": "in case of 的常考義是「萬一發生…」。易混片語：in charge of（負責）、in place of（代替）、in favor of（支持）。曾在學測106當作選項出現。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**in contrast to**",
+  "correctAnswer": "與…形成對比",
+  "options": [
+   "與…形成對比",
+   "除了…之外還有",
+   "回應",
+   "關於"
+  ],
+  "pos": "介系詞片語",
+  "explanation": "in contrast to 的常考義是「與…形成對比」。易混片語：in addition to（除了…之外還有）、in response to（回應）、in relation to（關於）。曾在學測108當作選項出現。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**on the contrary**",
+  "correctAnswer": "相反地",
+  "options": [
+   "相反地",
+   "整體而言",
+   "另一方面",
+   "當場"
+  ],
+  "pos": "轉承語",
+  "explanation": "on the contrary 的常考義是「相反地」。易混片語：on the whole（整體而言）、on the other hand（另一方面）、on the spot（當場）。曾在學測107當作選項出現。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**run out of**",
+  "correctAnswer": "用完",
+  "options": [
+   "用完",
+   "偶遇",
+   "逃離",
+   "輾過"
+  ],
+  "pos": "動詞片語",
+  "explanation": "run out of 的常考義是「用完」。易混片語：run into（偶遇）、run away from（逃離）、run over（輾過）。曾在學測107當作選項出現。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**see through**",
+  "correctAnswer": "看穿",
+  "options": [
+   "看穿",
+   "送行",
+   "負責處理",
+   "考慮"
+  ],
+  "pos": "動詞片語",
+  "explanation": "see through 的常考義是「看穿」。易混片語：see off（送行）、see to（負責處理）、see about（考慮）。曾在學測106當作選項出現。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**watch out for**",
+  "correctAnswer": "小心；提防",
+  "options": [
+   "小心；提防",
+   "看守",
+   "支持",
+   "彌補"
+  ],
+  "pos": "動詞片語",
+  "explanation": "watch out for 的常考義是「小心；提防」。易混片語：watch over（看守）、stand up for（支持）、make up for（彌補）。曾在學測110當作選項出現。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**with a view to**",
+  "correctAnswer": "為了…目的",
+  "options": [
+   "為了…目的",
+   "關於",
+   "在…的幫助下",
+   "輕易地"
+  ],
+  "pos": "介系詞片語",
+  "explanation": "with a view to 的常考義是「為了…目的」。易混片語：with regard to（關於）、with the help of（在…的幫助下）、with ease（輕易地）。曾在學測109當作選項出現。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**with regard to**",
+  "correctAnswer": "關於",
+  "options": [
+   "關於",
+   "為了",
+   "不論",
+   "作為回報"
+  ],
+  "pos": "介系詞片語",
+  "explanation": "with regard to 的常考義是「關於」。易混片語：with a view to（為了）、regardless of（不論）、in return for（作為回報）。曾在學測110當作選項出現。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**in particular**",
+  "correctAnswer": "尤其；特別是",
+  "options": [
+   "尤其；特別是",
+   "實際上",
+   "親自",
+   "公開地"
+  ],
+  "pos": "副詞片語",
+  "explanation": "in particular 的常考義是「尤其；特別是」。易混片語：in practice（實際上）、in person（親自）、in public（公開地）。",
+  "example": "**In particular**, they leave their poop in the same place for all the other members in the group to smell—just like humans leaving messages on social media.（學測115·綜合測驗）",
+  "exampleZh": "**尤其是**，牠們會把糞便留在同一個地方，讓群體中其他成員都能聞到，就像人類在社群媒體上留言一樣。",
+  "source": "學測111–115 出現 1 場、學測106–110 0 場、指考 0 場"
+ },
+ {
+  "word": "**in terms of**",
+  "correctAnswer": "就…而言",
+  "options": [
+   "就…而言",
+   "在…時期",
+   "流著淚",
+   "與…聯絡"
+  ],
+  "pos": "介系詞片語",
+  "explanation": "in terms of 的常考義是「就…而言」。易混片語：in times of（在…時期）、in tears（流著淚）、in touch with（與…聯絡）。曾在指考109補當作選項出現。",
+  "source": "學測111–115 出現 0 場、學測106–110 0 場、指考 1 場"
+ },
+ {
+  "word": "**be exposed to**",
+  "correctAnswer": "接觸；暴露於",
+  "options": [
+   "接觸；暴露於",
+   "反對",
+   "應該",
+   "傾向於"
+  ],
+  "pos": "形容詞片語",
+  "explanation": "be exposed to 的常考義是「接觸；暴露於」。易混片語：be opposed to（反對）、be supposed to（應該）、be disposed to（傾向於）。",
+  "example": "Olive oil spoils quickly when **exposed to** direct sunlight, so it should be stored in the dark at 16-18°C.（學測109·閱讀測驗）",
+  "exampleZh": "橄欖油**照到**陽光直射時很快就會變質，所以應存放在攝氏 16 到 18 度的陰暗處。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**be responsible for**",
+  "correctAnswer": "負責；是…的原因",
+  "options": [
+   "負責；是…的原因",
+   "尊敬",
+   "以…聞名",
+   "感激"
+  ],
+  "pos": "形容詞片語",
+  "explanation": "be responsible for 的常考義是「負責；是…的原因」。易混片語：be respectful to（尊敬）、be famous for（以…聞名）、be grateful for（感激）。",
+  "example": "Their simple design **is responsible for** many foot injuries.（學測109·閱讀測驗）",
+  "exampleZh": "它們簡單的設計是許多腳部傷害的**原因**。",
+  "source": "學測111–115 出現 0 場、學測106–110 1 場、指考 0 場"
+ },
+ {
+  "word": "**in general**",
+  "correctAnswer": "一般而言",
+  "options": [
+   "一般而言",
+   "尤其",
+   "詳細地",
+   "簡言之"
+  ],
+  "pos": "副詞片語",
+  "explanation": "in general 的常考義是「一般而言」。易混片語：in particular（尤其）、in detail（詳細地）、in brief（簡言之）。",
+  "example": "**In general**, golf balls with small, shallow dimples tend to have a longer, lower flight path, whereas those with deeper dimples have a higher flight path.（指考110·閱讀測驗）",
+  "exampleZh": "**一般來說**，凹洞小而淺的高爾夫球飛行路徑較長、較低，而凹洞較深的球飛行路徑則較高。",
+  "source": "學測111–115 出現 0 場、學測106–110 0 場、指考 1 場"
+ },
+ {
+  "word": "**take advantage of**",
+  "correctAnswer": "利用",
+  "options": [
+   "利用",
+   "負責",
+   "注意",
+   "同情"
+  ],
+  "pos": "動詞片語",
+  "explanation": "take advantage of 的常考義是「利用」。易混片語：take charge of（負責）、take note of（注意）、take pity on（同情）。",
+  "source": "學測111–115 出現 0 場、學測106–110 0 場、指考 1 場"
+ }
+]
