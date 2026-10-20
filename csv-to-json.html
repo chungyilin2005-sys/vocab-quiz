@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>題庫轉檔工具</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔄</text></svg>">
+<style>
+:root{
+  --paper:#EEF2F5; --sheet:#FFFFFF; --ink:#1B2A41; --muted:#5B6878; --line:#D9E0E7;
+  --red:#C23B4E; --red-soft:#FBEAED; --ok:#23744F; --focus:#2F6FD6;
+  --zh:"PingFang TC","Noto Sans TC","Microsoft JhengHei","Heiti TC",system-ui,sans-serif;
+  color-scheme:light; box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--paper:#11161D;--sheet:#1A212B;--ink:#E6ECF2;--muted:#9AA6B3;--line:#2C3542;--red:#E46C7E;--red-soft:#3A1E26;--ok:#5CC08F;--focus:#7AA7F0;color-scheme:dark}
+}
+:root[data-theme="dark"]{--paper:#11161D;--sheet:#1A212B;--ink:#E6ECF2;--muted:#9AA6B3;--line:#2C3542;--red:#E46C7E;--red-soft:#3A1E26;--ok:#5CC08F;--focus:#7AA7F0;color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--zh);font-size:17px;line-height:1.7}
+main{max-width:44rem;margin:0 auto;padding:1.5rem 1rem 3rem}
+.sheet{background:var(--sheet);border-top:4px solid var(--red);border-radius:2px 2px 14px 14px;padding:1.75rem 1.5rem}
+h1{font-size:1.5rem;margin:0 0 .5rem}
+h2{font-size:1.05rem;margin:1.5rem 0 .5rem}
+p{margin:.5rem 0}
+.muted{color:var(--muted);font-size:.92rem}
+ol.steps{padding-left:1.4rem;margin:.75rem 0 1.25rem}
+.drop{display:block;border:2px dashed var(--line);border-radius:12px;padding:1.5rem;text-align:center;cursor:pointer}
+.drop.over{border-color:var(--red);background:var(--red-soft)}
+.drop input{display:none}
+button{font:inherit;cursor:pointer;border-radius:10px;padding:.7rem 1.2rem;font-weight:700;border:2px solid var(--ink);background:var(--ink);color:var(--sheet);min-height:46px}
+button:disabled{opacity:.4;cursor:default}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+label.f{display:block;margin-top:1rem;font-weight:700}
+input[type=text]{font:inherit;padding:.5rem .7rem;border:1.5px solid var(--line);border-radius:8px;background:var(--sheet);color:var(--ink);width:12rem}
+.ok{color:var(--ok);font-weight:700}
+.bad{color:var(--red);font-weight:700}
+.list{margin:.25rem 0;padding-left:1.4rem;max-height:14rem;overflow:auto;font-size:.92rem}
+pre{background:var(--paper);border-radius:8px;padding:.75rem;overflow-x:auto;font-size:.82rem;max-height:18rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;align-items:end;margin-top:1rem}
+</style>
+</head>
+<body>
+<main>
+<section class="sheet">
+  <h1>題庫轉檔工具</h1>
+  <p class="muted">把 Excel 母檔轉成單字測驗用的 JSON 題庫。檔案只在你的瀏覽器裡處理，不會上傳。</p>
+  <ol class="steps">
+    <li>在 Excel 開啟母檔，切到「題庫」工作表。</li>
+    <li>檔案 → 另存新檔 → 存檔類型選「CSV UTF-8（逗號分隔）」。</li>
+    <li>把 CSV 拖進下面的框，確認沒有錯誤後下載 JSON，放進儲存庫的 data 資料夾。</li>
+  </ol>
+  <label class="drop" id="drop">
+    <input type="file" id="file" accept=".csv,text/csv">
+    <strong>選擇或拖入 CSV 檔</strong>
+    <div class="muted" id="fname">尚未選擇檔案</div>
+  </label>
+  <div id="out" aria-live="polite"></div>
+</section>
+</main>
+<script>
+'use strict';
+const COLS = { word: '單字', ans: '中文（正解）', d1: '誘答1', d2: '誘答2', d3: '誘答3',
+  pos: '詞性', level: '級別', exp: '解析', ex: '例句', exZh: '例句中譯', src: '出處', check: '檢查' };
+const REQUIRED = ['word', 'ans'];
+const $out = document.getElementById('out');
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+let result = null;
+
+function decode(buf) {
+  try { return new TextDecoder('utf-8', { fatal: true }).decode(buf).replace(/^\uFEFF/, ''); }
+  catch (e) { return new TextDecoder('big5').decode(buf); }
+}
+
+function parseCSV(text) {
+  const rows = []; let row = [], cell = '', q = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (q) {
+      if (c === '"') { if (text[i + 1] === '"') { cell += '"'; i++; } else q = false; }
+      else cell += c;
+    } else if (c === '"') q = true;
+    else if (c === ',') { row.push(cell); cell = ''; }
+    else if (c === '\n' || c === '\r') {
+      if (c === '\r' && text[i + 1] === '\n') i++;
+      row.push(cell); rows.push(row); row = []; cell = '';
+    } else cell += c;
+  }
+  if (cell !== '' || row.length) { row.push(cell); rows.push(row); }
+  return rows;
+}
+
+function convert(text) {
+  const rows = parseCSV(text).filter(r => r.some(c => c.trim() !== ''));
+  if (!rows.length) return { fatal: '檔案是空的。' };
+  const head = rows[0].map(h => h.trim());
+  const idx = {};
+  for (const [k, name] of Object.entries(COLS)) idx[k] = head.indexOf(name);
+  const missing = REQUIRED.filter(k => idx[k] < 0).map(k => COLS[k]);
+  if (missing.length) return { fatal: `找不到「${missing.join('」「')}」欄。請確認存的是「題庫」工作表，而且第一列是標題。` };
+  const get = (r, k) => idx[k] >= 0 ? (r[idx[k]] || '').trim() : '';
+  const items = [], problems = [];
+  rows.slice(1).forEach((r, i) => {
+    const line = i + 2, word = get(r, 'word'), ans = get(r, 'ans');
+    if (!word && !ans) return;
+    if (!word || !ans) { problems.push(`第 ${line} 列：單字或中文（正解）是空的，已略過`); return; }
+    const chk = get(r, 'check');
+    if (chk) problems.push(`第 ${line} 列（${word}）：${chk}`);
+    const ds = [...new Set(['d1', 'd2', 'd3'].map(k => get(r, k)).filter(x => x && x !== ans))];
+    const it = { word: word.includes('**') ? word : `**${word}**`, correctAnswer: ans };
+    if (ds.length) it.options = [ans, ...ds];
+    const pos = get(r, 'pos'), level = get(r, 'level'), exp = get(r, 'exp'), ex = get(r, 'ex'), exZh = get(r, 'exZh'), src = get(r, 'src');
+    if (pos) it.pos = pos;
+    if (level) it.level = level;
+    if (exp) it.explanation = exp;
+    if (ex) it.example = ex;
+    if (exZh) it.exampleZh = exZh;
+    if (src) it.source = src;
+    items.push(it);
+  });
+  return { items, problems };
+}
+
+function show(name, text) {
+  document.getElementById('fname').textContent = name;
+  const res = convert(text);
+  if (res.fatal) { result = null; $out.innerHTML = `<h2 class="bad">無法轉檔</h2><p>${esc(res.fatal)}</p>`; return; }
+  result = res.items;
+  const noOpt = res.items.filter(i => !i.options).length;
+  $out.innerHTML = `
+    <h2 class="${res.problems.length ? 'bad' : 'ok'}">共 ${res.items.length} 題${res.problems.length ? `，有 ${res.problems.length} 個地方要注意` : '，沒有發現問題'}</h2>
+    ${res.problems.length ? `<ol class="list">${res.problems.map(p => `<li>${esc(p)}</li>`).join('')}</ol>` : ''}
+    ${noOpt ? `<p class="muted">${noOpt} 題沒有誘答，測驗時會自動從其他題目的中文補選項。</p>` : ''}
+    <div class="actions">
+      <div><label class="f" for="outname">檔名</label><input type="text" id="outname" value="A.json"></div>
+      <button id="dl">下載 JSON</button>
+    </div>
+    <h2>第一題預覽</h2>
+    <pre>${esc(JSON.stringify(res.items[0], null, 2))}</pre>`;
+  document.getElementById('dl').onclick = download;
+}
+
+function download() {
+  if (!result) return;
+  let name = document.getElementById('outname').value.trim() || 'A.json';
+  if (!/\.json$/i.test(name)) name += '.json';
+  const blob = new Blob([JSON.stringify(result, null, 1)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href = url; a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+function read(file) {
+  if (!file) return;
+  const r = new FileReader();
+  r.onload = () => show(file.name, decode(new Uint8Array(r.result)));
+  r.readAsArrayBuffer(file);
+}
+const $drop = document.getElementById('drop'), $file = document.getElementById('file');
+$file.addEventListener('change', () => { read($file.files[0]); $file.value = ''; });
+['dragenter', 'dragover'].forEach(t => $drop.addEventListener(t, e => { e.preventDefault(); $drop.classList.add('over'); }));
+['dragleave', 'drop'].forEach(t => $drop.addEventListener(t, e => { e.preventDefault(); $drop.classList.remove('over'); }));
+$drop.addEventListener('drop', e => read(e.dataTransfer.files[0]));
+</script>
+</body>
+</html>
