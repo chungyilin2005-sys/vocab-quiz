@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>學測單字練習</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
+<style>
+:root{
+  --paper:#EEF2F5; --sheet:#FFFFFF; --ink:#1B2A41; --muted:#5B6878; --line:#D9E0E7;
+  --red:#C23B4E; --red-soft:#FBEAED; --ok:#23744F; --focus:#2F6FD6;
+  --zh:"PingFang TC","Noto Sans TC","Microsoft JhengHei","Heiti TC",system-ui,sans-serif;
+  --en:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#11161D; --sheet:#1A212B; --ink:#E6ECF2; --muted:#9AA6B3; --line:#2C3542;
+    --red:#E46C7E; --red-soft:#3A1E26; --ok:#5CC08F; --focus:#7AA7F0; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#11161D; --sheet:#1A212B; --ink:#E6ECF2; --muted:#9AA6B3; --line:#2C3542;
+  --red:#E46C7E; --red-soft:#3A1E26; --ok:#5CC08F; --focus:#7AA7F0; color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--zh);font-size:17px;line-height:1.7;-webkit-text-size-adjust:100%}
+.bar{max-width:40rem;margin:0 auto;padding:1rem 1.25rem .5rem;display:flex;justify-content:space-between;align-items:baseline;gap:1rem;font-size:.9rem;color:var(--muted)}
+.bar .brand{font-weight:700;color:var(--ink);letter-spacing:.04em}
+.bar a{color:var(--muted);margin-left:1rem}
+main{max-width:40rem;margin:0 auto;padding:0 1rem 3rem}
+.sheet{background:var(--sheet);border-top:4px solid var(--red);border-radius:2px 2px 14px 14px;padding:1.5rem 1.25rem 1.75rem}
+@media (min-width:560px){.sheet{padding:2rem 2.25rem 2.25rem}}
+h1{font-size:1.6rem;line-height:1.3;margin:.25rem 0 .5rem}
+h2{font-size:1.05rem;margin:1.75rem 0 .5rem}
+.lead{color:var(--muted);margin:0 0 1.5rem}
+.meta{color:var(--muted);font-size:.92rem;margin:0 0 1rem}
+.note{font-size:.9rem;color:var(--muted);border-left:3px solid var(--line);padding-left:.75rem;margin-top:1.5rem}
+button{font:inherit;color:inherit;cursor:pointer}
+button:disabled{cursor:default}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.primary,.secondary{border-radius:10px;padding:.75rem 1.2rem;font-weight:700;border:2px solid var(--ink);min-height:48px}
+.primary{background:var(--ink);color:var(--sheet)}
+.secondary{background:transparent;color:var(--ink)}
+.secondary:disabled{opacity:.4}
+.link{background:none;border:0;padding:.25rem 0;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.link.danger{color:var(--red)}
+.back{margin-bottom:.5rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem;align-items:center}
+.banks{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.bank{width:100%;display:flex;justify-content:space-between;align-items:center;gap:1rem;background:none;border:0;border-bottom:1px solid var(--line);padding:1rem .25rem;text-align:left}
+.bank .bname{font-size:1.15rem;font-weight:700}
+.bank .bcount{font-size:.85rem;color:var(--red)}
+.bank:hover .bname{text-decoration:underline;text-underline-offset:4px}
+fieldset{border:0;padding:0;margin:1.5rem 0 0;min-width:0}
+legend{font-weight:700;margin-bottom:.5rem;padding:0}
+.choice{display:flex;gap:.6rem;align-items:flex-start;padding:.4rem 0;cursor:pointer}
+.choice small{display:block;color:var(--muted);font-size:.82rem}
+.choice.off{color:var(--muted);cursor:default}
+input[type=radio]{accent-color:var(--red);width:1.15rem;height:1.15rem;margin:.3rem 0 0;flex:none}
+.row{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.chip span{display:inline-block;padding:.45rem .95rem;border:1.5px solid var(--line);border-radius:999px}
+.chip input:checked+span{border-color:var(--red);color:var(--red);font-weight:700;background:var(--red-soft)}
+.chip input:focus-visible+span{outline:3px solid var(--focus);outline-offset:2px}
+.warn{margin:1rem 0;border:1.5px solid var(--red);border-radius:8px;padding:.6rem .9rem;background:var(--red-soft);font-size:.9rem}
+.warn summary{cursor:pointer;font-weight:700;color:var(--red)}
+.warn ol{margin:.5rem 0 0;padding-left:1.4rem;max-height:14rem;overflow:auto}
+.qhead{display:flex;gap:1rem;align-items:baseline;font-size:.9rem;color:var(--muted)}
+.qhead span:first-child{flex:1}
+.qhead b{color:var(--ink)}
+.progress{height:3px;background:var(--line);margin:.6rem 0 1.5rem}
+.progress span{display:block;height:100%;background:var(--red);transition:width .25s}
+.prompt{min-height:6rem}
+.word-line{display:flex;align-items:flex-start;justify-content:space-between;gap:.75rem}
+.word{font-family:var(--en);font-size:clamp(2rem,8vw,2.9rem);line-height:1.25;font-weight:600;overflow-wrap:anywhere}
+.word a,.word span{color:inherit;text-decoration:none;border-bottom:1px dotted var(--muted)}
+.word a:hover{color:var(--focus)}
+.word .key{color:var(--red);border-bottom:2px solid var(--red)}
+.hint{font-size:.85rem;color:var(--muted);margin:.5rem 0 0}
+.hint a{color:var(--muted)}
+.zh-prompt{font-size:clamp(1.7rem,6vw,2.3rem);font-weight:700;line-height:1.35;margin-bottom:.75rem}
+.speak{flex:none;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);background:none;display:grid;place-items:center;color:var(--ink);margin-top:.3rem}
+.speak svg,.listen svg{width:22px;height:22px}
+.listen{display:inline-flex;align-items:center;gap:.6rem;border:2px solid var(--ink);background:none;border-radius:999px;padding:.75rem 1.4rem;font-weight:700;color:var(--ink)}
+.opts{list-style:none;margin:1.5rem 0 0;padding:0;border-top:1px solid var(--line)}
+.opt{width:100%;display:flex;align-items:center;gap:1rem;padding:.8rem .25rem;background:none;border:0;border-bottom:1px solid var(--line);text-align:left;min-height:56px}
+.bubble{flex:none;width:2.1rem;height:2.1rem;border-radius:50%;border:2px solid var(--red);color:var(--red);display:grid;place-items:center;font-size:.85rem;font-weight:700;font-family:var(--en);transition:background .15s,color .15s}
+.otext{font-size:1.08rem}
+.otext[lang=en]{font-family:var(--en);font-size:1.2rem}
+.opt:not(:disabled):hover .bubble{background:var(--red-soft)}
+.opt.is-ok .bubble{background:var(--ok);border-color:var(--ok);color:#fff}
+.opt.is-ok .otext{color:var(--ok);font-weight:700}
+.opt.is-bad .bubble{background:var(--red);color:#fff}
+.opt.is-bad .otext{color:var(--red);text-decoration:line-through}
+.opt.is-dim{opacity:.45}
+#after:not(:empty){margin-top:1.5rem}
+.verdict{font-weight:700;font-size:1.1rem;margin-bottom:.5rem}
+.verdict.is-ok{color:var(--ok)}
+.verdict.is-bad{color:var(--red)}
+.explain{border-left:3px solid var(--line);padding-left:1rem;margin-bottom:1.25rem}
+.explain p{margin:.35rem 0}
+.example{font-family:var(--en);font-style:italic}
+.example strong{font-style:normal;color:var(--red)}
+.example a{color:inherit;text-decoration:none;border-bottom:1px dotted var(--muted)}
+.example a:hover{color:var(--focus);border-bottom-color:var(--focus)}
+.example strong a{border-bottom:2px solid var(--red)}
+.example-zh{color:var(--muted)}
+.zh-toggle{font-size:.88rem;margin-top:.15rem}
+.example-zh strong{color:var(--red);font-weight:700}
+.source{font-size:.88rem;color:var(--muted)}
+.bookmsg{font-size:.88rem;color:var(--red)}
+.next{width:100%}
+.keys{font-size:.8rem;color:var(--muted);margin:1.5rem 0 0}
+@media (hover:none){.keys{display:none}}
+.mark{width:8rem;height:8rem;border:3px solid var(--red);border-radius:50%;display:grid;place-content:center;text-align:center;color:var(--red);font-family:var(--en);transform:rotate(-8deg);margin:.5rem 0 1rem;animation:stamp .35s ease-out}
+.mark span{font-size:2.8rem;line-height:1;font-weight:700}
+.mark small{font-size:1rem}
+@keyframes stamp{from{transform:rotate(-8deg) scale(1.35);opacity:0}to{transform:rotate(-8deg) scale(1);opacity:1}}
+.wronglist,.booklist{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.wronglist li,.booklist li{display:flex;flex-wrap:wrap;gap:.2rem 1rem;align-items:baseline;padding:.6rem 0;border-bottom:1px solid var(--line)}
+.w{font-family:var(--en);font-weight:600;font-size:1.1rem;min-width:9rem}
+.cnt{margin-left:auto;font-size:.85rem;color:var(--red)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="bar">
+  <span class="brand">學測單字練習</span>
+  <span><span id="bankName"></span><a id="homeLink" hidden>回首頁</a></span>
+</header>
+<main id="app"></main>
+<input type="file" id="file" accept=".json,application/json" hidden>
+
+<script>
+'use strict';
+
+/* ===== 設定：依你的儲存庫調整 ===== */
+const BANKS = [
+  { id: 'A', name: 'A 級必背 244 字', file: 'data/A.json' },
+  { id: 'B', name: 'B 級重要 1032 字', file: 'data/B.json' },
+  { id: 'P', name: '高頻片語 130 個', file: 'data/P.json' },
+];
+const HOME_URL = 'index.html'; // 首頁檔名；留空就不顯示「回首頁」
+const STREAK_TO_CLEAR = 3;    // 錯題連續答對幾次後移出錯題本
+const COUNT_CHOICES = [10, 20, 50];
+
+/* 範例題庫（出處欄為示意，非真實考題） */
+const DEMO = [
+  { word: '**abandon**', options: ['放棄', '採用', '吸收', '延期'], correctAnswer: '放棄', pos: 'v.', level: '4',
+    explanation: 'abandon 指完全放棄或離棄，常與 hope、plan、project 搭配。',
+    example: 'The team had to **abandon** the plan because of the storm.', source: '範例資料' },
+  { word: 'take **advantage** of', options: ['利用', '忽視', '佔上風', '冒險'], correctAnswer: '利用', pos: 'phr.',
+    explanation: '片語，意為「利用」；用在人身上時也有「佔……便宜」的意思。',
+    example: 'Students should **take advantage of** the free library resources.', source: '範例資料' },
+  { word: '**adapt**', options: ['適應', '採用', '收養', '熟練的'], correctAnswer: '適應', pos: 'v.', level: '4',
+    explanation: 'adapt 是「適應、改編」。小心與 adopt（採用、收養）、adept（熟練的）混淆。', source: '範例資料' },
+  { word: '**reluctant**', correctAnswer: '不情願的', pos: 'adj.', level: '4',
+    explanation: '這題沒有提供 options，選項會自動從題庫其他字的中文抽取。', source: '範例資料' },
+  { word: '**consequence**', correctAnswer: '後果', pos: 'n.', level: '4',
+    explanation: '常見搭配：as a consequence（結果）、face the consequences（承擔後果）。', source: '範例資料' },
+  { word: '**convenient**', options: ['方便的', '傳統的', '便宜的', '有說服力的'], correctAnswer: '方便的', pos: 'adj.', level: '2',
+    explanation: '名詞為 convenience，如 convenience store（便利商店）。', source: '範例資料' },
+];
+
+const MODES = [
+  { id: 'en2zh', label: '看英文選中文' },
+  { id: 'zh2en', label: '看中文選英文' },
+  { id: 'listen', label: '聽發音選中文' },
+];
+const LETTERS = 'ABCD';
+const ICON_SPEAK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg>';
+
+const $app = document.getElementById('app');
+const $bankName = document.getElementById('bankName');
+const $file = document.getElementById('file');
+
+/* ===== 工具 ===== */
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const plain = s => String(s).replace(/\*\*/g, '').trim();
+const rich = s => esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\r?\n/g, '<br>');
+const keyOf = it => plain(it.word).toLowerCase();
+
+const store = {
+  get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* 無法儲存時略過 */ } },
+};
+
+/* ===== 狀態 ===== */
+const prefs = store.get('vq:prefs', {});
+const S = {
+  screen: 'home', bank: null, items: [], errors: [], pool: [],
+  queue: [], idx: 0, score: 0, wrong: [], opts: [], correct: '', answered: false, kind: 'normal',
+  mode: MODES.some(m => m.id === prefs.mode) ? prefs.mode : 'en2zh',
+  count: typeof prefs.count === 'number' ? prefs.count : 20,
+  showZh: prefs.showZh === true,   // 例句中譯預設隱藏
+};
+const savePrefs = () => store.set('vq:prefs', { mode: S.mode, count: S.count, showZh: S.showZh });
+
+/* ===== 錯題本（存在這台裝置的瀏覽器） ===== */
+const bookKey = id => 'vq:book:' + id;
+const loadBook = () => store.get(bookKey(S.bank.id), {});
+const saveBook = b => store.set(bookKey(S.bank.id), b);
+function recordResult(item, ok) {
+  const b = loadBook(), k = keyOf(item);
+  let msg = '';
+  if (!ok) {
+    const e = b[k] || { item, wrong: 0, streak: 0 };
+    e.item = item; e.wrong += 1; e.streak = 0; e.last = Date.now();
+    b[k] = e;
+    msg = `已記入錯題本（累計答錯 ${e.wrong} 次）`;
+  } else if (b[k]) {
+    b[k].streak += 1;
+    if (b[k].streak >= STREAK_TO_CLEAR) { delete b[k]; msg = `連續答對 ${STREAK_TO_CLEAR} 次，已移出錯題本`; }
+    else msg = `錯題本進度：連續答對 ${b[k].streak}／${STREAK_TO_CLEAR}`;
+  }
+  saveBook(b);
+  return msg;
+}
+
+/* ===== 語音 ===== */
+const speech = { ok: 'speechSynthesis' in window && typeof SpeechSynthesisUtterance !== 'undefined', voice: null };
+function pickVoice() {
+  if (!('speechSynthesis' in window)) return;
+  const vs = speechSynthesis.getVoices();
+  if (!vs.length) return;
+  const en = vs.filter(v => /^en[-_]/i.test(v.lang));
+  if (!en.length) { speech.ok = false; return; }
+  speech.ok = true;
+  speech.voice = en.find(v => /Natural/i.test(v.name) && /en[-_]US/i.test(v.lang))
+    || en.find(v => /Google US English/i.test(v.name))
+    || en.find(v => /en[-_]US/i.test(v.lang)) || en[0];
+}
+if (speech.ok) { pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
+function speak(text) {
+  if (!speech.ok) return;
+  try {
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    if (speech.voice) u.voice = speech.voice;
+    u.lang = speech.voice ? speech.voice.lang : 'en-US';
+    u.rate = 0.9;
+    speechSynthesis.speak(u);
+  } catch (e) { /* 略過 */ }
+}
+
+/* ===== 題庫驗證 ===== */
+function normalize(raw) {
+  const items = [], errors = [], seen = new Set();
+  if (!Array.isArray(raw)) return { items, errors: ['檔案最外層必須是陣列，也就是用 [ ] 包起來。'] };
+  const str = v => typeof v === 'string' ? v.trim() : (typeof v === 'number' ? String(v) : '');
+  raw.forEach((r, i) => {
+    const n = i + 1;
+    if (!r || typeof r !== 'object') { errors.push(`第 ${n} 筆：不是有效的題目物件`); return; }
+    const word = str(r.word), ans = str(r.correctAnswer);
+    if (!word) { errors.push(`第 ${n} 筆：缺少 word`); return; }
+    const label = plain(word);
+    if (!ans) { errors.push(`第 ${n} 筆（${label}）：缺少 correctAnswer`); return; }
+    let options = [];
+    if (r.options !== undefined) {
+      if (!Array.isArray(r.options)) { errors.push(`第 ${n} 筆（${label}）：options 必須是陣列`); return; }
+      options = [...new Set(r.options.map(str).filter(Boolean))];
+      if (options.length && !options.includes(ans)) { errors.push(`第 ${n} 筆（${label}）：正解「${ans}」不在 options 裡，請檢查空格與全形半形`); return; }
+    }
+    const k = label.toLowerCase();
+    if (seen.has(k)) { errors.push(`第 ${n} 筆（${label}）：和前面的題目重複，已略過`); return; }
+    seen.add(k);
+    items.push({
+      word, correctAnswer: ans, options,
+      explanation: str(r.explanation), example: str(r.example), exampleZh: str(r.exampleZh),
+      source: Array.isArray(r.source) ? r.source.map(str).filter(Boolean).join('、') : str(r.source),
+      level: str(r.level), pos: str(r.pos),
+    });
+  });
+  return { items, errors };
+}
+
+/* ===== 出題 ===== */
+// 把「仍然是；保持；剩下」拆成個別字義，用來排除意思重疊的選項
+const senses = s => String(s).split(/[；;，,、／/]/).map(x => x.replace(/[（(][^）)]*[）)]/g, '').trim()).filter(Boolean);
+const overlaps = (a, b) => { const sa = senses(a); return senses(b).some(x => sa.includes(x)); };
+function pickDistractors(item, field, need, exclude) {
+  const val = it => field === 'en' ? plain(it.word) : it.correctAnswer;
+  const others = S.pool.filter(it => keyOf(it) !== keyOf(item) && !exclude.includes(val(it))
+    && !overlaps(it.correctAnswer, item.correctAnswer)
+    && !exclude.some(x => field === 'zh' && overlaps(x, it.correctAnswer)));
+  const samePos = shuffle(others.filter(it => item.pos && it.pos === item.pos));
+  const rest = shuffle(others.filter(it => !(item.pos && it.pos === item.pos)));
+  const out = [];
+  for (const it of samePos.concat(rest)) {
+    const v = val(it);
+    if (!out.includes(v) && !(field === 'zh' && out.some(o => overlaps(o, v)))) out.push(v);
+    if (out.length >= need) break;
+  }
+  return out;
+}
+function buildOptions(item) {
+  if (S.mode === 'zh2en') {
+    const c = plain(item.word);
+    return shuffle([c, ...pickDistractors(item, 'en', 3, [c])]);
+  }
+  let ds = shuffle(item.options.filter(o => o !== item.correctAnswer)).slice(0, 3);
+  if (ds.length < 3) ds = ds.concat(pickDistractors(item, 'zh', 3 - ds.length, [item.correctAnswer, ...ds]));
+  return shuffle([item.correctAnswer, ...ds]);
+}
+function pickNormal() {
+  const n = S.items.length;
+  const N = S.count && S.count < n ? S.count : n;
+  if (N >= n) return shuffle(S.items);
+  const book = loadBook();
+  const fromBook = shuffle(S.items.filter(it => book[keyOf(it)])).slice(0, Math.floor(N / 2));
+  const taken = new Set(fromBook.map(keyOf));
+  const rest = shuffle(S.items.filter(it => !taken.has(keyOf(it)))).slice(0, N - fromBook.length);
+  return shuffle(fromBook.concat(rest));
+}
+
+/* ===== 字典連結 ===== */
+const dictURL = term => 'https://dictionary.cambridge.org/zht/' + encodeURIComponent('詞典') + '/' +
+  encodeURIComponent('英語-漢語-繁體') + '/' + encodeURIComponent(term.toLowerCase());
+const phraseSlug = s => s.toLowerCase().replace(/[^a-z'\-\s]/g, '').trim().replace(/\s+/g, '-');
+function wordHTML(word) {
+  return word.split(/(\*\*.+?\*\*)/).filter(Boolean).map(seg => {
+    const bold = /^\*\*.+\*\*$/.test(seg);
+    const text = bold ? seg.slice(2, -2) : seg;
+    return text.split(/(\s+)/).map(tok => {
+      if (!tok) return '';
+      if (/^\s+$/.test(tok)) return ' ';
+      const clean = tok.replace(/^[^A-Za-z]+|[^A-Za-z]+$/g, '');
+      const cls = bold ? ' class="key"' : '';
+      if (!clean) return `<span${cls}>${esc(tok)}</span>`;
+      return `<a${cls} href="${dictURL(clean)}" target="_blank" rel="noopener">${esc(tok)}</a>`;
+    }).join('');
+  }).join('');
+}
+
+/* 例句：每個英文字都連到字典；粗體的目標字連到原形詞條 */
+const WORD_RE = /[A-Za-z]+(?:['’\-][A-Za-z]+)*/g;
+function linkWords(str, lookup) {
+  let out = '', last = 0, m;
+  WORD_RE.lastIndex = 0;
+  while ((m = WORD_RE.exec(str))) {
+    if (m.index > 0 && /[0-9]/.test(str[m.index - 1])) continue; // 如 1700s 的 s 不連結
+    out += esc(str.slice(last, m.index));
+    const q = (lookup || m[0]).replace(/['’]s$/i, '');
+    out += `<a href="${dictURL(q)}" target="_blank" rel="noopener">${esc(m[0])}</a>`;
+    last = WORD_RE.lastIndex;
+  }
+  return out + esc(str.slice(last));
+}
+function exampleHTML(text, headword) {
+  const head = plain(headword);
+  return text.split(/(\*\*.+?\*\*)/).filter(Boolean).map(seg => {
+    if (!/^\*\*.+\*\*$/.test(seg)) return linkWords(seg);
+    const inner = seg.slice(2, -2);
+    const lookup = !/\s/.test(inner) && !/\s/.test(head) ? head : null;
+    return `<strong>${linkWords(inner, lookup)}</strong>`;
+  }).join('').replace(/\r?\n/g, '<br>');
+}
+
+/* ===== 畫面 ===== */
+function promptHTML(item, revealed) {
+  const words = plain(item.word);
+  const spk = speech.ok ? `<button class="speak" data-act="speak" aria-label="播放發音" title="播放發音">${ICON_SPEAK}</button>` : '';
+  const phrase = /\s/.test(words) ? `，或<a href="${dictURL(phraseSlug(words))}" target="_blank" rel="noopener">查整個片語</a>` : '';
+  const wordBlock = `<div class="word-line"><div class="word" lang="en">${wordHTML(item.word)}</div>${spk}</div>
+    <p class="hint">點單字可查劍橋字典${phrase}</p>`;
+  if (S.mode === 'en2zh') return wordBlock;
+  if (S.mode === 'zh2en') {
+    return `<div class="zh-prompt">${esc(item.correctAnswer)}</div>` +
+      (item.pos && !revealed ? `<p class="meta">${esc(item.pos)}</p>` : '') + (revealed ? wordBlock : '');
+  }
+  return revealed ? wordBlock : `<button class="listen" data-act="speak">${ICON_SPEAK}<span>再聽一次</span></button>`;
+}
+
+function renderHome() {
+  S.screen = 'home'; S.bank = null; $bankName.textContent = '';
+  try { history.replaceState(null, '', location.pathname); } catch (e) { /* 略過 */ }
+  const local = location.protocol === 'file:';
+  $app.innerHTML = `<section class="sheet">
+    <h1>學測單字練習</h1>
+    <p class="lead">選一份題庫開始。答錯的字會記在這台裝置的錯題本，下次練習時優先出現。</p>
+    ${BANKS.length ? `<ul class="banks">${BANKS.map(b => {
+      const n = Object.keys(store.get(bookKey(b.id), {})).length;
+      return `<li><button class="bank" data-act="bank" data-id="${esc(b.id)}"><span class="bname">${esc(b.name)}</span><span class="bcount">${n ? `錯題 ${n}` : ''}</span></button></li>`;
+    }).join('')}</ul>` : ''}
+    <div class="actions">
+      <button class="secondary" data-act="demo">試用範例題庫</button>
+      <button class="secondary" data-act="upload">上傳 JSON 題庫</button>
+    </div>
+    ${local ? '<p class="note">目前是直接開啟本機檔案，瀏覽器不允許讀取資料夾裡的題庫，只能用「上傳」。放上 GitHub Pages 後，上面的題庫就能直接點選。</p>' : ''}
+  </section>`;
+}
+
+function modeBlocked(id) {
+  if (id === 'zh2en' && S.items.length < 4) return '題庫至少需要 4 個字';
+  if (id === 'listen' && !speech.ok) return '這個瀏覽器沒有英文語音';
+  return '';
+}
+
+function renderSetup() {
+  S.screen = 'setup';
+  if (modeBlocked(S.mode)) S.mode = 'en2zh';
+  const n = S.items.length;
+  const bookN = Object.keys(loadBook()).length;
+  const counts = COUNT_CHOICES.filter(c => c < n).concat([0]);
+  if (!counts.includes(S.count)) S.count = counts.filter(c => c && c <= 20).pop() || 0;
+  const errs = S.errors.length ? `<details class="warn"${S.errors.length <= 5 ? ' open' : ''}>
+      <summary>有 ${S.errors.length} 筆資料無法使用，已略過</summary>
+      <ol>${S.errors.map(e => `<li>${esc(e)}</li>`).join('')}</ol></details>` : '';
+  $app.innerHTML = `<section class="sheet">
+    <button class="link back" data-act="home">換題庫</button>
+    <h1>${esc(S.bank.name)}</h1>
+    <p class="meta">共 ${n} 題${bookN ? `，錯題本裡有 ${bookN} 題` : ''}</p>
+    ${errs}
+    <fieldset><legend>題型</legend>${MODES.map(m => {
+      const why = modeBlocked(m.id);
+      return `<label class="choice${why ? ' off' : ''}"><input type="radio" name="mode" value="${m.id}"${S.mode === m.id ? ' checked' : ''}${why ? ' disabled' : ''}><span>${m.label}${why ? `<small>${why}</small>` : ''}</span></label>`;
+    }).join('')}</fieldset>
+    <fieldset><legend>題數</legend><div class="row">${counts.map(c =>
+      `<label class="chip"><input type="radio" name="count" value="${c}"${S.count === c ? ' checked' : ''}><span>${c ? `${c} 題` : `全部 ${n} 題`}</span></label>`).join('')}</div></fieldset>
+    ${S.items.some(it => it.exampleZh) ? `<fieldset><legend>例句中譯</legend>
+      <label class="choice"><input type="radio" name="showZh" value="0"${S.showZh ? '' : ' checked'}><span>先隱藏，需要時再點開<small>建議：先自己讀懂英文，再對照中文</small></span></label>
+      <label class="choice"><input type="radio" name="showZh" value="1"${S.showZh ? ' checked' : ''}><span>作答後直接顯示</span></label>
+    </fieldset>` : ''}
+    <div class="actions">
+      <button class="primary" data-act="start">開始練習</button>
+      <button class="secondary" data-act="book"${bookN ? '' : ' disabled'}>錯題本${bookN ? `（${bookN}）` : ''}</button>
+    </div>
+  </section>`;
+}
+
+function startQuiz(kind, list) {
+  if (!list.length) return;
+  S.kind = kind; S.queue = list; S.idx = 0; S.score = 0; S.wrong = [];
+  const seen = new Set(S.items.map(keyOf));
+  S.pool = S.items.concat(list.filter(it => !seen.has(keyOf(it))));
+  showQuestion();
+}
+
+function showQuestion() {
+  S.screen = 'quiz'; S.answered = false;
+  const item = S.queue[S.idx], total = S.queue.length;
+  S.correct = S.mode === 'zh2en' ? plain(item.word) : item.correctAnswer;
+  S.opts = buildOptions(item);
+  $app.innerHTML = `<section class="sheet quiz">
+    <div class="qhead"><span>第 ${S.idx + 1} 題／共 ${total} 題</span><span>答對 <b id="scoreNow">${S.score}</b></span><button class="link" data-act="quit">結束</button></div>
+    <div class="progress" aria-hidden="true"><span style="width:${S.idx / total * 100}%"></span></div>
+    <div class="prompt">${promptHTML(item, false)}</div>
+    <ol class="opts">${S.opts.map((o, i) => `<li><button class="opt" data-act="pick" data-i="${i}"><span class="bubble">${LETTERS[i]}</span><span class="otext"${S.mode === 'zh2en' ? ' lang="en"' : ''}>${esc(o)}</span></button></li>`).join('')}</ol>
+    <div id="after" aria-live="polite"></div>
+    <p class="keys">鍵盤：1–4 作答　Enter 下一題　P 播放發音　T 中譯　Esc 結束</p>
+  </section>`;
+  window.scrollTo(0, 0);
+  if (S.mode === 'listen') speak(plain(item.word));
+}
+
+function pick(i) {
+  if (S.screen !== 'quiz' || S.answered || i >= S.opts.length) return;
+  S.answered = true;
+  const item = S.queue[S.idx];
+  const ok = S.opts[i] === S.correct;
+  if (ok) S.score += 1; else S.wrong.push(item);
+  const msg = recordResult(item, ok);
+  $app.querySelectorAll('.opt').forEach((b, j) => {
+    b.disabled = true;
+    if (S.opts[j] === S.correct) b.classList.add('is-ok');
+    else if (j === i) b.classList.add('is-bad');
+    else b.classList.add('is-dim');
+  });
+  $app.querySelector('.prompt').innerHTML = promptHTML(item, true);
+  $app.querySelector('#scoreNow').textContent = S.score;
+  $app.querySelector('.progress span').style.width = ((S.idx + 1) / S.queue.length * 100) + '%';
+  const meta = [item.pos, item.level ? `參考詞彙表第 ${item.level} 級` : ''].filter(Boolean).join('　');
+  const after = $app.querySelector('#after');
+  after.innerHTML = `<div class="verdict ${ok ? 'is-ok' : 'is-bad'}">${ok ? '答對了' : `答錯了，正解是「${esc(S.correct)}」`}</div>
+    <div class="explain">
+      ${meta ? `<p class="meta">${esc(meta)}</p>` : ''}
+      ${item.explanation ? `<p>${rich(item.explanation)}</p>` : ''}
+      ${item.example ? `<p class="example" lang="en">${exampleHTML(item.example, item.word)}</p>${item.exampleZh ? `<button class="link zh-toggle" data-act="zh" aria-expanded="${S.showZh}" aria-controls="exZh">${S.showZh ? '隱藏中譯' : '顯示中譯'}</button><p class="example-zh" id="exZh"${S.showZh ? '' : ' hidden'}>${rich(item.exampleZh)}</p>` : ''}<p class="hint">點例句中的單字可查劍橋字典</p>` : ''}
+      ${item.source ? `<p class="source">出處：${esc(item.source)}</p>` : ''}
+      ${msg ? `<p class="bookmsg">${esc(msg)}</p>` : ''}
+    </div>
+    <button class="primary next" data-act="next">${S.idx < S.queue.length - 1 ? '下一題' : '看結果'}</button>`;
+  const btn = after.querySelector('.next');
+  btn.focus({ preventScroll: true });
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  btn.scrollIntoView({ block: 'nearest', behavior: reduce ? 'auto' : 'smooth' });
+  speak(plain(item.word));
+}
+
+// 只切換這一題，不改變預設設定
+function toggleZh() {
+  const p = document.getElementById('exZh'), b = $app.querySelector('.zh-toggle');
+  if (!p || !b) return;
+  p.hidden = !p.hidden;
+  b.textContent = p.hidden ? '顯示中譯' : '隱藏中譯';
+  b.setAttribute('aria-expanded', String(!p.hidden));
+}
+
+function next() {
+  if (S.screen !== 'quiz' || !S.answered) return;
+  S.idx += 1;
+  if (S.idx >= S.queue.length) renderResult(); else showQuestion();
+}
+
+function quit() {
+  const done = S.idx + (S.answered ? 1 : 0);
+  if (done === 0) { renderSetup(); return; }
+  if (!confirm('結束這回練習？已作答的結果會保留在錯題本。')) return;
+  S.queue = S.queue.slice(0, done);
+  renderResult();
+}
+
+function renderResult() {
+  S.screen = 'result';
+  if (speech.ok) speechSynthesis.cancel();
+  const total = S.queue.length, acc = total ? Math.round(S.score / total * 100) : 0;
+  const bookN = Object.keys(loadBook()).length;
+  const w = S.wrong;
+  const tag = S.kind === 'book' ? '（錯題本練習）' : S.kind === 'retry' ? '（重做錯題）' : '';
+  $app.innerHTML = `<section class="sheet">
+    <div class="mark" role="img" aria-label="答對 ${S.score} 題，共 ${total} 題"><span>${S.score}</span><small>/ ${total}</small></div>
+    <h1>${acc === 100 ? '全部答對' : '練習結束'}</h1>
+    <p class="meta">正確率 ${acc}%${tag}</p>
+    ${w.length ? `<h2>這回答錯的字</h2><ul class="wronglist">${w.map(x =>
+      `<li><span class="w" lang="en">${esc(plain(x.word))}</span><span>${esc(x.correctAnswer)}</span></li>`).join('')}</ul>` : ''}
+    <div class="actions">
+      ${w.length ? `<button class="primary" data-act="retry">重做這 ${w.length} 題</button>` : ''}
+      <button class="${w.length ? 'secondary' : 'primary'}" data-act="start">再練一回</button>
+      <button class="secondary" data-act="book"${bookN ? '' : ' disabled'}>錯題本${bookN ? `（${bookN}）` : ''}</button>
+      <button class="link" data-act="setup">回設定</button>
+    </div>
+  </section>`;
+  window.scrollTo(0, 0);
+}
+
+function renderBook() {
+  S.screen = 'book';
+  const entries = Object.values(loadBook()).sort((a, b) => b.wrong - a.wrong || (b.last || 0) - (a.last || 0));
+  $app.innerHTML = `<section class="sheet">
+    <button class="link back" data-act="setup">回設定</button>
+    <h1>錯題本</h1>
+    <p class="meta">${esc(S.bank.name)}，共 ${entries.length} 題。同一題連續答對 ${STREAK_TO_CLEAR} 次就會移出。</p>
+    ${entries.length ? `<ul class="booklist">${entries.map(e =>
+      `<li><span class="w" lang="en">${esc(plain(e.item.word))}</span><span>${esc(e.item.correctAnswer)}</span><span class="cnt">錯 ${e.wrong} 次${e.streak ? `，連對 ${e.streak}` : ''}</span></li>`).join('')}</ul>
+    <div class="actions">
+      <button class="primary" data-act="bookstart">練習錯題本</button>
+      <button class="secondary" data-act="export">匯出 JSON</button>
+      <button class="link danger" data-act="clear">清空錯題本</button>
+    </div>` : `<p>目前沒有錯題。</p><div class="actions"><button class="primary" data-act="setup">回設定</button></div>`}
+  </section>`;
+}
+
+function exportBook() {
+  const items = Object.values(loadBook()).map(e => e.item);
+  if (!items.length) return;
+  const blob = new Blob([JSON.stringify(items, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `錯題本_${S.bank.name}_${new Date().toLocaleDateString('sv-SE')}.json`;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+function renderError(title, lines) {
+  S.screen = 'error';
+  $app.innerHTML = `<section class="sheet">
+    <h1>${esc(title)}</h1>
+    ${lines.map(l => `<p>${esc(l)}</p>`).join('')}
+    <div class="actions"><button class="primary" data-act="home">回到題庫選單</button></div>
+  </section>`;
+}
+
+/* ===== 載入題庫 ===== */
+function setBank(bank, raw) {
+  const { items, errors } = normalize(raw);
+  S.bank = bank; S.items = items; S.errors = errors;
+  $bankName.textContent = bank.name;
+  const p = new URLSearchParams(location.search);
+  if (BANKS.some(b => b.id === bank.id) || bank.id === 'demo') { p.set('set', bank.id); p.delete('src'); }
+  else if (!bank.src) { p.delete('set'); p.delete('src'); }
+  try { history.replaceState(null, '', p.toString() ? '?' + p : location.pathname); } catch (e) { /* 略過 */ }
+  if (!items.length) {
+    const shown = errors.slice(0, 20);
+    if (errors.length > 20) shown.push(`……另外還有 ${errors.length - 20} 筆錯誤`);
+    renderError('這份題庫沒有可以使用的題目', shown);
+    return;
+  }
+  renderSetup();
+}
+
+async function loadBank(bank) {
+  S.screen = 'loading';
+  $app.innerHTML = `<section class="sheet"><p class="meta">正在載入「${esc(bank.name)}」……</p></section>`;
+  try {
+    const res = await fetch(bank.file, { cache: 'no-cache' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    setBank(bank, await res.json());
+  } catch (err) {
+    if (location.protocol === 'file:') {
+      renderError('題庫載入失敗', ['直接用瀏覽器開啟本機檔案時，瀏覽器不允許讀取其他檔案。', '請改用「上傳 JSON 題庫」，或把整個資料夾放上 GitHub Pages 後再開啟。']);
+    } else {
+      renderError('題庫載入失敗', [`無法讀取 ${bank.file}（${err.message}）。`,
+        err instanceof SyntaxError ? '檔案內容不是有效的 JSON，請檢查逗號、引號和括號。' : '請確認這個檔案已經上傳到儲存庫，路徑和英文大小寫都要一致。']);
+    }
+  }
+}
+
+$file.addEventListener('change', () => {
+  const f = $file.files[0];
+  if (!f) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try { setBank({ id: 'upload:' + f.name, name: f.name.replace(/\.json$/i, '') }, JSON.parse(reader.result)); }
+    catch (e) { renderError('無法讀取這個檔案', ['檔案內容不是有效的 JSON，請檢查逗號、引號和括號。', e.message]); }
+    $file.value = '';
+  };
+  reader.readAsText(f, 'utf-8');
+});
+
+/* ===== 事件 ===== */
+document.addEventListener('click', e => {
+  const t = e.target.closest('[data-act]');
+  if (!t) return;
+  switch (t.dataset.act) {
+    case 'bank': { const b = BANKS.find(x => x.id === t.dataset.id); if (b) loadBank(b); break; }
+    case 'demo': setBank({ id: 'demo', name: '範例題庫' }, DEMO); break;
+    case 'upload': $file.click(); break;
+    case 'home': renderHome(); break;
+    case 'setup': renderSetup(); break;
+    case 'start': startQuiz('normal', pickNormal()); break;
+    case 'book': renderBook(); break;
+    case 'bookstart': startQuiz('book', shuffle(Object.values(loadBook()).map(x => x.item))); break;
+    case 'retry': startQuiz('retry', shuffle(S.wrong)); break;
+    case 'pick': pick(Number(t.dataset.i)); break;
+    case 'next': next(); break;
+    case 'quit': quit(); break;
+    case 'speak': if (S.screen === 'quiz') speak(plain(S.queue[S.idx].word)); break;
+    case 'zh': toggleZh(); break;
+    case 'export': exportBook(); break;
+    case 'clear': if (confirm('確定清空錯題本？這個動作無法復原。')) { saveBook({}); renderBook(); } break;
+  }
+});
+
+document.addEventListener('change', e => {
+  if (e.target.name === 'mode') { S.mode = e.target.value; savePrefs(); }
+  if (e.target.name === 'count') { S.count = Number(e.target.value); savePrefs(); }
+  if (e.target.name === 'showZh') { S.showZh = e.target.value === '1'; savePrefs(); }
+});
+
+document.addEventListener('keydown', e => {
+  if (S.screen !== 'quiz' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const k = e.key.toLowerCase();
+  const onControl = e.target.closest && e.target.closest('button, a, input');
+  const map = { '1': 0, '2': 1, '3': 2, '4': 3, a: 0, b: 1, c: 2, d: 3 };
+  if (!S.answered && k in map) { e.preventDefault(); pick(map[k]); }
+  else if (S.answered && (k === 'enter' || k === ' ') && !onControl) { e.preventDefault(); next(); }
+  else if (k === 'p') { speak(plain(S.queue[S.idx].word)); }
+  else if (k === 't' && S.answered) { toggleZh(); }
+  else if (k === 'escape') { quit(); }
+});
+
+/* ===== 啟動 ===== */
+(function init() {
+  if (HOME_URL) { const h = document.getElementById('homeLink'); h.href = HOME_URL; h.hidden = false; }
+  const p = new URLSearchParams(location.search);
+  const set = p.get('set'), src = p.get('src');
+  if (set) {
+    if (set.toLowerCase() === 'demo') { setBank({ id: 'demo', name: '範例題庫' }, DEMO); return; }
+    const b = BANKS.find(x => x.id.toLowerCase() === set.toLowerCase());
+    if (b) { loadBank(b); return; }
+  }
+  if (src && !/^[a-z][a-z0-9+.-]*:|^\/\//i.test(src)) {
+    loadBank({ id: 'src:' + src, name: src.split('/').pop().replace(/\.json$/i, ''), file: src, src: true });
+    return;
+  }
+  renderHome();
+})();
+</script>
+</body>
+</html>
