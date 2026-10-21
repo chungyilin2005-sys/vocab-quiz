@@ -64,3 +64,7 @@ tools/
 ## 資料來源
 
 題目內容整理自大學入學考試中心公布之歷屆學測與指考英文試題，僅供學習使用。
+
+## 字型
+
+例句與英文選項使用 Atkinson Hyperlegible（Braille Institute of America 設計，SIL Open Font License 1.1），已內嵌在 `vocab-quiz.html` 中，不需要連外網下載。這套字型專為辨識度設計，I／l／1、rn／m 等容易混淆的字母外形差異明顯。
