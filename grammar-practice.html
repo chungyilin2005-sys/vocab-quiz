@@ -157,6 +157,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <a href="index.html">回首頁</a>
 </header>
 <main id="app"><section class="sheet"><p class="meta">正在載入題庫……</p></section></main>
+<input type="file" id="file" accept=".json,application/json" hidden>
 
 <script>
 'use strict';
@@ -169,6 +170,7 @@ const LETTERS = 'ABCD';
 const K = { prefs: 'gp:prefs', book: 'gp:book', test: 'gp:test' };
 
 const $app = document.getElementById('app');
+const $file = document.getElementById('file');
 const store = {
   get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* 略過 */ } },
@@ -267,6 +269,7 @@ function renderHome() {
   $app.innerHTML = `<section class="sheet">
     <h1>綜合測驗歷屆題庫</h1>
     <p class="lead">${esc(d.scope)}，共 ${S.items.length} 題，皆為歷屆原題。</p>
+    ${S.srcName ? `<p class="note">目前使用上傳的題庫檔：${esc(S.srcName)}</p>` : ''}
     <p class="note">${esc(d.notIncluded)}。</p>
     ${saved ? `<div class="resume">上次的測驗還沒交卷（${saved.ids.length} 題）。<div class="actions" style="margin-top:.5rem"><button class="primary" data-act="resume">繼續作答</button><button class="link" data-act="discard">放棄這次測驗</button></div></div>` : ''}
     <div class="modes">
@@ -291,6 +294,8 @@ function renderHome() {
     ${types.map(t => { const p = wt ? Math.round((w[t] || 0) / wt * 100) : 0; return `<tr><td>${esc(t)}${grammar.includes(t) ? '<span class="tag">文法</span>' : ''}</td><td class="n">${cnt[t] || 0}</td><td class="barcell"><div class="bar-track" aria-label="${p}%"><span class="bar-fill" style="width:${p}%"></span></div></td></tr>`; }).join('')}
     </tbody></table>
     <p class="muted">占比依學測 111–115 年綜合測驗計算。新制「句意判斷」題增加，需要讀懂上下文才能作答。</p>
+    <div class="actions"><button class="secondary" data-act="upload">上傳 JSON 題庫</button></div>
+    <p class="muted">可改用自己的題庫檔，格式與 data/G.json 相同。上傳的檔案只在這次開啟的頁面有效，重新整理後會回到網站上的題庫。</p>
   </section>`;
 }
 
@@ -516,6 +521,7 @@ document.addEventListener('click', e => {
     case 'tpick': tpick(t.dataset.q, Number(t.dataset.i)); break;
     case 'submit': submitTest(false); break;
     case 'drill': S.mode = 'practice'; S.types = [t.dataset.type]; S.count = 10; savePrefs(); startPractice('normal', pickPractice()); break;
+    case 'upload': $file.click(); break;
     case 'tretry': startPractice('retry', shuffle(S.results.filter(r => !r.ok).map(r => r.it))); break;
   }
 });
@@ -541,7 +547,8 @@ document.addEventListener('keydown', e => {
 /* ===== 載入 ===== */
 function validate(d) {
   const errs = [];
-  if (!d || !Array.isArray(d.items)) return ['G.json 缺少 items 陣列'];
+  if (!d || !Array.isArray(d.items)) return ['缺少 items 陣列'];
+  if (!Array.isArray(d.types) || !Array.isArray(d.grammarTypes)) return ['缺少 types 或 grammarTypes 題型清單'];
   d.items.forEach((x, i) => {
     const L = `第 ${i + 1} 題（${x && x.id}）`;
     if (!x || !x.id) errs.push(`第 ${i + 1} 題：缺少 id`);
@@ -551,19 +558,45 @@ function validate(d) {
   });
   return errs;
 }
+function useData(d, srcName) {
+  const errs = validate(d);
+  if (errs.length) throw new Error(errs.slice(0, 5).join('；'));
+  S.data = d; S.items = d.items; S.byId = Object.fromEntries(d.items.map(x => [x.id, x]));
+  S.srcName = srcName || '';
+  const keep = S.types || prefs.types;
+  S.types = Array.isArray(keep) ? keep.filter(t => d.types.includes(t)) : null;
+  if (S.types && !S.types.length) S.types = null;
+}
+function renderLoadError(title, msg) {
+  stopTimer(); S.screen = 'error';
+  $app.innerHTML = `<section class="sheet"><h1>${esc(title)}</h1><p>${esc(msg)}</p>
+    <div class="actions"><button class="primary" data-act="upload">上傳 JSON 題庫</button></div>
+    <p class="muted">可以選擇電腦裡的 G.json（在網站資料夾的 data 裡），或用 tools/csv-to-json.html 從綜合測驗母檔轉出的檔案。</p></section>`;
+}
+$file.addEventListener('change', () => {
+  const f = $file.files[0];
+  if (!f) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    let d;
+    try { d = JSON.parse(reader.result); }
+    catch (e) { renderLoadError('無法讀取這個檔案', '檔案內容不是有效的 JSON，請檢查逗號、引號和括號。（' + e.message + '）'); $file.value = ''; return; }
+    try { useData(d, f.name); renderHome(); window.scrollTo(0, 0); }
+    catch (e) { renderLoadError('這個檔案不是綜合測驗題庫', e.message + '。請確認選的是 G.json 格式的檔案，單字題庫（A、B、C、P）請到單字測驗頁上傳。'); }
+    $file.value = '';
+  };
+  reader.readAsText(f, 'utf-8');
+});
 (async function init() {
   try {
     const res = await fetch(DATA_URL, { cache: 'no-cache' });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const d = await res.json();
-    const errs = validate(d);
-    if (errs.length) throw new Error(errs.slice(0, 5).join('；'));
-    S.data = d; S.items = d.items; S.byId = Object.fromEntries(d.items.map(x => [x.id, x]));
-    if (Array.isArray(prefs.types)) S.types = prefs.types.filter(t => d.types.includes(t));
-    if (S.types && !S.types.length) S.types = null;
+    useData(await res.json());
     if (store.get(K.test, null) && location.hash === '#test') renderTest(); else renderHome();
   } catch (err) {
-    $app.innerHTML = `<section class="sheet"><h1>題庫載入失敗</h1><p>${esc(location.protocol === 'file:' ? '直接用瀏覽器開啟本機檔案時，瀏覽器不允許讀取 data 資料夾。請放上 GitHub Pages 後再開啟。' : `無法讀取 ${DATA_URL}（${err.message}）。請確認檔案已上傳。`)}</p></section>`;
+    renderLoadError('題庫載入失敗', location.protocol === 'file:'
+      ? '直接用瀏覽器開啟本機檔案時，瀏覽器不允許自動讀取 data 資料夾。請按下方按鈕手動選擇題庫檔，或放上 GitHub Pages 後再開啟。'
+      : `無法讀取 ${DATA_URL}（${err.message}）。請確認檔案已上傳，或先手動上傳題庫檔。`);
   }
 })();
 </script>

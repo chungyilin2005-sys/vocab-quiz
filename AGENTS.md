@@ -97,6 +97,7 @@ Excel 母檔 →（另存 CSV UTF-8）→ tools/csv-to-json.html → data/*.json
 - 測驗模式：10 題 15 分鐘或 20 題 30 分鐘；`sampleTest()` 依學測 111–115 年各題型題數比例（最大餘數法）抽題；作答與截止時間存在 `gp:test`，重新整理可繼續，時間到自動交卷。不換算成 100 分，因為每次抽的題目不同，分數沒有可比性。
 - 練習模式答錯「連接詞／轉承語」題時，用 `transitionGroup()` 找出正解所屬的轉承語分組並顯示同組用語。
 - localStorage 鍵：`gp:prefs`、`gp:book`（錯題本，以題目 id 為索引）、`gp:test`（進行中的測驗）。
+- 題庫可手動上傳：首頁下方與載入失敗頁都有「上傳 JSON 題庫」（隱藏的 `#file` 輸入框）。`useData()` 是網站載入與上傳共用的入口，會先跑 `validate()`（含 `types`、`grammarTypes` 檢查）。上傳的檔案只在當次頁面有效；錯題本仍以題目 id 為索引，所以上傳同一份 G.json 時紀錄可以沿用。直接開本機檔案（file://）時讀不到 data 資料夾，就靠這個功能測試。
 
 ## 5-3. grammar-exam.html
 
