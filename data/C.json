@@ -12894,5 +12894,20 @@
   "example": "The sound of the birds **wakened** me early in the morning.（自編例句）",
   "exampleZh": "鳥叫聲一大早就把我**喚醒**了。",
   "source": "歷屆學測、指考未考過；參考詞彙表 Level 4；建議優先度：低"
+ },
+ {
+  "word": "**geopolitical**",
+  "correctAnswer": "地緣政治的",
+  "options": [
+   "地緣政治的",
+   "地質的",
+   "幾何的",
+   "國際化的"
+  ],
+  "pos": "adj.",
+  "explanation": "geopolitical 的常考義是「地緣政治的」。易混字：geological（地質的）、geometrical（幾何的）、cosmopolitan（國際化的）。同字族：politics、political。",
+  "example": "Rising **geopolitical** tensions in East Asia have made many companies rethink where to build their factories.（自編例句）",
+  "exampleZh": "東亞日益升高的**地緣政治**緊張情勢，讓許多企業重新考慮要把工廠設在哪裡。",
+  "source": "歷屆學測、指考未考過；參考詞彙表外（人工補充）；建議優先度：高"
  }
 ]

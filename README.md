@@ -12,7 +12,7 @@ grammar-exam.html      文法專題測驗（50 題原創考卷）
 data/
   A.json               A 級必背 244 字
   B.json               B 級重要 1032 字
-  C.json               C 級補強 806 字（歷屆未考過，例句為自編）
+  C.json               C 級補強 807 字（歷屆未考過，例句為自編）
   P.json               高頻片語 130 個
   G.json               綜合測驗歷屆題庫 185 題
 tools/
