@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>題庫檢查工具</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✅</text></svg>">
+<style>
+:root{
+  --paper:#EEF2F5; --sheet:#FFFFFF; --ink:#1B2A41; --muted:#5B6878; --line:#D9E0E7;
+  --red:#C23B4E; --red-soft:#FBEAED; --ok:#23744F; --warn:#9A6200; --focus:#2F6FD6;
+  --zh:"PingFang TC","Noto Sans TC","Microsoft JhengHei","Heiti TC",system-ui,sans-serif;
+  color-scheme:light; box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--paper:#11161D;--sheet:#1A212B;--ink:#E6ECF2;--muted:#9AA6B3;--line:#2C3542;--red:#E46C7E;--red-soft:#3A1E26;--ok:#5CC08F;--warn:#E0B050;--focus:#7AA7F0;color-scheme:dark}
+}
+:root[data-theme="dark"]{--paper:#11161D;--sheet:#1A212B;--ink:#E6ECF2;--muted:#9AA6B3;--line:#2C3542;--red:#E46C7E;--red-soft:#3A1E26;--ok:#5CC08F;--warn:#E0B050;--focus:#7AA7F0;color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--zh);font-size:16px;line-height:1.7}
+main{max-width:52rem;margin:0 auto;padding:1.5rem 1rem 3rem}
+.sheet{background:var(--sheet);border-top:4px solid var(--red);border-radius:2px 2px 14px 14px;padding:1.5rem 1.4rem;margin-bottom:1rem}
+h1{font-size:1.5rem;margin:0 0 .4rem}
+h2{font-size:1.15rem;margin:0 0 .3rem}
+p{margin:.4rem 0}
+.muted{color:var(--muted);font-size:.92rem}
+button{font:inherit;cursor:pointer;border-radius:10px;padding:.6rem 1.1rem;font-weight:700;border:2px solid var(--ink);background:var(--ink);color:var(--sheet);min-height:44px}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.status{font-weight:700}
+.ok{color:var(--ok)} .err{color:var(--red)} .warn{color:var(--warn)}
+details{margin-top:.6rem;border-top:1px solid var(--line);padding-top:.5rem}
+summary{cursor:pointer;font-weight:700}
+.list{margin:.4rem 0 0;padding-left:1.3rem;max-height:22rem;overflow:auto;font-size:.9rem}
+.list li{margin:.15rem 0}
+code{font-size:.85em;background:var(--paper);padding:.05rem .3rem;border-radius:4px}
+.actions{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.8rem;align-items:center}
+input[type=file]{font:inherit}
+</style>
+</head>
+<body>
+<main>
+<section class="sheet">
+  <h1>題庫檢查工具</h1>
+  <p class="muted">檢查 data 資料夾裡的 A.json、B.json、P.json、G.json 是否符合測驗程式的格式約定。修改題庫或程式後都應該跑一次。<strong>「錯誤」</strong>會讓測驗出錯或答案不正確，必須修正；<strong>「提醒」</strong>不影響運作，請人工判斷。</p>
+  <div class="actions">
+    <button id="run">檢查網站上的四份題庫</button>
+    <label class="muted">或選擇本機的 JSON 檔（可多選）：<input type="file" id="file" accept=".json" multiple></label>
+  </div>
+  <p class="muted" id="note"></p>
+</section>
+<div id="out" aria-live="polite"></div>
+</main>
+<script>
+'use strict';
+// 以下規則必須與 vocab-quiz.html 保持一致；修改其中一邊時，另一邊也要同步
+const BANKS = [
+  { file: 'A.json', name: 'A 級必背', kind: 'word' },
+  { file: 'B.json', name: 'B 級重要', kind: 'word' },
+  { file: 'P.json', name: '高頻片語', kind: 'phrase' },
+  { file: 'G.json', name: '綜合測驗', kind: 'grammar' },
+];
+const GENERIC = ['詞彙題：依文意選字', '片語題：依文意選擇片語', '選項為完整語意片語，需理解整段文意判斷'];
+// 綜合測驗題庫（G.json）的檢查；規則須與 grammar-practice.html 的 validate() 一致
+function checkGrammar(d) {
+  const errors = [], warns = [];
+  if (!d || !Array.isArray(d.items)) return { errors: ['缺少 items 陣列'], warns, n: 0 };
+  if (!Array.isArray(d.types) || !Array.isArray(d.grammarTypes)) errors.push('缺少 types 或 grammarTypes 題型清單');
+  if (!d.transitions || !Array.isArray(d.transitions.groups)) warns.push('缺少轉承語分組，答錯轉承語題時不會顯示補充');
+  const seen = new Set(); let generic = 0, noZh = 0;
+  d.items.forEach((x, i) => {
+    const L = `第 ${i + 1} 題（${x && x.id || '無編號'}）`;
+    if (!x || !x.id) { errors.push(`第 ${i + 1} 題：缺少 id`); return; }
+    if (seen.has(x.id)) errors.push(`${L}：編號重複（錯題本以編號為索引）`); seen.add(x.id);
+    if (!Array.isArray(x.options) || x.options.length !== 4) errors.push(`${L}：選項必須是 4 個`);
+    else {
+      if (x.options.some(o => !String(o).trim())) errors.push(`${L}：選項有空白`);
+      if (new Set(x.options).size !== 4) errors.push(`${L}：選項重複`);
+    }
+    if (!(Number.isInteger(x.answer) && x.answer >= 0 && x.answer <= 3)) errors.push(`${L}：answer 必須是 0–3`);
+    if (String(x.sentence || '').split('____').length !== 2) errors.push(`${L}：題目句必須剛好有一個 ____`);
+    if (Array.isArray(d.types) && !d.types.includes(x.type)) errors.push(`${L}：題型「${x.type}」不在題型清單中`);
+    if (!x.point) errors.push(`${L}：缺少考點說明`);
+    else if (GENERIC.includes(x.point)) generic++;
+    if (!x.zh) noZh++;
+    if (!x.prev) warns.push(`${L}：沒有前文`);
+    if (/\[\d+\]/.test((x.prev || '') + (x.sentence || '') + (x.next || ''))) errors.push(`${L}：前後文仍有未填的空格`);
+  });
+  if (generic) warns.push(`${generic} 題的考點說明是通用文字（例如「詞彙題：依文意選字」），尚待補寫`);
+  if (noZh) warns.push(`${noZh} 題沒有題目句中譯`);
+  return { errors, warns, n: d.items.length };
+}
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const plain = s => String(s).replace(/\*\*/g, '').trim();
+const senses = s => String(s).split(/[；;，,、／/]/).map(x => x.replace(/[（(][^）)]*[）)]/g, '').trim()).filter(Boolean);
+const overlaps = (a, b) => { const sa = senses(a); return senses(b).some(x => sa.includes(x)); };
+const balanced = s => !s || (String(s).match(/\*\*/g) || []).length % 2 === 0;
+function confusableMap(exp) {
+  const map = {};
+  const m = /易混(?:字|片語)：(.+?)。/.exec(exp || '');
+  if (!m) return null;
+  m[1].split('、').forEach(p => { const x = /^(.+?)（(.+)）$/.exec(p.trim()); if (x) map[x[2]] = x[1]; });
+  return map;
+}
+
+function check(data, name) {
+  const errors = [], warns = [];
+  if (!Array.isArray(data)) return { errors: ['檔案最外層不是陣列'], warns, n: 0 };
+  const seen = new Map();
+  const isOptionOnly = ex => /本字為選項之一/.test(ex || '');
+  data.forEach((it, i) => {
+    const w = it && typeof it.word === 'string' ? plain(it.word) : '';
+    const L = `第 ${i + 1} 題（${w || '無單字'}）`;
+    if (!it || typeof it !== 'object') { errors.push(`第 ${i + 1} 題：不是物件`); return; }
+    if (!w) errors.push(`${L}：缺少 word`);
+    if (!it.correctAnswer) errors.push(`${L}：缺少 correctAnswer`);
+    const k = w.toLowerCase();
+    if (seen.has(k)) errors.push(`${L}：與第 ${seen.get(k)} 題重複（錯題本以單字為索引，重複會互相覆蓋）`); else seen.set(k, i + 1);
+
+    // 選項
+    const o = it.options;
+    if (!Array.isArray(o)) warns.push(`${L}：沒有 options，測驗時會自動補選項，選項品質較差`);
+    else {
+      if (o.length !== 4) errors.push(`${L}：options 有 ${o.length} 個，應為 4 個（含正解）`);
+      if (!o.includes(it.correctAnswer)) errors.push(`${L}：正解「${it.correctAnswer}」不在 options 裡（注意全形半形與空格）`);
+      if (new Set(o).size !== o.length) errors.push(`${L}：options 有重複`);
+      o.filter(x => x !== it.correctAnswer).forEach(x => {
+        if (overlaps(x, it.correctAnswer)) errors.push(`${L}：誘答「${x}」與正解意思重疊，會出現兩個正確答案`);
+      });
+      // 解析的易混字格式：選項旁的字典連結靠它還原英文
+      const map = confusableMap(it.explanation);
+      if (!map) errors.push(`${L}：解析缺少「易混字：英文（中文）、…。」格式，選項旁的字典連結會消失`);
+      else o.filter(x => x !== it.correctAnswer).forEach(x => {
+        if (!map[x]) errors.push(`${L}：誘答「${x}」在解析的易混字清單中找不到對應英文`);
+      });
+    }
+
+    // 粗體標記
+    ['word', 'explanation', 'example', 'exampleZh'].forEach(f => {
+      if (!balanced(it[f])) errors.push(`${L}：${f} 的 ** 標記沒有成對`);
+    });
+
+    // 例句與中譯
+    const ex = it.example || '', zh = it.exampleZh || '';
+    if (zh && !ex) errors.push(`${L}：有 exampleZh 卻沒有 example`);
+    if (ex) {
+      if (/__/.test(ex)) errors.push(`${L}：例句仍有空格 ____`);
+      if (!/（[^（）]+）$/.test(ex)) warns.push(`${L}：例句結尾沒有（出處）標註`);
+      if (isOptionOnly(ex)) {
+        if (/\*\*/.test(ex)) errors.push(`${L}：「本字為選項之一」的例句不應標紅（句中沒有目標字）`);
+        if (/\*\*/.test(zh)) errors.push(`${L}：「本字為選項之一」的中譯不應標紅`);
+      } else {
+        if (!/\*\*/.test(ex)) warns.push(`${L}：例句沒有標出目標字（若句中只有衍生字，可忽略）`);
+        if (zh && !/\*\*/.test(zh) && /\*\*/.test(ex)) warns.push(`${L}：例句有標紅，中譯卻沒有標出對應中文`);
+      }
+      if (!zh) warns.push(`${L}：例句沒有中譯`);
+    }
+    if (!it.explanation) warns.push(`${L}：沒有解析`);
+    if (!it.pos) warns.push(`${L}：沒有詞性（自動補選項時無法比對詞性）`);
+  });
+  return { errors, warns, n: data.length };
+}
+
+function render(results) {
+  const out = document.getElementById('out');
+  out.innerHTML = results.map(r => {
+    if (r.fail) return `<section class="sheet"><h2>${esc(r.name)}</h2><p class="status err">無法讀取：${esc(r.fail)}</p></section>`;
+    const { errors, warns, n } = r.res;
+    const st = errors.length ? `<span class="err">${errors.length} 個錯誤</span>` : '<span class="ok">沒有錯誤</span>';
+    return `<section class="sheet"><h2>${esc(r.name)}</h2>
+      <p class="status">共 ${n} 題，${st}${warns.length ? `，<span class="warn">${warns.length} 個提醒</span>` : ''}</p>
+      ${errors.length ? `<details open><summary class="err">錯誤</summary><ol class="list">${errors.map(e => `<li>${esc(e)}</li>`).join('')}</ol></details>` : ''}
+      ${warns.length ? `<details><summary class="warn">提醒</summary><ol class="list">${warns.map(e => `<li>${esc(e)}</li>`).join('')}</ol></details>` : ''}
+    </section>`;
+  }).join('');
+}
+
+document.getElementById('run').addEventListener('click', async () => {
+  const results = [];
+  for (const b of BANKS) {
+    try {
+      const res = await fetch('../data/' + b.file, { cache: 'no-cache' });
+      if (!res.ok) throw new Error(`HTTP ${res.status}，請確認 data/${b.file} 存在`);
+      const data = await res.json();
+      results.push({ name: `${b.name}（data/${b.file}）`, res: b.kind === 'grammar' ? checkGrammar(data) : check(data, b.name) });
+    } catch (e) {
+      results.push({ name: `${b.name}（data/${b.file}）`, fail: location.protocol === 'file:' ? '直接開啟本機檔案時無法讀取，請改用右側的選擇檔案' : e.message });
+    }
+  }
+  render(results);
+});
+document.getElementById('file').addEventListener('change', async e => {
+  const results = [];
+  for (const f of e.target.files) {
+    try { const data = JSON.parse(await f.text()); results.push({ name: f.name, res: Array.isArray(data) ? check(data, f.name) : checkGrammar(data) }); }
+    catch (err) { results.push({ name: f.name, fail: '不是有效的 JSON：' + err.message }); }
+  }
+  render(results);
+  e.target.value = '';
+});
+if (location.protocol === 'file:') document.getElementById('note').textContent = '目前是直接開啟本機檔案，請用「選擇本機的 JSON 檔」。';
+</script>
+</body>
+</html>

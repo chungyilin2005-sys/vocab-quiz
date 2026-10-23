@@ -1,0 +1,3772 @@
+{
+ "title": "綜合測驗歷屆題庫",
+ "scope": "學測 106–115 年、指考 106–110 年（含 109 年補考）綜合測驗選擇題",
+ "notIncluded": "111–115 年混合題的「字形變化」填充題尚未收錄",
+ "types": [
+  "動詞形式",
+  "連接詞／轉承語",
+  "關係詞／代名詞",
+  "介系詞搭配",
+  "句意判斷",
+  "片語",
+  "單字詞彙"
+ ],
+ "grammarTypes": [
+  "動詞形式",
+  "連接詞／轉承語",
+  "關係詞／代名詞",
+  "介系詞搭配"
+ ],
+ "transitions": {
+  "groups": [
+   {
+    "name": "因果／結果",
+    "words": "therefore；thus；accordingly；as a result (of)；due to；owing to；thanks to；as such",
+    "seen": "學測106 Accordingly、學測108 therefore、Due to、學測109 owing to、學測114 thus、學測115 as such、指考107 as a result of、指考109補 thanks to"
+   },
+   {
+    "name": "轉折／讓步",
+    "words": "however；although；and yet；despite；in spite of；nevertheless；but not quite",
+    "seen": "學測106 Although、學測109 And yet、學測112 Despite、but not quite"
+   },
+   {
+    "name": "補充／遞進",
+    "words": "as well (as)；moreover；in addition (to)；not to mention；let alone；more than",
+    "seen": "學測106 as well as、let alone、學測107 more than、學測110 not to mention、學測114 as well"
+   },
+   {
+    "name": "換句話說／說明",
+    "words": "in other words；namely；it turns out；that is",
+    "seen": "學測107 In other words、學測115 it turns out"
+   },
+   {
+    "name": "時間／順序",
+    "words": "eventually；meanwhile；beforehand；at first",
+    "seen": "學測108 Eventually"
+   },
+   {
+    "name": "對比／取代",
+    "words": "instead of；rather than；other than；otherwise；in contrast (to)",
+    "seen": "學測109 otherwise、學測111 other than、指考109補 instead of"
+   },
+   {
+    "name": "條件／範圍",
+    "words": "regardless of；whether；unless；in case (of)",
+    "seen": "學測107 regardless of"
+   },
+   {
+    "name": "目的",
+    "words": "in a search for；in order to；with a view to",
+    "seen": "學測109 In a search for"
+   },
+   {
+    "name": "舉例／列舉",
+    "words": "such as；among others；for example",
+    "seen": "指考108 among others"
+   }
+  ],
+  "tip": "解題提示：先判斷空格前後兩句的關係（因果、轉折、補充…），再從對應組別選詞；注意詞性，Despite／Due to 後接名詞，Although 後接子句。"
+ },
+ "items": [
+  {
+   "id": "學測115-11",
+   "exam": "學測",
+   "year": "115",
+   "q": 11,
+   "type": "連接詞／轉承語",
+   "point": "插入語：it turns out（結果是；原來）",
+   "prev": "From the campfire to the café, people have always gathered together to share the latest news.",
+   "sentence": "White rhinoceroses, ____, do the same thing—only their choice of meeting place is a giant pile of poop.",
+   "next": "A new study indicates that rhinos have a smelly way to communicate.",
+   "options": [
+    "what is more",
+    "it turns out",
+    "in other words",
+    "all in all"
+   ],
+   "answer": 1,
+   "source": "學測115·綜合測驗第11題",
+   "zh": "**原來**白犀牛也做一樣的事，只是牠們選的聚會地點是一大堆糞便。"
+  },
+  {
+   "id": "學測115-12",
+   "exam": "學測",
+   "year": "115",
+   "q": 12,
+   "type": "單字詞彙",
+   "point": "communicate（溝通）：犀牛以糞便的氣味傳遞訊息。demonstrate（示範；證明）、immigrate（移入）、manipulate（操縱）語意不合。",
+   "prev": "White rhinoceroses, it turns out, do the same thing—only their choice of meeting place is a giant pile of poop.",
+   "sentence": "A new study indicates that rhinos have a smelly way to ____.",
+   "next": "Scientists studying white rhinos in South Africa have found that these animals leave messages in their poop.",
+   "options": [
+    "demonstrate",
+    "immigrate",
+    "communicate",
+    "manipulate"
+   ],
+   "answer": 2,
+   "source": "學測115·綜合測驗第12題",
+   "zh": "一項新研究指出，犀牛有一種靠氣味來**溝通**的方式。"
+  },
+  {
+   "id": "學測115-13",
+   "exam": "學測",
+   "year": "115",
+   "q": 13,
+   "type": "單字詞彙",
+   "point": "clues（線索）：化學物質透露個體資訊，provide clues about…（提供關於…的線索）。doubts（懷疑）、icons（圖示；偶像）、matches（比賽；火柴）語意不合。",
+   "prev": "In particular, they leave their poop in the same place for all the other members in the group to smell—just like humans leaving messages on social media.",
+   "sentence": "Furthermore, different rhinos leave different chemicals in their poop, which provide important ____ about the age, sex, general health, and reproductive conditions of each specific rhino.",
+   "next": "This is of great significance for the peace and harmony in the group.",
+   "options": [
+    "doubts",
+    "icons",
+    "matches",
+    "clues"
+   ],
+   "answer": 3,
+   "source": "學測115·綜合測驗第13題",
+   "zh": "此外，不同的犀牛會在糞便中留下不同的化學物質，這些物質提供了關於每一隻犀牛的年齡、性別、整體健康和生殖狀態的重要**線索**。"
+  },
+  {
+   "id": "學測115-14",
+   "exam": "學測",
+   "year": "115",
+   "q": 14,
+   "type": "句意判斷",
+   "point": "less likely（比較不可能）：前一句說這對群體的和平很重要，所以彼此了解會減少衝突。hardly surprising（一點也不意外）、more acceptable（較能接受）、truly important（真的很重要）都無法接上「打架」的語意。",
+   "prev": "This is of great significance for the peace and harmony in the group.",
+   "sentence": "When all members in a group know what’s going on with each other, it is ____ that they will fight.",
+   "next": "The researchers have even made “fake poop” to see how different rhinos would react.",
+   "options": [
+    "hardly surprising",
+    "more acceptable",
+    "truly important",
+    "less likely"
+   ],
+   "answer": 3,
+   "source": "學測115·綜合測驗第14題",
+   "zh": "當群體裡所有成員都知道彼此的狀況，牠們就**比較不可能**打架。"
+  },
+  {
+   "id": "學測115-15",
+   "exam": "學測",
+   "year": "115",
+   "q": 15,
+   "type": "介系詞搭配",
+   "point": "形容詞＋介系詞：responsive to（對…有反應）",
+   "prev": "The researchers have even made “fake poop” to see how different rhinos would react.",
+   "sentence": "They find that dominant males are particularly ____ the “fake poop” that carries chemicals from females ready to mate.",
+   "next": "The males sniff it for longer duration and come back to the same spot more frequently, a clear sign that they are gathering information about mating opportunities from the poop.",
+   "options": [
+    "responsive to",
+    "annoyed at",
+    "considerate of",
+    "tolerant with"
+   ],
+   "answer": 0,
+   "source": "學測115·綜合測驗第15題",
+   "zh": "他們發現，強勢的公犀牛對帶有準備交配母犀牛化學物質的「假便便」特別**有反應**。"
+  },
+  {
+   "id": "學測115-16",
+   "exam": "學測",
+   "year": "115",
+   "q": 16,
+   "type": "單字詞彙",
+   "point": "accommodate（容納；接待）：茶館讓旅人歇腳休息。compensate（補償）、anticipate（預期）、reinforce（加強）語意不合。",
+   "prev": "Those who traveled along the routes through China needed places to rest.",
+   "sentence": "Teahouses thus sprang up to ____ the weary travelers, offering them a cup of tea to help them regain energy.",
+   "next": "But the culinary art of dim sum had yet to develop, for it was considered inappropriate to pair tea with food.",
+   "options": [
+    "accommodate",
+    "compensate",
+    "anticipate",
+    "reinforce"
+   ],
+   "answer": 0,
+   "source": "學測115·綜合測驗第16題",
+   "zh": "於是茶館紛紛興起，**接待**疲憊的旅人，提供他們一杯茶恢復體力。"
+  },
+  {
+   "id": "學測115-17",
+   "exam": "學測",
+   "year": "115",
+   "q": 17,
+   "type": "動詞形式",
+   "point": "had yet to + V（當時尚未…）：過去完成，表在過去某時點還沒發生",
+   "prev": "Teahouses thus sprang up to accommodate the weary travelers, offering them a cup of tea to help them regain energy.",
+   "sentence": "But the culinary art of dim sum ____, for it was considered inappropriate to pair tea with food.",
+   "next": "Centuries later, the ability of tea to aid in digestion finally became known.",
+   "options": [
+    "would hardly develop",
+    "had yet to develop",
+    "was fast developing",
+    "had almost developed"
+   ],
+   "answer": 1,
+   "source": "學測115·綜合測驗第17題",
+   "zh": "但點心的烹飪技藝當時**尚未發展**出來，因為人們認為喝茶配食物並不恰當。"
+  },
+  {
+   "id": "學測115-18",
+   "exam": "學測",
+   "year": "115",
+   "q": 18,
+   "type": "片語",
+   "point": "be meant to be（本來就是要…；用意是…）：點心是一種悠閒的用餐體驗。passed on to（傳給）、brought up as（被當作…養大）、thought to have（被認為有）都無法接名詞補語 an enjoyable dining experience。",
+   "prev": "Dim sum is more than just an example of Chinese cuisine.",
+   "sentence": "It is ____ an enjoyable dining experience that can span hours.",
+   "next": "The small portions were designed to merely “touch the heart,” as the name literally means, and as such were first enjoyed as snacks.",
+   "options": [
+    "passed on to",
+    "brought up as",
+    "thought to have",
+    "meant to be"
+   ],
+   "answer": 3,
+   "source": "學測115·綜合測驗第18題",
+   "zh": "它**的本意是**一種可以持續好幾個小時的愉快用餐體驗。"
+  },
+  {
+   "id": "學測115-19",
+   "exam": "學測",
+   "year": "115",
+   "q": 19,
+   "type": "連接詞／轉承語",
+   "point": "as such（因此；就其本身而言）",
+   "prev": "It is meant to be an enjoyable dining experience that can span hours.",
+   "sentence": "The small portions were designed to merely “touch the heart,” as the name literally means, and ____ were first enjoyed as snacks.",
+   "next": "The small size allows the customer to order a great variety of dishes, creating a banquet of different tastes and flavors.",
+   "options": [
+    "if so",
+    "as such",
+    "by then",
+    "in that"
+   ],
+   "answer": 1,
+   "source": "學測115·綜合測驗第19題",
+   "zh": "小份量的設計只是為了「點到心」，正如這個名稱的字面意思，**因此**最初被當作點心享用。"
+  },
+  {
+   "id": "學測115-20",
+   "exam": "學測",
+   "year": "115",
+   "q": 20,
+   "type": "句意判斷",
+   "point": "a joyful social activity（愉快的社交活動）：big groups、together 指向「社交」。a widely known delicacy（知名美食）、an intimate romantic dinner（浪漫晚餐）、an amazing local cuisine（驚人的在地料理）都不符合「大家一起」的情境。",
+   "prev": "The small size allows the customer to order a great variety of dishes, creating a banquet of different tastes and flavors.",
+   "sentence": "It is customary for big groups to enjoy simple dishes together as ____.",
+   "next": "Ultimately, dim sum—the food—is only a small part of the dim sum experience.",
+   "options": [
+    "a widely known delicacy",
+    "an intimate romantic dinner",
+    "a joyful social activity",
+    "an amazing local cuisine"
+   ],
+   "answer": 2,
+   "source": "學測115·綜合測驗第20題",
+   "zh": "大夥人一起享用簡單的菜餚，是一種**愉快的社交活動**，這是當地的習俗。"
+  },
+  {
+   "id": "學測114-11",
+   "exam": "學測",
+   "year": "114",
+   "q": 11,
+   "type": "動詞形式",
+   "point": "過去未來：在過去的時間點看未來會發生的事→would spread",
+   "prev": "In 1995, a group of business and academic leaders met at the home of Juanita Brown and David Isaacs in Mill Valley, California.",
+   "sentence": "None of them had any idea they were about to create a social innovation that ____ rapidly around the world.",
+   "next": "The group was supposed to have a large-circle discussion in their beautiful garden.",
+   "options": [
+    "had spread",
+    "would spread",
+    "had been spreading",
+    "would have spread"
+   ],
+   "answer": 1,
+   "source": "學測114·綜合測驗第11題",
+   "zh": "他們誰也沒想到，自己即將創造出一種**會**迅速**傳遍**全世界的社會創新。"
+  },
+  {
+   "id": "學測114-12",
+   "exam": "學測",
+   "year": "114",
+   "q": 12,
+   "type": "單字詞彙",
+   "point": "disrupted（打亂；中斷）：前一句說開始下大雨，計畫因此受阻。facilitated（促進）、disclosed（揭露）、fulfilled（實現）語意不合。",
+   "prev": "Unfortunately, it started pouring.",
+   "sentence": "With their plan ____ by the rain, the two dozen participants squeezed into the living room.",
+   "next": "They broke into small, intimate table conversations, recording their insights on paper tablecloths.",
+   "options": [
+    "facilitated",
+    "disrupted",
+    "disclosed",
+    "fulfilled"
+   ],
+   "answer": 1,
+   "source": "學測114·綜合測驗第12題",
+   "zh": "計畫被雨**打亂**後，二十多位參與者擠進了客廳。"
+  },
+  {
+   "id": "學測114-13",
+   "exam": "學測",
+   "year": "114",
+   "q": 13,
+   "type": "單字詞彙",
+   "point": "circulate（流通；傳播）：換桌讓想法在不同人之間傳開。emphasize（強調）、recover（恢復）、preserve（保存）語意不合。",
+   "prev": "They broke into small, intimate table conversations, recording their insights on paper tablecloths.",
+   "sentence": "They periodically stopped their conversations to switch tables so the insights and ideas might ____ and deepen.",
+   "next": "As they moved from one table to another, they noticed new ideas emerging from the discussions.",
+   "options": [
+    "circulate",
+    "emphasize",
+    "recover",
+    "preserve"
+   ],
+   "answer": 0,
+   "source": "學測114·綜合測驗第13題",
+   "zh": "他們定期中斷談話、交換桌子，讓見解和想法能夠**流通**並深化。"
+  },
+  {
+   "id": "學測114-14",
+   "exam": "學測",
+   "year": "114",
+   "q": 14,
+   "type": "片語",
+   "point": "give rise to（導致；催生）：新的討論方式帶出新的合作形式。made up for（彌補）、kept track of（記錄；掌握）、looked out for（留意；照顧）語意不合。",
+   "prev": "This in turn enriched subsequent rounds of conversation.",
+   "sentence": "Over the course of the morning, the innovative discussion process ____ a new form of collective effort that transformed the depth, scope, and quality of their discussion.",
+   "next": "The World Café was thus created.",
+   "options": [
+    "made up for",
+    "kept track of",
+    "gave rise to",
+    "looked out for"
+   ],
+   "answer": 2,
+   "source": "學測114·綜合測驗第14題",
+   "zh": "在那個早上，這種創新的討論方式**催生了**一種新的集體合作形式，徹底改變了討論的深度、廣度和品質。"
+  },
+  {
+   "id": "學測114-15",
+   "exam": "學測",
+   "year": "114",
+   "q": 15,
+   "type": "連接詞／轉承語",
+   "point": "轉承語：thus（因此），放在 be 動詞與過去分詞之間",
+   "prev": "Over the course of the morning, the innovative discussion process gave rise to a new form of collective effort that transformed the depth, scope, and quality of their discussion.",
+   "sentence": "The World Café was ____ created.",
+   "next": "Since that rainy morning in Mill Valley, the World Café approach has been applied to multi-group discussions and cooperative actions by businesses, industries, and educational institutions around the world.",
+   "options": [
+    "still",
+    "also",
+    "further",
+    "thus"
+   ],
+   "answer": 3,
+   "source": "學測114·綜合測驗第15題",
+   "zh": "「世界咖啡館」就**這樣**誕生了。"
+  },
+  {
+   "id": "學測114-16",
+   "exam": "學測",
+   "year": "114",
+   "q": 16,
+   "type": "單字詞彙",
+   "point": "strike（突然發生；侵襲）：疾病或不適可以 strike suddenly。crash（墜毀）、flush（臉紅；沖水）、burst（爆裂）語意不合。",
+   "prev": "If you have ever been sick to your stomach on a rocking boat or a bumpy car ride, you know the discomfort of motion sickness.",
+   "sentence": "It can ____ suddenly, progressing from a feeling of uneasiness to a cold sweat.",
+   "next": "Soon, it can lead to dizziness, nausea, and vomiting.",
+   "options": [
+    "crash",
+    "flush",
+    "burst",
+    "strike"
+   ],
+   "answer": 3,
+   "source": "學測114·綜合測驗第16題",
+   "zh": "它可能突然**發作**，從一開始覺得不舒服，進展到冒冷汗。"
+  },
+  {
+   "id": "學測114-17",
+   "exam": "學測",
+   "year": "114",
+   "q": 17,
+   "type": "句意判斷",
+   "point": "do not match（不一致）：下一句說各部位傳來互相矛盾的訊息。are not regular（不規律）、can hardly move（幾乎不能動）、are rarely cued（很少被提示）都不符合「矛盾」的語意。",
+   "prev": "Soon, it can lead to dizziness, nausea, and vomiting.",
+   "sentence": "Motion sickness occurs when the signals your brain receives from your eyes, ears, and body ____.",
+   "next": "Your brain doesn’t know whether you are stationary or moving when these parts send conflicting information: One part of your balance-sensing system detects that your body is moving, but the other parts don’t.",
+   "options": [
+    "are not regular",
+    "can hardly move",
+    "do not match",
+    "are rarely cued"
+   ],
+   "answer": 2,
+   "source": "學測114·綜合測驗第17題",
+   "zh": "當大腦從眼睛、耳朵和身體接收到的訊號**不一致**時，就會發生動暈症。"
+  },
+  {
+   "id": "學測114-18",
+   "exam": "學測",
+   "year": "114",
+   "q": 18,
+   "type": "動詞形式",
+   "point": "助動詞代替重複的動詞：other parts don’t（= don’t detect that your body is moving）；主詞為複數、時態為現在式→don’t",
+   "prev": "Motion sickness occurs when the signals your brain receives from your eyes, ears, and body do not match.",
+   "sentence": "Your brain doesn’t know whether you are stationary or moving when these parts send conflicting information: One part of your balance-sensing system detects that your body is moving, but the other parts ____.",
+   "next": "Your brain’s confused reaction makes you feel sick.",
+   "options": [
+    "aren’t",
+    "won’t",
+    "don’t",
+    "haven’t"
+   ],
+   "answer": 2,
+   "source": "學測114·綜合測驗第18題",
+   "zh": "當這些部位傳來互相矛盾的訊息時，大腦就不知道你是靜止還是在移動：平衡系統的一部分偵測到身體正在移動，其他部分卻**沒有**。"
+  },
+  {
+   "id": "學測114-19",
+   "exam": "學測",
+   "year": "114",
+   "q": 19,
+   "type": "句意判斷",
+   "point": "preventive measures（預防措施）：take measures（採取措施），後面 to help avoid the discomfort 說明目的是預防。special opportunities（特別的機會）、potential risks（潛在風險）、significant advantages（顯著的好處）都不能用來「避免不適」。",
+   "prev": "You may also get sick from playing video games, or looking through a microscope.",
+   "sentence": "You can take some ____ to help avoid the discomfort.",
+   "next": "If you are traveling, reserve seats where motion is felt the least, such as the front row of a car or forward cars of a train.",
+   "options": [
+    "special opportunities",
+    "preventive measures",
+    "potential risks",
+    "significant advantages"
+   ],
+   "answer": 1,
+   "source": "學測114·綜合測驗第19題",
+   "zh": "你可以採取一些**預防措施**來幫助避免這種不適。"
+  },
+  {
+   "id": "學測114-20",
+   "exam": "學測",
+   "year": "114",
+   "q": 20,
+   "type": "連接詞／轉承語",
+   "point": "as well（也），放句尾",
+   "prev": "If you are traveling, reserve seats where motion is felt the least, such as the front row of a car or forward cars of a train.",
+   "sentence": "Looking out into the distance from the vehicle can help ____.",
+   "next": "You can also take medicine before your ride to avoid or reduce nausea and vomiting.",
+   "options": [
+    "as well",
+    "by far",
+    "at least",
+    "after all"
+   ],
+   "answer": 0,
+   "source": "學測114·綜合測驗第20題",
+   "zh": "從車內望向遠方**也**會有幫助。"
+  },
+  {
+   "id": "學測113-11",
+   "exam": "學測",
+   "year": "113",
+   "q": 11,
+   "type": "片語",
+   "point": "pose as（假扮成）：神祕客偽裝成一般顧客。call for（需要）、attend to（處理）、engage in（從事）語意不合。",
+   "prev": "They are sent to a wide variety of service-based businesses, including stores, restaurants, and banks—potentially anywhere customers are served.",
+   "sentence": "Sometimes referred to as secret shoppers, mystery shoppers ____ regular customers to purchase items, eat in restaurants, make inquiries, or return items.",
+   "next": "They grade and report on the quality of products, customer service, and environment of the stores to which they are assigned.",
+   "options": [
+    "call for",
+    "pose as",
+    "attend to",
+    "engage in"
+   ],
+   "answer": 1,
+   "source": "學測113·綜合測驗第11題",
+   "zh": "神祕客有時又稱為秘密客，他們**假扮成**一般顧客，去購買商品、在餐廳用餐、詢問問題或退貨。"
+  },
+  {
+   "id": "學測113-12",
+   "exam": "學測",
+   "year": "113",
+   "q": 12,
+   "type": "關係詞／代名詞",
+   "point": "介系詞＋關係代名詞：be assigned to the stores → the stores to which they are assigned",
+   "prev": "Sometimes referred to as secret shoppers, mystery shoppers pose as regular customers to purchase items, eat in restaurants, make inquiries, or return items.",
+   "sentence": "They grade and report on the quality of products, customer service, and environment of the stores ____ they are assigned.",
+   "next": "When evaluating a business, mystery shoppers have to follow certain standard procedures to avoid personal bias.",
+   "options": [
+    "in that",
+    "with which",
+    "for that",
+    "to which"
+   ],
+   "answer": 3,
+   "source": "學測113·綜合測驗第12題",
+   "zh": "他們會針對被**指派**前往的商店，評分並報告產品品質、顧客服務和店內環境。"
+  },
+  {
+   "id": "學測113-13",
+   "exam": "學測",
+   "year": "113",
+   "q": 13,
+   "type": "句意判斷",
+   "point": "personal bias（個人偏見）：遵守標準程序是為了讓評分客觀。keen competitions（激烈競爭）、financial hardship（經濟困難）、racial conflicts（種族衝突）都與「評分程序」無關。",
+   "prev": "They grade and report on the quality of products, customer service, and environment of the stores to which they are assigned.",
+   "sentence": "When evaluating a business, mystery shoppers have to follow certain standard procedures to avoid ____.",
+   "next": "They are often given a checklist that provides directions on what to observe or look out for to ensure consistency.",
+   "options": [
+    "keen competitions",
+    "financial hardship",
+    "racial conflicts",
+    "personal bias"
+   ],
+   "answer": 3,
+   "source": "學測113·綜合測驗第13題",
+   "zh": "評估一家店時，神祕客必須遵守一定的標準程序，以避免**個人偏見**。"
+  },
+  {
+   "id": "學測113-14",
+   "exam": "學測",
+   "year": "113",
+   "q": 14,
+   "type": "單字詞彙",
+   "point": "difficult（難搞的；難相處的）：後面 arguing with a salesperson 說明顧客很難應付。potential（潛在的）、constant（持續的）、anonymous（匿名的）語意不合。",
+   "prev": "Sometimes these shoppers collect data about their “normal” observations, such as cleanliness of the store or timeliness of the service.",
+   "sentence": "They may also pretend to be ____ customers, arguing with a salesperson without a good reason.",
+   "next": "With the data they collect, mystery shoppers can identify areas for improvement and thereby help enhance the quality of products and services.",
+   "options": [
+    "difficult",
+    "potential",
+    "constant",
+    "anonymous"
+   ],
+   "answer": 0,
+   "source": "學測113·綜合測驗第14題",
+   "zh": "他們也可能假裝成**難搞的**顧客，無緣無故和店員爭論。"
+  },
+  {
+   "id": "學測113-15",
+   "exam": "學測",
+   "year": "113",
+   "q": 15,
+   "type": "單字詞彙",
+   "point": "improvement（改進）：areas for improvement（需要改進之處），後文 enhance the quality 呼應。distribution（分配）、expectation（期望）、management（管理）語意不合。",
+   "prev": "They may also pretend to be difficult customers, arguing with a salesperson without a good reason.",
+   "sentence": "With the data they collect, mystery shoppers can identify areas for ____ and thereby help enhance the quality of products and services.",
+   "next": "In this way, these secret shoppers may help a business gain a competitive edge.",
+   "options": [
+    "distribution",
+    "expectation",
+    "improvement",
+    "management"
+   ],
+   "answer": 2,
+   "source": "學測113·綜合測驗第15題",
+   "zh": "神祕客可以根據蒐集到的資料，找出需要**改進**的地方，進而協助提升產品與服務的品質。"
+  },
+  {
+   "id": "學測113-16",
+   "exam": "學測",
+   "year": "113",
+   "q": 16,
+   "type": "動詞形式",
+   "point": "情態助動詞完成式：could have + p.p.（過去本來可以…）",
+   "prev": "During the second Industrial Age, people toiled at unusual hours in mines or factories and often had to get up for work early in the morning.",
+   "sentence": "They ____ alarm clocks because adjustable alarms had been invented by the mid-19th century.",
+   "next": "But the new device was still relatively expensive and unreliable.",
+   "options": [
+    "must be using",
+    "could have used",
+    "had hardly used",
+    "were mostly using"
+   ],
+   "answer": 1,
+   "source": "學測113·綜合測驗第16題",
+   "zh": "他們**原本可以使用**鬧鐘，因為可調式鬧鐘在 19 世紀中期就已經發明了。"
+  },
+  {
+   "id": "學測113-17",
+   "exam": "學測",
+   "year": "113",
+   "q": 17,
+   "type": "片語",
+   "point": "Equipped with（配備著）：分詞構句，說明敲窗人帶著棍子或豌豆槍。Aimed at（針對）、Trained for（受訓以…）、Exhausted by（因…筋疲力盡）語意不合。",
+   "prev": "British workers thus relied on a human alarm clock known as a “knocker-up.”",
+   "sentence": "____ sticks or pea shooters, the human alarms would tour the streets, tap on windows, or blast them with dried peas, trying to wake paying customers in time for work.",
+   "next": "Whether they wielded rods or pea shooters, knockers-up became familiar presences throughout the United Kingdom.",
+   "options": [
+    "Aimed at",
+    "Trained for",
+    "Equipped with",
+    "Exhausted by"
+   ],
+   "answer": 2,
+   "source": "學測113·綜合測驗第17題",
+   "zh": "**帶著**棍子或豌豆槍，這些人體鬧鐘會穿梭在大街小巷，敲打窗戶，或用乾豌豆射向窗戶，設法及時叫醒付費的顧客上班。"
+  },
+  {
+   "id": "學測113-18",
+   "exam": "學測",
+   "year": "113",
+   "q": 18,
+   "type": "句意判斷",
+   "point": "familiar presences（熟悉的身影）：敲窗人遍布英國，大家都看慣了。distant memories（遙遠的記憶）、vague images（模糊的印象）、public eyesores（公共場所的礙眼之物）都不符合當時「普遍存在」的情境。",
+   "prev": "Equipped with sticks or pea shooters, the human alarms would tour the streets, tap on windows, or blast them with dried peas, trying to wake paying customers in time for work.",
+   "sentence": "Whether they wielded rods or pea shooters, knockers-up became ____ throughout the United Kingdom.",
+   "next": "Every morning, these people, often older in age, were seen in big streets and small alleys, waking up their customers professionally.",
+   "options": [
+    "familiar presences",
+    "distant memories",
+    "vague images",
+    "public eyesores"
+   ],
+   "answer": 0,
+   "source": "學測113·綜合測驗第18題",
+   "zh": "不論揮的是長竿還是豌豆槍，「敲窗人」在英國各地都成了**熟悉的身影**。"
+  },
+  {
+   "id": "學測113-19",
+   "exam": "學測",
+   "year": "113",
+   "q": 19,
+   "type": "單字詞彙",
+   "point": "declined（衰退；沒落）：While 表示讓步，前面說仍持續，後面說隨鬧鐘普及而式微。remained（仍然是）、dismissed（解散；不予理會）、revised（修訂）語意不合。",
+   "prev": "They usually would not leave people’s houses until they were sure their customers were awake.",
+   "sentence": "While the practice continued in some parts of the country until the 1970s, it ____ as alarm clocks became more widespread and affordable.",
+   "next": "Today, beeping alarm clocks and smartphones that play morning music are surely simpler and more convenient.",
+   "options": [
+    "remained",
+    "dismissed",
+    "revised",
+    "declined"
+   ],
+   "answer": 3,
+   "source": "學測113·綜合測驗第19題",
+   "zh": "雖然這種做法在該國某些地區一直持續到 1970 年代，但隨著鬧鐘變得普及又便宜，它就逐漸**沒落**了。"
+  },
+  {
+   "id": "學測113-20",
+   "exam": "學測",
+   "year": "113",
+   "q": 20,
+   "type": "單字詞彙",
+   "point": "match（比得上）：cannot match（比不上），However 與前句「鬧鐘更方便」形成轉折。forget（忘記）、change（改變）、regret（後悔）語意不合。",
+   "prev": "Today, beeping alarm clocks and smartphones that play morning music are surely simpler and more convenient.",
+   "sentence": "However, they cannot ____ the personal attention coming from the distinctive tap of a pea shooter.",
+   "next": "",
+   "options": [
+    "forget",
+    "change",
+    "match",
+    "regret"
+   ],
+   "answer": 2,
+   "source": "學測113·綜合測驗第20題",
+   "zh": "然而，它們**比不上**豌豆槍那獨特的輕敲所帶來的個人關注。"
+  },
+  {
+   "id": "學測112-11",
+   "exam": "學測",
+   "year": "112",
+   "q": 11,
+   "type": "連接詞／轉承語",
+   "point": "句意連接：almost, but not quite（幾乎但沒有）",
+   "prev": "In certain forests, when you look up you will see a network of cracks formed by gaps between the outermost edges of tree branches.",
+   "sentence": "It looks like a precisely engineered jigsaw puzzle, each branch growing just perfectly so it almost, ____, touches the neighboring tree.",
+   "next": "This beautiful phenomenon is called crown shyness.",
+   "options": [
+    "in no time",
+    "by all means",
+    "but not quite",
+    "and pretty much"
+   ],
+   "answer": 2,
+   "source": "學測112·綜合測驗第11題",
+   "zh": "它看起來像一幅精密設計的拼圖，每根樹枝都長得恰到好處，幾乎、**卻又沒有**碰到鄰近的樹。"
+  },
+  {
+   "id": "學測112-12",
+   "exam": "學測",
+   "year": "112",
+   "q": 12,
+   "type": "單字詞彙",
+   "point": "multiple（多個的；多種的）：後文介紹了好幾種說法。universal（普遍的）、productive（有生產力的）、conventional（傳統的）語意不合。",
+   "prev": "This beautiful phenomenon is called crown shyness.",
+   "sentence": "Scientists have been discussing crown shyness since the 1920s, proposing ____ explanations for the phenomenon.",
+   "next": "Some researchers point out that as trees often grow close together, treetops can easily collide and break when swayed by the wind.",
+   "options": [
+    "universal",
+    "productive",
+    "conventional",
+    "multiple"
+   ],
+   "answer": 3,
+   "source": "學測112·綜合測驗第12題",
+   "zh": "自 1920 年代以來，科學家一直在討論「樹冠羞避」，並為這個現象提出了**多種**解釋。"
+  },
+  {
+   "id": "學測112-13",
+   "exam": "學測",
+   "year": "112",
+   "q": 13,
+   "type": "片語",
+   "point": "compete for（爭奪）：下一句說資源爭奪很激烈。get over（克服）、give way to（讓步；被取代）、make up for（彌補）語意不合。",
+   "prev": "In order to protect their branches from breakage, trees maintain “shyness gaps”—spaces large enough to prevent them from touching their neighbors.",
+   "sentence": "Other scientists suggest that plants, like animals, ____ resources—nutrients, water, space, and light.",
+   "next": "In forested areas with thick tree crowns, there is intense struggle for these resources.",
+   "options": [
+    "get over",
+    "compete for",
+    "give way to",
+    "make up for"
+   ],
+   "answer": 1,
+   "source": "學測112·綜合測驗第13題",
+   "zh": "其他科學家則認為，植物和動物一樣會**爭奪**資源，包括養分、水、空間和光線。"
+  },
+  {
+   "id": "學測112-14",
+   "exam": "學測",
+   "year": "112",
+   "q": 14,
+   "type": "介系詞搭配",
+   "point": "名詞＋介系詞：exposure to（暴露於）",
+   "prev": "In forested areas with thick tree crowns, there is intense struggle for these resources.",
+   "sentence": "Gaps in the treetops resulting from crown shyness may allow trees to increase their ____ light and enhance photosynthesis.",
+   "next": "Additionally, by having branches that do not touch those of their neighbors, trees may be able to limit the spread of leaf-eating insects, and potentially also the transmission of diseases from tree to tree.",
+   "options": [
+    "reliance on",
+    "exposure to",
+    "sensitivity to",
+    "reflection on"
+   ],
+   "answer": 1,
+   "source": "學測112·綜合測驗第14題",
+   "zh": "樹冠羞避在樹頂形成的空隙，可能讓樹木得到更多日照（**接觸**光線的機會），進而增強光合作用。"
+  },
+  {
+   "id": "學測112-15",
+   "exam": "學測",
+   "year": "112",
+   "q": 15,
+   "type": "連接詞／轉承語",
+   "point": "讓步介系詞：Despite + 名詞（儘管數十年研究，仍無共識）",
+   "prev": "Additionally, by having branches that do not touch those of their neighbors, trees may be able to limit the spread of leaf-eating insects, and potentially also the transmission of diseases from tree to tree.",
+   "sentence": "____ decades of investigation, there is no consensus on exactly what causes the beautiful and mysterious phenomenon of crown shyness.",
+   "next": "",
+   "options": [
+    "For",
+    "Besides",
+    "Despite",
+    "Concerning"
+   ],
+   "answer": 2,
+   "source": "學測112·綜合測驗第15題",
+   "zh": "**儘管**經過數十年的調查，對於究竟是什麼造成「樹冠羞避」這種美麗又神祕的現象，仍然沒有共識。"
+  },
+  {
+   "id": "學測112-16",
+   "exam": "學測",
+   "year": "112",
+   "q": 16,
+   "type": "片語",
+   "point": "free of（擺脫；不受…影響）：shoot free of Earth’s pull（衝出地球引力）。back to（回到）、long before（早在…之前）、straight on（一直往前）語意不合。",
+   "prev": "Gravity has been at the top of the science agenda since the start of Mars missions.",
+   "sentence": "In the earlier days of space travel, scientists tried to overcome the force of gravity so that a rocket could shoot ____ Earth’s pull in order to land humans on the moon.",
+   "next": "Today, they are more interested in how reduced gravity affects the astronauts’ physical condition.",
+   "options": [
+    "back to",
+    "free of",
+    "long before",
+    "straight on"
+   ],
+   "answer": 1,
+   "source": "學測112·綜合測驗第16題",
+   "zh": "在太空旅行的早期，科學家設法克服重力，讓火箭能**擺脫**地球引力，把人類送上月球。"
+  },
+  {
+   "id": "學測112-17",
+   "exam": "學測",
+   "year": "112",
+   "q": 17,
+   "type": "單字詞彙",
+   "point": "physical（身體的）：下文描述體液重新分布、臉部浮腫等身體變化。perceptual（知覺的）、mental（心理的）、external（外部的）語意不合。",
+   "prev": "In the earlier days of space travel, scientists tried to overcome the force of gravity so that a rocket could shoot free of Earth’s pull in order to land humans on the moon.",
+   "sentence": "Today, they are more interested in how reduced gravity affects the astronauts’ ____ condition.",
+   "next": "Our bodies have evolved to exist within Earth’s gravity (1 g), not in the weightlessness of space (0 g) or the microgravity of Mars (0.3 g).",
+   "options": [
+    "physical",
+    "perceptual",
+    "mental",
+    "external"
+   ],
+   "answer": 0,
+   "source": "學測112·綜合測驗第17題",
+   "zh": "如今，他們更關心的是重力減少如何影響太空人的**身體**狀況。"
+  },
+  {
+   "id": "學測112-18",
+   "exam": "學測",
+   "year": "112",
+   "q": 18,
+   "type": "動詞形式",
+   "point": "主要動詞判斷：主詞 our body fluids 需要一般現在式動詞 redistribute；後面 shifting 為分詞構句",
+   "prev": "When on Earth, we have more fluids in our lower body because they are pulled down by Earth’s gravity.",
+   "sentence": "However, with the absence of gravity in the outer space, our body fluids ____, shifting toward the upper body and the head.",
+   "next": "As a result, the astronauts have swollen, puffy faces, very much resembling that of the round-headed Charlie Brown in the famous comic strip.",
+   "options": [
+    "redistribute",
+    "redistributed",
+    "redistributing",
+    "being redistributed"
+   ],
+   "answer": 0,
+   "source": "學測112·綜合測驗第18題",
+   "zh": "然而，在沒有重力的外太空，我們的體液會**重新分布**，往上半身和頭部移動。"
+  },
+  {
+   "id": "學測112-19",
+   "exam": "學測",
+   "year": "112",
+   "q": 19,
+   "type": "單字詞彙",
+   "point": "severe（嚴重的）：任務時間更長，症狀會更嚴重。contagious（傳染性的）、unusual（不尋常的）、aggressive（具攻擊性的）語意不合。",
+   "prev": "As a result, the astronauts have swollen, puffy faces, very much resembling that of the round-headed Charlie Brown in the famous comic strip.",
+   "sentence": "This “Charlie Brown effect” will be more ____ when the astronauts go on their Mars missions, which will take about three years to complete, much longer than missions to the moon.",
+   "next": "Moreover, the effect is often accompanied by space motion sickness, headaches, and nausea.",
+   "options": [
+    "contagious",
+    "unusual",
+    "severe",
+    "aggressive"
+   ],
+   "answer": 2,
+   "source": "學測112·綜合測驗第19題",
+   "zh": "當太空人執行火星任務時，這種「查理．布朗效應」會更加**嚴重**，因為火星任務大約要三年才能完成，比登月任務長得多。"
+  },
+  {
+   "id": "學測112-20",
+   "exam": "學測",
+   "year": "112",
+   "q": 20,
+   "type": "片語",
+   "point": "accompanied by（伴隨著）：A is accompanied by B（A 伴隨 B 出現）。varied with（隨…變化）、brought about（造成）、transferred from（從…轉移）語意不合。",
+   "prev": "This “Charlie Brown effect” will be more severe when the astronauts go on their Mars missions, which will take about three years to complete, much longer than missions to the moon.",
+   "sentence": "Moreover, the effect is often ____ space motion sickness, headaches, and nausea.",
+   "next": "Such a syndrome is considered the top health risk for the astronauts, and scientists are still trying to figure out how it may be prevented.",
+   "options": [
+    "varied with",
+    "brought about",
+    "transferred from",
+    "accompanied by"
+   ],
+   "answer": 3,
+   "source": "學測112·綜合測驗第20題",
+   "zh": "此外，這種效應常**伴隨著**太空動暈症、頭痛和噁心。"
+  },
+  {
+   "id": "學測111-11",
+   "exam": "學測",
+   "year": "111",
+   "q": 11,
+   "type": "單字詞彙",
+   "point": "initiated（創始；發起）：布斯開了第一家書店，是書鎮的開創者。represented（代表）、acknowledged（承認）、manipulated（操縱）語意不合。",
+   "prev": "A book town is a rural town in which second-hand and antiquarian bookshops are concentrated.",
+   "sentence": "The concept was ____ by Richard Booth, who opened the first second-hand bookshop in Hay-on-Wye, UK in 1961.",
+   "next": "Following him, many local people opened their own bookshops, and the small town soon became a model of sustainable rural development and tourism.",
+   "options": [
+    "initiated",
+    "represented",
+    "acknowledged",
+    "manipulated"
+   ],
+   "answer": 0,
+   "source": "學測111·綜合測驗第11題",
+   "zh": "這個構想是由理查．布斯**首創**的，他在 1961 年於英國海伊鎮開了第一家二手書店。"
+  },
+  {
+   "id": "學測111-12",
+   "exam": "學測",
+   "year": "111",
+   "q": 12,
+   "type": "動詞形式",
+   "point": "時態：Since the 1970s 到現在仍持續→現在完成進行式 have been springing",
+   "prev": "Following him, many local people opened their own bookshops, and the small town soon became a model of sustainable rural development and tourism.",
+   "sentence": "Since the 1970s, book towns like Hay-on-Wye ____ up all over the world.",
+   "next": "Although all book towns have a great number of bookshops, that’s where the similarities end.",
+   "options": [
+    "spring",
+    "sprang",
+    "had sprung",
+    "have been springing"
+   ],
+   "answer": 3,
+   "source": "學測111·綜合測驗第12題",
+   "zh": "自 1970 年代以來，像海伊鎮這樣的書鎮**一直在**世界各地**紛紛出現**。"
+  },
+  {
+   "id": "學測111-13",
+   "exam": "學測",
+   "year": "111",
+   "q": 13,
+   "type": "單字詞彙",
+   "point": "end（結束）：that’s where the similarities end（相似之處就到此為止），下文接著介紹各書鎮的不同。form（形成）、count（重要；計算）、matter（重要）語意不合。",
+   "prev": "Since the 1970s, book towns like Hay-on-Wye have been springing up all over the world.",
+   "sentence": "Although all book towns have a great number of bookshops, that’s where the similarities ____.",
+   "next": "Each of these towns shows unique features of its own.",
+   "options": [
+    "form",
+    "count",
+    "end",
+    "matter"
+   ],
+   "answer": 2,
+   "source": "學測111·綜合測驗第13題",
+   "zh": "雖然所有書鎮都有大量的書店，但相似之處也就**到此為止**。"
+  },
+  {
+   "id": "學測111-14",
+   "exam": "學測",
+   "year": "111",
+   "q": 14,
+   "type": "單字詞彙",
+   "point": "releases（新發行的作品）：latest releases（最新出版品）。trends（趨勢）、agendas（議程）、announcements（公告）語意不合。",
+   "prev": "For example, an annual book festival is held in Hay-on-Wye.",
+   "sentence": "Clunes, in Australia, holds a monthly book talk that hosts authors to discuss their latest ____.",
+   "next": "As digital reading is changing our traditional way of reading, book towns like Hay-on-Wye are particularly important to keep the printed word alive.",
+   "options": [
+    "trends",
+    "releases",
+    "agendas",
+    "announcements"
+   ],
+   "answer": 1,
+   "source": "學測111·綜合測驗第14題",
+   "zh": "澳洲的克倫斯每月舉辦一場讀書座談，邀請作家來談他們的最新**作品**。"
+  },
+  {
+   "id": "學測111-15",
+   "exam": "學測",
+   "year": "111",
+   "q": 15,
+   "type": "句意判斷",
+   "point": "keep the printed word alive（讓紙本閱讀延續下去）：與前半「數位閱讀改變傳統閱讀」形成對照。get their worldwide fame（獲得世界聲譽）、conform to the new mode（順應新模式）、make their visitors satisfied（讓遊客滿意）都沒有回應數位閱讀的衝擊。",
+   "prev": "Clunes, in Australia, holds a monthly book talk that hosts authors to discuss their latest releases.",
+   "sentence": "As digital reading is changing our traditional way of reading, book towns like Hay-on-Wye are particularly important to ____.",
+   "next": "The feel of a book, the smell, the weight, and the knowledge that a particular book might be more than a hundred years old—all these highlight the importance of preserving the physical book as a complement to technology.",
+   "options": [
+    "get their worldwide fame",
+    "conform to the new mode",
+    "make their visitors satisfied",
+    "keep the printed word alive"
+   ],
+   "answer": 3,
+   "source": "學測111·綜合測驗第15題",
+   "zh": "隨著數位閱讀改變我們傳統的閱讀方式，像海伊鎮這樣的書鎮對於**讓紙本書得以延續**格外重要。"
+  },
+  {
+   "id": "學測111-16",
+   "exam": "學測",
+   "year": "111",
+   "q": 16,
+   "type": "連接詞／轉承語",
+   "point": "other than（除了；不同於）",
+   "prev": "Airline passengers may have noticed that all plane windows have rounded edges, instead of the hard corners commonly found in our house.",
+   "sentence": "The round windows are indeed pleasant to the eye, but they actually were designed for reasons ____ aesthetics.",
+   "next": "In the early days of aviation, plane windows used to be square in shape.",
+   "options": [
+    "contrary to",
+    "except for",
+    "more of",
+    "other than"
+   ],
+   "answer": 3,
+   "source": "學測111·綜合測驗第16題",
+   "zh": "那些圓形窗戶確實賞心悅目，但當初設計成圓形其實是出於美觀**以外**的原因。"
+  },
+  {
+   "id": "學測111-17",
+   "exam": "學測",
+   "year": "111",
+   "q": 17,
+   "type": "動詞形式",
+   "point": "used to + V（過去曾經，現在不再）：早期飛機窗戶曾是方形",
+   "prev": "The round windows are indeed pleasant to the eye, but they actually were designed for reasons other than aesthetics.",
+   "sentence": "In the early days of aviation, plane windows ____ square in shape.",
+   "next": "Then as commercial air travel became popular in the 1950s and airplanes began flying higher and faster, three planes mysteriously broke apart in midair.",
+   "options": [
+    "used to be",
+    "were to be",
+    "would have been",
+    "must have been"
+   ],
+   "answer": 0,
+   "source": "學測111·綜合測驗第17題",
+   "zh": "在航空業早期，飛機窗戶**過去是**方形的。"
+  },
+  {
+   "id": "學測111-18",
+   "exam": "學測",
+   "year": "111",
+   "q": 18,
+   "type": "單字詞彙",
+   "point": "intensified（加劇）：高空壓差變大，問題更嚴重。disguised（偽裝）、understood（理解）、confronted（面對）語意不合。",
+   "prev": "Scientists found that sharp corners are natural weak spots where stress concentrates.",
+   "sentence": "The problem is ____ when airplanes fly at higher altitudes, where the difference between the inside and outside pressure increases, causing added stress.",
+   "next": "When subjected to repeated pressurization high in the sky, the four corners on a square window may spell disaster.",
+   "options": [
+    "disguised",
+    "understood",
+    "confronted",
+    "intensified"
+   ],
+   "answer": 3,
+   "source": "學測111·綜合測驗第18題",
+   "zh": "飛機飛到更高的高度時，問題會**更加嚴重**，因為機艙內外的壓差變大，造成額外的應力。"
+  },
+  {
+   "id": "學測111-19",
+   "exam": "學測",
+   "year": "111",
+   "q": 19,
+   "type": "句意判斷",
+   "point": "spell disaster（招致災難）：前文說尖角是應力集中的弱點。cause conflict（引起衝突）、rebuild strength（恢復力量）、endure shock（承受衝擊）都不符合「弱點導致危險」的語意。",
+   "prev": "The problem is intensified when airplanes fly at higher altitudes, where the difference between the inside and outside pressure increases, causing added stress.",
+   "sentence": "When subjected to repeated pressurization high in the sky, the four corners on a square window may ____.",
+   "next": "Curved windows, on the other hand, distribute stress around more evenly, reducing the likelihood of cracks or breaks.",
+   "options": [
+    "cause conflict",
+    "rebuild strength",
+    "spell disaster",
+    "endure shock"
+   ],
+   "answer": 2,
+   "source": "學測111·綜合測驗第19題",
+   "zh": "在高空中反覆承受加壓時，方形窗戶的四個角可能會**釀成災難**。"
+  },
+  {
+   "id": "學測111-20",
+   "exam": "學測",
+   "year": "111",
+   "q": 20,
+   "type": "單字詞彙",
+   "point": "tolerate（承受；容忍）：結構堅固，所以能承受壓差。improve（改善）、justify（證明…合理）、obtain（獲得）語意不合。",
+   "prev": "Curved windows, on the other hand, distribute stress around more evenly, reducing the likelihood of cracks or breaks.",
+   "sentence": "Circular shapes are also stronger and resist deformation, and therefore can ____ extreme differences in pressure inside and outside of an aircraft.",
+   "next": "Thus, round windows are a major safety innovation that keeps planes from disintegrating mid-flight.",
+   "options": [
+    "tolerate",
+    "improve",
+    "justify",
+    "obtain"
+   ],
+   "answer": 0,
+   "source": "學測111·綜合測驗第20題",
+   "zh": "圓形的結構也比較堅固、不容易變形，因此能**承受**飛機內外極大的壓力差。"
+  },
+  {
+   "id": "學測110-16",
+   "exam": "學測",
+   "year": "110",
+   "q": 16,
+   "type": "連接詞／轉承語",
+   "point": "介系詞 without + V-ing（沒有…）：would not be the same without encountering them（沒遇到牠們，感覺就不一樣）",
+   "prev": "Street pigeons are a common sight in many European cities.",
+   "sentence": "In fact, a visit to a major European city just would not be the same ____ encountering them: bathing in fountains, perching on historic buildings, and flocking in public squares.",
+   "next": "In Barcelona, however, the birds are now threatening to take over the city’s historic center, pooping on monuments, buildings, and even tourists.",
+   "options": [
+    "as",
+    "for",
+    "though",
+    "without"
+   ],
+   "answer": 3,
+   "source": "學測110·綜合測驗第16題",
+   "zh": "事實上，到歐洲大城市旅遊，如果**沒有**遇到牠們，感覺就是不一樣：在噴泉裡洗澡、停在歷史建築上、在廣場上成群聚集。"
+  },
+  {
+   "id": "學測110-17",
+   "exam": "學測",
+   "year": "110",
+   "q": 17,
+   "type": "片語",
+   "point": "take over（接管；占領）：threaten to take over（威脅要占領）。set up（設立）、hang on（緊抓；稍等）、break down（故障；分解）語意不合。",
+   "prev": "In fact, a visit to a major European city just would not be the same without encountering them: bathing in fountains, perching on historic buildings, and flocking in public squares.",
+   "sentence": "In Barcelona, however, the birds are now threatening to ____ the city’s historic center, pooping on monuments, buildings, and even tourists.",
+   "next": "The city council originally proposed reducing the pigeon population by gathering the birds and shooting them.",
+   "options": [
+    "set up",
+    "hang on",
+    "take over",
+    "break down"
+   ],
+   "answer": 2,
+   "source": "學測110·綜合測驗第17題",
+   "zh": "然而在巴塞隆納，這些鴿子如今大有**占領**歷史城區之勢，在古蹟、建築，甚至遊客身上大便。"
+  },
+  {
+   "id": "學測110-18",
+   "exam": "學測",
+   "year": "110",
+   "q": 18,
+   "type": "單字詞彙",
+   "point": "reducing（減少）：propose + V-ing，抓來射殺是為了減少數量。counting（計算）、displaying（展示）、maintaining（維持）語意不合。",
+   "prev": "In Barcelona, however, the birds are now threatening to take over the city’s historic center, pooping on monuments, buildings, and even tourists.",
+   "sentence": "The city council originally proposed ____ the pigeon population by gathering the birds and shooting them.",
+   "next": "But that idea led to strong protests from numerous animal rights groups.",
+   "options": [
+    "counting",
+    "reducing",
+    "displaying",
+    "maintaining"
+   ],
+   "answer": 1,
+   "source": "學測110·綜合測驗第18題",
+   "zh": "市議會原本提議把鴿子抓起來射殺，以**減少**鴿子的數量。"
+  },
+  {
+   "id": "學測110-19",
+   "exam": "學測",
+   "year": "110",
+   "q": 19,
+   "type": "單字詞彙",
+   "point": "similarly（同樣地）：another similarly effective method（另一個同樣有效的方法）。nearly（幾乎）、shortly（不久）、precisely（精確地）語意不合。",
+   "prev": "But that idea led to strong protests from numerous animal rights groups.",
+   "sentence": "After heated debates and discussions, the government was finally persuaded to consider another ____ effective method: giving the pigeons birth control.",
+   "next": "In 2016, the city council decided to put its 85,000 pigeon population on a birth control pill to block the formation of eggs in birds.",
+   "options": [
+    "nearly",
+    "shortly",
+    "precisely",
+    "similarly"
+   ],
+   "answer": 3,
+   "source": "學測110·綜合測驗第19題",
+   "zh": "經過激烈的辯論與討論，政府終於被說服，考慮另一種**同樣**有效的方法：讓鴿子避孕。"
+  },
+  {
+   "id": "學測110-20",
+   "exam": "學測",
+   "year": "110",
+   "q": 20,
+   "type": "動詞形式",
+   "point": "過去分詞修飾名詞：feeders (which were) installed…，餵食器是「被安裝」",
+   "prev": "In 2016, the city council decided to put its 85,000 pigeon population on a birth control pill to block the formation of eggs in birds.",
+   "sentence": "Starting from April 2017, the pills were placed in 40 bird feeders ____ throughout the city.",
+   "next": "It was predicted that there would be a decrease of 20 percent in the pigeon population in the first year and between 70 and 80 percent in four or five years.",
+   "options": [
+    "installing",
+    "installed",
+    "to install",
+    "having installed"
+   ],
+   "answer": 1,
+   "source": "學測110·綜合測驗第20題",
+   "zh": "從 2017 年 4 月開始，避孕藥被放在全市**設置**的 40 個餵鳥器中。"
+  },
+  {
+   "id": "學測110-21",
+   "exam": "學測",
+   "year": "110",
+   "q": 21,
+   "type": "連接詞／轉承語",
+   "point": "not to mention（更不用說）",
+   "prev": "Being hit by lightning is a rare event.",
+   "sentence": "Over the course of an 80-year life span, the odds of being hit by lightning are 1 in 3,000, ____ the probability of being struck seven different times.",
+   "next": "Roy Sullivan, a park ranger in the United States, was struck by lightning more recorded times than any other human being.",
+   "options": [
+    "if it isn’t",
+    "as you can see",
+    "not to mention",
+    "with regard to"
+   ],
+   "answer": 2,
+   "source": "學測110·綜合測驗第21題",
+   "zh": "在 80 年的人生中，被雷打到的機率是三千分之一，**更不用說**被雷打中七次的機率了。"
+  },
+  {
+   "id": "學測110-22",
+   "exam": "學測",
+   "year": "110",
+   "q": 22,
+   "type": "單字詞彙",
+   "point": "survived（倖存；活了下來）：被雷擊中卻沒死。piloted（駕駛）、rejected（拒絕）、tracked（追蹤）語意不合。",
+   "prev": "Roy Sullivan, a park ranger in the United States, was struck by lightning more recorded times than any other human being.",
+   "sentence": "Over his 36-year career, Sullivan was struck by lightning seven times—and ____ each shock!",
+   "next": "Strikes one, two, and three were pure bad luck, he thought.",
+   "options": [
+    "piloted",
+    "rejected",
+    "survived",
+    "tracked"
+   ],
+   "answer": 2,
+   "source": "學測110·綜合測驗第22題",
+   "zh": "在 36 年的職業生涯中，蘇利文被雷擊中七次，而且每次都**活了下來**！"
+  },
+  {
+   "id": "學測110-23",
+   "exam": "學測",
+   "year": "110",
+   "q": 23,
+   "type": "介系詞搭配",
+   "point": "形容詞＋介系詞：fearful of（害怕…）",
+   "prev": "Strikes one, two, and three were pure bad luck, he thought.",
+   "sentence": "But after strike four, Sullivan became ____ death and took precautions during lightning strikes.",
+   "next": "Strike five occurred in 1973 when Sullivan was on patrol.",
+   "options": [
+    "fearful of",
+    "critical of",
+    "doubtful about",
+    "positive about"
+   ],
+   "answer": 0,
+   "source": "學測110·綜合測驗第23題",
+   "zh": "但在第四次被雷擊之後，蘇利文開始**害怕**死亡，在打雷時會採取預防措施。"
+  },
+  {
+   "id": "學測110-24",
+   "exam": "學測",
+   "year": "110",
+   "q": 24,
+   "type": "片語",
+   "point": "come after（追趕）：一朵雲追著他跑，所以他想逃。getting over（克服）、holding on to（緊抓）、watching out for（留意）語意不合。",
+   "prev": "The same thing happened again in 1976.",
+   "sentence": "Sullivan, while surveying a campground, felt that a cloud was ____ him, and tried all he could to run—but it got him anyway.",
+   "next": "Finally, on 25 June 1977, a seventh and final bolt struck Sullivan as he was fishing in a pond.",
+   "options": [
+    "coming after",
+    "getting over",
+    "holding on to",
+    "watching out for"
+   ],
+   "answer": 0,
+   "source": "學測110·綜合測驗第24題",
+   "zh": "蘇利文在巡視營地時，覺得有一朵雲在**追著**他，他拚命想逃，但還是被雷打中了。"
+  },
+  {
+   "id": "學測110-25",
+   "exam": "學測",
+   "year": "110",
+   "q": 25,
+   "type": "動詞形式",
+   "point": "假設語氣：與過去事實相反，主句用 would have + p.p.",
+   "prev": "“I don’t believe God is after me,” he theorized.",
+   "sentence": "“If he was, the first bolt ____ enough.",
+   "next": "Best I can figure is that I have some chemical, some mineral, in my body that draws lightning.",
+   "options": [
+    "was",
+    "had been",
+    "would be",
+    "would have been"
+   ],
+   "answer": 3,
+   "source": "學測110·綜合測驗第25題",
+   "zh": "「如果祂是，第一道閃電**就已經**夠了。」"
+  },
+  {
+   "id": "學測110-26",
+   "exam": "學測",
+   "year": "110",
+   "q": 26,
+   "type": "片語",
+   "point": "be home to（是…的所在地；有…）：這些山脈有冰河。covers of（…的封面）、roofs over（…上方的屋頂）、room for（…的空間）語意不合。",
+   "prev": "Glaciers are usually associated with colder climates.",
+   "sentence": "But some mountain ranges of South America, Africa, and Indonesia are also ____ glaciers and ice sheets.",
+   "next": "These tropical glaciers serve as a major source of water supply to one-sixth of the world’s population.",
+   "options": [
+    "home to",
+    "covers of",
+    "roofs over",
+    "room for"
+   ],
+   "answer": 0,
+   "source": "學測110·綜合測驗第26題",
+   "zh": "但南美洲、非洲和印尼的一些山脈，也**有**冰河和冰層分布。"
+  },
+  {
+   "id": "學測110-27",
+   "exam": "學測",
+   "year": "110",
+   "q": 27,
+   "type": "單字詞彙",
+   "point": "immediate（立即的；迫切的）：immediate threat（迫在眉睫的威脅），下文說十年內就會消失。occasional（偶爾的）、elaborate（精心的）、offensive（冒犯的）語意不合。",
+   "prev": "These tropical glaciers serve as a major source of water supply to one-sixth of the world’s population.",
+   "sentence": "A newly published study, however, revealed that rising temperatures are posing an ____ threat to the last tropical glaciers in Indonesia’s Papua region.",
+   "next": "The ice sheets, which once spanned 20 square kilometers, are thinning over five times as quickly compared to a few years ago.",
+   "options": [
+    "occasional",
+    "elaborate",
+    "immediate",
+    "offensive"
+   ],
+   "answer": 2,
+   "source": "學測110·綜合測驗第27題",
+   "zh": "然而，一項新發表的研究揭露，氣溫上升正對印尼巴布亞地區最後的熱帶冰河構成**立即的**威脅。"
+  },
+  {
+   "id": "學測110-28",
+   "exam": "學測",
+   "year": "110",
+   "q": 28,
+   "type": "動詞形式",
+   "point": "分詞構句（完成式）：主詞 Papua’s glaciers「已經縮小」，動作早於主要子句，且 shrink 為不及物動詞→Having + p.p.（Having already shrunk）",
+   "prev": "The ice sheets, which once spanned 20 square kilometers, are thinning over five times as quickly compared to a few years ago.",
+   "sentence": "____ already shrunk by 85% to a mere 0.5 square kilometers, Papua’s glaciers will completely disappear within a decade, researchers have predicted.",
+   "next": "The disappearance of the glaciers will also leave a significant cultural impact.",
+   "options": [
+    "Have",
+    "Had",
+    "Having",
+    "Having been"
+   ],
+   "answer": 2,
+   "source": "學測110·綜合測驗第28題",
+   "zh": "**已經**縮小 85%、只剩 0.5 平方公里的巴布亞冰河，研究人員預測將在十年內完全消失。"
+  },
+  {
+   "id": "學測110-29",
+   "exam": "學測",
+   "year": "110",
+   "q": 29,
+   "type": "單字詞彙",
+   "point": "cultural（文化的）：下一句說當地人把山與冰河視為神的身體。moral（道德的）、political（政治的）、environmental（環境的）語意不合；環境影響前文已談過，這裡轉入文化面。",
+   "prev": "Having already shrunk by 85% to a mere 0.5 square kilometers, Papua’s glaciers will completely disappear within a decade, researchers have predicted.",
+   "sentence": "The disappearance of the glaciers will also leave a significant ____ impact.",
+   "next": "For many indigenous Papuans, the ice sheets represent a sacred symbol.",
+   "options": [
+    "cultural",
+    "moral",
+    "political",
+    "environmental"
+   ],
+   "answer": 0,
+   "source": "學測110·綜合測驗第29題",
+   "zh": "冰河消失也會造成重大的**文化**衝擊。"
+  },
+  {
+   "id": "學測110-30",
+   "exam": "學測",
+   "year": "110",
+   "q": 30,
+   "type": "動詞形式",
+   "point": "使役結構：leave + O + p.p.（任由…不受控制）",
+   "prev": "“The mountains and valleys are the arms and legs of their god and the glaciers are the head,” explained the head researcher.",
+   "sentence": "The study warned that Papua’s glaciers are only the “first to go” if greenhouse gases are ____ and temperatures continue rising.",
+   "next": "And this is certainly a serious warning about the depressing fate of other glaciers around the world.",
+   "options": [
+    "kept balanced",
+    "made released",
+    "seen dismissed",
+    "left unchecked"
+   ],
+   "answer": 3,
+   "source": "學測110·綜合測驗第30題",
+   "zh": "研究警告，如果溫室氣體**不受控制**、氣溫持續上升，巴布亞的冰河只是「第一個消失」的。"
+  },
+  {
+   "id": "學測109-16",
+   "exam": "學測",
+   "year": "109",
+   "q": 16,
+   "type": "動詞形式",
+   "point": "時態：Over the centuries（數百年來）→現在完成式 have been used",
+   "prev": "The art and tradition of using all-natural paste from the henna plant to create temporary henna tattoos goes back to ancient Asia and the Middle East.",
+   "sentence": "Over the centuries, henna tattoos ____ used in weddings and holiday celebrations because they are thought to carry blessings from the gods.",
+   "next": "Today, the ancient art form has found a new application in the hands of contemporary artists.",
+   "options": [
+    "were being",
+    "have been",
+    "will be",
+    "had to be"
+   ],
+   "answer": 1,
+   "source": "學測109·綜合測驗第16題",
+   "zh": "幾個世紀以來，指甲花彩繪**一直被**用在婚禮和節慶中，因為人們相信它帶有神明的祝福。"
+  },
+  {
+   "id": "學測109-17",
+   "exam": "學測",
+   "year": "109",
+   "q": 17,
+   "type": "單字詞彙",
+   "point": "application（應用；用途）：古老藝術被用在新的地方（癌症病患）。competition（競爭）、investigation（調查）、participation（參與）語意不合。",
+   "prev": "Over the centuries, henna tattoos have been used in weddings and holiday celebrations because they are thought to carry blessings from the gods.",
+   "sentence": "Today, the ancient art form has found a new ____ in the hands of contemporary artists.",
+   "next": "Henna Heals, an artist group based in Canada, uses henna tattoos to help women suffering from cancer feel confident and beautiful again.",
+   "options": [
+    "competition",
+    "application",
+    "investigation",
+    "participation"
+   ],
+   "answer": 1,
+   "source": "學測109·綜合測驗第17題",
+   "zh": "如今，這種古老的藝術形式在當代藝術家手中找到了新的**用途**。"
+  },
+  {
+   "id": "學測109-18",
+   "exam": "學測",
+   "year": "109",
+   "q": 18,
+   "type": "片語",
+   "point": "cope with（應付；面對）：幫助病患面對掉髮。carry away（使忘我）、build on（以…為基礎）、get off（下車）語意不合。",
+   "prev": "Henna Heals, an artist group based in Canada, uses henna tattoos to help women suffering from cancer feel confident and beautiful again.",
+   "sentence": "They draw elegant henna crowns on the women’s bare heads to help them ____ the loss of their hair after cancer treatment.",
+   "next": "Featuring floral patterns, religious symbols, and messages of hope, the painted henna crowns are amazing substitutes for the hats and wigs that the cancer patients would otherwise use to cover their heads.",
+   "options": [
+    "carry away",
+    "build on",
+    "cope with",
+    "get off"
+   ],
+   "answer": 2,
+   "source": "學測109·綜合測驗第18題",
+   "zh": "她們在女性光禿的頭上畫出優雅的指甲花頭冠，幫助她們**面對**癌症治療後掉髮的困擾。"
+  },
+  {
+   "id": "學測109-19",
+   "exam": "學測",
+   "year": "109",
+   "q": 19,
+   "type": "連接詞／轉承語",
+   "point": "otherwise（否則；在其他情況下）：would otherwise use",
+   "prev": "They draw elegant henna crowns on the women’s bare heads to help them cope with the loss of their hair after cancer treatment.",
+   "sentence": "Featuring floral patterns, religious symbols, and messages of hope, the painted henna crowns are amazing substitutes for the hats and wigs that the cancer patients would ____ use to cover their heads.",
+   "next": "Many women report that the henna crowns really work as a healing device, helping them build a more positive self-image at a time when they are vulnerable and depressed.",
+   "options": [
+    "moreover",
+    "altogether",
+    "namely",
+    "otherwise"
+   ],
+   "answer": 3,
+   "source": "學測109·綜合測驗第19題",
+   "zh": "這些畫上去的指甲花頭冠以花卉圖案、宗教符號和充滿希望的話語為特色，是癌症病患**原本**用來遮頭的帽子和假髮的絕佳替代品。"
+  },
+  {
+   "id": "學測109-20",
+   "exam": "學測",
+   "year": "109",
+   "q": 20,
+   "type": "單字詞彙",
+   "point": "positive（正面的；積極的）：與 vulnerable and depressed（脆弱沮喪）對比。general（一般的）、flexible（有彈性的）、considerate（體貼的）語意不合。",
+   "prev": "Featuring floral patterns, religious symbols, and messages of hope, the painted henna crowns are amazing substitutes for the hats and wigs that the cancer patients would otherwise use to cover their heads.",
+   "sentence": "Many women report that the henna crowns really work as a healing device, helping them build a more ____ self-image at a time when they are vulnerable and depressed.",
+   "next": "According to Frances Darwin, founder of Henna Heals, the number of artists now involved in the project across Canada and the US has grown to over 150.",
+   "options": [
+    "positive",
+    "general",
+    "flexible",
+    "considerate"
+   ],
+   "answer": 0,
+   "source": "學測109·綜合測驗第20題",
+   "zh": "許多女性表示，指甲花頭冠真的有療癒效果，在她們脆弱又沮喪的時候，幫助她們建立更**正面的**自我形象。"
+  },
+  {
+   "id": "學測109-21",
+   "exam": "學測",
+   "year": "109",
+   "q": 21,
+   "type": "單字詞彙",
+   "point": "similar（類似的）：前一句說人打噴嚏會傳播疾病，植物也有相似的情形。miserable（悲慘的）、realistic（實際的）、temporary（暫時的）語意不合。",
+   "prev": "When a person sneezes, the droplets can spread diseases.",
+   "sentence": "Now research shows that plants have a somewhat ____ problem.",
+   "next": "Plant diseases can also spread through tiny water drops that jump off leaves—a plant’s version of a sneeze.",
+   "options": [
+    "similar",
+    "miserable",
+    "realistic",
+    "temporary"
+   ],
+   "answer": 0,
+   "source": "學測109·綜合測驗第21題",
+   "zh": "現在研究顯示，植物也有某種**類似的**問題。"
+  },
+  {
+   "id": "學測109-22",
+   "exam": "學測",
+   "year": "109",
+   "q": 22,
+   "type": "連接詞／轉承語",
+   "point": "介系詞片語：In a search for（為了尋找）表目的",
+   "prev": "Scientists already knew earlier that wind and splashes of rainwater can move bacteria and other germs from leaf to leaf.",
+   "sentence": "____ other possible transmission routes, researchers at Virginia Tech observed water drops on the leaves of wheat plants that were infected with leaf rust.",
+   "next": "They found that the sick plants could “sneeze” and shoot out tiny water drops filled with leaf rust germs, spreading the disease to neighboring plants.",
+   "options": [
+    "As a result of",
+    "In a search for",
+    "With a view to",
+    "To the extent of"
+   ],
+   "answer": 1,
+   "source": "學測109·綜合測驗第22題",
+   "zh": "**為了尋找**其他可能的傳播途徑，維吉尼亞理工大學的研究人員觀察了感染葉鏽病的小麥葉片上的水滴。"
+  },
+  {
+   "id": "學測109-23",
+   "exam": "學測",
+   "year": "109",
+   "q": 23,
+   "type": "片語",
+   "point": "shoot out（射出；噴出）：植物「打噴嚏」把水滴噴出去。hold on（等一下；抓緊）、come across（偶然遇到）、give up（放棄）語意不合。",
+   "prev": "In a search for other possible transmission routes, researchers at Virginia Tech observed water drops on the leaves of wheat plants that were infected with leaf rust.",
+   "sentence": "They found that the sick plants could “sneeze” and ____ tiny water drops filled with leaf rust germs, spreading the disease to neighboring plants.",
+   "next": "The researchers noticed that small drops of water on the wheat leaves would move to combine and form a larger drop.",
+   "options": [
+    "shoot out",
+    "hold on",
+    "come across",
+    "give up"
+   ],
+   "answer": 0,
+   "source": "學測109·綜合測驗第23題",
+   "zh": "他們發現，生病的植物會「打噴嚏」，**噴出**充滿葉鏽病菌的小水滴，把疾病傳給鄰近的植物。"
+  },
+  {
+   "id": "學測109-24",
+   "exam": "學測",
+   "year": "109",
+   "q": 24,
+   "type": "動詞形式",
+   "point": "不定詞：allow + O + to V",
+   "prev": "As they were moving, the energy of the droplets in motion would be released.",
+   "sentence": "This energy allowed the water ____ into the air, which looked just like sneezing!",
+   "next": "However, not all plants can sneeze.",
+   "options": [
+    "jump",
+    "to jump",
+    "jumping",
+    "jumped"
+   ],
+   "answer": 1,
+   "source": "學測109·綜合測驗第24題",
+   "zh": "這股能量讓水滴**跳**到空中，看起來就像打噴嚏一樣！"
+  },
+  {
+   "id": "學測109-25",
+   "exam": "學測",
+   "year": "109",
+   "q": 25,
+   "type": "單字詞彙",
+   "point": "unique（獨特的；獨有的）：be unique to（為…所獨有），前一句說並非所有植物都能打噴嚏。curious（好奇的）、relative（相對的）、primitive（原始的）語意不合。",
+   "prev": "However, not all plants can sneeze.",
+   "sentence": "The ability is ____ to those with leaves that are hydrophobic, or repel water—a special feature that forces the liquid to move away when the leaf is exposed to it.",
+   "next": "",
+   "options": [
+    "curious",
+    "relative",
+    "unique",
+    "primitive"
+   ],
+   "answer": 2,
+   "source": "學測109·綜合測驗第25題",
+   "zh": "這種能力是葉片具疏水性（也就是會排斥水）的植物所**獨有**的，這種特殊性質會在葉片碰到水時，迫使水分移開。"
+  },
+  {
+   "id": "學測109-26",
+   "exam": "學測",
+   "year": "109",
+   "q": 26,
+   "type": "單字詞彙",
+   "point": "encourage（鼓勵）：encourage + O + to V，旅行社想讓人在一月出遊。increase（增加）、require（要求；需要）、command（命令）語意或句型不合。",
+   "prev": "The idea of Blue Monday dates back to a 2005 campaign by Sky Travel.",
+   "sentence": "The travel company wanted to ____ people to take January vacations, so they reached out to a psychologist.",
+   "next": "The scholar then developed an equation to find the most depressing day of the year, and it turned out to be the third Monday in January.",
+   "options": [
+    "increase",
+    "require",
+    "command",
+    "encourage"
+   ],
+   "answer": 3,
+   "source": "學測109·綜合測驗第26題",
+   "zh": "這家旅行社想**鼓勵**人們在一月去度假，於是找上一位心理學家。"
+  },
+  {
+   "id": "學測109-27",
+   "exam": "學測",
+   "year": "109",
+   "q": 27,
+   "type": "單字詞彙",
+   "point": "remedy（解藥；補救方法）：把商品包裝成對抗「憂鬱星期一」的良方。disguise（偽裝）、merit（優點）、ceremony（典禮）語意不合。",
+   "prev": "The scholar then developed an equation to find the most depressing day of the year, and it turned out to be the third Monday in January.",
+   "sentence": "Since then, other companies have jumped on the bandwagon to promote everything from soft drinks to new clothes as a ____.",
+   "next": "A group in the UK even started a website devoted to “beating Blue Monday.”",
+   "options": [
+    "disguise",
+    "merit",
+    "remedy",
+    "ceremony"
+   ],
+   "answer": 2,
+   "source": "學測109·綜合測驗第27題",
+   "zh": "從那之後，其他公司也紛紛跟進，把從汽水到新衣服的各種東西都當成**解藥**來推銷。"
+  },
+  {
+   "id": "學測109-28",
+   "exam": "學測",
+   "year": "109",
+   "q": 28,
+   "type": "連接詞／轉承語",
+   "point": "轉承語：前句說沒有證據，後句說觀念仍存在→And yet（然而）",
+   "prev": "Many scientists, however, say there is no evidence that Blue Monday causes any more sadness than other specific days of the year.",
+   "sentence": "____, the idea of Blue Monday persists.",
+   "next": "According to psychologist Dean Burnett, people feel down in January owing to post-holiday discontent, and the Blue Monday claim makes it seem like there are scientific reasons for this.",
+   "options": [
+    "If so",
+    "And yet",
+    "On that",
+    "With this"
+   ],
+   "answer": 1,
+   "source": "學測109·綜合測驗第28題",
+   "zh": "**然而**，「憂鬱星期一」的說法依然存在。"
+  },
+  {
+   "id": "學測109-29",
+   "exam": "學測",
+   "year": "109",
+   "q": 29,
+   "type": "連接詞／轉承語",
+   "point": "owing to + 名詞（由於）",
+   "prev": "And yet, the idea of Blue Monday persists.",
+   "sentence": "According to psychologist Dean Burnett, people feel down in January ____ post-holiday discontent, and the Blue Monday claim makes it seem like there are scientific reasons for this.",
+   "next": "Also, the idea breaks down a very complex issue regarding depression into something simple and easily understandable, and that tends to appeal to a lot of people.",
+   "options": [
+    "as for",
+    "owing to",
+    "in spite of",
+    "with respect to"
+   ],
+   "answer": 1,
+   "source": "學測109·綜合測驗第29題",
+   "zh": "心理學家迪恩．伯內特表示，人們在一月心情低落，是**由於**假期結束後的失落感，而「憂鬱星期一」的說法讓這件事看起來好像有科學根據。"
+  },
+  {
+   "id": "學測109-30",
+   "exam": "學測",
+   "year": "109",
+   "q": 30,
+   "type": "片語",
+   "point": "break down…into…（把…分解；簡化成…）：把複雜議題簡化為簡單的東西。mixes up（混淆）、tears off（撕下）、results in（導致）語意不合。",
+   "prev": "According to psychologist Dean Burnett, people feel down in January owing to post-holiday discontent, and the Blue Monday claim makes it seem like there are scientific reasons for this.",
+   "sentence": "Also, the idea ____ a very complex issue regarding depression into something simple and easily understandable, and that tends to appeal to a lot of people.",
+   "next": "",
+   "options": [
+    "breaks down",
+    "mixes up",
+    "tears off",
+    "results in"
+   ],
+   "answer": 0,
+   "source": "學測109·綜合測驗第30題",
+   "zh": "此外，這個說法把憂鬱這個非常複雜的議題**簡化**成簡單易懂的東西，而這往往很能吸引大眾。"
+  },
+  {
+   "id": "學測108-16",
+   "exam": "學測",
+   "year": "108",
+   "q": 16,
+   "type": "片語",
+   "point": "stem from（源自）：說明愚人節的起源。leads to（導致）、brings out（使顯現）、comes across（偶然遇到）語意不合；起源要用「源自」，不是「導致」。",
+   "prev": "April Fools’ Day, one of the most light-hearted days of the year, has an unclear origin.",
+   "sentence": "Some see it as a celebration related to the turn of the seasons from winter to spring; others, however, believe that it ____ the adoption of a new calendar.",
+   "next": "Ancient cultures celebrated New Year’s Day on or around April 1, which roughly coincides with the beginning of spring.",
+   "options": [
+    "leads to",
+    "brings out",
+    "stems from",
+    "comes across"
+   ],
+   "answer": 2,
+   "source": "學測108·綜合測驗第16題",
+   "zh": "有些人把它看成與冬去春來季節交替有關的慶祝活動；但也有人認為它**源自**新曆法的採用。"
+  },
+  {
+   "id": "學測108-17",
+   "exam": "學測",
+   "year": "108",
+   "q": 17,
+   "type": "動詞形式",
+   "point": "主要動詞判斷：主詞 many people 後有插入的分詞片語，真正的動詞需用過去式 continued",
+   "prev": "In 1582, Pope Gregory XIII ordered a new calendar, which called for New Year’s Day to be celebrated on January 1.",
+   "sentence": "However, many people, either refusing to accept the new date or not having heard about it, ____ to celebrate New Year’s Day on April 1.",
+   "next": "Other people began to make fun of these traditionalists, sending them on “fool’s errands” or trying to fool them into believing something false.",
+   "options": [
+    "continue",
+    "continuing",
+    "to continue",
+    "continued"
+   ],
+   "answer": 3,
+   "source": "學測108·綜合測驗第17題",
+   "zh": "然而，許多人因為拒絕接受新日期，或根本沒聽說這件事，**繼續**在 4 月 1 日慶祝新年。"
+  },
+  {
+   "id": "學測108-18",
+   "exam": "學測",
+   "year": "108",
+   "q": 18,
+   "type": "連接詞／轉承語",
+   "point": "轉承語：時間發展的結果→Eventually（最後）",
+   "prev": "Other people began to make fun of these traditionalists, sending them on “fool’s errands” or trying to fool them into believing something false.",
+   "sentence": "____, the practice spread throughout Europe and the rest of the world.",
+   "next": "Nowadays, on April Fools’ Day, people often go to great lengths to create elaborate hoaxes to fool others.",
+   "options": [
+    "Precisely",
+    "Eventually",
+    "Additionally",
+    "Literally"
+   ],
+   "answer": 1,
+   "source": "學測108·綜合測驗第18題",
+   "zh": "**最後**，這種做法傳遍了歐洲和世界其他地方。"
+  },
+  {
+   "id": "學測108-19",
+   "exam": "學測",
+   "year": "108",
+   "q": 19,
+   "type": "片語",
+   "point": "go to great lengths（竭盡全力；不遺餘力）：後接 to V，強調費盡心思設計騙局。come to an end（結束）、put in service（使投入使用）、hold in store（為…準備）語意不合。",
+   "prev": "Eventually, the practice spread throughout Europe and the rest of the world.",
+   "sentence": "Nowadays, on April Fools’ Day, people often ____ to create elaborate hoaxes to fool others.",
+   "next": "Newspapers, radio and TV stations, and websites have participated in the April 1 tradition of making fictional reports in order to fool their audiences.",
+   "options": [
+    "come to an end",
+    "go to great lengths",
+    "put in service",
+    "hold in store"
+   ],
+   "answer": 1,
+   "source": "學測108·綜合測驗第19題",
+   "zh": "如今在愚人節，人們常常**不遺餘力地**設計精心的騙局來捉弄別人。"
+  },
+  {
+   "id": "學測108-20",
+   "exam": "學測",
+   "year": "108",
+   "q": 20,
+   "type": "單字詞彙",
+   "point": "fictional（虛構的）：愚人節報導是假的。essential（必要的）、ancient（古代的）、subjective（主觀的）語意不合。",
+   "prev": "Nowadays, on April Fools’ Day, people often go to great lengths to create elaborate hoaxes to fool others.",
+   "sentence": "Newspapers, radio and TV stations, and websites have participated in the April 1 tradition of making ____ reports in order to fool their audiences.",
+   "next": "The BBC once reported that Swiss farmers were experiencing a spaghetti crop and showed scenes of people harvesting noodles from trees.",
+   "options": [
+    "fictional",
+    "essential",
+    "ancient",
+    "subjective"
+   ],
+   "answer": 0,
+   "source": "學測108·綜合測驗第20題",
+   "zh": "報紙、廣播電視台和網站都參與了愚人節的傳統，製作**虛構的**報導來捉弄觀眾。"
+  },
+  {
+   "id": "學測108-21",
+   "exam": "學測",
+   "year": "108",
+   "q": 21,
+   "type": "片語",
+   "point": "serve as（作為；當作）：鳳梨葉可以當作皮革的替代品。bring along（帶來）、turn out（結果是）、account for（說明；占）語意不合。",
+   "prev": "The pineapple, a delicious tropical fruit, has been valued for centuries not only for its distinct and unique taste, but also for its miraculous health and medical benefits.",
+   "sentence": "But pineapples can also be a fashionable fruit: Pineapple leaves can ____ a substitute for leather.",
+   "next": "The idea was developed when a Spanish designer travelling to the Philippines observed a traditional Filipino shirt woven together with the fibers of pineapple leaves.",
+   "options": [
+    "bring along",
+    "turn out",
+    "account for",
+    "serve as"
+   ],
+   "answer": 3,
+   "source": "學測108·綜合測驗第21題",
+   "zh": "不過鳳梨也可以是一種時尚的水果：鳳梨葉可以**用來**代替皮革。"
+  },
+  {
+   "id": "學測108-22",
+   "exam": "學測",
+   "year": "108",
+   "q": 22,
+   "type": "動詞形式",
+   "point": "過去分詞作形容詞：a shirt (which was) woven…，衣服是「被編織」",
+   "prev": "But pineapples can also be a fashionable fruit: Pineapple leaves can serve as a substitute for leather.",
+   "sentence": "The idea was developed when a Spanish designer travelling to the Philippines observed a traditional Filipino shirt ____ together with the fibers of pineapple leaves.",
+   "next": "After five years of research, she created from pineapple leaves a material which, like real leather, can be used for making bags, shoes, and other textile products.",
+   "options": [
+    "wove",
+    "weaving",
+    "woven",
+    "to weave"
+   ],
+   "answer": 2,
+   "source": "學測108·綜合測驗第22題",
+   "zh": "這個構想源自一位西班牙設計師到菲律賓旅行時，看到一件用鳳梨葉纖維**編織**而成的傳統菲律賓襯衫。"
+  },
+  {
+   "id": "學測108-23",
+   "exam": "學測",
+   "year": "108",
+   "q": 23,
+   "type": "關係詞／代名詞",
+   "point": "限定詞：bags, shoes, and other + 複數名詞（其他…）",
+   "prev": "The idea was developed when a Spanish designer travelling to the Philippines observed a traditional Filipino shirt woven together with the fibers of pineapple leaves.",
+   "sentence": "After five years of research, she created from pineapple leaves a material which, like real leather, can be used for making bags, shoes, and ____ textile products.",
+   "next": "It is an eco-friendly and biodegradable fiber.",
+   "options": [
+    "else",
+    "those",
+    "other",
+    "such"
+   ],
+   "answer": 2,
+   "source": "學測108·綜合測驗第23題",
+   "zh": "經過五年研究，她用鳳梨葉做出一種材料，可以像真皮一樣用來製作包包、鞋子和**其他**紡織品。"
+  },
+  {
+   "id": "學測108-24",
+   "exam": "學測",
+   "year": "108",
+   "q": 24,
+   "type": "單字詞彙",
+   "point": "advantages（好處；優點）：have advantages for the environment（對環境有好處），前一句說它環保又可分解。considerations（考量）、opportunities（機會）、responsibilities（責任）語意不合。",
+   "prev": "It is an eco-friendly and biodegradable fiber.",
+   "sentence": "This eco-friendly leather has clear ____ for the environment, compared to real leather and synthetic leathers.",
+   "next": "It requires fewer chemicals, making it safer for the workers in factories.",
+   "options": [
+    "advantages",
+    "considerations",
+    "opportunities",
+    "responsibilities"
+   ],
+   "answer": 0,
+   "source": "學測108·綜合測驗第24題",
+   "zh": "和真皮及合成皮相比，這種環保皮革對環境有明顯的**好處**。"
+  },
+  {
+   "id": "學測108-25",
+   "exam": "學測",
+   "year": "108",
+   "q": 25,
+   "type": "連接詞／轉承語",
+   "point": "Due to + 名詞（由於），表原因",
+   "prev": "In addition, the leftover material following the removal of fibers can even be used as a natural fertilizer back in the pineapple fields.",
+   "sentence": "____ its low cost, this innovative material is already being used by many leading fashion companies to make their products.",
+   "next": "",
+   "options": [
+    "Due to",
+    "Nothing but",
+    "In contrast to",
+    "On behalf of"
+   ],
+   "answer": 0,
+   "source": "學測108·綜合測驗第25題",
+   "zh": "**由於**成本低，這種創新材料已經被許多知名時尚品牌用來製作產品。"
+  },
+  {
+   "id": "學測108-26",
+   "exam": "學測",
+   "year": "108",
+   "q": 26,
+   "type": "介系詞搭配",
+   "point": "介系詞：be built into（內建於）",
+   "prev": "Researchers from a university in Japan have developed “diet-glasses” that play tricks with one’s perception of food, which could be helpful to people on a diet.",
+   "sentence": "A camera and a viewing system are built ____ these glasses.",
+   "next": "As the wearer brings the food toward their mouth, the camera captures an image of the food.",
+   "options": [
+    "beyond",
+    "into",
+    "from",
+    "with"
+   ],
+   "answer": 1,
+   "source": "學測108·綜合測驗第26題",
+   "zh": "這副眼鏡**內建**了一台攝影機和顯示系統。"
+  },
+  {
+   "id": "學測108-27",
+   "exam": "學測",
+   "year": "108",
+   "q": 27,
+   "type": "關係詞／代名詞",
+   "point": "代名詞 that 代替前面提過的單數名詞 the size：that of their hand",
+   "prev": "It replays the image back through the glasses after processing it on an attached computer.",
+   "sentence": "The size of the food they are about to eat is magnified while ____ of their hand remains normal.",
+   "next": "Their brain is therefore tricked into thinking they are eating more than they really are.",
+   "options": [
+    "this",
+    "that",
+    "some",
+    "other"
+   ],
+   "answer": 1,
+   "source": "學測108·綜合測驗第27題",
+   "zh": "他們即將吃下的食物尺寸被放大，而他們手的**大小**則維持正常。"
+  },
+  {
+   "id": "學測108-28",
+   "exam": "學測",
+   "year": "108",
+   "q": 28,
+   "type": "連接詞／轉承語",
+   "point": "轉承語：結果→therefore",
+   "prev": "The size of the food they are about to eat is magnified while that of their hand remains normal.",
+   "sentence": "Their brain is ____ tricked into thinking they are eating more than they really are.",
+   "next": "The study showed that participants who wore the glasses ate 9.3% less than those who did not wear them.",
+   "options": [
+    "beforehand",
+    "likewise",
+    "instead",
+    "therefore"
+   ],
+   "answer": 3,
+   "source": "學測108·綜合測驗第28題",
+   "zh": "**因此**，他們的大腦會被騙，以為自己吃得比實際還多。"
+  },
+  {
+   "id": "學測108-29",
+   "exam": "學測",
+   "year": "108",
+   "q": 29,
+   "type": "單字詞彙",
+   "point": "tastier（更美味的）：香味瓶影響的是味道感受。prettier（更漂亮的）、larger（更大的）、healthier（更健康的）都與 scent bottles（香味瓶）無關。",
+   "prev": "The study showed that participants who wore the glasses ate 9.3% less than those who did not wear them.",
+   "sentence": "The team has also developed a special device which uses scent bottles and visual trickery to make the wearers of these glasses think that the plain snack they are eating is ____ than it actually is.",
+   "next": "The device, for instance, can be set to release one’s favorite flavor.",
+   "options": [
+    "prettier",
+    "larger",
+    "healthier",
+    "tastier"
+   ],
+   "answer": 3,
+   "source": "學測108·綜合測驗第29題",
+   "zh": "研究團隊還開發了一種特殊裝置，利用香味瓶和視覺錯覺，讓配戴者以為自己正在吃的普通零食比實際上更**美味**。"
+  },
+  {
+   "id": "學測108-30",
+   "exam": "學測",
+   "year": "108",
+   "q": 30,
+   "type": "單字詞彙",
+   "point": "release（釋放；散發）：裝置釋放香味。impress（使印象深刻）、bother（打擾）、attract（吸引）語意不合。",
+   "prev": "The team has also developed a special device which uses scent bottles and visual trickery to make the wearers of these glasses think that the plain snack they are eating is tastier than it actually is.",
+   "sentence": "The device, for instance, can be set to ____ one’s favorite flavor.",
+   "next": "Recent experiments with this device showed that 80% of the participants were fooled by the smell.",
+   "options": [
+    "impress",
+    "release",
+    "bother",
+    "attract"
+   ],
+   "answer": 1,
+   "source": "學測108·綜合測驗第30題",
+   "zh": "例如，這個裝置可以設定成**散發**你最喜歡的味道。"
+  },
+  {
+   "id": "學測107-16",
+   "exam": "學測",
+   "year": "107",
+   "q": 16,
+   "type": "單字詞彙",
+   "point": "less A than B（與其說是 A，不如說是 B）：前一句說人們以為創造力是少數人才有的特質，However 轉折為「其實人人都有」。more（更多）、better（更好）、worse（更糟）都無法形成這個語意。",
+   "prev": "It has long been assumed that creativity is some unusual trait enjoyed by the few.",
+   "sentence": "However, according to a wide array of scientific and sociological research, creativity is ____ a sign of rare genius than a natural human potential.",
+   "next": "Thus, it can be nurtured and encouraged.",
+   "options": [
+    "more",
+    "less",
+    "better",
+    "worse"
+   ],
+   "answer": 1,
+   "source": "學測107·綜合測驗第16題",
+   "zh": "然而，根據大量科學與社會學研究，創造力**與其說**是罕見天才的象徵，**不如說**是人類天生的潛能。"
+  },
+  {
+   "id": "學測107-17",
+   "exam": "學測",
+   "year": "107",
+   "q": 17,
+   "type": "單字詞彙",
+   "point": "spark（激發；引發）：spark a moment of insight（激發靈感），與後面 stimulate new ideas 呼應。carve（雕刻）、drill（鑽孔；操練）、grind（磨碎）語意不合。",
+   "prev": "Thus, it can be nurtured and encouraged.",
+   "sentence": "It is believed that taking breaks from a problem can help ____ a moment of insight or stimulate new ideas.",
+   "next": "Unconventional solutions can also be explored.",
+   "options": [
+    "spark",
+    "carve",
+    "drill",
+    "grind"
+   ],
+   "answer": 0,
+   "source": "學測107·綜合測驗第17題",
+   "zh": "一般認為，暫時放下問題休息一下，有助於**激發**靈光乍現的時刻，或激發新的想法。"
+  },
+  {
+   "id": "學測107-18",
+   "exam": "學測",
+   "year": "107",
+   "q": 18,
+   "type": "片語",
+   "point": "take part in（參加）：鼓勵員工參與放鬆活動。refer to（提到）、answer for（為…負責）、put up with（忍受）語意不合。",
+   "prev": "Unconventional solutions can also be explored.",
+   "sentence": "That is why some of the most successful companies in the world, such as 3M and Google, encourage their employees to ____ all sorts of relaxing activities, such as playing pinball and wandering about the campus.",
+   "next": "During such breaks, the mind turns inward, where it can subconsciously puzzle over subtle meanings and connections.",
+   "options": [
+    "refer to",
+    "answer for",
+    "take part in",
+    "put up with"
+   ],
+   "answer": 2,
+   "source": "學測107·綜合測驗第18題",
+   "zh": "這就是為什麼一些全球最成功的公司，例如 3M 和 Google，會鼓勵員工**參加**各種放鬆的活動，例如打彈珠台和在園區裡閒晃。"
+  },
+  {
+   "id": "學測107-19",
+   "exam": "學測",
+   "year": "107",
+   "q": 19,
+   "type": "關係詞／代名詞",
+   "point": "關係副詞 where 引導補述子句，指心思轉向的「內在」那個地方，後面接完整子句 it can subconsciously puzzle over…；which 後須接不完整子句",
+   "prev": "That is why some of the most successful companies in the world, such as 3M and Google, encourage their employees to take part in all sorts of relaxing activities, such as playing pinball and wandering about the campus.",
+   "sentence": "During such breaks, the mind turns inward, ____ it can subconsciously puzzle over subtle meanings and connections.",
+   "next": "Another way to increase creativity is to take risks.",
+   "options": [
+    "if",
+    "but",
+    "where",
+    "which"
+   ],
+   "answer": 2,
+   "source": "學測107·綜合測驗第19題",
+   "zh": "在這樣的休息時間，心思會轉向內在，**在那裡**可以下意識地琢磨細微的意義和關聯。"
+  },
+  {
+   "id": "學測107-20",
+   "exam": "學測",
+   "year": "107",
+   "q": 20,
+   "type": "介系詞搭配",
+   "point": "介系詞：beyond（超出…範圍）",
+   "prev": "Another way to increase creativity is to take risks.",
+   "sentence": "This is because many breakthroughs come up when people venture ____ their usual routines or areas of expertise.",
+   "next": "This can be done by, for example, learning new skills or traveling to new countries.",
+   "options": [
+    "into",
+    "without",
+    "under",
+    "beyond"
+   ],
+   "answer": 3,
+   "source": "學測107·綜合測驗第20題",
+   "zh": "這是因為許多突破都出現在人們勇於**跨出**日常習慣或專業領域的時候。"
+  },
+  {
+   "id": "學測107-21",
+   "exam": "學測",
+   "year": "107",
+   "q": 21,
+   "type": "連接詞／轉承語",
+   "point": "讓步連接詞 While（雖然）：前半「對衛生不太好」與後半「對環境很有幫助」語意相反",
+   "prev": "Hair usually gets greasy when it has not been washed because it soaks up oil—hence the need for shampoo!",
+   "sentence": "____ this oil-absorbing feature might not always be so great for our hygiene, it can be great for the environment.",
+   "next": "Matter of Trust, a nonprofit organization, has an innovative solution for removing the large-scale oil spill in the Gulf of Mexico in 2010, using the ultimate renewable resource: human hair, of which there is an unlimited supply.",
+   "options": [
+    "For",
+    "While",
+    "In case",
+    "As long as"
+   ],
+   "answer": 1,
+   "source": "學測107·綜合測驗第21題",
+   "zh": "**雖然**這種吸油的特性對我們的衛生不見得總是好事，但對環境可能大有幫助。"
+  },
+  {
+   "id": "學測107-22",
+   "exam": "學測",
+   "year": "107",
+   "q": 22,
+   "type": "單字詞彙",
+   "point": "resource（資源）：renewable resource（再生資源），頭髮取之不盡。equipment（設備）、ingredient（成分；食材）、product（產品）語意不合。",
+   "prev": "While this oil-absorbing feature might not always be so great for our hygiene, it can be great for the environment.",
+   "sentence": "Matter of Trust, a nonprofit organization, has an innovative solution for removing the large-scale oil spill in the Gulf of Mexico in 2010, using the ultimate renewable ____: human hair, of which there is an unlimited supply.",
+   "next": "Since its founding in 1998, Matter of Trust has collected donations of human hair and animal fur to clean up after the thousands of oil spills that happen each year.",
+   "options": [
+    "equipment",
+    "ingredient",
+    "product",
+    "resource"
+   ],
+   "answer": 3,
+   "source": "學測107·綜合測驗第22題",
+   "zh": "非營利組織「信任之物」想出一個創新的方法，來清除 2010 年墨西哥灣的大規模漏油，使用的是終極的再生**資源**：供應源源不絕的人類頭髮。"
+  },
+  {
+   "id": "學測107-23",
+   "exam": "學測",
+   "year": "107",
+   "q": 23,
+   "type": "片語",
+   "point": "clean up after（善後；清理…留下的髒亂）：清理漏油造成的污染。get away with（做壞事而未受懲罰）、run out of（用完）、look down upon（看不起）語意不合。",
+   "prev": "Matter of Trust, a nonprofit organization, has an innovative solution for removing the large-scale oil spill in the Gulf of Mexico in 2010, using the ultimate renewable resource: human hair, of which there is an unlimited supply.",
+   "sentence": "Since its founding in 1998, Matter of Trust has collected donations of human hair and animal fur to ____ the thousands of oil spills that happen each year.",
+   "next": "The hair and fur are made into mats and brooms and sent to polluted waters to absorb the oil.",
+   "options": [
+    "get away with",
+    "clean up after",
+    "run out of",
+    "look down upon"
+   ],
+   "answer": 1,
+   "source": "學測107·綜合測驗第23題",
+   "zh": "自 1998 年成立以來，「信任之物」一直收集捐贈的人類頭髮和動物毛，用來**清理**每年發生的數千起漏油事件**留下的污染**。"
+  },
+  {
+   "id": "學測107-24",
+   "exam": "學測",
+   "year": "107",
+   "q": 24,
+   "type": "單字詞彙",
+   "point": "polluted（受污染的）：過去分詞當形容詞修飾 waters，表被動「被污染的水域」。pollute（動詞原形）、polluting（造成污染的，主動）、pollution（名詞）詞性或語意不合。",
+   "prev": "Since its founding in 1998, Matter of Trust has collected donations of human hair and animal fur to clean up after the thousands of oil spills that happen each year.",
+   "sentence": "The hair and fur are made into mats and brooms and sent to ____ waters to absorb the oil.",
+   "next": "Across the United States each day, 300,000 pounds of hair and fur are cut.",
+   "options": [
+    "pollute",
+    "polluting",
+    "polluted",
+    "pollution"
+   ],
+   "answer": 2,
+   "source": "學測107·綜合測驗第24題",
+   "zh": "這些頭髮和動物毛被做成墊子和掃把，送到**受污染的**水域去吸收油污。"
+  },
+  {
+   "id": "學測107-25",
+   "exam": "學測",
+   "year": "107",
+   "q": 25,
+   "type": "單字詞彙",
+   "point": "unneeded（不需要的）：剪下來的頭髮本來是廢棄物。overthrown（被推翻的）、excluded（被排除的）、disconnected（斷線的）語意不合。",
+   "prev": "Across the United States each day, 300,000 pounds of hair and fur are cut.",
+   "sentence": "Matter of Trust is helping organize the collection of this ____ hair and fur through thousands of salons, pet groomers, and ranchers.",
+   "next": "Individuals can also speak to local hair stylists and pet groomers about sending in leftover hair and fur.",
+   "options": [
+    "unneeded",
+    "overthrown",
+    "excluded",
+    "disconnected"
+   ],
+   "answer": 0,
+   "source": "學測107·綜合測驗第25題",
+   "zh": "「信任之物」正透過數千家美髮沙龍、寵物美容店和牧場主人，協助收集這些**不需要的**頭髮和動物毛。"
+  },
+  {
+   "id": "學測107-26",
+   "exam": "學測",
+   "year": "107",
+   "q": 26,
+   "type": "關係詞／代名詞",
+   "point": "複合關係代名詞 what（= the thing that）：know what they are dreaming of，what 同時是 know 的受詞與 of 的受詞",
+   "prev": "This kind of dream is called a “lucid dream.”",
+   "sentence": "The term “lucid” means clear; lucid dreamers know that they are dreaming and ____ they are dreaming of.",
+   "next": "It is different from daydreaming.",
+   "options": [
+    "what",
+    "why",
+    "when",
+    "which"
+   ],
+   "answer": 0,
+   "source": "學測107·綜合測驗第26題",
+   "zh": "「lucid」這個字的意思是清楚的；清醒夢的作夢者知道自己在作夢，也知道自己夢到**什麼**。"
+  },
+  {
+   "id": "學測107-27",
+   "exam": "學測",
+   "year": "107",
+   "q": 27,
+   "type": "單字詞彙",
+   "point": "asleep（睡著的）：與後半句 awake（醒著的）形成對比。apart（分開的）、absent（缺席的）、alone（單獨的）語意不合。",
+   "prev": "It is different from daydreaming.",
+   "sentence": "When a person is having a lucid dream, the person’s body is ____; when a person daydreams, his/her body is awake.",
+   "next": "Thus, daydreams are really just waking thoughts.",
+   "options": [
+    "apart",
+    "absent",
+    "alone",
+    "asleep"
+   ],
+   "answer": 3,
+   "source": "學測107·綜合測驗第27題",
+   "zh": "一個人在作清醒夢時，身體是**睡著的**；作白日夢時，身體則是醒著的。"
+  },
+  {
+   "id": "學測107-28",
+   "exam": "學測",
+   "year": "107",
+   "q": 28,
+   "type": "連接詞／轉承語",
+   "point": "more than（不只是）：is more than just…",
+   "prev": "In lucid dreams, however, we are completely immersed in the dream world.",
+   "sentence": "Yet, lucid dreaming is ____ just having a clear dream.",
+   "next": "It is your chance to play around with the extraordinary abilities buried in unused parts of your brain.",
+   "options": [
+    "related to",
+    "aside from",
+    "more than",
+    "nothing but"
+   ],
+   "answer": 2,
+   "source": "學測107·綜合測驗第28題",
+   "zh": "不過，清醒夢**不只是**作一個清楚的夢而已。"
+  },
+  {
+   "id": "學測107-29",
+   "exam": "學測",
+   "year": "107",
+   "q": 29,
+   "type": "連接詞／轉承語",
+   "point": "轉承語：後句是換個方式重述前句→In other words",
+   "prev": "It is your chance to play around with the extraordinary abilities buried in unused parts of your brain.",
+   "sentence": "____, it is a way for you to put the deepest areas of your brain to good use while you’re sleeping.",
+   "next": "You can be an everyday Jane Doe or John Smith while awake but a superhero while sleeping, regardless of who you are in real life.",
+   "options": [
+    "In other words",
+    "By no means",
+    "At any cost",
+    "On the contrary"
+   ],
+   "answer": 0,
+   "source": "學測107·綜合測驗第29題",
+   "zh": "**換句話說**，它是讓你在睡覺時好好運用大腦最深處的一種方式。"
+  },
+  {
+   "id": "學測107-30",
+   "exam": "學測",
+   "year": "107",
+   "q": 30,
+   "type": "連接詞／轉承語",
+   "point": "regardless of + 名詞子句（不論…）",
+   "prev": "In other words, it is a way for you to put the deepest areas of your brain to good use while you’re sleeping.",
+   "sentence": "You can be an everyday Jane Doe or John Smith while awake but a superhero while sleeping, ____ who you are in real life.",
+   "next": "All the obstacles of reality can be set aside and you are able to accomplish tasks that you could never manage in waking reality.",
+   "options": [
+    "such as",
+    "regardless of",
+    "with respect to",
+    "on behalf of"
+   ],
+   "answer": 1,
+   "source": "學測107·綜合測驗第30題",
+   "zh": "**不管**你在現實生活中是誰，醒著的時候可能只是個平凡人，睡著時卻能成為超級英雄。"
+  },
+  {
+   "id": "學測106-16",
+   "exam": "學測",
+   "year": "106",
+   "q": 16,
+   "type": "片語",
+   "point": "look into（往…裡面看；調查）：look into the mirror（照鏡子）。check out（查看；退房）、watch over（看守）、see through（看穿）語意或搭配不合。",
+   "prev": "You begin to notice a bit of pain on your eyelid each time you blink.",
+   "sentence": "You ____ the mirror to find a tiny red spot on the base of your lower lashes.",
+   "next": "These symptoms are probably the beginning of an eye stye.",
+   "options": [
+    "check out",
+    "look into",
+    "watch over",
+    "see through"
+   ],
+   "answer": 1,
+   "source": "學測106·綜合測驗第16題",
+   "zh": "你**看向**鏡子，發現下睫毛根部有一個小紅點。"
+  },
+  {
+   "id": "學測106-17",
+   "exam": "學測",
+   "year": "106",
+   "q": 17,
+   "type": "單字詞彙",
+   "point": "symptoms（症狀）：前文描述眨眼會痛、有小紅點，都是生病的症狀。incidents（事件）、measures（措施）、explanations（解釋）語意不合。",
+   "prev": "You look into the mirror to find a tiny red spot on the base of your lower lashes.",
+   "sentence": "These ____ are probably the beginning of an eye stye.",
+   "next": "An eye stye is a small bump, resembling a pimple, that develops when an oil gland at the edge of an eyelid becomes infected by bacteria.",
+   "options": [
+    "incidents",
+    "measures",
+    "symptoms",
+    "explanations"
+   ],
+   "answer": 2,
+   "source": "學測106·綜合測驗第17題",
+   "zh": "這些**症狀**很可能是針眼的初期。"
+  },
+  {
+   "id": "學測106-18",
+   "exam": "學測",
+   "year": "106",
+   "q": 18,
+   "type": "單字詞彙",
+   "point": "transferred（轉移）：be transferred to（被轉移到），細菌從鼻子跑到眼睛。attracted（被吸引）、contributed（貢獻）、exposed（暴露）語意或搭配不合。",
+   "prev": "An eye stye is a small bump, resembling a pimple, that develops when an oil gland at the edge of an eyelid becomes infected by bacteria.",
+   "sentence": "These bacteria are found in the nose and are easily ____ to the eye when you rub your nose, then your eye.",
+   "next": "Pus will build up in the center of the stye, causing a yellowish spot.",
+   "options": [
+    "attracted",
+    "contributed",
+    "exposed",
+    "transferred"
+   ],
+   "answer": 3,
+   "source": "學測106·綜合測驗第18題",
+   "zh": "這些細菌存在於鼻子裡，當你先揉鼻子、再揉眼睛時，很容易就被**轉移**到眼睛。"
+  },
+  {
+   "id": "學測106-19",
+   "exam": "學測",
+   "year": "106",
+   "q": 19,
+   "type": "連接詞／轉承語",
+   "point": "讓步連接詞：前句說「看起來不舒服」，後句說「通常無害」，語意相反→Although",
+   "prev": "Usually a stye is accompanied by a swollen eye.",
+   "sentence": "____ a stye can look unpleasant at times, it is usually harmless and doesn’t cause vision problems.",
+   "next": "Most styes heal on their own within a few days.",
+   "options": [
+    "As",
+    "If",
+    "Unless",
+    "Although"
+   ],
+   "answer": 3,
+   "source": "學測106·綜合測驗第19題",
+   "zh": "**雖然**針眼有時看起來不太舒服，但通常是無害的，也不會造成視力問題。"
+  },
+  {
+   "id": "學測106-20",
+   "exam": "學測",
+   "year": "106",
+   "q": 20,
+   "type": "介系詞搭配",
+   "point": "介系詞：press A against B（把 A 壓在 B 上）",
+   "prev": "Most styes heal on their own within a few days.",
+   "sentence": "You might speed up healing time by gently pressing a warm washcloth ____ your eyelid for 10 minutes, 3 or 4 times a day.",
+   "next": "Make sure you don’t squeeze or pop a stye like you would a pimple.",
+   "options": [
+    "against",
+    "among",
+    "about",
+    "after"
+   ],
+   "answer": 0,
+   "source": "學測106·綜合測驗第20題",
+   "zh": "你可以用溫熱的毛巾輕輕**敷在**眼皮上，每次 10 分鐘，一天 3 到 4 次，或許能加快復原。"
+  },
+  {
+   "id": "學測106-21",
+   "exam": "學測",
+   "year": "106",
+   "q": 21,
+   "type": "連接詞／轉承語",
+   "point": "let alone（更不用說）：用在否定句後，補充更難達成的事",
+   "prev": "Shoes are hugely important for protecting our feet, especially in places like Africa, where healthcare provision is limited.",
+   "sentence": "Unfortunately, shoes are not always readily available for people living in poverty, ____ shoes that are the right size.",
+   "next": "Almost as soon as a child receives shoes to wear, he/she is likely to have grown out of them.",
+   "options": [
+    "except for",
+    "provided with",
+    "far from",
+    "let alone"
+   ],
+   "answer": 3,
+   "source": "學測106·綜合測驗第21題",
+   "zh": "不幸的是，生活貧困的人不一定隨時有鞋子可穿，**更不用說**尺寸合腳的鞋子了。"
+  },
+  {
+   "id": "學測106-22",
+   "exam": "學測",
+   "year": "106",
+   "q": 22,
+   "type": "片語",
+   "point": "make do with（將就；湊合著用）：鞋子太小也只能湊合著穿。get done（完成）、get lost（迷路）、make believe（假裝）語意不合。",
+   "prev": "Almost as soon as a child receives shoes to wear, he/she is likely to have grown out of them.",
+   "sentence": "Then the child has to ____ with shoes that are too small.",
+   "next": "The Shoe That Grows, created by a charity called Because International, changes all this.",
+   "options": [
+    "get done",
+    "get lost",
+    "make do",
+    "make believe"
+   ],
+   "answer": 2,
+   "source": "學測106·綜合測驗第22題",
+   "zh": "接著，孩子只好**將就**穿太小的鞋子。"
+  },
+  {
+   "id": "學測106-23",
+   "exam": "學測",
+   "year": "106",
+   "q": 23,
+   "type": "單字詞彙",
+   "point": "adjust（調整）：會長大的鞋可以調整大小，下文說能在三處伸展。explore（探索）、insert（插入）、overlook（忽略；俯瞰）語意不合。",
+   "prev": "The Shoe That Grows, created by a charity called Because International, changes all this.",
+   "sentence": "It allows children to ____ their shoes’ size as their feet grow.",
+   "next": "The innovative footwear resembles a common sandal and is made of leather straps and rubber soles, a material similar to that used in tires.",
+   "options": [
+    "adjust",
+    "explore",
+    "insert",
+    "overlook"
+   ],
+   "answer": 0,
+   "source": "學測106·綜合測驗第23題",
+   "zh": "它讓孩子可以隨著腳長大而**調整**鞋子的尺寸。"
+  },
+  {
+   "id": "學測106-24",
+   "exam": "學測",
+   "year": "106",
+   "q": 24,
+   "type": "介系詞搭配",
+   "point": "介系詞：come in + 尺寸／顏色（有…尺寸）",
+   "prev": "The innovative footwear resembles a common sandal and is made of leather straps and rubber soles, a material similar to that used in tires.",
+   "sentence": "They come ____ two sizes, and can expand in three places.",
+   "next": "The straps on the heel and toe control the length of the shoe, while the two on either side allow for different widths.",
+   "options": [
+    "by",
+    "in",
+    "from",
+    "down"
+   ],
+   "answer": 1,
+   "source": "學測106·綜合測驗第24題",
+   "zh": "它們**有**兩種尺寸，並且可以在三個地方加大。"
+  },
+  {
+   "id": "學測106-25",
+   "exam": "學測",
+   "year": "106",
+   "q": 25,
+   "type": "連接詞／轉承語",
+   "point": "對比連接詞 while（而）：鞋跟與腳趾的帶子控制長度，兩側的帶子則調整寬度，兩件事互相對照",
+   "prev": "They come in two sizes, and can expand in three places.",
+   "sentence": "The straps on the heel and toe control the length of the shoe, ____ the two on either side allow for different widths.",
+   "next": "With this special design, the shoes can “grow” up to five sizes and last for at least five years.",
+   "options": [
+    "whether",
+    "while",
+    "with",
+    "for"
+   ],
+   "answer": 1,
+   "source": "學測106·綜合測驗第25題",
+   "zh": "鞋跟與腳趾的帶子控制鞋子的長度，**而**兩側的帶子則可以調整不同的寬度。"
+  },
+  {
+   "id": "學測106-26",
+   "exam": "學測",
+   "year": "106",
+   "q": 26,
+   "type": "連接詞／轉承語",
+   "point": "轉承語：前文為原因（天氣影響心情），後文為推論→Accordingly（因此）",
+   "prev": "Research has proven that weather plays a part in our moods: Warmer temperatures and exposure to sunshine increase positive thinking, whereas cold, rainy days bring anxiety and fatigue.",
+   "sentence": "____, many people believe that bad weather can reduce productivity and efficiency.",
+   "next": "There is, however, a significant gap between such beliefs and the actual effect of weather on people’s performance at work.",
+   "options": [
+    "At most",
+    "In contrast",
+    "Literally",
+    "Accordingly"
+   ],
+   "answer": 3,
+   "source": "學測106·綜合測驗第26題",
+   "zh": "**因此**，許多人認為壞天氣會降低生產力和效率。"
+  },
+  {
+   "id": "學測106-27",
+   "exam": "學測",
+   "year": "106",
+   "q": 27,
+   "type": "單字詞彙",
+   "point": "gap（落差；差距）：a gap between A and B（A 與 B 之間的落差），however 表示看法與事實不符。link（關聯）、clue（線索）、ratio（比例）語意不合。",
+   "prev": "Accordingly, many people believe that bad weather can reduce productivity and efficiency.",
+   "sentence": "There is, however, a significant ____ between such beliefs and the actual effect of weather on people’s performance at work.",
+   "next": "Using empirical data from laboratory experiments as well as observations of a mid-sized Japanese bank in real life, researchers find that weather conditions indeed influence a worker’s focus.",
+   "options": [
+    "gap",
+    "link",
+    "clue",
+    "ratio"
+   ],
+   "answer": 0,
+   "source": "學測106·綜合測驗第27題",
+   "zh": "然而，這樣的看法和天氣對人們工作表現的實際影響之間，存在相當大的**落差**。"
+  },
+  {
+   "id": "學測106-28",
+   "exam": "學測",
+   "year": "106",
+   "q": 28,
+   "type": "連接詞／轉承語",
+   "point": "連接片語：A as well as B，連接兩個並列名詞",
+   "prev": "There is, however, a significant gap between such beliefs and the actual effect of weather on people’s performance at work.",
+   "sentence": "Using empirical data from laboratory experiments ____ observations of a mid-sized Japanese bank in real life, researchers find that weather conditions indeed influence a worker’s focus.",
+   "next": "When the weather is bad, individuals tend to focus more on their work rather than thinking about activities they could engage in outside of work.",
+   "options": [
+    "out of",
+    "as well as",
+    "in case of",
+    "due to"
+   ],
+   "answer": 1,
+   "source": "學測106·綜合測驗第28題",
+   "zh": "研究人員利用實驗室實驗的實證資料，**以及**對日本一家中型銀行的實地觀察，發現天氣狀況確實會影響工作者的專注力。"
+  },
+  {
+   "id": "學測106-29",
+   "exam": "學測",
+   "year": "106",
+   "q": 29,
+   "type": "片語",
+   "point": "engage in（從事；參與）：activities they could engage in（可以從事的活動）。break off（中斷）、approve of（贊成）、take over（接管）語意不合。",
+   "prev": "Using empirical data from laboratory experiments as well as observations of a mid-sized Japanese bank in real life, researchers find that weather conditions indeed influence a worker’s focus.",
+   "sentence": "When the weather is bad, individuals tend to focus more on their work rather than thinking about activities they could ____ outside of work.",
+   "next": "But photos showing outdoor activities, such as sailing on a sunny day or walking in the woods, can greatly distract workers and thus lower their productivity.",
+   "options": [
+    "break off",
+    "approve of",
+    "engage in",
+    "take over"
+   ],
+   "answer": 2,
+   "source": "學測106·綜合測驗第29題",
+   "zh": "天氣不好時，人們往往更專注在工作上，而不會去想下班後可以**從事**哪些活動。"
+  },
+  {
+   "id": "學測106-30",
+   "exam": "學測",
+   "year": "106",
+   "q": 30,
+   "type": "單字詞彙",
+   "point": "lower（降低）：分心會讓生產力下降，thus 表示結果。reform（改革）、switch（轉換）、demand（要求）語意不合。",
+   "prev": "When the weather is bad, individuals tend to focus more on their work rather than thinking about activities they could engage in outside of work.",
+   "sentence": "But photos showing outdoor activities, such as sailing on a sunny day or walking in the woods, can greatly distract workers and thus ____ their productivity.",
+   "next": "The findings conclude that workers are actually most productive when the weather is lousy—and only if nothing reminds them of good weather.",
+   "options": [
+    "reform",
+    "lower",
+    "switch",
+    "demand"
+   ],
+   "answer": 1,
+   "source": "學測106·綜合測驗第30題",
+   "zh": "但呈現戶外活動的照片，例如晴天出海航行或在樹林裡散步，可能會讓工作者大大分心，因而**降低**生產力。"
+  },
+  {
+   "id": "指考110-11",
+   "exam": "指考",
+   "year": "110",
+   "q": 11,
+   "type": "單字詞彙",
+   "point": "chronic（長期的；慢性的）：與後半句 short-term（短期的）形成對比。contagious（傳染性的）、diagnostic（診斷的）、tedious（冗長乏味的）語意不合。",
+   "prev": "We all know that too much stress is not good for our health, but too little is not ideal, either.",
+   "sentence": "While ____ stress can be dangerous to the body, short-term stress is actually healthy.",
+   "next": "Short-term stress triggers the production of protective chemicals in our body and strengthens the body’s defenses.",
+   "options": [
+    "contagious",
+    "chronic",
+    "diagnostic",
+    "tedious"
+   ],
+   "answer": 1,
+   "source": "指考110·綜合測驗第11題",
+   "zh": "雖然**長期的**壓力可能對身體有害，但短期的壓力其實是健康的。"
+  },
+  {
+   "id": "指考110-12",
+   "exam": "指考",
+   "year": "110",
+   "q": 12,
+   "type": "連接詞／轉承語",
+   "point": "時間連接詞 When（當…時）：身體處於脆弱狀態時，短暫的壓力會啟動修復系統；Unless、Whereas、Till 語意都不合",
+   "prev": "Short-term stress triggers the production of protective chemicals in our body and strengthens the body’s defenses.",
+   "sentence": "____ our body is in a vulnerable situation, a burst of stress will quickly mobilize the body’s own repair system to defend the damaged areas.",
+   "next": "This shields us from physical discomfort and sickness.",
+   "options": [
+    "Till",
+    "Unless",
+    "When",
+    "Whereas"
+   ],
+   "answer": 2,
+   "source": "指考110·綜合測驗第12題",
+   "zh": "**當**身體處於脆弱的狀態時，一陣短暫的壓力會迅速啟動身體本身的修復系統，保護受損的部位。"
+  },
+  {
+   "id": "指考110-13",
+   "exam": "指考",
+   "year": "110",
+   "q": 13,
+   "type": "單字詞彙",
+   "point": "shield A from B（保護 A 免於 B）：前一句說壓力會啟動修復系統。conceals（隱藏）、derives（源自）、transforms（轉變）語意或搭配不合。",
+   "prev": "When our body is in a vulnerable situation, a burst of stress will quickly mobilize the body’s own repair system to defend the damaged areas.",
+   "sentence": "This ____ us from physical discomfort and sickness.",
+   "next": "Small amounts of stress hormones may even sharpen our memory.",
+   "options": [
+    "conceals",
+    "derives",
+    "shields",
+    "transforms"
+   ],
+   "answer": 2,
+   "source": "指考110·綜合測驗第13題",
+   "zh": "這能**保護**我們免於身體不適和生病。"
+  },
+  {
+   "id": "指考110-14",
+   "exam": "指考",
+   "year": "110",
+   "q": 14,
+   "type": "單字詞彙",
+   "point": "better（更好）：far better than（遠比…更好），呼應前一句「少量壓力荷爾蒙能提升記憶力」。harder（更努力）、less（更少）、further（更遠）語意不合。",
+   "prev": "Small amounts of stress hormones may even sharpen our memory.",
+   "sentence": "A recent study found that when rats were forced to swim—an activity that places them under stress for a short while—they remembered their way through mazes far ____ than rats that were in a relaxed state.",
+   "next": "The key to a healthy lifestyle is to keep our stress level balanced.",
+   "options": [
+    "harder",
+    "better",
+    "less",
+    "further"
+   ],
+   "answer": 1,
+   "source": "指考110·綜合測驗第14題",
+   "zh": "一項近期研究發現，老鼠被迫游泳（一種讓牠們短暫承受壓力的活動）之後，走迷宮時記路的能力遠比放鬆狀態下的老鼠**好**。"
+  },
+  {
+   "id": "指考110-15",
+   "exam": "指考",
+   "year": "110",
+   "q": 15,
+   "type": "動詞形式",
+   "point": "keep + O + 形容詞／過去分詞：keep our stress level balanced",
+   "prev": "A recent study found that when rats were forced to swim—an activity that places them under stress for a short while—they remembered their way through mazes far better than rats that were in a relaxed state.",
+   "sentence": "The key to a healthy lifestyle is to keep our stress level ____.",
+   "next": "Too much stress will make us cranky and sick.",
+   "options": [
+    "balanced",
+    "balancing",
+    "balances",
+    "to balance"
+   ],
+   "answer": 0,
+   "source": "指考110·綜合測驗第15題",
+   "zh": "健康生活的關鍵，在於讓壓力程度維持**平衡**。"
+  },
+  {
+   "id": "指考110-16",
+   "exam": "指考",
+   "year": "110",
+   "q": 16,
+   "type": "單字詞彙",
+   "point": "location（位置）：下文依序說明流星體在太空、流星在大氣層、隕石落到地面，差別在於所在位置。size（大小）、weight（重量）、temperature（溫度）語意不合。",
+   "prev": "Many people find these words confusing.",
+   "sentence": "However, the difference is all about their ____.",
+   "next": "Meteoroids are far up in the sky.",
+   "options": [
+    "size",
+    "weight",
+    "location",
+    "temperature"
+   ],
+   "answer": 2,
+   "source": "指考110·綜合測驗第16題",
+   "zh": "然而，它們的差別完全在於所在的**位置**。"
+  },
+  {
+   "id": "指考110-17",
+   "exam": "指考",
+   "year": "110",
+   "q": 17,
+   "type": "動詞形式",
+   "point": "情態助動詞：may be（可能是），描述現在的可能性",
+   "prev": "Some are very large and may be hundreds of feet wide.",
+   "sentence": "Others ____ the size of a small stone.",
+   "next": "Most meteoroids travel around the sun in space and stay away from the Earth.",
+   "options": [
+    "may be",
+    "would be",
+    "must have been",
+    "could have been"
+   ],
+   "answer": 0,
+   "source": "指考110·綜合測驗第17題",
+   "zh": "有些**可能**只有小石頭那麼大。"
+  },
+  {
+   "id": "指考110-18",
+   "exam": "指考",
+   "year": "110",
+   "q": 18,
+   "type": "片語",
+   "point": "heat up（變熱；升溫）：摩擦生熱，之後燃燒。wear out（磨損；使疲憊）、turn off（關掉）、break through（突破）語意不合。",
+   "prev": "However, sometimes a meteoroid will enter the Earth’s atmosphere.",
+   "sentence": "Friction with the atmosphere will cause it to ____ and burn while traveling at high speed.",
+   "next": "As a meteoroid begins to burn in the atmosphere, it leaves a streak of light.",
+   "options": [
+    "wear out",
+    "turn off",
+    "break through",
+    "heat up"
+   ],
+   "answer": 3,
+   "source": "指考110·綜合測驗第18題",
+   "zh": "與大氣的摩擦會讓它在高速行進時**升溫**並燃燒。"
+  },
+  {
+   "id": "指考110-19",
+   "exam": "指考",
+   "year": "110",
+   "q": 19,
+   "type": "單字詞彙",
+   "point": "survives（倖存；撐過）：前一句說大多數流星會完全氣化，沒燒完的才會落地。approaches（接近）、confirms（證實）、targets（以…為目標）語意不合。",
+   "prev": "Most meteors vaporize completely before they hit the ground.",
+   "sentence": "If any meteor ____ its fiery journey through the atmosphere and lands on Earth, it is called a meteorite.",
+   "next": "Large meteorites can cause great explosions and much destruction on the surface of the Earth.",
+   "options": [
+    "approaches",
+    "survives",
+    "confirms",
+    "targets"
+   ],
+   "answer": 1,
+   "source": "指考110·綜合測驗第19題",
+   "zh": "如果有流星在穿越大氣層的炙熱旅程中**倖存**，落到地球上，就叫做隕石。"
+  },
+  {
+   "id": "指考110-20",
+   "exam": "指考",
+   "year": "110",
+   "q": 20,
+   "type": "連接詞／轉承語",
+   "point": "轉承語 For example（例如）：前文說隕石撞擊會形成坑洞，此句以 Barringer Crater 為例",
+   "prev": "Large meteorites can cause great explosions and much destruction on the surface of the Earth.",
+   "sentence": "____, Barringer Crater in the American state of Arizona, measuring 1,200 m in diameter and some 170 m deep, was produced by a meteorite impact.",
+   "next": "",
+   "options": [
+    "Indeed",
+    "Nevertheless",
+    "For example",
+    "In short"
+   ],
+   "answer": 2,
+   "source": "指考110·綜合測驗第20題",
+   "zh": "**例如**，美國亞利桑那州的巴林傑隕石坑，直徑 1,200 公尺、深約 170 公尺，就是隕石撞擊形成的。"
+  },
+  {
+   "id": "指考109補考-11",
+   "exam": "指考",
+   "year": "109補考",
+   "q": 11,
+   "type": "單字詞彙",
+   "point": "Scrambled（混亂的；弄混的）：scrambled name phenomenon（名字混淆的現象），呼應前一句 mix up their children’s names。Forgetful（健忘的）、Complicated（複雜的）、Alternative（替代的）語意不合；下文也說明這不是記憶力差造成的。",
+   "prev": "Mothers often mix up their children’s names, but studies show that moms are not the only ones who make this mistake.",
+   "sentence": "____ name phenomenon turns out to be very common.",
+   "next": "Almost everyone sometimes mixes up the names of their family and friends.",
+   "options": [
+    "Forgetful",
+    "Complicated",
+    "Scrambled",
+    "Alternative"
+   ],
+   "answer": 2,
+   "source": "指考109補考·綜合測驗第11題",
+   "zh": "**叫錯名字**的現象其實非常普遍。"
+  },
+  {
+   "id": "指考109補考-12",
+   "exam": "指考",
+   "year": "109補考",
+   "q": 12,
+   "type": "單字詞彙",
+   "point": "classifies（分類）：下文說大腦把名字分成家人、好友等不同群組。defends（保衛）、predicts（預測）、translates（翻譯）語意不合。",
+   "prev": "It is not caused by a bad memory or by aging processes that affect brain functioning.",
+   "sentence": "It is simply a result of the way our brain ____ those we love.",
+   "next": "When our brain is attempting to retrieve a name so that we can say it, it is likely that another name in the same group will come to our lips instead of the one we meant to say.",
+   "options": [
+    "classifies",
+    "defends",
+    "predicts",
+    "translates"
+   ],
+   "answer": 0,
+   "source": "指考109補考·綜合測驗第12題",
+   "zh": "這純粹是我們的大腦**歸類**所愛之人的方式造成的。"
+  },
+  {
+   "id": "指考109補考-13",
+   "exam": "指考",
+   "year": "109補考",
+   "q": 13,
+   "type": "連接詞／轉承語",
+   "point": "instead of（而不是）",
+   "prev": "It is simply a result of the way our brain classifies those we love.",
+   "sentence": "When our brain is attempting to retrieve a name so that we can say it, it is likely that another name in the same group will come to our lips ____ the one we meant to say.",
+   "next": "That is because in order to find the name we are looking for, we are essentially flipping through the whole set of names in that group, which includes all our beloved family members.",
+   "options": [
+    "as for",
+    "instead of",
+    "due to",
+    "far beyond"
+   ],
+   "answer": 1,
+   "source": "指考109補考·綜合測驗第13題",
+   "zh": "當大腦試著提取某個名字好讓我們說出口時，很可能會脫口而出同一群組裡的另一個名字，**而不是**我們本來想說的那個。"
+  },
+  {
+   "id": "指考109補考-14",
+   "exam": "指考",
+   "year": "109補考",
+   "q": 14,
+   "type": "片語",
+   "point": "flip through（快速翻閱）：像翻名冊一樣在一組名字裡搜尋。making up（編造；組成）、catching on（流行起來；理解）、skipping off（溜走）語意不合。",
+   "prev": "When our brain is attempting to retrieve a name so that we can say it, it is likely that another name in the same group will come to our lips instead of the one we meant to say.",
+   "sentence": "That is because in order to find the name we are looking for, we are essentially ____ the whole set of names in that group, which includes all our beloved family members.",
+   "next": "Scientists also report that the category to which the person belongs (family, close friends, etc.) is far more influential in causing a mix-up than any phonetic similarity between names.",
+   "options": [
+    "making up",
+    "catching on",
+    "skipping off",
+    "flipping through"
+   ],
+   "answer": 3,
+   "source": "指考109補考·綜合測驗第14題",
+   "zh": "這是因為為了找到我們要的名字，我們基本上是在**快速翻找**那一組裡的所有名字，其中包括我們所有心愛的家人。"
+  },
+  {
+   "id": "指考109補考-15",
+   "exam": "指考",
+   "year": "109補考",
+   "q": 15,
+   "type": "關係詞／代名詞",
+   "point": "介系詞＋關係代名詞：belong to the category → the category to which the person belongs",
+   "prev": "That is because in order to find the name we are looking for, we are essentially flipping through the whole set of names in that group, which includes all our beloved family members.",
+   "sentence": "Scientists also report that the category ____ the person belongs (family, close friends, etc.) is far more influential in causing a mix-up than any phonetic similarity between names.",
+   "next": "Names that sound alike do not usually trigger the mix-up.",
+   "options": [
+    "by whom",
+    "to which",
+    "in that",
+    "for what"
+   ],
+   "answer": 1,
+   "source": "指考109補考·綜合測驗第15題",
+   "zh": "科學家也指出，造成名字叫錯的原因，對方**所屬的**類別（家人、好友等）影響遠比名字發音相似更大。"
+  },
+  {
+   "id": "指考109補考-16",
+   "exam": "指考",
+   "year": "109補考",
+   "q": 16,
+   "type": "動詞形式",
+   "point": "現在分詞修飾名詞：the sunlight (which is) falling on it",
+   "prev": "The Jupiter-sized planet, known as TrES-2b, is located in another solar system some 750 million light years away from Earth.",
+   "sentence": "Reflecting less than one percent of the sunlight ____ on it, TrES-2b is less reflective than black acrylic paint, and is blacker than coal.",
+   "next": "The only light that comes from TrES-2b is a faint red glow, similar to the heated coils on an electric stove or a very dim light bulb.",
+   "options": [
+    "falls",
+    "falling",
+    "fallen",
+    "to fall"
+   ],
+   "answer": 1,
+   "source": "指考109補考·綜合測驗第16題",
+   "zh": "TrES-2b 只反射不到百分之一**照射**在它上面的陽光，反光程度比黑色壓克力顏料還低，比煤炭還黑。"
+  },
+  {
+   "id": "指考109補考-17",
+   "exam": "指考",
+   "year": "109補考",
+   "q": 17,
+   "type": "介系詞搭配",
+   "point": "形容詞＋介系詞：similar to",
+   "prev": "Reflecting less than one percent of the sunlight falling on it, TrES-2b is less reflective than black acrylic paint, and is blacker than coal.",
+   "sentence": "The only light that comes from TrES-2b is a faint red glow, ____ the heated coils on an electric stove or a very dim light bulb.",
+   "next": "Researchers believe this results from its extremely hot atmosphere, which is as high as 1,800°F (980°C), thanks to its closeness to its sun—its source of energy.",
+   "options": [
+    "associated with",
+    "committed to",
+    "familiar with",
+    "similar to"
+   ],
+   "answer": 3,
+   "source": "指考109補考·綜合測驗第17題",
+   "zh": "TrES-2b 發出的光只有微弱的紅光，**類似**電爐上加熱的線圈，或是非常昏暗的燈泡。"
+  },
+  {
+   "id": "指考109補考-18",
+   "exam": "指考",
+   "year": "109補考",
+   "q": 18,
+   "type": "連接詞／轉承語",
+   "point": "thanks to + 名詞（由於；多虧）",
+   "prev": "The only light that comes from TrES-2b is a faint red glow, similar to the heated coils on an electric stove or a very dim light bulb.",
+   "sentence": "Researchers believe this results from its extremely hot atmosphere, which is as high as 1,800°F (980°C), ____ its closeness to its sun—its source of energy.",
+   "next": "So how does this planet manage to absorb about 99% of the light it receives from its sun?",
+   "options": [
+    "thanks to",
+    "regardless of",
+    "in addition to",
+    "in terms of"
+   ],
+   "answer": 0,
+   "source": "指考109補考·綜合測驗第18題",
+   "zh": "研究人員認為，這是因為它的大氣極為炙熱，高達華氏 1,800 度（攝氏 980 度），**這要歸因於**它離它的太陽（能量來源）很近。"
+  },
+  {
+   "id": "指考109補考-19",
+   "exam": "指考",
+   "year": "109補考",
+   "q": 19,
+   "type": "連接詞／轉承語",
+   "point": "讓步連接詞 While（雖然）：研究人員雖然不完全確定，仍提出可能的原因",
+   "prev": "So how does this planet manage to absorb about 99% of the light it receives from its sun?",
+   "sentence": "____ researchers are not completely sure, they believe it could be because its atmosphere is composed of light-absorbing chemicals like vaporized sodium or even some elements whose existence is not yet known.",
+   "next": "Although they may never be able to tell exactly how the planet remains so stealthily hidden, scientists are sure of one thing—there are many more even darker planets out there just waiting to be discovered!",
+   "options": [
+    "Once",
+    "When",
+    "While",
+    "If"
+   ],
+   "answer": 2,
+   "source": "指考109補考·綜合測驗第19題",
+   "zh": "**雖然**研究人員還不完全確定，但他們認為這可能是因為它的大氣由汽化的鈉等吸光化學物質，甚至一些尚未被發現的元素所組成。"
+  },
+  {
+   "id": "指考109補考-20",
+   "exam": "指考",
+   "year": "109補考",
+   "q": 20,
+   "type": "單字詞彙",
+   "point": "tell（知道；分辨）：can tell exactly how…（能確切得知如何…）。make（製作）、count（計算）、read（閱讀）語意不合。",
+   "prev": "While researchers are not completely sure, they believe it could be because its atmosphere is composed of light-absorbing chemicals like vaporized sodium or even some elements whose existence is not yet known.",
+   "sentence": "Although they may never be able to ____ exactly how the planet remains so stealthily hidden, scientists are sure of one thing—there are many more even darker planets out there just waiting to be discovered!",
+   "next": "",
+   "options": [
+    "make",
+    "count",
+    "read",
+    "tell"
+   ],
+   "answer": 3,
+   "source": "指考109補考·綜合測驗第20題",
+   "zh": "雖然他們也許永遠無法確切**知道**這顆行星如何如此隱密地藏身，但科學家確定一件事：宇宙中還有許多更暗的行星等著被發現！"
+  },
+  {
+   "id": "指考109-11",
+   "exam": "指考",
+   "year": "109",
+   "q": 11,
+   "type": "片語",
+   "point": "serve as（擔任；作為）：後接職務 the supervisor and coordinator。fights for（為…奮鬥）、persists in（堅持）、corresponds to（與…一致）語意不合。",
+   "prev": "The Act demonstrated the government’s efforts to protect consumers’ rights and interests.",
+   "sentence": "The Consumer Protection Commission, the current Consumer Protection Committee, ____ the supervisor and coordinator for the various consumer protection organizations that put this law into practice.",
+   "next": "In order to improve the well-being of consumers in Taiwan, the Committee advocates fair trade and reasonable pricing for goods and services.",
+   "options": [
+    "serves as",
+    "fights for",
+    "persists in",
+    "corresponds to"
+   ],
+   "answer": 0,
+   "source": "指考109·綜合測驗第11題",
+   "zh": "行政院消費者保護委員會（即現在的消費者保護會）**擔任**監督與協調的角色，負責統籌執行這項法律的各個消保組織。"
+  },
+  {
+   "id": "指考109-12",
+   "exam": "指考",
+   "year": "109",
+   "q": 12,
+   "type": "單字詞彙",
+   "point": "reasonable（合理的）：reasonable pricing（合理定價），與 fair trade 並列。prominent（顯著的）、essential（必要的）、intensive（密集的）語意不合。",
+   "prev": "The Consumer Protection Commission, the current Consumer Protection Committee, serves as the supervisor and coordinator for the various consumer protection organizations that put this law into practice.",
+   "sentence": "In order to improve the well-being of consumers in Taiwan, the Committee advocates fair trade and ____ pricing for goods and services.",
+   "next": "The Committee also organizes educational programs to raise consumer awareness, and is active in assisting consumers involved in disputes with businesses or manufacturers.",
+   "options": [
+    "prominent",
+    "essential",
+    "reasonable",
+    "intensive"
+   ],
+   "answer": 2,
+   "source": "指考109·綜合測驗第12題",
+   "zh": "為了增進台灣消費者的福祉，該委員會提倡公平交易，以及商品和服務的**合理**定價。"
+  },
+  {
+   "id": "指考109-13",
+   "exam": "指考",
+   "year": "109",
+   "q": 13,
+   "type": "單字詞彙",
+   "point": "disputes（糾紛；爭議）：消費者與商家之間的爭端。references（參考）、shortages（短缺）、purchases（購買）語意不合。",
+   "prev": "In order to improve the well-being of consumers in Taiwan, the Committee advocates fair trade and reasonable pricing for goods and services.",
+   "sentence": "The Committee also organizes educational programs to raise consumer awareness, and is active in assisting consumers involved in ____ with businesses or manufacturers.",
+   "next": "Since its establishment, the Consumer Protection Committee has taken measures that emphasize product safety and sanitation.",
+   "options": [
+    "references",
+    "shortages",
+    "purchases",
+    "disputes"
+   ],
+   "answer": 3,
+   "source": "指考109·綜合測驗第13題",
+   "zh": "委員會也舉辦教育活動來提升消費者意識，並積極協助與商家或製造商發生**糾紛**的消費者。"
+  },
+  {
+   "id": "指考109-14",
+   "exam": "指考",
+   "year": "109",
+   "q": 14,
+   "type": "動詞形式",
+   "point": "that 子句中的動詞：主詞 all labels and advertisements 為複數→conform",
+   "prev": "Since its establishment, the Consumer Protection Committee has taken measures that emphasize product safety and sanitation.",
+   "sentence": "These measures also ensure that all labels and advertisements ____ to regulations.",
+   "next": "In addition, the Committee collaborates with various international consumer protection organizations to respond to problems involving cross-border trade and business.",
+   "options": [
+    "conform",
+    "conformed",
+    "conforming",
+    "to conform"
+   ],
+   "answer": 0,
+   "source": "指考109·綜合測驗第14題",
+   "zh": "這些措施也確保所有標示和廣告都**符合**規定。"
+  },
+  {
+   "id": "指考109-15",
+   "exam": "指考",
+   "year": "109",
+   "q": 15,
+   "type": "連接詞／轉承語",
+   "point": "介系詞 With（憑藉；有了）表原因或手段：With its regulatory power…，委員會才能扮演關鍵角色",
+   "prev": "In addition, the Committee collaborates with various international consumer protection organizations to respond to problems involving cross-border trade and business.",
+   "sentence": "____ its regulatory power and administrative resources, the Committee plays a crucial role in protecting consumers in Taiwan.",
+   "next": "",
+   "options": [
+    "From",
+    "With",
+    "Despite",
+    "Beyond"
+   ],
+   "answer": 1,
+   "source": "指考109·綜合測驗第15題",
+   "zh": "**憑藉**其監管權力和行政資源，委員會在保護台灣消費者方面扮演關鍵角色。"
+  },
+  {
+   "id": "指考109-16",
+   "exam": "指考",
+   "year": "109",
+   "q": 16,
+   "type": "單字詞彙",
+   "point": "disorder（凌亂；混亂）：指前一句提到的 untidy laboratory（凌亂的實驗室）。merit（優點）、opinion（意見）、scandal（醜聞）語意不合。",
+   "prev": "Fleming had long been known for having an untidy laboratory.",
+   "sentence": "One morning in 1928, this ____ proved very fortunate.",
+   "next": "It was his first day coming back to work after a long vacation.",
+   "options": [
+    "merit",
+    "opinion",
+    "scandal",
+    "disorder"
+   ],
+   "answer": 3,
+   "source": "指考109·綜合測驗第16題",
+   "zh": "1928 年的某天早上，這種**凌亂**結果成了非常幸運的事。"
+  },
+  {
+   "id": "指考109-17",
+   "exam": "指考",
+   "year": "109",
+   "q": 17,
+   "type": "動詞形式",
+   "point": "過去完成式：Before the vacation（假期前）已完成的動作→had piled",
+   "prev": "It was his first day coming back to work after a long vacation.",
+   "sentence": "Before the vacation, he ____ in the sink a number of petri dishes in which he had been growing bacteria.",
+   "next": "While he was sorting through the long unattended dishes of germs that morning, he observed that some of the dishes were contaminated with a fungus, which had ruined his experiment.",
+   "options": [
+    "would pile",
+    "had piled",
+    "was piling",
+    "might have piled"
+   ],
+   "answer": 1,
+   "source": "指考109·綜合測驗第17題",
+   "zh": "休假前，他**已經把**一些培養細菌用的培養皿**堆在**水槽裡。"
+  },
+  {
+   "id": "指考109-18",
+   "exam": "指考",
+   "year": "109",
+   "q": 18,
+   "type": "單字詞彙",
+   "point": "unattended（無人照料的；被擱置的）：休假期間培養皿沒人處理。disabled（殘障的；失效的）、excluded（被排除的）、misunderstood（被誤解的）語意不合。",
+   "prev": "Before the vacation, he had piled in the sink a number of petri dishes in which he had been growing bacteria.",
+   "sentence": "While he was sorting through the long ____ dishes of germs that morning, he observed that some of the dishes were contaminated with a fungus, which had ruined his experiment.",
+   "next": "He was about to toss out the dishes, but he noticed that in one dish, the bacteria had failed to grow in the area around the fungus.",
+   "options": [
+    "disabled",
+    "excluded",
+    "unattended",
+    "misunderstood"
+   ],
+   "answer": 2,
+   "source": "指考109·綜合測驗第18題",
+   "zh": "那天早上他整理著**擱置已久**的細菌培養皿時，發現有些培養皿被黴菌污染，毀了他的實驗。"
+  },
+  {
+   "id": "指考109-19",
+   "exam": "指考",
+   "year": "109",
+   "q": 19,
+   "type": "片語",
+   "point": "toss out（丟掉）：實驗被污染毀了，本來要丟棄，but 表示轉折。get off（下車）、catch up（趕上）、carry on（繼續）語意不合。",
+   "prev": "While he was sorting through the long unattended dishes of germs that morning, he observed that some of the dishes were contaminated with a fungus, which had ruined his experiment.",
+   "sentence": "He was about to ____ the dishes, but he noticed that in one dish, the bacteria had failed to grow in the area around the fungus.",
+   "next": "This accidental finding gave rise to subsequent research that led to the discovery of penicillin—a drug that has since saved millions of lives.",
+   "options": [
+    "toss out",
+    "get off",
+    "catch up",
+    "carry on"
+   ],
+   "answer": 0,
+   "source": "指考109·綜合測驗第19題",
+   "zh": "他正要把培養皿**丟掉**，卻注意到其中一個培養皿裡，黴菌周圍的細菌沒有長出來。"
+  },
+  {
+   "id": "指考109-20",
+   "exam": "指考",
+   "year": "109",
+   "q": 20,
+   "type": "單字詞彙",
+   "point": "alone（單單；僅僅）：名詞＋alone（只靠…），Chance alone（光靠運氣）。alike（相似的）、above（在上方）、ahead（在前方）語意不合。",
+   "prev": "This accidental finding gave rise to subsequent research that led to the discovery of penicillin—a drug that has since saved millions of lives.",
+   "sentence": "Chance ____, however, may not be enough to make key discoveries like this.",
+   "next": "The scientist must have a prepared and open mind to detect the importance of the unforeseen incident and to use it constructively.",
+   "options": [
+    "alone",
+    "alike",
+    "above",
+    "ahead"
+   ],
+   "answer": 0,
+   "source": "指考109·綜合測驗第20題",
+   "zh": "然而，**單**靠運氣，可能不足以做出這樣的重大發現。"
+  },
+  {
+   "id": "指考108-11",
+   "exam": "指考",
+   "year": "108",
+   "q": 11,
+   "type": "連接詞／轉承語",
+   "point": "among others（等等；其中包括）",
+   "prev": "The fashion industry in Africa has witnessed tremendous growth in recent years.",
+   "sentence": "African fashion design has caught the eyes of international celebrities including former US first lady, Michelle Obama, Rihanna, and Beyoncé, ____.",
+   "next": "Global demand for African-inspired fashion has led to incredible sales for some African designers and brands.",
+   "options": [
+    "if any",
+    "among others",
+    "in short",
+    "at best"
+   ],
+   "answer": 1,
+   "source": "指考108·綜合測驗第11題",
+   "zh": "非洲時尚設計吸引了國際名人的目光，**其中包括**美國前第一夫人蜜雪兒．歐巴馬、蕾哈娜和碧昂絲**等人**。"
+  },
+  {
+   "id": "指考108-12",
+   "exam": "指考",
+   "year": "108",
+   "q": 12,
+   "type": "關係詞／代名詞",
+   "point": "關係副詞 where 修飾地點 Europe，後接完整子句 she got an opportunity…",
+   "prev": "Folake Folarin–Coker, founder of Tiffany Amber, is one of the best-known fashion designers in both the African and global fashion industry.",
+   "sentence": "Born in Lagos, Nigeria, she received her education in Europe, ____ she got an opportunity to interact with various cultures at a young age.",
+   "next": "Interestingly, she has a master’s degree in law from Switzerland, but as fate would have it, her passion for fashion led her into fashion design.",
+   "options": [
+    "where",
+    "there",
+    "that",
+    "whether"
+   ],
+   "answer": 0,
+   "source": "指考108·綜合測驗第12題",
+   "zh": "她出生於奈及利亞的拉哥斯，在歐洲接受教育，**在那裡**她從小就有機會接觸各種文化。"
+  },
+  {
+   "id": "指考108-13",
+   "exam": "指考",
+   "year": "108",
+   "q": 13,
+   "type": "連接詞／轉承語",
+   "point": "句首評論副詞 Interestingly（有趣的是），表示接下來的資訊出人意料：主修法律，卻走上服裝設計之路",
+   "prev": "Born in Lagos, Nigeria, she received her education in Europe, where she got an opportunity to interact with various cultures at a young age.",
+   "sentence": "____, she has a master’s degree in law from Switzerland, but as fate would have it, her passion for fashion led her into fashion design.",
+   "next": "Folake’s tasteful and colorful creations have earned her global recognition, making her the first African fashion designer to showcase her talent at the New York Mercedes Fashion Week for two consecutive years.",
+   "options": [
+    "Generally",
+    "Ideally",
+    "Relatively",
+    "Interestingly"
+   ],
+   "answer": 3,
+   "source": "指考108·綜合測驗第13題",
+   "zh": "**有趣的是**，她擁有瑞士的法學碩士學位，但命運使然，她對時尚的熱情引領她走上服裝設計之路。"
+  },
+  {
+   "id": "指考108-14",
+   "exam": "指考",
+   "year": "108",
+   "q": 14,
+   "type": "單字詞彙",
+   "point": "recognition（認可；肯定）：earn global recognition（贏得國際肯定），下文舉時裝週為證。motivation（動機）、supervision（監督）、preparation（準備）語意不合。",
+   "prev": "Interestingly, she has a master’s degree in law from Switzerland, but as fate would have it, her passion for fashion led her into fashion design.",
+   "sentence": "Folake’s tasteful and colorful creations have earned her global ____, making her the first African fashion designer to showcase her talent at the New York Mercedes Fashion Week for two consecutive years.",
+   "next": "She has also been widely featured in international media such as CNN.",
+   "options": [
+    "recognition",
+    "motivation",
+    "supervision",
+    "preparation"
+   ],
+   "answer": 0,
+   "source": "指考108·綜合測驗第14題",
+   "zh": "福拉克品味出眾、色彩繽紛的作品為她贏得了全球**肯定**，使她成為第一位連續兩年在紐約賓士時裝週展現才華的非洲設計師。"
+  },
+  {
+   "id": "指考108-15",
+   "exam": "指考",
+   "year": "108",
+   "q": 15,
+   "type": "單字詞彙",
+   "point": "featured（被報導；成為焦點）：be featured in the media（登上媒體）。believed（被相信）、announced（被宣布）、populated（居住於）語意不合。",
+   "prev": "Folake’s tasteful and colorful creations have earned her global recognition, making her the first African fashion designer to showcase her talent at the New York Mercedes Fashion Week for two consecutive years.",
+   "sentence": "She has also been widely ____ in international media such as CNN.",
+   "next": "In 2013, she was listed as one of the Forbes Power Women in Africa.",
+   "options": [
+    "believed",
+    "announced",
+    "featured",
+    "populated"
+   ],
+   "answer": 2,
+   "source": "指考108·綜合測驗第15題",
+   "zh": "她也多次**登上** CNN 等國際媒體。"
+  },
+  {
+   "id": "指考108-16",
+   "exam": "指考",
+   "year": "108",
+   "q": 16,
+   "type": "片語",
+   "point": "in service（使用中；運作中）：電纜正在服役。at large（逍遙法外；整體）、by contrast（相較之下）、under control（受控制）語意不合。",
+   "prev": "These cable systems, faster and cheaper than satellites, carry most of the intercontinental Internet traffic.",
+   "sentence": "Today, there are over 420 submarine cables ____, stretching over 700,000 miles around the world.",
+   "next": "It is not a new phenomenon, though.",
+   "options": [
+    "at large",
+    "in service",
+    "by contrast",
+    "under control"
+   ],
+   "answer": 1,
+   "source": "指考108·綜合測驗第16題",
+   "zh": "如今，全球有超過 420 條海底電纜**正在運作**，總長超過 70 萬英里。"
+  },
+  {
+   "id": "指考108-17",
+   "exam": "指考",
+   "year": "108",
+   "q": 17,
+   "type": "連接詞／轉承語",
+   "point": "副詞 though 放句尾（不過；然而），與前文形成轉折",
+   "prev": "Today, there are over 420 submarine cables in service, stretching over 700,000 miles around the world.",
+   "sentence": "It is not a new phenomenon, ____.",
+   "next": "The first transcontinental cable—laid in 1854—ran from Ireland to Newfoundland, and made telegraph communication possible between England and Canada.",
+   "options": [
+    "then",
+    "still",
+    "instead",
+    "though"
+   ],
+   "answer": 3,
+   "source": "指考108·綜合測驗第17題",
+   "zh": "**不過**，這並不是新現象。"
+  },
+  {
+   "id": "指考108-18",
+   "exam": "指考",
+   "year": "108",
+   "q": 18,
+   "type": "單字詞彙",
+   "point": "Suitably（恰當地）：容量最大的電纜叫 FASTER，名字很貼切。Constantly（不斷地）、Vitally（極其）、Mockingly（嘲弄地）語意不合。",
+   "prev": "Currently, the world’s highest-capacity undersea Internet cable is a 5,600-mile link between the US and Japan.",
+   "sentence": "____ named “FASTER,” the cable connects Oregon in the US with Japan and Taiwan.",
+   "next": "The submarine cables require extra care to install.",
+   "options": [
+    "Suitably",
+    "Constantly",
+    "Vitally",
+    "Mockingly"
+   ],
+   "answer": 0,
+   "source": "指考108·綜合測驗第18題",
+   "zh": "這條電纜被取了一個**恰如其分的**名字「FASTER」，連接美國奧勒岡州與日本、台灣。"
+  },
+  {
+   "id": "指考108-19",
+   "exam": "指考",
+   "year": "108",
+   "q": 19,
+   "type": "單字詞彙",
+   "point": "care（小心；謹慎）：require extra care（需要格外小心），下一句說明鋪設時要避開各種障礙。speed（速度）、light（光）、link（連結）語意不合。",
+   "prev": "Suitably named “FASTER,” the cable connects Oregon in the US with Japan and Taiwan.",
+   "sentence": "The submarine cables require extra ____ to install.",
+   "next": "They must generally be run across flat surfaces of the ocean floor, and stay clear of coral reefs, sunken ships, fish beds, and other general obstacles.",
+   "options": [
+    "speed",
+    "light",
+    "care",
+    "link"
+   ],
+   "answer": 2,
+   "source": "指考108·綜合測驗第19題",
+   "zh": "海底電纜的鋪設需要格外**小心**。"
+  },
+  {
+   "id": "指考108-20",
+   "exam": "指考",
+   "year": "108",
+   "q": 20,
+   "type": "單字詞彙",
+   "point": "obstacles（障礙物）：other general obstacles 總括前面列舉的珊瑚礁、沉船等。directions（方向）、aquariums（水族館）、circulations（循環）語意不合。",
+   "prev": "The submarine cables require extra care to install.",
+   "sentence": "They must generally be run across flat surfaces of the ocean floor, and stay clear of coral reefs, sunken ships, fish beds, and other general ____.",
+   "next": "The fiber-optic cables are also very fragile, so they are surrounded with layers of tubing and steel to prevent damage.",
+   "options": [
+    "directions",
+    "obstacles",
+    "aquariums",
+    "circulations"
+   ],
+   "answer": 1,
+   "source": "指考108·綜合測驗第20題",
+   "zh": "它們通常必須鋪設在海底平坦的地方，避開珊瑚礁、沉船、魚群棲息地和其他各種**障礙物**。"
+  },
+  {
+   "id": "指考107-11",
+   "exam": "指考",
+   "year": "107",
+   "q": 11,
+   "type": "單字詞彙",
+   "point": "comparison（比較）：comparison to（與…比較），和鄰居比較誰擁有得多。reaction（反應）、attachment（依附）、similarity（相似）語意不合。",
+   "prev": "“Keeping up with the Joneses” is a catchphrase in many parts of the English-speaking world.",
+   "sentence": "Just like “keeping up appearances,” it refers to the ____ to one’s neighbors as a standard for social status or the accumulation of material goods.",
+   "next": "Generally speaking, the more luxuries people have, the higher their value or social status—or so they believe.",
+   "options": [
+    "reaction",
+    "attachment",
+    "similarity",
+    "comparison"
+   ],
+   "answer": 3,
+   "source": "指考107·綜合測驗第11題",
+   "zh": "就像「維持體面」一樣，它指的是把**和**鄰居**比較**當作社會地位或物質累積的標準。"
+  },
+  {
+   "id": "指考107-12",
+   "exam": "指考",
+   "year": "107",
+   "q": 12,
+   "type": "關係詞／代名詞",
+   "point": "so 代替前面的子句：or so they believe（或者說，他們是這麼認為的）",
+   "prev": "Just like “keeping up appearances,” it refers to the comparison to one’s neighbors as a standard for social status or the accumulation of material goods.",
+   "sentence": "Generally speaking, the more luxuries people have, the higher their value or social status—or ____ they believe.",
+   "next": "To fail to “keep up with the Joneses” is thus perceived as revealing socio-economic inferiority or, as the Chinese would put it, a great loss of face.",
+   "options": [
+    "still",
+    "so",
+    "yet",
+    "even"
+   ],
+   "answer": 1,
+   "source": "指考107·綜合測驗第12題",
+   "zh": "一般來說，人們擁有的奢侈品越多，他們的價值或社會地位就越高，**至少他們是這麼認為的**。"
+  },
+  {
+   "id": "指考107-13",
+   "exam": "指考",
+   "year": "107",
+   "q": 13,
+   "type": "單字詞彙",
+   "point": "phrase（片語；說法）：指前文的 “Keeping up with the Joneses” 這個說法。signal（信號）、material（材料）、analysis（分析）語意不合。",
+   "prev": "To fail to “keep up with the Joneses” is thus perceived as revealing socio-economic inferiority or, as the Chinese would put it, a great loss of face.",
+   "sentence": "The ____ was popularized when a comic strip of the same name was created by cartoonist Arthur R. “Pop” Momand.",
+   "next": "The strip was first published in 1916 in the New York World, and ran in American newspapers for 28 years before it was eventually adapted into books, films, and musical comedies.",
+   "options": [
+    "phrase",
+    "signal",
+    "material",
+    "analysis"
+   ],
+   "answer": 0,
+   "source": "指考107·綜合測驗第13題",
+   "zh": "這個**片語**是在漫畫家亞瑟．R．「老爹」．莫曼德創作了同名連環漫畫後開始流行的。"
+  },
+  {
+   "id": "指考107-14",
+   "exam": "指考",
+   "year": "107",
+   "q": 14,
+   "type": "單字詞彙",
+   "point": "adapted（改編）：be adapted into（被改編成）。admitted（承認；准許進入）、advanced（前進）、advised（建議）語意或搭配不合。",
+   "prev": "The phrase was popularized when a comic strip of the same name was created by cartoonist Arthur R. “Pop” Momand.",
+   "sentence": "The strip was first published in 1916 in the New York World, and ran in American newspapers for 28 years before it was eventually ____ into books, films, and musical comedies.",
+   "next": "The “Joneses” of the title were rich neighbors of the strip’s main characters and, interestingly, they were merely spoken of but never actually seen in person in the comic strip.",
+   "options": [
+    "adapted",
+    "admitted",
+    "advanced",
+    "advised"
+   ],
+   "answer": 0,
+   "source": "指考107·綜合測驗第14題",
+   "zh": "這部漫畫於 1916 年首次刊登在《紐約世界報》，在美國報紙上連載了 28 年，最後被**改編**成書籍、電影和音樂喜劇。"
+  },
+  {
+   "id": "指考107-15",
+   "exam": "指考",
+   "year": "107",
+   "q": 15,
+   "type": "片語",
+   "point": "spoken of（被提到）：與 never actually seen（從未現身）形成對比。checked out（被查看）、watched over（被看守）、traded with（被交易）語意不合。",
+   "prev": "The strip was first published in 1916 in the New York World, and ran in American newspapers for 28 years before it was eventually adapted into books, films, and musical comedies.",
+   "sentence": "The “Joneses” of the title were rich neighbors of the strip’s main characters and, interestingly, they were merely ____ but never actually seen in person in the comic strip.",
+   "next": "",
+   "options": [
+    "checked out",
+    "watched over",
+    "spoken of",
+    "traded with"
+   ],
+   "answer": 2,
+   "source": "指考107·綜合測驗第15題",
+   "zh": "標題中的「瓊斯一家」是主角的有錢鄰居。有趣的是，在漫畫中他們只是被**提及**，從來沒有真正露面。"
+  },
+  {
+   "id": "指考107-16",
+   "exam": "指考",
+   "year": "107",
+   "q": 16,
+   "type": "動詞形式",
+   "point": "助動詞代替重複的形容詞：the condition typically isn’t（= isn’t serious）；前面 sounds pretty serious 為連綴動詞＋形容詞，所以用 be 動詞 isn’t 承接",
+   "prev": "One of the most common causes for these little white spots is a condition called leukonychia.",
+   "sentence": "Although the name sounds pretty serious, the condition typically ____.",
+   "next": "And while many people think the white spots are caused by a calcium or zinc deficiency, that’s generally not the case.",
+   "options": [
+    "isn’t",
+    "doesn’t",
+    "couldn’t",
+    "wouldn’t"
+   ],
+   "answer": 0,
+   "source": "指考107·綜合測驗第16題",
+   "zh": "雖然這個名稱聽起來很嚴重，但這種症狀通常**並不嚴重**。"
+  },
+  {
+   "id": "指考107-17",
+   "exam": "指考",
+   "year": "107",
+   "q": 17,
+   "type": "連接詞／轉承語",
+   "point": "as a result of + 名詞（由於…的結果）",
+   "prev": "And while many people think the white spots are caused by a calcium or zinc deficiency, that’s generally not the case.",
+   "sentence": "In reality, these spots most often develop ____ mild to moderate trauma to your nail.",
+   "next": "If you can’t think of anything that would have injured your nail, consider the fact that nails grow very slowly, so the injury may have occurred weeks before the spots ever appeared.",
+   "options": [
+    "in spite of",
+    "as a result of",
+    "to the best of",
+    "for the sake of"
+   ],
+   "answer": 1,
+   "source": "指考107·綜合測驗第17題",
+   "zh": "事實上，這些斑點最常是**因為**指甲受到輕微到中度的外傷**而**產生的。"
+  },
+  {
+   "id": "指考107-18",
+   "exam": "指考",
+   "year": "107",
+   "q": 18,
+   "type": "動詞形式",
+   "point": "情態助動詞完成式：may have + p.p.（對過去的推測）",
+   "prev": "In reality, these spots most often develop as a result of mild to moderate trauma to your nail.",
+   "sentence": "If you can’t think of anything that would have injured your nail, consider the fact that nails grow very slowly, so the injury ____ weeks before the spots ever appeared.",
+   "next": "The spots could also be a sign of a mild infection or allergy, or a side effect of certain medications.",
+   "options": [
+    "might occur",
+    "would occur",
+    "will have occurred",
+    "may have occurred"
+   ],
+   "answer": 3,
+   "source": "指考107·綜合測驗第18題",
+   "zh": "如果你想不起有什麼東西傷到指甲，別忘了指甲長得很慢，所以受傷**可能**是在斑點出現的好幾週前**就發生了**。"
+  },
+  {
+   "id": "指考107-19",
+   "exam": "指考",
+   "year": "107",
+   "q": 19,
+   "type": "連接詞／轉承語",
+   "point": "讓步：Whatever (may be) the source of the injury（無論受傷原因為何）；Whether 須搭配 or 或接完整子句",
+   "prev": "The spots could also be a sign of a mild infection or allergy, or a side effect of certain medications.",
+   "sentence": "____ the source of the injury, these spots typically do not require any treatment and should go away as your nail grows out.",
+   "next": "And they should not return unless you suffer another injury to a nail.",
+   "options": [
+    "Supposing",
+    "Including",
+    "Whatever",
+    "Whether"
+   ],
+   "answer": 2,
+   "source": "指考107·綜合測驗第19題",
+   "zh": "**不論**受傷的原因**是什麼**，這些斑點通常不需要任何治療，會隨著指甲長出而消失。"
+  },
+  {
+   "id": "指考107-20",
+   "exam": "指考",
+   "year": "107",
+   "q": 20,
+   "type": "單字詞彙",
+   "point": "applies（適用）：this applies when…（這適用於…的情況），However 表示前述說法有條件限制。indicates（指出）、defines（定義）、confirms（證實）語意不合。",
+   "prev": "And they should not return unless you suffer another injury to a nail.",
+   "sentence": "However, this generally ____ when only a single or a few nails are affected.",
+   "next": "If all of your nails are showing white spots, the leukonychia could be related to another more serious condition such as anemia, cardiac disease, diabetes, or kidney disease.",
+   "options": [
+    "indicates",
+    "defines",
+    "applies",
+    "confirms"
+   ],
+   "answer": 2,
+   "source": "指考107·綜合測驗第20題",
+   "zh": "不過，這通常只**適用於**單一或少數幾片指甲受影響的情況。"
+  },
+  {
+   "id": "指考106-11",
+   "exam": "指考",
+   "year": "106",
+   "q": 11,
+   "type": "單字詞彙",
+   "point": "criminalize（使成為刑事犯罪）：下一句說違法的經紀公司會被罰款、員工可能坐牢。forecast（預測）、represent（代表）、distinguish（區別）語意不合。",
+   "prev": "France, home to such major fashion houses as Chanel, Dior, and Yves Saint Laurent, has joined Italy, Spain, and Israel in adopting laws against super-skinny models on catwalks or in ads.",
+   "sentence": "The French government has passed a bill that will ____ the use of excessively skinny models.",
+   "next": "Modeling agencies violating the law can receive a fine of up to US$81,000, with up to six months in jail for staff involved.",
+   "options": [
+    "forecast",
+    "represent",
+    "criminalize",
+    "distinguish"
+   ],
+   "answer": 2,
+   "source": "指考106·綜合測驗第11題",
+   "zh": "法國政府通過了一項法案，將使用過瘦模特兒的行為**列為刑事犯罪**。"
+  },
+  {
+   "id": "指考106-12",
+   "exam": "指考",
+   "year": "106",
+   "q": 12,
+   "type": "片語",
+   "point": "crack down on（取締；嚴厲打擊）：法律要打擊美化過瘦的風氣。put up with（忍受）、give in to（屈服於）、look out for（留意）語意不合。",
+   "prev": "Modeling agencies violating the law can receive a fine of up to US$81,000, with up to six months in jail for staff involved.",
+   "sentence": "According to French officials, the measure aims to ____ the glorification of dangerously thin models.",
+   "next": "Under the approved legislation, models will have to present a medical certificate that proves they are healthy before being allowed to work in the fashion industry.",
+   "options": [
+    "put up with",
+    "crack down on",
+    "give in to",
+    "look out for"
+   ],
+   "answer": 1,
+   "source": "指考106·綜合測驗第12題",
+   "zh": "根據法國官員的說法，這項措施旨在**遏止**對危險過瘦模特兒的美化。"
+  },
+  {
+   "id": "指考106-13",
+   "exam": "指考",
+   "year": "106",
+   "q": 13,
+   "type": "單字詞彙",
+   "point": "certificate（證明書）：medical certificate（醫療證明），後面 that proves they are healthy 說明用途。coverage（報導；保險範圍）、operation（手術）、prescription（處方）語意不合。",
+   "prev": "According to French officials, the measure aims to crack down on the glorification of dangerously thin models.",
+   "sentence": "Under the approved legislation, models will have to present a medical ____ that proves they are healthy before being allowed to work in the fashion industry.",
+   "next": "Moreover, they will be subject to regular weight checks.",
+   "options": [
+    "coverage",
+    "certificate",
+    "operation",
+    "prescription"
+   ],
+   "answer": 1,
+   "source": "指考106·綜合測驗第13題",
+   "zh": "根據通過的法案，模特兒在獲准從事時尚業工作之前，必須出示證明自己健康的醫療**證明**。"
+  },
+  {
+   "id": "指考106-14",
+   "exam": "指考",
+   "year": "106",
+   "q": 14,
+   "type": "介系詞搭配",
+   "point": "be subject to（受制於；需接受）",
+   "prev": "Under the approved legislation, models will have to present a medical certificate that proves they are healthy before being allowed to work in the fashion industry.",
+   "sentence": "Moreover, they will be ____ regular weight checks.",
+   "next": "Modeling agencies will have to produce a medical report showing that their models have maintained a healthy body mass-to-height ratio.",
+   "options": [
+    "subject to",
+    "accustomed to",
+    "blessed with",
+    "familiar with"
+   ],
+   "answer": 0,
+   "source": "指考106·綜合測驗第14題",
+   "zh": "此外，他們還必須**接受**定期的體重檢查。"
+  },
+  {
+   "id": "指考106-15",
+   "exam": "指考",
+   "year": "106",
+   "q": 15,
+   "type": "單字詞彙",
+   "point": "healthy（健康的）：法案目的是確保模特兒不過瘦。pleasant（愉快的）、frequent（頻繁的）、distinctive（獨特的）語意不合。",
+   "prev": "Moreover, they will be subject to regular weight checks.",
+   "sentence": "Modeling agencies will have to produce a medical report showing that their models have maintained a ____ body mass-to-height ratio.",
+   "next": "This bill is expected to change young women’s view on the ideal female form.",
+   "options": [
+    "healthy",
+    "pleasant",
+    "frequent",
+    "distinctive"
+   ],
+   "answer": 0,
+   "source": "指考106·綜合測驗第15題",
+   "zh": "模特兒經紀公司必須出具醫療報告，證明旗下模特兒維持**健康的**體重與身高比例。"
+  },
+  {
+   "id": "指考106-16",
+   "exam": "指考",
+   "year": "106",
+   "q": 16,
+   "type": "關係詞／代名詞",
+   "point": "代名詞 None of + 複數名詞（沒有一個）：沒有酵素時，這些反應都不可能發生",
+   "prev": "Imagine the infinite amount of reactions that a large organism such as human carries out every single day.",
+   "sentence": "____ of these reactions are possible without enzymes.",
+   "next": "Enzymes consist of various types of proteins that work to drive the chemical reactions required for certain types of nutrients to take effect.",
+   "options": [
+    "Any",
+    "All",
+    "None",
+    "More"
+   ],
+   "answer": 2,
+   "source": "指考106·綜合測驗第16題",
+   "zh": "沒有酵素，這些反應**一個也**不可能發生。"
+  },
+  {
+   "id": "指考106-17",
+   "exam": "指考",
+   "year": "106",
+   "q": 17,
+   "type": "動詞形式",
+   "point": "過去分詞修飾名詞：reactions (which are) required for…",
+   "prev": "None of these reactions are possible without enzymes.",
+   "sentence": "Enzymes consist of various types of proteins that work to drive the chemical reactions ____ for certain types of nutrients to take effect.",
+   "next": "Enzymes can either launch a reaction or speed it up.",
+   "options": [
+    "requires",
+    "required",
+    "requiring",
+    "to require"
+   ],
+   "answer": 1,
+   "source": "指考106·綜合測驗第17題",
+   "zh": "酵素由各種蛋白質組成，負責驅動某些營養素發揮作用時**所需的**化學反應。"
+  },
+  {
+   "id": "指考106-18",
+   "exam": "指考",
+   "year": "106",
+   "q": 18,
+   "type": "片語",
+   "point": "if…at all（即使真的…的話；甚至根本不）：if they are able to do so at all（如果它們根本做得到的話）。at hand（在手邊）、at first（起初）、at ease（自在）語意不合。",
+   "prev": "Enzymes can either launch a reaction or speed it up.",
+   "sentence": "In the absence of enzymes, reactants may take hundreds of years to convert into a usable product, if they are able to do so ____.",
+   "next": "This is why enzymes are crucial in the sustenance of life on earth.",
+   "options": [
+    "at all",
+    "at hand",
+    "at first",
+    "at ease"
+   ],
+   "answer": 0,
+   "source": "指考106·綜合測驗第18題",
+   "zh": "沒有酵素的話，反應物可能要花數百年才能轉變成可用的產物，**甚至根本**無法轉變。"
+  },
+  {
+   "id": "指考106-19",
+   "exam": "指考",
+   "year": "106",
+   "q": 19,
+   "type": "連接詞／轉承語",
+   "point": "轉承語 however（然而）作插入語：前文說明酵素的重要，此句轉為「酵素不一定都能完美運作」",
+   "prev": "This is why enzymes are crucial in the sustenance of life on earth.",
+   "sentence": "Enzymes, ____, do not always function perfectly.",
+   "next": "In 1902 Sir Archibald Garrod was the first to attribute a disease to an enzyme defect, which he later referred to as an “inborn error of metabolism.”",
+   "options": [
+    "hereafter",
+    "instead",
+    "likewise",
+    "however"
+   ],
+   "answer": 3,
+   "source": "指考106·綜合測驗第19題",
+   "zh": "**然而**，酵素並不總是能完美運作。"
+  },
+  {
+   "id": "指考106-20",
+   "exam": "指考",
+   "year": "106",
+   "q": 20,
+   "type": "單字詞彙",
+   "point": "disease（疾病）：attribute a disease to…（把疾病歸因於…），後面 inborn error of metabolism 是一種病。balance（平衡）、measure（措施）、statement（陳述）語意不合。",
+   "prev": "Enzymes, however, do not always function perfectly.",
+   "sentence": "In 1902 Sir Archibald Garrod was the first to attribute a ____ to an enzyme defect, which he later referred to as an “inborn error of metabolism.”",
+   "next": "Today, newborns are routinely screened for certain enzyme defects such as PKU (phenylketonuria) and galactosemia, an error in the handling of the sugar galactose.",
+   "options": [
+    "disease",
+    "balance",
+    "measure",
+    "statement"
+   ],
+   "answer": 0,
+   "source": "指考106·綜合測驗第20題",
+   "zh": "1902 年，阿奇博爾德．加洛德爵士首先把一種**疾病**歸因於酵素缺陷，後來他稱之為「先天性代謝缺陷」。"
+  }
+ ]
+}

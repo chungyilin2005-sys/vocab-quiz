@@ -45,7 +45,7 @@ pre{background:var(--paper);border-radius:8px;padding:.75rem;overflow-x:auto;fon
 <main>
 <section class="sheet">
   <h1>題庫轉檔工具</h1>
-  <p class="muted">把 Excel 母檔轉成單字測驗用的 JSON 題庫。檔案只在你的瀏覽器裡處理，不會上傳。</p>
+  <p class="muted">把 Excel 母檔轉成測驗用的 JSON 題庫。單字、片語母檔轉出 A／B／P.json；綜合測驗母檔轉出 G.json。檔案只在你的瀏覽器裡處理，不會上傳。</p>
   <ol class="steps">
     <li>在 Excel 開啟母檔，切到「題庫」工作表。</li>
     <li>檔案 → 另存新檔 → 存檔類型選「CSV UTF-8（逗號分隔）」。</li>
@@ -91,10 +91,56 @@ function parseCSV(text) {
   return rows;
 }
 
+/* ===== 綜合測驗題庫（文法題）：母檔有「題目句」欄時使用 ===== */
+const GCOLS = { exam: '考試', year: '年度', q: '題號', type: '題型', point: '考點說明', prev: '前文', sentence: '題目句', next: '後文',
+  a: '選項A', b: '選項B', c: '選項C', d: '選項D', ans: '正解', zh: '題目句中譯', check: '檢查' };
+let grammarMeta = null, pendingGrammar = null;
+async function loadGrammarMeta() {
+  if (grammarMeta) return grammarMeta;
+  try {
+    const res = await fetch('../data/G.json', { cache: 'no-cache' });
+    if (!res.ok) throw new Error();
+    const d = await res.json(); const m = { ...d }; delete m.items; grammarMeta = m;
+  } catch (e) { /* 本機開啟或尚未上傳時讀不到 */ }
+  return grammarMeta;
+}
+function convertGrammar(rows, head) {
+  const idx = {};
+  for (const [k, name] of Object.entries(GCOLS)) idx[k] = head.indexOf(name);
+  const need = ['exam', 'year', 'q', 'type', 'sentence', 'a', 'b', 'c', 'd', 'ans'].filter(k => idx[k] < 0).map(k => GCOLS[k]);
+  if (need.length) return { fatal: `找不到「${need.join('」「')}」欄。` };
+  const get = (r, k) => idx[k] >= 0 ? (r[idx[k]] || '').trim() : '';
+  const items = [], problems = [], seen = new Set();
+  rows.slice(1).forEach((r, i) => {
+    const line = i + 2;
+    if (!get(r, 'sentence') && !get(r, 'exam')) return;
+    const exam = get(r, 'exam'), year = get(r, 'year'), q = Number(get(r, 'q'));
+    const id = `${exam}${year}-${q}`;
+    const options = ['a', 'b', 'c', 'd'].map(k => get(r, k));
+    const answer = 'ABCD'.indexOf(get(r, 'ans').toUpperCase());
+    const sentence = get(r, 'sentence');
+    const bad = [];
+    if (!exam || !year || !q) bad.push('考試、年度或題號是空的');
+    if (seen.has(id)) bad.push(`題目編號 ${id} 重複`);
+    if (options.some(o => !o)) bad.push('四個選項不能有空白');
+    if (answer < 0) bad.push('正解必須是 A、B、C、D');
+    if (sentence.split('____').length !== 2) bad.push('題目句必須有一個 ____');
+    if (bad.length) { problems.push(`第 ${line} 列（${id}）：${bad.join('；')}，已略過`); return; }
+    seen.add(id);
+    const chk = get(r, 'check'); if (chk) problems.push(`第 ${line} 列（${id}）：${chk}`);
+    const it = { id, exam, year, q, type: get(r, 'type'), point: get(r, 'point'), prev: get(r, 'prev'), sentence,
+      next: get(r, 'next'), options, answer, source: `${exam}${year}·綜合測驗第${q}題` };
+    const zh = get(r, 'zh'); if (zh) it.zh = zh;
+    items.push(it);
+  });
+  return { grammar: true, items, problems };
+}
+
 function convert(text) {
   const rows = parseCSV(text).filter(r => r.some(c => c.trim() !== ''));
   if (!rows.length) return { fatal: '檔案是空的。' };
   const head = rows[0].map(h => h.trim());
+  if (head.includes('題目句')) return convertGrammar(rows, head);
   const idx = {};
   for (const [k, name] of Object.entries(COLS)) idx[k] = head.indexOf(name);
   const missing = REQUIRED.filter(k => idx[k] < 0).map(k => COLS[k]);
@@ -122,10 +168,36 @@ function convert(text) {
   return { items, problems };
 }
 
-function show(name, text) {
+async function show(name, text) {
   document.getElementById('fname').textContent = name;
   const res = convert(text);
   if (res.fatal) { result = null; $out.innerHTML = `<h2 class="bad">無法轉檔</h2><p>${esc(res.fatal)}</p>`; return; }
+  if (res.grammar) {
+    const meta = await loadGrammarMeta();
+    if (!meta) {
+      result = null; pendingGrammar = { name, text };
+      $out.innerHTML = `<h2 class="bad">還需要舊的 G.json</h2>
+        <p>題型清單、轉承語分組等設定存在原本的 G.json 裡，這裡讀不到網站上的檔案（直接在電腦上開啟本工具時會這樣）。</p>
+        <p>請選擇目前使用中的 G.json：<input type="file" id="metaFile" accept=".json"></p>`;
+      document.getElementById('metaFile').onchange = async e => {
+        try { const d = JSON.parse(await e.target.files[0].text()); const m = { ...d }; delete m.items; grammarMeta = m; show(pendingGrammar.name, pendingGrammar.text); }
+        catch (err) { alert('這個檔案不是有效的 G.json'); }
+      };
+      return;
+    }
+    result = { ...meta, items: res.items };
+    $out.innerHTML = `
+      <h2 class="${res.problems.length ? 'bad' : 'ok'}">綜合測驗題庫：共 ${res.items.length} 題${res.problems.length ? `，有 ${res.problems.length} 個地方要注意` : '，沒有發現問題'}</h2>
+      ${res.problems.length ? `<ol class="list">${res.problems.map(p => `<li>${esc(p)}</li>`).join('')}</ol>` : ''}
+      <div class="actions">
+        <div><label class="f" for="outname">檔名</label><input type="text" id="outname" value="G.json"></div>
+        <button id="dl">下載 JSON</button>
+      </div>
+      <h2>第一題預覽</h2>
+      <pre>${esc(JSON.stringify(res.items[0], null, 2))}</pre>`;
+    document.getElementById('dl').onclick = download;
+    return;
+  }
   result = res.items;
   const noOpt = res.items.filter(i => !i.options).length;
   $out.innerHTML = `

@@ -5,14 +5,20 @@
 ## 檔案結構
 
 ```
-index.html             首頁（連到三份題庫）
-vocab-quiz.html        測驗主程式
+index.html             首頁
+vocab-quiz.html        單字／片語測驗
+grammar-practice.html  綜合測驗歷屆題庫（練習模式、測驗模式）
+grammar-exam.html      文法專題測驗（50 題原創考卷）
 data/
   A.json               A 級必背 244 字
   B.json               B 級重要 1032 字
   P.json               高頻片語 130 個
+  G.json               綜合測驗歷屆題庫 185 題
 tools/
   csv-to-json.html     Excel 母檔轉 JSON 工具
+  check.html           題庫檢查工具
+AGENTS.md              給 AI agent 的專案說明（修改程式前請 agent 先讀）
+CLAUDE.md              指向 AGENTS.md，供 Claude Code 自動讀取
 .nojekyll              讓 GitHub Pages 直接提供檔案，不經 Jekyll 處理
 ```
 
@@ -30,6 +36,8 @@ tools/
 - `index.html`：首頁
 - `vocab-quiz.html?set=A`、`?set=B`、`?set=P`：直接開啟 A 級、B 級、片語題庫
 - `vocab-quiz.html?set=demo`：內建的範例題庫
+- `grammar-practice.html`：綜合測驗歷屆題庫
+- `grammar-exam.html`：文法專題測驗
 
 直接在電腦上雙擊開啟 HTML 時，瀏覽器的安全限制不允許讀取 `data/` 裡的檔案，只能用測驗頁的「上傳 JSON 題庫」測試。放上 GitHub Pages 後就沒有這個限制。
 
@@ -40,8 +48,9 @@ tools/
 1. 在母檔修改藍字欄（中文、誘答、易混字、補充說明、例句、例句中譯），黑字的解析、出處和檢查欄會自動更新。
 2. 「檢查」欄若出現紅字，先修正再繼續。
 3. 另存成「CSV UTF-8（逗號分隔）」。
-4. 開啟 `tools/csv-to-json.html`，拖入 CSV，確認沒有警告後下載 JSON，檔名改成對應的 `A.json`、`B.json` 或 `P.json`。
+4. 開啟 `tools/csv-to-json.html`，拖入 CSV，確認沒有警告後下載 JSON，檔名改成對應的 `A.json`、`B.json`、`P.json` 或 `G.json`（綜合測驗母檔會自動預設為 G.json）。
 5. 在 GitHub 上傳新檔，取代 `data/` 裡的舊檔。
+6. 開啟網站上的 `tools/check.html`，按「檢查網站上的四份題庫」，確認沒有錯誤。
 
 ## 題庫欄位
 
