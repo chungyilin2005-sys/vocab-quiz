@@ -12,6 +12,7 @@ grammar-exam.html      文法專題測驗（50 題原創考卷）
 data/
   A.json               A 級必背 244 字
   B.json               B 級重要 1032 字
+  C.json               C 級補強 806 字（歷屆未考過，例句為自編）
   P.json               高頻片語 130 個
   G.json               綜合測驗歷屆題庫 185 題
 tools/
@@ -34,7 +35,7 @@ CLAUDE.md              指向 AGENTS.md，供 Claude Code 自動讀取
 ## 網址用法
 
 - `index.html`：首頁
-- `vocab-quiz.html?set=A`、`?set=B`、`?set=P`：直接開啟 A 級、B 級、片語題庫
+- `vocab-quiz.html?set=A`、`?set=B`、`?set=C`、`?set=P`：直接開啟 A 級、B 級、C 級、片語題庫
 - `vocab-quiz.html?set=demo`：內建的範例題庫
 - `grammar-practice.html`：綜合測驗歷屆題庫
 - `grammar-exam.html`：文法專題測驗
@@ -48,9 +49,9 @@ CLAUDE.md              指向 AGENTS.md，供 Claude Code 自動讀取
 1. 在母檔修改藍字欄（中文、誘答、易混字、補充說明、例句、例句中譯），黑字的解析、出處和檢查欄會自動更新。
 2. 「檢查」欄若出現紅字，先修正再繼續。
 3. 另存成「CSV UTF-8（逗號分隔）」。
-4. 開啟 `tools/csv-to-json.html`，拖入 CSV，確認沒有警告後下載 JSON，檔名改成對應的 `A.json`、`B.json`、`P.json` 或 `G.json`（綜合測驗母檔會自動預設為 G.json）。
+4. 開啟 `tools/csv-to-json.html`，拖入 CSV，確認沒有警告後下載 JSON，檔名改成對應的 `A.json`、`B.json`、`C.json`、`P.json` 或 `G.json`（綜合測驗母檔會自動預設為 G.json）。
 5. 在 GitHub 上傳新檔，取代 `data/` 裡的舊檔。
-6. 開啟網站上的 `tools/check.html`，按「檢查網站上的四份題庫」，確認沒有錯誤。
+6. 開啟網站上的 `tools/check.html`，按「檢查網站上的五份題庫」，確認沒有錯誤。
 
 ## 題庫欄位
 

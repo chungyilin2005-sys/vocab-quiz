@@ -44,7 +44,7 @@ input[type=file]{font:inherit}
   <h1>題庫檢查工具</h1>
   <p class="muted">檢查 data 資料夾裡的 A.json、B.json、P.json、G.json 是否符合測驗程式的格式約定。修改題庫或程式後都應該跑一次。<strong>「錯誤」</strong>會讓測驗出錯或答案不正確，必須修正；<strong>「提醒」</strong>不影響運作，請人工判斷。</p>
   <div class="actions">
-    <button id="run">檢查網站上的四份題庫</button>
+    <button id="run">檢查網站上的五份題庫</button>
     <label class="muted">或選擇本機的 JSON 檔（可多選）：<input type="file" id="file" accept=".json" multiple></label>
   </div>
   <p class="muted" id="note"></p>
@@ -57,6 +57,7 @@ input[type=file]{font:inherit}
 const BANKS = [
   { file: 'A.json', name: 'A 級必背', kind: 'word' },
   { file: 'B.json', name: 'B 級重要', kind: 'word' },
+  { file: 'C.json', name: 'C 級補強', kind: 'word' },
   { file: 'P.json', name: '高頻片語', kind: 'phrase' },
   { file: 'G.json', name: '綜合測驗', kind: 'grammar' },
 ];
