@@ -128,6 +128,17 @@ Excel 母檔 →（另存 CSV UTF-8）→ tools/csv-to-json.html → data/*.json
 3. 實際操作：四份單字題庫各選「全部」跑過，確認每題 4 個選項、作答後選項右側有字典連結、中譯可切換。綜合測驗頁練習 10 題、測驗模式交卷一次，並測試重新整理後能繼續作答。
 4. 版面：手機寬度（約 390px）和桌機各看一次，含深色模式。
 5. 改了檢查規則或解析格式時，`vocab-quiz.html` 與 `tools/check.html` 的對應函式（`senses`、`overlaps`、`confusableMap`）要同步修改。
+6. 改了 A、B、C 級的單字資料（詞性、例句、中文等）之後，要同步舊站，見下一節。
+
+## 7-2. 舊站 gsat-english-site 的同步
+
+Billy 另有一個舊站 `chungyilin2005-sys/gsat-english-site`（網址 `https://chungyilin2005-sys.github.io/gsat-english-site/`），有 A、B、C 級三個單字學習頁（字卡、測驗、週計畫、列印字卡等）和一個文法頁。它的單字資料**內嵌在各頁的 `RAW_WORDS` 常數裡**，不讀本儲存庫的 JSON，所以母檔或本儲存庫的題庫修改後，舊站不會自己跟著更新。2026-10 發現舊站的 526 句例句落後（空格沒補回、混入選項列等），已同步一次。
+
+- 舊站的完整說明在它自己的 `AGENTS.md`。通常在 `C:\cowork\gsat-english-site`；沒有的話先 `git clone`。
+- A、B 級：本儲存庫的詞性與例句為準。在舊站資料夾執行 `node tools/sync-ab-from-quiz.js check <本儲存庫資料夾>` 看差異，確認後改 `apply`。只會改詞性和例句兩欄，舊站獨有的考頻資料不動。
+- C 級：以 Excel 母檔為準（需要母檔裡的排名、Zipf、優先度）。執行 `python tools/sync-c-data.py <C級題庫_母檔.xlsx 路徑>`。
+- 兩個網站是各自的儲存庫，要分別 commit 與 push。改完先在本機開舊站頁面確認沒有錯誤。
+- 修改題庫內容時，順手問 Billy 要不要同步舊站，不要自行 push 舊站。
 
 ## 8. 部署注意
 
