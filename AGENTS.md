@@ -29,7 +29,7 @@ CLAUDE.md              只指向本檔
 .nojekyll              讓 GitHub Pages 不經 Jekyll 處理
 ```
 
-Excel 母檔（`A級題庫_母檔.xlsx`、`B級題庫_母檔.xlsx`、`C級題庫_母檔.xlsx`、`片語題庫_母檔.xlsx`、`綜合測驗題庫_母檔.xlsx`）**不在儲存庫裡**，由 Billy 自行保存，位置是 `C:\學測英文單字練習_備份\學測英文單字練習\2_題庫母檔`。需要時請他提供或連接該資料夾。
+Excel 母檔（`A級題庫_母檔.xlsx`、`B級題庫_母檔.xlsx`、`C級題庫_母檔.xlsx`、`片語題庫_母檔.xlsx`、`綜合測驗題庫_母檔.xlsx`）**不在本儲存庫裡**，放在私人儲存庫 `chungyilin2005-sys/gsat-source` 的 `2_題庫母檔/`（通常 clone 在 `C:\cowork\gsat-source`；參考資料與建檔工具也在那裡，說明見它的 `AGENTS.md`）。2026-10-29 起以該儲存庫為準；`C:\學測英文單字練習_備份` 只是舊存檔，不要再改。
 
 ## 3. 資料流與唯一來源
 
@@ -136,7 +136,7 @@ Billy 另有一個舊站 `chungyilin2005-sys/gsat-english-site`（網址 `https:
 
 - 舊站的完整說明在它自己的 `AGENTS.md`。通常在 `C:\cowork\gsat-english-site`；沒有的話先 `git clone`。
 - A、B 級：本儲存庫的詞性與例句為準。在舊站資料夾執行 `node tools/sync-ab-from-quiz.js check <本儲存庫資料夾>` 看差異，確認後改 `apply`。只會改詞性和例句兩欄，舊站獨有的考頻資料不動。
-- C 級：以 Excel 母檔為準（需要母檔裡的排名、Zipf、優先度）。執行 `python tools/sync-c-data.py <C級題庫_母檔.xlsx 路徑>`。
+- C 級：以 Excel 母檔為準（需要母檔裡的排名、Zipf、優先度）。執行 `python tools/sync-c-data.py C:\cowork\gsat-source\2_題庫母檔\C級題庫_母檔.xlsx`。
 - 兩個網站是各自的儲存庫，要分別 commit 與 push。改完先在本機開舊站頁面確認沒有錯誤。
 - 修改題庫內容時，順手問 Billy 要不要同步舊站，不要自行 push 舊站。
 
