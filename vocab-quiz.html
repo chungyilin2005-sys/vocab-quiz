@@ -131,6 +131,11 @@ input[type=radio]{accent-color:var(--red);width:1.15rem;height:1.15rem;margin:.3
 .mark{width:8rem;height:8rem;border:3px solid var(--red);border-radius:50%;display:grid;place-content:center;text-align:center;color:var(--red);font-family:var(--en);transform:rotate(-8deg);margin:.5rem 0 1rem;animation:stamp .35s ease-out}
 .mark span{font-size:2.8rem;line-height:1;font-weight:700}
 .mark small{font-size:1rem}
+.mastery{margin:-.25rem 0 .5rem}
+.mastery p{margin:.3rem 0 0;font-size:.92rem}
+.mastery small{display:block;color:var(--muted);font-size:.8rem}
+.mbar{height:6px;border-radius:99px;background:var(--line);overflow:hidden}
+.mbar span{display:block;height:100%;background:var(--red);border-radius:99px}
 .goal{font-size:.92rem;margin:-.5rem 0 1rem;padding:.45rem .75rem;border-left:3px solid var(--red);background:var(--red-soft)}
 @keyframes stamp{from{transform:rotate(-8deg) scale(1.35);opacity:0}to{transform:rotate(-8deg) scale(1);opacity:1}}
 .wronglist,.booklist{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
@@ -237,6 +242,15 @@ function logAnswers(src, n, ok) {
 function goalLine() {
   const n = Object.values(store.get(LOG_KEY, {})[dayKey()] || {}).reduce((s, r) => s + r[0], 0);
   return n >= DAILY_GOAL ? `今天已練 ${n} 題，達成每日目標（${DAILY_GOAL} 題）` : `今天已練 ${n}／${DAILY_GOAL} 題，再 ${DAILY_GOAL - n} 題就達成每日目標`;
+}
+
+/* ===== 掌握進度（vq:seen:<題庫id>，答對過的字，以小寫單字為索引） =====
+   「已掌握」＝答對過至少一次，而且目前不在錯題本裡。index.html 用同樣的定義計算。 */
+const seenKey = id => 'vq:seen:' + id;
+function markSeen(id, k) { const s = store.get(seenKey(id), {}); if (!s[k]) { s[k] = 1; store.set(seenKey(id), s); } }
+function masteredCount() {
+  const seen = store.get(seenKey(S.bank.id), {}), b = loadBook();
+  return S.items.filter(it => { const k = keyOf(it); return seen[k] && !b[k]; }).length;
 }
 
 /* ===== 錯題本（存在這台裝置的瀏覽器） ===== */
@@ -453,6 +467,8 @@ function renderSetup() {
     <button class="link back" data-act="home">換題庫</button>
     <h1>${esc(S.bank.name)}</h1>
     <p class="meta">共 ${n} 題${bookN ? `，錯題本裡有 ${bookN} 題` : ''}</p>
+    ${BANKS.some(b => b.id === S.bank.id) ? (m => `<div class="mastery"><div class="mbar" role="progressbar" aria-label="掌握進度" aria-valuemin="0" aria-valuemax="${n}" aria-valuenow="${m}"><span style="width:${m / n * 100}%"></span></div>
+      <p>已掌握 <b>${m}</b>／${n} 字（${Math.floor(m / n * 100)}%）<small>答對過、而且不在錯題本裡的字</small></p></div>`)(masteredCount()) : ''}
     ${errs}
     <fieldset><legend>題型</legend>${MODES.map(m => {
       const why = modeBlocked(m.id);
@@ -529,7 +545,10 @@ function pick(i) {
   const ok = S.opts[i] === S.correct;
   if (ok) S.score += 1; else S.wrong.push(item);
   const msg = recordResult(item, ok);
-  if (BANKS.some(b => b.id === S.bank.id)) logAnswers(S.bank.id, 1, ok ? 1 : 0);
+  if (BANKS.some(b => b.id === S.bank.id)) {
+    logAnswers(S.bank.id, 1, ok ? 1 : 0);
+    if (ok) markSeen(S.bank.id, keyOf(item));
+  }
   $app.querySelectorAll('.opt').forEach((b, j) => {
     b.disabled = true;
     if (S.opts[j] === S.correct) b.classList.add('is-ok');

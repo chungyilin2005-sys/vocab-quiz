@@ -34,6 +34,11 @@ h1{font-size:1.7rem;line-height:1.3;margin:0 0 .5rem}
 .name{font-size:1.2rem;font-weight:700}
 .go{grid-row:span 2;color:var(--red);font-size:1.4rem}
 .desc{color:var(--muted);font-size:.92rem}
+.prog{grid-column:2;display:flex;align-items:center;gap:.6rem;font-size:.8rem;color:var(--muted);margin-top:.2rem}
+.prog .mbar{flex:1;max-width:10rem;height:5px;border-radius:99px;background:var(--line);overflow:hidden}
+.prog .mbar span{display:block;height:100%;background:var(--red);border-radius:99px}
+.countdown{margin:0 0 .8rem;font-size:.92rem;color:var(--muted)}
+.countdown b{color:var(--red);font-size:1.15rem;font-family:var(--en)}
 h2{font-size:1.05rem;margin:2rem 0 .5rem}
 h2.sec{font-size:.9rem;color:var(--muted);margin:1.5rem 0 .25rem;letter-spacing:.08em}
 p{margin:.5rem 0}
@@ -106,22 +111,22 @@ footer a{color:var(--muted)}
   <div id="study" class="study" hidden></div>
   <h2 class="sec">單字與片語</h2>
   <ul class="banks">
-    <li><a class="bank" href="vocab-quiz.html?set=A">
+    <li><a class="bank" href="vocab-quiz.html?set=A" data-bank="A">
       <span class="mark" aria-hidden="true">A</span><span class="name">A 級必背 244 字</span><span class="go" aria-hidden="true">›</span>
       <span class="desc">出現頻率最高、最優先要熟記的單字</span></a></li>
-    <li><a class="bank" href="vocab-quiz.html?set=B">
+    <li><a class="bank" href="vocab-quiz.html?set=B" data-bank="B">
       <span class="mark" aria-hidden="true">B</span><span class="name">B 級重要 1032 字</span><span class="go" aria-hidden="true">›</span>
       <span class="desc">歷屆常見、拉開分數差距的重要單字</span></a></li>
-    <li><a class="bank" href="vocab-quiz.html?set=C">
+    <li><a class="bank" href="vocab-quiz.html?set=C" data-bank="C">
       <span class="mark" aria-hidden="true">C</span><span class="name">C 級補強 807 字</span><span class="go" aria-hidden="true">›</span>
       <span class="desc">歷屆還沒考過的 Level 4–5 字與補充重要字，例句為自編</span></a></li>
-    <li><a class="bank" href="vocab-quiz.html?set=P">
+    <li><a class="bank" href="vocab-quiz.html?set=P" data-bank="P">
       <span class="mark" aria-hidden="true">P</span><span class="name">高頻片語 130 個</span><span class="go" aria-hidden="true">›</span>
       <span class="desc">動詞片語、介系詞片語與轉承語</span></a></li>
   </ul>
   <h2 class="sec">文法</h2>
   <ul class="banks">
-    <li><a class="bank" href="grammar-practice.html">
+    <li><a class="bank" href="grammar-practice.html" data-bank="G">
       <span class="mark" aria-hidden="true">G</span><span class="name">綜合測驗歷屆題庫 185 題</span><span class="go" aria-hidden="true">›</span>
       <span class="desc">歷屆原題，可依題型練習，或依新制比例計時測驗</span></a></li>
     <li><a class="bank" href="grammar-exam.html">
@@ -130,6 +135,7 @@ footer a{color:var(--muted)}
   </ul>
   <h2>使用說明</h2>
   <p class="note">單字與片語題庫可以選擇題型（看英文選中文、看中文選英文、聽發音選中文）和題數。綜合測驗題庫有練習與測驗兩種模式。答錯的題目會記在這台裝置的錯題本，下次練習時優先出現；同一題連續答對 3 次就會移出。</p>
+  <p class="note">題庫下方的「已掌握」是答對過、而且目前不在錯題本裡的字或題目；答錯會回到錯題本，掌握數也會跟著減少。</p>
   <p class="note">每天的目標是 20 題，單字、片語和綜合測驗（練習與測驗模式）的題數合併計算；文法專題測驗不列入。達成目標的日子會在日曆上塗滿，每 7 天內可以休息 1 天，連續天數不會中斷。「給老師的學習週報」可以截圖或複製文字繳交。</p>
   <p class="note">錯題本和練習紀錄只存在你目前使用的瀏覽器裡。換手機、換電腦或清除瀏覽資料前，請先用「備份／還原紀錄」下載備份檔，到新裝置再還原。</p>
 </section>
@@ -147,7 +153,13 @@ const REST_GAP = 7;      // 每 7 天內可以休息 1 天，連續天數不中�
 const LOG_KEY = 'study:log', NAME_KEY = 'study:name';
 const SRC = [['A', 'A 級單字'], ['B', 'B 級單字'], ['C', 'C 級單字'], ['P', '高頻片語'], ['G', '綜合測驗']];
 const BOOK_KEYS = { A: 'vq:book:A', B: 'vq:book:B', C: 'vq:book:C', P: 'vq:book:P', G: 'gp:book' };
-const BACKUP_KEYS = [LOG_KEY, NAME_KEY, ...Object.values(BOOK_KEYS)];
+// 掌握進度：答對過的字或題目（vocab-quiz.html 的 markSeen() 與 grammar-practice.html 的 markSeen() 寫入）
+const SEEN_KEYS = { A: 'vq:seen:A', B: 'vq:seen:B', C: 'vq:seen:C', P: 'vq:seen:P', G: 'gp:seen' };
+// 各題庫總數；題庫增減時要和首頁題庫名稱上的數字一起改
+const TOTALS = { A: 244, B: 1032, C: 807, P: 130, G: 185 };
+// 學測第一天（116 學年度：2027/1/22–24）；每年改一次
+const GSAT = { name: '116 學測', date: '2027-01-22' };
+const BACKUP_KEYS = [LOG_KEY, NAME_KEY, ...Object.values(BOOK_KEYS), ...Object.values(SEEN_KEYS)];
 const DAY_RE = /^\d{4}-\d{2}-\d{2}$/;
 const WD = '日一二三四五六';
 
@@ -192,6 +204,12 @@ function streakInfo(log) {
   return { cur, best, restUntil };
 }
 
+// 已掌握＝答對過至少一次、而且目前不在錯題本裡
+function mastered(id) {
+  const seen = store.get(SEEN_KEYS[id], {}), book = store.get(BOOK_KEYS[id], {});
+  return Math.min(TOTALS[id], Object.keys(seen).filter(k => !book[k]).length);
+}
+
 /* ===== 畫面 ===== */
 const $study = document.getElementById('study');
 const $sheet = $study.closest('.sheet');
@@ -202,6 +220,12 @@ function render() {
   $sheet.classList.toggle('solo', view !== 'dash');
   $study.innerHTML = view === 'report' ? reportHTML(log) : view === 'backup' ? backupHTML() : dashHTML(log);
   $study.hidden = false;
+  document.querySelectorAll('.bank[data-bank]').forEach(a => {
+    const id = a.dataset.bank, m = mastered(id), t = TOTALS[id];
+    let el = a.querySelector('.prog');
+    if (!el) { el = document.createElement('span'); el.className = 'prog'; a.appendChild(el); }
+    el.innerHTML = `<span class="mbar" aria-hidden="true"><span style="width:${m / t * 100}%"></span></span><span>已掌握 ${m}／${t}</span>`;
+  });
 }
 
 function dashHTML(log) {
@@ -216,7 +240,9 @@ function dashHTML(log) {
     const cls = k > tk ? 'fut' : c >= DAILY_GOAL ? 'done' : c ? 'part' : '';
     cells += `<span class="d ${cls}${k === tk ? ' today' : ''}" title="${md(d)}：${c} 題"${k > tk ? ' aria-hidden="true"' : ` aria-label="${md(d)} 練了 ${c} 題"`}>${d.getDate()}</span>`;
   }
+  const exam = parseDay(GSAT.date), left2 = Math.round((exam - parseDay(tk)) / 864e5);
   return `
+    ${left2 > 0 ? `<p class="countdown">距離 ${GSAT.name}還有 <b>${left2}</b> 天（${exam.getFullYear()}/${md(exam)}）</p>` : ''}
     <div class="today">
       <div class="tnum"><b>${n}</b><small>／${DAILY_GOAL} 題</small></div>
       <div class="tinfo">
@@ -250,7 +276,8 @@ function weekData(log) {
     }
   }
   const books = SRC.map(([id, name]) => [name, Object.keys(store.get(BOOK_KEYS[id], {})).length]).filter(x => x[1]);
-  return { mon, sun: addDays(mon, 6), days, bySrc, n, ok, doneDays, activeDays, books, ...streakInfo(log) };
+  const mast = SRC.map(([id, name]) => [name, mastered(id), TOTALS[id]]).filter(x => x[1]);
+  return { mon, sun: addDays(mon, 6), days, bySrc, n, ok, doneDays, activeDays, books, mast, ...streakInfo(log) };
 }
 
 function reportText(w, name) {
@@ -263,6 +290,7 @@ function reportText(w, name) {
     `目前連續達標 ${w.cur} 天（最長 ${w.best} 天）`,
     `每日題數：${w.days.map(x => `${WD[x.d.getDay()]} ${x.fut ? '—' : x.n}`).join('、')}`,
     `各題庫：${SRC.filter(([id]) => w.bySrc[id]).map(([id, nm]) => `${nm} ${w.bySrc[id][0]} 題（${pct(w.bySrc[id][1], w.bySrc[id][0])}）`).join('、') || '無'}`,
+    `掌握進度：${w.mast.map(([nm, m, t]) => `${nm} ${m}／${t}`).join('、') || '尚無'}`,
     `目前錯題本：${w.books.map(([nm, c]) => `${nm} ${c} 題`).join('、') || '無'}`,
     `產生時間：${now.getFullYear()}/${now.getMonth() + 1}/${now.getDate()} ${pad(now.getHours())}:${pad(now.getMinutes())}`,
   ].join('\n');
@@ -288,6 +316,7 @@ function reportHTML(log) {
     <div class="week">${w.days.map(x => `<div class="${x.fut ? 'fut' : x.n >= DAILY_GOAL ? 'done' : x.n ? 'part' : ''}">${WD[x.d.getDay()]}<b>${x.fut ? '—' : x.n}</b></div>`).join('')}</div>
     <p>每日目標 ${DAILY_GOAL} 題・目前連續達標 <b>${w.cur}</b> 天（最長 ${w.best} 天）</p>
     ${rows ? `<table><thead><tr><th>題庫</th><th class="n">題數</th><th class="n">正確率</th></tr></thead><tbody>${rows}</tbody></table>` : '<p>這週還沒有練習紀錄。</p>'}
+    <p>掌握進度：${w.mast.map(([nm, m, t]) => `${esc(nm)} ${m}／${t}`).join('、') || '尚無'}</p>
     <p>目前錯題本：${w.books.map(([nm, c]) => `${esc(nm)} ${c} 題`).join('、') || '無'}</p>
     <p class="stamp">產生時間：${now.getFullYear()}/${now.getMonth() + 1}/${now.getDate()} ${pad(now.getHours())}:${pad(now.getMinutes())}</p>
     <div class="actions">
@@ -358,6 +387,14 @@ function restore(text) {
       if (!b[id] || (+e.last || 0) > (+b[id].last || 0)) b[id] = e;
     }
     store.set(key, b);
+  }
+  // 掌握進度：聯集
+  for (const key of Object.values(SEEN_KEYS)) {
+    const inS = d[key];
+    if (!inS || typeof inS !== 'object') continue;
+    const m = store.get(key, {});
+    for (const k of Object.keys(inS)) m[k] = 1;
+    store.set(key, m);
   }
   if (!store.get(NAME_KEY, '') && typeof d[NAME_KEY] === 'string') store.set(NAME_KEY, d[NAME_KEY].slice(0, 30));
   const saved = store.set(LOG_KEY, log);
