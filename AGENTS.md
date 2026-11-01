@@ -86,7 +86,7 @@ Excel 母檔 →（另存 CSV UTF-8）→ tools/csv-to-json.html → data/*.json
 - `confusableMap()` 從 explanation 的易混字清單還原「中文選項→英文」，`addOptionLinks()` 在**作答後**於每個選項右側加劍橋字典連結。
 - `dictURL()`、`phraseSlug()`、`wordHTML()`、`exampleHTML()` 負責字典連結；例句中粗體的目標字會連到原形詞條。
 - 錯題本：`recordResult()`，連續答對 `STREAK_TO_CLEAR`（3）次移出。
-- localStorage 鍵：`vq:prefs`（題型、題數、中譯顯示）、`vq:book:<題庫id>`（錯題本，以小寫單字為索引）。**改鍵名或改 word 文字，學生既有的錯題紀錄會對不上。**
+- localStorage 鍵：`vq:prefs`（題型、題數、中譯顯示）、`vq:book:<題庫id>`（錯題本，以小寫單字為索引）、`vq:seen:<題庫id>`（答對過的字，見 5-4）、`study:log`（每日題數，見 5-4）。**改鍵名或改 word 文字，學生既有的錯題紀錄會對不上。**
 - 三種題型：`en2zh` 看英文選中文、`zh2en` 看中文選英文、`listen` 聽發音選中文。
 - 例句中譯預設隱藏，作答後可點「顯示中譯」或按 T；設定頁可改成自動顯示。
 
@@ -96,7 +96,7 @@ Excel 母檔 →（另存 CSV UTF-8）→ tools/csv-to-json.html → data/*.json
 - 載入 `data/G.json`，`validate()` 檢查基本格式。畫面：`renderHome`（模式切換、題型勾選、題數、各題型新制占比）、`showQuestion`／`pick`（練習）、`renderPracticeResult`、`renderTest`（測驗，一頁列出全部題目）、`renderTestResult`（各題型答對率、建議加強的題型、逐題檢討）。
 - 測驗模式：10 題 15 分鐘或 20 題 30 分鐘；`sampleTest()` 依學測 111–115 年各題型題數比例（最大餘數法）抽題；作答與截止時間存在 `gp:test`，重新整理可繼續，時間到自動交卷。不換算成 100 分，因為每次抽的題目不同，分數沒有可比性。
 - 練習模式答錯「連接詞／轉承語」題時，用 `transitionGroup()` 找出正解所屬的轉承語分組並顯示同組用語。
-- localStorage 鍵：`gp:prefs`、`gp:book`（錯題本，以題目 id 為索引）、`gp:test`（進行中的測驗）。
+- localStorage 鍵：`gp:prefs`、`gp:book`（錯題本，以題目 id 為索引）、`gp:test`（進行中的測驗）、`gp:seen`（答對過的題目，見 5-4）、`study:log`（每日題數）。
 - 題庫可手動上傳：首頁下方與載入失敗頁都有「上傳 JSON 題庫」（隱藏的 `#file` 輸入框）。`useData()` 是網站載入與上傳共用的入口，會先跑 `validate()`（含 `types`、`grammarTypes` 檢查）。上傳的檔案只在當次頁面有效；錯題本仍以題目 id 為索引，所以上傳同一份 G.json 時紀錄可以沿用。直接開本機檔案（file://）時讀不到 data 資料夾，就靠這個功能測試。
 
 ## 5-3. grammar-exam.html
@@ -114,6 +114,15 @@ Excel 母檔 →（另存 CSV UTF-8）→ tools/csv-to-json.html → data/*.json
 - 學習週報：週一到週日，可切換本週／上週。姓名存在 `study:name`。學生截圖或按「複製文字」貼到 LINE、Classroom 交給老師。紀錄存在學生自己的瀏覽器，老師無法從網站端驗證，週報是自我報告性質。
 - 備份／還原：備份檔內容為 `{ type: 'study-backup', v: 1, exported, data: { 各 localStorage 鍵: 值 } }`，包含 `study:log`、`study:name`、`vq:book:A/B/C/P`、`gp:book`。還原一律**合併**：練習紀錄同一天同一題庫取題數較多者（重複還原不會累加），錯題本同一題保留 `last` 較新者，姓名只在本機沒填時帶入。新增要備份的鍵時改 `BACKUP_KEYS`。
 - 刻意不做的：積分、排行榜（會鼓勵刷簡單題，且需要後端）。
+
+### 第二階段：掌握進度與學測倒數
+
+- 「已掌握」＝**答對過至少一次，而且目前不在錯題本裡**。答錯回到錯題本時掌握數會減少，連續答對 3 次移出錯題本後又算回來。
+- 紀錄：`vq:seen:<題庫id>`（以小寫單字為索引，和錯題本相同）、`gp:seen`（以題目 id 為索引），值都是 `{ 索引: 1 }`。只記正式題庫；綜合測驗測驗模式在交卷時記入答對的題目。上線前的作答沒有紀錄，所以所有人從 0 開始。
+- 顯示：首頁每個題庫下方的進度條、`vocab-quiz.html` 設定頁、`grammar-practice.html` 首頁、學習週報的「掌握進度」。
+- `index.html` 的 `TOTALS` 是各題庫總數，**題庫增減字數時要和首頁題庫名稱上的數字一起改**。練習頁則直接用載入的題目數計算。
+- 學測倒數：`index.html` 的 `GSAT`（名稱與第一天日期），**每年要改一次**。116 學測為 2027/1/22–24（依新聞轉述大考中心公告）。考試日當天及之後不顯示。
+- 備份的 `BACKUP_KEYS` 已包含 `vq:seen:*`、`gp:seen`，還原時取聯集。
 
 ## 6. 不可破壞的設計決策
 

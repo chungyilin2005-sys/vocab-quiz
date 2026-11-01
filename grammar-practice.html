@@ -139,6 +139,11 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .mark{width:8rem;height:8rem;border:3px solid var(--red);border-radius:50%;display:grid;place-content:center;text-align:center;color:var(--red);font-family:var(--en);transform:rotate(-8deg);margin:.5rem 0 1rem;animation:stamp .35s ease-out}
 .mark span{font-size:2.8rem;line-height:1;font-weight:700}
 .mark small{font-size:1rem}
+.mastery{margin:0 0 1rem}
+.mastery p{margin:.3rem 0 0;font-size:.92rem}
+.mastery small{display:block;color:var(--muted);font-size:.8rem}
+.mbar{height:6px;border-radius:99px;background:var(--line);overflow:hidden}
+.mbar span{display:block;height:100%;background:var(--red);border-radius:99px}
 .goal{font-size:.92rem;margin:-.5rem 0 1rem;padding:.45rem .75rem;border-left:3px solid var(--red);background:var(--red-soft)}
 @keyframes stamp{from{transform:rotate(-8deg) scale(1.35);opacity:0}to{transform:rotate(-8deg) scale(1);opacity:1}}
 .advice{margin-top:1rem;padding:.9rem 1rem;border-radius:10px;background:var(--red-soft)}
@@ -168,7 +173,7 @@ const STREAK_TO_CLEAR = 3;          // 錯題連續答對幾次後移出錯題�
 const TESTS = [{ n: 10, min: 15 }, { n: 20, min: 30 }];
 const PRACTICE_COUNTS = [10, 20];
 const LETTERS = 'ABCD';
-const K = { prefs: 'gp:prefs', book: 'gp:book', test: 'gp:test' };
+const K = { prefs: 'gp:prefs', book: 'gp:book', test: 'gp:test', seen: 'gp:seen' };
 
 const $app = document.getElementById('app');
 const $file = document.getElementById('file');
@@ -241,6 +246,9 @@ function record(it, ok) {
   }
   store.set(K.book, b); return msg;
 }
+// 掌握進度：答對過至少一次、而且目前不在錯題本裡（與 index.html 定義相同）
+function markSeen(id) { const s = store.get(K.seen, {}); if (!s[id]) { s[id] = 1; store.set(K.seen, s); } }
+function masteredCount() { const s = store.get(K.seen, {}), b = loadBook(); return S.items.filter(x => s[x.id] && !b[x.id]).length; }
 const bookItems = () => Object.keys(loadBook()).map(id => S.byId[id]).filter(Boolean);
 
 /* ===== 轉承語補充 ===== */
@@ -288,6 +296,8 @@ function renderHome() {
     <h1>綜合測驗歷屆題庫</h1>
     <p class="lead">${esc(d.scope)}，共 ${S.items.length} 題，皆為歷屆原題。</p>
     ${S.srcName ? `<p class="note">目前使用上傳的題庫檔：${esc(S.srcName)}</p>` : ''}
+    ${(m => `<div class="mastery"><div class="mbar" role="progressbar" aria-label="掌握進度" aria-valuemin="0" aria-valuemax="${S.items.length}" aria-valuenow="${m}"><span style="width:${m / S.items.length * 100}%"></span></div>
+      <p>已掌握 <b>${m}</b>／${S.items.length} 題（${Math.floor(m / S.items.length * 100)}%）<small>答對過、而且不在錯題本裡的題目</small></p></div>`)(masteredCount())}
     <p class="note">${esc(d.notIncluded)}。</p>
     ${saved ? `<div class="resume">上次的測驗還沒交卷（${saved.ids.length} 題）。<div class="actions" style="margin-top:.5rem"><button class="primary" data-act="resume">繼續作答</button><button class="link" data-act="discard">放棄這次測驗</button></div></div>` : ''}
     <div class="modes">
@@ -348,6 +358,7 @@ function pick(i) {
   if (ok) S.score++; else S.wrong.push(it);
   const msg = record(it, ok);
   logAnswers('G', 1, ok ? 1 : 0);
+  if (ok) markSeen(it.id);
   $app.querySelectorAll('.opt').forEach((b, j) => {
     b.disabled = true;
     if (j === it.answer) b.classList.add('is-ok'); else if (j === i) b.classList.add('is-bad'); else b.classList.add('is-dim');
@@ -487,6 +498,7 @@ function submitTest(auto) {
   res.forEach(r => record(r.it, r.ok));
   const done = res.filter(r => r.pick !== undefined);   // 只計入有作答的題目
   logAnswers('G', done.length, done.filter(r => r.ok).length);
+  res.forEach(r => { if (r.ok) markSeen(r.it.id); });
   store.del(K.test);
   renderTestResult(res, Math.min(Date.now(), t.endAt) - t.startAt, auto);
 }
