@@ -131,6 +131,7 @@ input[type=radio]{accent-color:var(--red);width:1.15rem;height:1.15rem;margin:.3
 .mark{width:8rem;height:8rem;border:3px solid var(--red);border-radius:50%;display:grid;place-content:center;text-align:center;color:var(--red);font-family:var(--en);transform:rotate(-8deg);margin:.5rem 0 1rem;animation:stamp .35s ease-out}
 .mark span{font-size:2.8rem;line-height:1;font-weight:700}
 .mark small{font-size:1rem}
+.goal{font-size:.92rem;margin:-.5rem 0 1rem;padding:.45rem .75rem;border-left:3px solid var(--red);background:var(--red-soft)}
 @keyframes stamp{from{transform:rotate(-8deg) scale(1.35);opacity:0}to{transform:rotate(-8deg) scale(1);opacity:1}}
 .wronglist,.booklist{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
 .wronglist li,.booklist li{display:flex;flex-wrap:wrap;gap:.2rem 1rem;align-items:baseline;padding:.6rem 0;border-bottom:1px solid var(--line)}
@@ -220,6 +221,23 @@ const S = {
   showZh: prefs.showZh === true,   // 例句中譯預設隱藏
 };
 const savePrefs = () => store.set('vq:prefs', { mode: S.mode, count: S.count, showZh: S.showZh });
+
+/* ===== 每日學習紀錄（study:log，index.html、vocab-quiz.html、grammar-practice.html 共用同一格式） =====
+   { "YYYY-MM-DD": { 題庫代號: [作答題數, 答對題數] } }，日期用裝置的本地時間。 */
+const DAILY_GOAL = 20;            // 每日目標題數；改這裡時 index.html 的 DAILY_GOAL 要一起改
+const LOG_KEY = 'study:log';
+const dayKey = (d = new Date()) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+function logAnswers(src, n, ok) {
+  if (!n) return;
+  const log = store.get(LOG_KEY, {}), d = dayKey();
+  const day = log[d] || (log[d] = {}), r = day[src] || (day[src] = [0, 0]);
+  r[0] += n; r[1] += ok;
+  store.set(LOG_KEY, log);
+}
+function goalLine() {
+  const n = Object.values(store.get(LOG_KEY, {})[dayKey()] || {}).reduce((s, r) => s + r[0], 0);
+  return n >= DAILY_GOAL ? `今天已練 ${n} 題，達成每日目標（${DAILY_GOAL} 題）` : `今天已練 ${n}／${DAILY_GOAL} 題，再 ${DAILY_GOAL - n} 題就達成每日目標`;
+}
 
 /* ===== 錯題本（存在這台裝置的瀏覽器） ===== */
 const bookKey = id => 'vq:book:' + id;
@@ -511,6 +529,7 @@ function pick(i) {
   const ok = S.opts[i] === S.correct;
   if (ok) S.score += 1; else S.wrong.push(item);
   const msg = recordResult(item, ok);
+  if (BANKS.some(b => b.id === S.bank.id)) logAnswers(S.bank.id, 1, ok ? 1 : 0);
   $app.querySelectorAll('.opt').forEach((b, j) => {
     b.disabled = true;
     if (S.opts[j] === S.correct) b.classList.add('is-ok');
@@ -573,6 +592,7 @@ function renderResult() {
     <div class="mark" role="img" aria-label="答對 ${S.score} 題，共 ${total} 題"><span>${S.score}</span><small>/ ${total}</small></div>
     <h1>${acc === 100 ? '全部答對' : '練習結束'}</h1>
     <p class="meta">正確率 ${acc}%${tag}</p>
+    <p class="goal">${esc(goalLine())}</p>
     ${w.length ? `<h2>這回答錯的字</h2><ul class="wronglist">${w.map(x =>
       `<li><span class="w" lang="en">${esc(plain(x.word))}</span><span>${esc(x.correctAnswer)}</span></li>`).join('')}</ul>` : ''}
     <div class="actions">

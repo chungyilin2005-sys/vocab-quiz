@@ -139,6 +139,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .mark{width:8rem;height:8rem;border:3px solid var(--red);border-radius:50%;display:grid;place-content:center;text-align:center;color:var(--red);font-family:var(--en);transform:rotate(-8deg);margin:.5rem 0 1rem;animation:stamp .35s ease-out}
 .mark span{font-size:2.8rem;line-height:1;font-weight:700}
 .mark small{font-size:1rem}
+.goal{font-size:.92rem;margin:-.5rem 0 1rem;padding:.45rem .75rem;border-left:3px solid var(--red);background:var(--red-soft)}
 @keyframes stamp{from{transform:rotate(-8deg) scale(1.35);opacity:0}to{transform:rotate(-8deg) scale(1);opacity:1}}
 .advice{margin-top:1rem;padding:.9rem 1rem;border-radius:10px;background:var(--red-soft)}
 .advice b{color:var(--red)}
@@ -210,6 +211,23 @@ const S = { data: null, items: [], byId: {}, mode: prefs.mode === 'test' ? 'test
   types: null, count: typeof prefs.count === 'number' ? prefs.count : 10, testSize: prefs.testSize === 20 ? 20 : 10,
   screen: 'home', queue: [], idx: 0, score: 0, wrong: [], answered: false, kind: 'normal', results: [], timer: null };
 const savePrefs = () => store.set(K.prefs, { mode: S.mode, types: S.types, count: S.count, testSize: S.testSize });
+
+/* ===== 每日學習紀錄（study:log，index.html、vocab-quiz.html、grammar-practice.html 共用同一格式） =====
+   { "YYYY-MM-DD": { 題庫代號: [作答題數, 答對題數] } }，日期用裝置的本地時間。 */
+const DAILY_GOAL = 20;            // 每日目標題數；改這裡時 index.html 的 DAILY_GOAL 要一起改
+const LOG_KEY = 'study:log';
+const dayKey = (d = new Date()) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+function logAnswers(src, n, ok) {
+  if (!n) return;
+  const log = store.get(LOG_KEY, {}), d = dayKey();
+  const day = log[d] || (log[d] = {}), r = day[src] || (day[src] = [0, 0]);
+  r[0] += n; r[1] += ok;
+  store.set(LOG_KEY, log);
+}
+function goalLine() {
+  const n = Object.values(store.get(LOG_KEY, {})[dayKey()] || {}).reduce((s, r) => s + r[0], 0);
+  return n >= DAILY_GOAL ? `今天已練 ${n} 題，達成每日目標（${DAILY_GOAL} 題）` : `今天已練 ${n}／${DAILY_GOAL} 題，再 ${DAILY_GOAL - n} 題就達成每日目標`;
+}
 
 /* ===== 錯題本 ===== */
 const loadBook = () => store.get(K.book, {});
@@ -329,6 +347,7 @@ function pick(i) {
   const it = S.queue[S.idx], ok = i === it.answer;
   if (ok) S.score++; else S.wrong.push(it);
   const msg = record(it, ok);
+  logAnswers('G', 1, ok ? 1 : 0);
   $app.querySelectorAll('.opt').forEach((b, j) => {
     b.disabled = true;
     if (j === it.answer) b.classList.add('is-ok'); else if (j === i) b.classList.add('is-bad'); else b.classList.add('is-dim');
@@ -385,6 +404,7 @@ function renderPracticeResult() {
     <div class="mark" role="img" aria-label="答對 ${S.score} 題，共 ${total} 題"><span>${S.score}</span><small>/ ${total}</small></div>
     <h1>${acc === 100 ? '全部答對' : '練習結束'}</h1>
     <p class="meta">正確率 ${acc}%${S.kind === 'book' ? '（錯題本練習）' : S.kind === 'retry' ? '（重做錯題）' : ''}</p>
+    <p class="goal">${esc(goalLine())}</p>
     <h2>各題型答對情形</h2>${typeTable(S.queue, okSet).html}
     <div class="actions">
       ${S.wrong.length ? `<button class="primary" data-act="retry">重做這 ${S.wrong.length} 題</button>` : ''}
@@ -465,6 +485,8 @@ function submitTest(auto) {
   const qs = t.ids.map(id => S.byId[id]);
   const res = qs.map(it => ({ it, pick: t.answers[it.id], ok: t.answers[it.id] === it.answer }));
   res.forEach(r => record(r.it, r.ok));
+  const done = res.filter(r => r.pick !== undefined);   // 只計入有作答的題目
+  logAnswers('G', done.length, done.filter(r => r.ok).length);
   store.del(K.test);
   renderTestResult(res, Math.min(Date.now(), t.endAt) - t.startAt, auto);
 }
@@ -479,6 +501,7 @@ function renderTestResult(res, used, auto) {
     <div class="mark" role="img" aria-label="答對 ${ok} 題，共 ${n} 題"><span>${ok}</span><small>/ ${n}</small></div>
     <h1>測驗結果</h1>
     <p class="meta">正確率 ${Math.round(ok / n * 100)}%，用時 ${fmt(used)}</p>
+    <p class="goal">${esc(goalLine())}</p>
     <h2>各題型答對率</h2>${html}
     ${weak ? `<div class="advice">建議先加強<b>${esc(weak.t)}</b>（答對 ${weak.ok}／${weak.n}）。
       <div class="actions" style="margin-top:.6rem"><button class="primary" data-act="drill" data-type="${esc(weak.t)}">練習「${esc(weak.t)}」10 題</button></div></div>`

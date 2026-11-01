@@ -5,7 +5,7 @@
 ## 檔案結構
 
 ```
-index.html             首頁
+index.html             首頁（含每日目標、打卡日曆、學習週報、備份／還原）
 vocab-quiz.html        單字／片語測驗
 grammar-practice.html  綜合測驗歷屆題庫（練習模式、測驗模式）
 grammar-exam.html      文法專題測驗（50 題原創考卷）

@@ -38,6 +38,62 @@ h2{font-size:1.05rem;margin:2rem 0 .5rem}
 h2.sec{font-size:.9rem;color:var(--muted);margin:1.5rem 0 .25rem;letter-spacing:.08em}
 p{margin:.5rem 0}
 .note{color:var(--muted);font-size:.92rem}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.primary,.secondary{border-radius:10px;padding:.6rem 1.1rem;font-weight:700;border:2px solid var(--ink);min-height:44px}
+.primary{background:var(--ink);color:var(--sheet)}
+.secondary{background:transparent;color:var(--ink)}
+.link{background:none;border:0;padding:.25rem 0;color:var(--muted);text-decoration:underline;text-underline-offset:3px;min-height:44px}
+.actions{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem;align-items:center}
+/* 每日目標與打卡日曆 */
+.study{border:1.5px solid var(--line);border-radius:12px;padding:1rem 1rem 1.1rem;margin:0 0 .5rem}
+.today{display:flex;gap:1rem;align-items:center}
+.tnum{flex:none;min-width:5.2rem;text-align:center;line-height:1.1}
+.tnum b{display:block;font-size:2.4rem;color:var(--red);font-family:var(--en)}
+.tnum small{color:var(--muted);font-size:.85rem}
+.tinfo{flex:1;min-width:0}
+.tline{margin:0 0 .35rem;font-weight:700}
+.pbar{height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.pbar span{display:block;height:100%;background:var(--red);border-radius:99px}
+.streak{margin:.45rem 0 0;font-size:.92rem;color:var(--muted)}
+.streak b{color:var(--ink);font-size:1.05rem}
+.rest{font-size:.85rem;color:var(--muted);margin:.6rem 0 0}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:1rem;max-width:22rem}
+.cal .h{font-size:.75rem;color:var(--muted);text-align:center}
+.cal .d{aspect-ratio:1;border-radius:6px;border:1.5px solid var(--line);display:grid;place-items:center;font-size:.75rem;color:var(--muted)}
+.cal .d.part{background:var(--red-soft);border-color:var(--red-soft);color:var(--ink)}
+.cal .d.done{background:var(--red);border-color:var(--red);color:var(--sheet);font-weight:700}
+.cal .d.today{outline:2px solid var(--focus);outline-offset:1px}
+.cal .d.fut{visibility:hidden}
+.legend{display:flex;flex-wrap:wrap;gap:.3rem 1rem;font-size:.78rem;color:var(--muted);margin:.5rem 0 0}
+.legend i{display:inline-block;width:.8rem;height:.8rem;border-radius:3px;border:1.5px solid var(--line);vertical-align:-.1rem;margin-right:.3rem}
+.legend i.done{background:var(--red);border-color:var(--red)}
+.legend i.part{background:var(--red-soft);border-color:var(--red-soft)}
+/* 週報、備份畫面：只顯示這一區，方便截圖 */
+.sheet.solo>:not(#study){display:none}
+.sheet.solo .study{border:0;padding:0;margin:0}
+.rep h2{margin:0 0 .25rem;font-size:1.35rem}
+.rep .who{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin:.5rem 0}
+.rep input{font:inherit;color:var(--ink);background:var(--sheet);border:1.5px solid var(--line);border-radius:8px;padding:.35rem .6rem;width:11rem;min-height:40px}
+.seg{display:inline-flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden}
+.seg button{white-space:nowrap;background:none;border:0;padding:.35rem .9rem;min-height:40px;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--red-soft);color:var(--red);font-weight:700}
+.kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin:1rem 0}
+.kpi div{border:1.5px solid var(--line);border-radius:10px;padding:.5rem .4rem;text-align:center;line-height:1.2}
+.kpi b{display:block;font-size:1.5rem;color:var(--red);font-family:var(--en)}
+.kpi small{font-size:.78rem;color:var(--muted)}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin:.5rem 0 1rem}
+.week div{border:1.5px solid var(--line);border-radius:8px;text-align:center;padding:.3rem 0;font-size:.78rem;line-height:1.3}
+.week div b{display:block;font-size:1rem;font-family:var(--en)}
+.week div.done{background:var(--red);border-color:var(--red);color:var(--sheet)}
+.week div.part{background:var(--red-soft);border-color:var(--red-soft)}
+.week div.fut{color:var(--muted);border-style:dashed}
+.rep table{width:100%;border-collapse:collapse;font-size:.92rem}
+.rep th,.rep td{border-bottom:1px solid var(--line);padding:.35rem .25rem;text-align:left}
+.rep td.n,.rep th.n{text-align:right;font-variant-numeric:tabular-nums}
+.rep .stamp{font-size:.8rem;color:var(--muted);margin-top:.75rem}
+.bk textarea{width:100%;min-height:6rem;font:inherit;font-size:.85rem;color:var(--ink);background:var(--sheet);border:1.5px solid var(--line);border-radius:8px;padding:.5rem}
+.bk h3{font-size:1rem;margin:1.25rem 0 .25rem}
 footer{max-width:40rem;margin:0 auto;padding:0 1.25rem 2.5rem;color:var(--muted);font-size:.85rem}
 footer a{color:var(--muted)}
 </style>
@@ -47,6 +103,7 @@ footer a{color:var(--muted)}
 <section class="sheet">
   <h1>學測英文單字練習</h1>
   <p class="lead">整理自 106–115 學年度學測與指考英文試題的高頻單字、片語與綜合測驗。作答後可看解析、歷屆例句與中譯。</p>
+  <div id="study" class="study" hidden></div>
   <h2 class="sec">單字與片語</h2>
   <ul class="banks">
     <li><a class="bank" href="vocab-quiz.html?set=A">
@@ -73,11 +130,297 @@ footer a{color:var(--muted)}
   </ul>
   <h2>使用說明</h2>
   <p class="note">單字與片語題庫可以選擇題型（看英文選中文、看中文選英文、聽發音選中文）和題數。綜合測驗題庫有練習與測驗兩種模式。答錯的題目會記在這台裝置的錯題本，下次練習時優先出現；同一題連續答對 3 次就會移出。</p>
-  <p class="note">錯題本只存在你目前使用的瀏覽器裡，換裝置或清除瀏覽資料後會重新開始。</p>
+  <p class="note">每天的目標是 20 題，單字、片語和綜合測驗（練習與測驗模式）的題數合併計算；文法專題測驗不列入。達成目標的日子會在日曆上塗滿，每 7 天內可以休息 1 天，連續天數不會中斷。「給老師的學習週報」可以截圖或複製文字繳交。</p>
+  <p class="note">錯題本和練習紀錄只存在你目前使用的瀏覽器裡。換手機、換電腦或清除瀏覽資料前，請先用「備份／還原紀錄」下載備份檔，到新裝置再還原。</p>
 </section>
 </main>
 <footer>
   題目內容整理自大學入學考試中心公布之歷屆試題，僅供學習使用。<a href="tools/csv-to-json.html">題庫轉檔工具</a>
 </footer>
+<script>
+'use strict';
+/* ===== 每日目標、連續天數、學習週報、備份 =====
+   紀錄由 vocab-quiz.html 與 grammar-practice.html 的 logAnswers() 寫入 localStorage 的 study:log：
+   { "YYYY-MM-DD": { 題庫代號: [作答題數, 答對題數] } }，日期用裝置的本地時間。 */
+const DAILY_GOAL = 20;   // 每日目標題數；改這裡時另外兩頁的 DAILY_GOAL 要一起改
+const REST_GAP = 7;      // 每 7 天內可以休息 1 天，連續天數不中斷
+const LOG_KEY = 'study:log', NAME_KEY = 'study:name';
+const SRC = [['A', 'A 級單字'], ['B', 'B 級單字'], ['C', 'C 級單字'], ['P', '高頻片語'], ['G', '綜合測驗']];
+const BOOK_KEYS = { A: 'vq:book:A', B: 'vq:book:B', C: 'vq:book:C', P: 'vq:book:P', G: 'gp:book' };
+const BACKUP_KEYS = [LOG_KEY, NAME_KEY, ...Object.values(BOOK_KEYS)];
+const DAY_RE = /^\d{4}-\d{2}-\d{2}$/;
+const WD = '日一二三四五六';
+
+const store = {
+  get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch (e) { return false; } },
+};
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const pad = n => String(n).padStart(2, '0');
+const dayKey = (d = new Date()) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+const parseDay = k => { const [y, m, d] = k.split('-').map(Number); return new Date(y, m - 1, d); };
+const addDays = (d, n) => new Date(d.getFullYear(), d.getMonth(), d.getDate() + n);
+const md = d => `${d.getMonth() + 1}/${d.getDate()}`;
+const mdw = d => `${md(d)}（${WD[d.getDay()]}）`;
+const pct = (ok, n) => n ? Math.round(ok / n * 100) + '%' : '—';
+const mondayOf = d => addDays(d, -((d.getDay() + 6) % 7));
+
+function dayTotal(log, k) {
+  return Object.values(log[k] || {}).reduce((s, r) => [s[0] + (+r[0] || 0), s[1] + (+r[1] || 0)], [0, 0]);
+}
+
+// 由最早的紀錄往後掃：達標的日子 +1；沒達標的日子算休息，
+// 兩個休息日相距不到 7 天就中斷。今天還沒達標時不算休息（今天還沒過完）。
+function streakInfo(log) {
+  const today = new Date(), tk = dayKey(today);
+  const keys = Object.keys(log).filter(k => DAY_RE.test(k)).sort();
+  let cur = 0, best = 0, lastRest = null;
+  if (keys.length) {
+    for (let d = parseDay(keys[0]); dayKey(d) <= tk; d = addDays(d, 1)) {
+      const k = dayKey(d);
+      if (dayTotal(log, k)[0] >= DAILY_GOAL) cur++;
+      else if (k !== tk) {
+        if (cur === 0) lastRest = null;
+        else if (lastRest && Math.round((d - lastRest) / 864e5) < REST_GAP) { cur = 0; lastRest = null; }
+        else lastRest = d;
+      }
+      best = Math.max(best, cur);
+    }
+  }
+  // 休息日用掉後，到哪一天之前不能再休息
+  const restUntil = cur && lastRest && Math.round((today - lastRest) / 864e5) < REST_GAP ? addDays(lastRest, REST_GAP) : null;
+  return { cur, best, restUntil };
+}
+
+/* ===== 畫面 ===== */
+const $study = document.getElementById('study');
+const $sheet = $study.closest('.sheet');
+let view = 'dash', weekOffset = 0;
+
+function render() {
+  const log = store.get(LOG_KEY, {});
+  $sheet.classList.toggle('solo', view !== 'dash');
+  $study.innerHTML = view === 'report' ? reportHTML(log) : view === 'backup' ? backupHTML() : dashHTML(log);
+  $study.hidden = false;
+}
+
+function dashHTML(log) {
+  const today = new Date(), tk = dayKey(today);
+  const n = dayTotal(log, tk)[0], { cur, best, restUntil } = streakInfo(log);
+  const left = DAILY_GOAL - n;
+  // 日曆：最近 5 週，週一開頭
+  const start = addDays(mondayOf(today), -28);
+  let cells = '';
+  for (let i = 0; i < 35; i++) {
+    const d = addDays(start, i), k = dayKey(d), c = dayTotal(log, k)[0];
+    const cls = k > tk ? 'fut' : c >= DAILY_GOAL ? 'done' : c ? 'part' : '';
+    cells += `<span class="d ${cls}${k === tk ? ' today' : ''}" title="${md(d)}：${c} 題"${k > tk ? ' aria-hidden="true"' : ` aria-label="${md(d)} 練了 ${c} 題"`}>${d.getDate()}</span>`;
+  }
+  return `
+    <div class="today">
+      <div class="tnum"><b>${n}</b><small>／${DAILY_GOAL} 題</small></div>
+      <div class="tinfo">
+        <p class="tline">${left > 0 ? (n ? `今天再 ${left} 題就達標` : `今天的目標：${DAILY_GOAL} 題`) : '今天已達成目標'}</p>
+        <div class="pbar" role="progressbar" aria-label="今日進度" aria-valuemin="0" aria-valuemax="${DAILY_GOAL}" aria-valuenow="${Math.min(n, DAILY_GOAL)}"><span style="width:${Math.min(100, n / DAILY_GOAL * 100)}%"></span></div>
+        <p class="streak">連續達標 <b>${cur}</b> 天${best > cur ? `・最長 ${best} 天` : ''}</p>
+      </div>
+    </div>
+    ${restUntil ? `<p class="rest">這 7 天內已休息過一天，${md(addDays(restUntil, -1))} 以前每天都要達標，連續天數才不會中斷。</p>` : ''}
+    <div class="cal" aria-label="最近 5 週練習日曆">${[...'一二三四五六日'].map(w => `<span class="h" aria-hidden="true">${w}</span>`).join('')}${cells}</div>
+    <p class="legend"><span><i class="done"></i>達成 ${DAILY_GOAL} 題</span><span><i class="part"></i>有練習</span><span><i></i>沒練習</span></p>
+    <div class="actions">
+      <button class="secondary" data-act="report">給老師的學習週報</button>
+      <button class="link" data-act="backup">備份／還原紀錄</button>
+    </div>`;
+}
+
+function weekData(log) {
+  const today = new Date(), tk = dayKey(today);
+  const mon = addDays(mondayOf(today), weekOffset * 7);
+  const days = [], bySrc = {};
+  let n = 0, ok = 0, doneDays = 0, activeDays = 0;
+  for (let i = 0; i < 7; i++) {
+    const d = addDays(mon, i), k = dayKey(d), t = dayTotal(log, k);
+    days.push({ d, k, n: t[0], fut: k > tk });
+    n += t[0]; ok += t[1];
+    if (t[0] >= DAILY_GOAL) doneDays++;
+    if (t[0]) activeDays++;
+    for (const [src, r] of Object.entries(log[k] || {})) {
+      const b = bySrc[src] || (bySrc[src] = [0, 0]); b[0] += +r[0] || 0; b[1] += +r[1] || 0;
+    }
+  }
+  const books = SRC.map(([id, name]) => [name, Object.keys(store.get(BOOK_KEYS[id], {})).length]).filter(x => x[1]);
+  return { mon, sun: addDays(mon, 6), days, bySrc, n, ok, doneDays, activeDays, books, ...streakInfo(log) };
+}
+
+function reportText(w, name) {
+  const now = new Date();
+  return [
+    `【學測英文學習週報】${name || '（未填姓名）'}`,
+    `期間：${mdw(w.mon)}–${mdw(w.sun)}`,
+    `達成每日目標（${DAILY_GOAL} 題）：${w.doneDays}／7 天`,
+    `本週共練 ${w.n} 題，正確率 ${pct(w.ok, w.n)}`,
+    `目前連續達標 ${w.cur} 天（最長 ${w.best} 天）`,
+    `每日題數：${w.days.map(x => `${WD[x.d.getDay()]} ${x.fut ? '—' : x.n}`).join('、')}`,
+    `各題庫：${SRC.filter(([id]) => w.bySrc[id]).map(([id, nm]) => `${nm} ${w.bySrc[id][0]} 題（${pct(w.bySrc[id][1], w.bySrc[id][0])}）`).join('、') || '無'}`,
+    `目前錯題本：${w.books.map(([nm, c]) => `${nm} ${c} 題`).join('、') || '無'}`,
+    `產生時間：${now.getFullYear()}/${now.getMonth() + 1}/${now.getDate()} ${pad(now.getHours())}:${pad(now.getMinutes())}`,
+  ].join('\n');
+}
+
+function reportHTML(log) {
+  const w = weekData(log), name = store.get(NAME_KEY, '');
+  const now = new Date();
+  const rows = SRC.filter(([id]) => w.bySrc[id]).map(([id, nm]) =>
+    `<tr><td>${nm}</td><td class="n">${w.bySrc[id][0]} 題</td><td class="n">${pct(w.bySrc[id][1], w.bySrc[id][0])}</td></tr>`).join('');
+  return `<div class="rep">
+    <button class="link" data-act="dash">‹ 回首頁</button>
+    <h2>學測英文學習週報</h2>
+    <div class="who"><label for="stuName">姓名</label><input id="stuName" value="${esc(name)}" placeholder="班級座號姓名" maxlength="30" autocomplete="off"></div>
+    <div class="who"><span class="seg" role="group" aria-label="選擇週次">
+      <button data-act="week" data-off="0" aria-pressed="${weekOffset === 0}">本週</button><button data-act="week" data-off="-1" aria-pressed="${weekOffset === -1}">上週</button>
+    </span><span>${mdw(w.mon)}–${mdw(w.sun)}</span></div>
+    <div class="kpi">
+      <div><b>${w.doneDays}<small>／7</small></b><small>達標天數</small></div>
+      <div><b>${w.n}</b><small>本週題數</small></div>
+      <div><b>${pct(w.ok, w.n)}</b><small>正確率</small></div>
+    </div>
+    <div class="week">${w.days.map(x => `<div class="${x.fut ? 'fut' : x.n >= DAILY_GOAL ? 'done' : x.n ? 'part' : ''}">${WD[x.d.getDay()]}<b>${x.fut ? '—' : x.n}</b></div>`).join('')}</div>
+    <p>每日目標 ${DAILY_GOAL} 題・目前連續達標 <b>${w.cur}</b> 天（最長 ${w.best} 天）</p>
+    ${rows ? `<table><thead><tr><th>題庫</th><th class="n">題數</th><th class="n">正確率</th></tr></thead><tbody>${rows}</tbody></table>` : '<p>這週還沒有練習紀錄。</p>'}
+    <p>目前錯題本：${w.books.map(([nm, c]) => `${esc(nm)} ${c} 題`).join('、') || '無'}</p>
+    <p class="stamp">產生時間：${now.getFullYear()}/${now.getMonth() + 1}/${now.getDate()} ${pad(now.getHours())}:${pad(now.getMinutes())}</p>
+    <div class="actions">
+      <button class="primary" data-act="copyrep">複製文字</button>
+      <button class="link" data-act="dash">回首頁</button>
+    </div>
+    <p class="legend">把這個畫面截圖，或按「複製文字」貼到 LINE、Classroom 交給老師。</p>
+  </div>`;
+}
+
+function backupHTML() {
+  return `<div class="bk">
+    <button class="link" data-act="dash">‹ 回首頁</button>
+    <h2>備份／還原紀錄</h2>
+    <p class="legend">練習紀錄和錯題本只存在這個瀏覽器。換手機、換電腦或清除瀏覽資料前，先下載備份檔；到新裝置打開這一頁再還原。還原是「合併」，不會刪掉新裝置上已有的紀錄。</p>
+    <h3>備份</h3>
+    <div class="actions" style="margin-top:.25rem">
+      <button class="primary" data-act="download">下載備份檔</button>
+      <button class="secondary" data-act="copybk">複製備份文字</button>
+    </div>
+    <h3>還原</h3>
+    <div class="actions" style="margin-top:.25rem"><button class="secondary" data-act="pickfile">選擇備份檔</button></div>
+    <p class="legend">或把備份文字貼在下面：</p>
+    <textarea id="bkText" aria-label="貼上備份文字" spellcheck="false"></textarea>
+    <div class="actions" style="margin-top:.5rem"><button class="secondary" data-act="restoretext">用貼上的文字還原</button></div>
+    <input type="file" id="bkFile" accept=".json,application/json,text/plain" hidden>
+  </div>`;
+}
+
+/* ===== 備份與還原 ===== */
+function backupObject() {
+  const data = {};
+  for (const k of BACKUP_KEYS) { const v = store.get(k, undefined); if (v !== undefined) data[k] = v; }
+  return { app: '學測英文單字練習', type: 'study-backup', v: 1, exported: new Date().toISOString(), data };
+}
+
+function restore(text) {
+  let obj;
+  try { obj = JSON.parse(String(text).trim()); } catch (e) { alert('讀不懂這份備份：內容不是完整的備份文字或備份檔。'); return; }
+  if (!obj || obj.type !== 'study-backup' || typeof obj.data !== 'object' || !obj.data) { alert('這不是本網站的學習紀錄備份。'); return; }
+  const d = obj.data, inLog = d[LOG_KEY] && typeof d[LOG_KEY] === 'object' ? d[LOG_KEY] : {};
+  const days = Object.keys(inLog).filter(k => DAY_RE.test(k));
+  let wrongN = 0;
+  for (const id in BOOK_KEYS) if (d[BOOK_KEYS[id]] && typeof d[BOOK_KEYS[id]] === 'object') wrongN += Object.keys(d[BOOK_KEYS[id]]).length;
+  const when = obj.exported ? new Date(obj.exported) : null;
+  if (!confirm(`這份備份${when && !isNaN(when) ? `（${when.getFullYear()}/${when.getMonth() + 1}/${when.getDate()} 建立）` : ''}有 ${days.length} 天的練習紀錄、錯題 ${wrongN} 題。\n會和這台裝置現有的紀錄合併，不會刪除任何紀錄。要還原嗎？`)) return;
+
+  // 練習紀錄：同一天同一題庫取題數較多的那筆，重複還原也不會重複累加
+  const log = store.get(LOG_KEY, {});
+  for (const k of days) {
+    const day = inLog[k];
+    if (!day || typeof day !== 'object') continue;
+    for (const src of Object.keys(day)) {
+      const r = day[src];
+      if (!Array.isArray(r) || !(r[0] >= 0) || !(r[1] >= 0)) continue;
+      const mine = log[k] && log[k][src];
+      if (!mine || (+mine[0] || 0) < +r[0]) (log[k] || (log[k] = {}))[src] = [Math.floor(+r[0]), Math.min(Math.floor(+r[1]), Math.floor(+r[0]))];
+    }
+  }
+  // 錯題本：同一題保留最近答錯的那筆
+  for (const key of Object.values(BOOK_KEYS)) {
+    const inB = d[key];
+    if (!inB || typeof inB !== 'object') continue;
+    const b = store.get(key, {});
+    for (const id of Object.keys(inB)) {
+      const e = inB[id];
+      if (!e || typeof e !== 'object') continue;
+      if (!b[id] || (+e.last || 0) > (+b[id].last || 0)) b[id] = e;
+    }
+    store.set(key, b);
+  }
+  if (!store.get(NAME_KEY, '') && typeof d[NAME_KEY] === 'string') store.set(NAME_KEY, d[NAME_KEY].slice(0, 30));
+  const saved = store.set(LOG_KEY, log);
+  alert(saved ? '還原完成。' : '瀏覽器不允許儲存（可能是無痕模式），還原沒有成功。');
+  view = 'dash'; render();
+}
+
+async function copyText(text, btn) {
+  let ok = false;
+  try { await navigator.clipboard.writeText(text); ok = true; } catch (e) {
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { ok = document.execCommand('copy'); } catch (e2) { ok = false; }
+    ta.remove();
+  }
+  if (!ok) { prompt('無法自動複製，請手動複製以下內容：', text); return; }
+  const old = btn.textContent; btn.textContent = '已複製'; setTimeout(() => { btn.textContent = old; }, 2000);
+}
+
+$study.addEventListener('click', e => {
+  const t = e.target.closest('[data-act]');
+  if (!t) return;
+  switch (t.dataset.act) {
+    case 'dash': view = 'dash'; render(); window.scrollTo(0, 0); break;
+    case 'report': view = 'report'; weekOffset = 0; render(); window.scrollTo(0, 0); break;
+    case 'backup': view = 'backup'; render(); window.scrollTo(0, 0); break;
+    case 'week': weekOffset = Number(t.dataset.off) || 0; render(); break;
+    case 'copyrep': copyText(reportText(weekData(store.get(LOG_KEY, {})), store.get(NAME_KEY, '')), t); break;
+    case 'copybk': copyText(JSON.stringify(backupObject()), t); break;
+    case 'download': {
+      const name = store.get(NAME_KEY, '').replace(/[\\/:*?"<>|\s]+/g, '');
+      const url = URL.createObjectURL(new Blob([JSON.stringify(backupObject(), null, 1)], { type: 'application/json' }));
+      const a = document.createElement('a');
+      a.href = url; a.download = `學習紀錄備份${name ? '_' + name : ''}_${dayKey()}.json`;
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      break;
+    }
+    case 'pickfile': document.getElementById('bkFile').click(); break;
+    case 'restoretext': {
+      const v = document.getElementById('bkText').value;
+      if (v.trim()) restore(v); else alert('請先把備份文字貼在框裡。');
+      break;
+    }
+  }
+});
+
+$study.addEventListener('change', e => {
+  if (e.target.id === 'stuName') store.set(NAME_KEY, e.target.value.trim().slice(0, 30));
+  if (e.target.id === 'bkFile') {
+    const f = e.target.files[0];
+    if (!f) return;
+    const reader = new FileReader();
+    reader.onload = () => restore(reader.result);
+    reader.readAsText(f, 'utf-8');
+    e.target.value = '';
+  }
+});
+
+// 從練習頁按「上一頁」回來時（bfcache）也要更新今日題數
+window.addEventListener('pageshow', () => { if (view === 'dash') render(); });
+render();
+</script>
 </body>
 </html>
