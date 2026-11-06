@@ -547,7 +547,31 @@ function pickVoice() {
     || en.find(v => /en[-_]US/i.test(v.lang)) || en[0];
 }
 if (speech.ok) { pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
+
+/* 正式題庫有預錄的 Kokoro 音檔：audio/<題庫>/<小寫、空白換成 -> .mp3，由 tools/make_audio.py 產生。
+   點到才下載；沒有音檔、讀不到（例如直接開本機檔案）或播放失敗時，改用裝置語音。 */
+const audioURL = (bankId, text) => `audio/${bankId}/${text.toLowerCase().replace(/\s+/g, '-')}.mp3`;
+const hasAudio = () => !!S.bank && BANKS.some(b => b.id === S.bank.id) && /^https?:$/.test(location.protocol);
+const canSpeak = () => speech.ok || hasAudio();
+let player = null;
+function stopSpeak() {
+  if (player) { player.pause(); player = null; }
+  if (speech.ok) try { speechSynthesis.cancel(); } catch (e) { /* 略過 */ }
+}
 function speak(text) {
+  stopSpeak();
+  if (!hasAudio()) return speakTTS(text);
+  const a = new Audio(audioURL(S.bank.id, text));
+  player = a;
+  let fell = false;
+  const fallback = () => {
+    if (fell || player !== a) return;   // 已改用裝置語音，或已換成別的字
+    fell = true; player = null; speakTTS(text);
+  };
+  a.onerror = fallback;
+  try { const p = a.play(); if (p && p.catch) p.catch(fallback); } catch (e) { fallback(); }
+}
+function speakTTS(text) {
   if (!speech.ok) return;
   try {
     speechSynthesis.cancel();
@@ -675,7 +699,7 @@ function exampleHTML(text, headword) {
 /* ===== 畫面 ===== */
 function promptHTML(item, revealed) {
   const words = plain(item.word);
-  const spk = speech.ok ? `<button class="speak" data-act="speak" aria-label="播放發音" title="播放發音">${ICON_SPEAK}</button>` : '';
+  const spk = canSpeak() ? `<button class="speak" data-act="speak" aria-label="播放發音" title="播放發音">${ICON_SPEAK}</button>` : '';
   const phrase = /\s/.test(words) ? `，或<a href="${dictURL(phraseSlug(words))}" target="_blank" rel="noopener">查整個片語</a>` : '';
   const wordBlock = `<div class="word-line"><div class="word" lang="en">${wordHTML(item.word)}</div>${spk}</div>
     <p class="hint">點單字可查劍橋字典${phrase}</p>`;
@@ -708,7 +732,7 @@ function renderHome() {
 
 function modeBlocked(id) {
   if (id === 'zh2en' && S.items.length < 4) return '題庫至少需要 4 個字';
-  if (id === 'listen' && !speech.ok) return '這個瀏覽器沒有英文語音';
+  if (id === 'listen' && !canSpeak()) return '這個瀏覽器沒有英文語音';
   return '';
 }
 
@@ -865,7 +889,7 @@ function quit() {
 
 function renderResult() {
   S.screen = 'result';
-  if (speech.ok) speechSynthesis.cancel();
+  stopSpeak();
   const total = S.queue.length, acc = total ? Math.round(S.score / total * 100) : 0;
   const bookN = Object.keys(loadBook()).length;
   const w = S.wrong;

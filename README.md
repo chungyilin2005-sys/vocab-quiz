@@ -15,9 +15,12 @@ data/
   C.json               C 級補強 807 字（歷屆未考過，例句為自編）
   P.json               高頻片語 130 個
   G.json               綜合測驗歷屆題庫 185 題
+audio/
+  A/ B/ C/ P/          單字與片語的發音音檔（Kokoro 女聲，由 tools/make_audio.py 產生）
 tools/
   csv-to-json.html     Excel 母檔轉 JSON 工具
   check.html           題庫檢查工具
+  make_audio.py        產生發音音檔（在自己電腦上執行，不是網頁的一部分）
 AGENTS.md              給 AI agent 的專案說明（修改程式前請 agent 先讀）
 CLAUDE.md              指向 AGENTS.md，供 Claude Code 自動讀取
 .nojekyll              讓 GitHub Pages 直接提供檔案，不經 Jekyll 處理
@@ -52,6 +55,21 @@ CLAUDE.md              指向 AGENTS.md，供 Claude Code 自動讀取
 4. 開啟 `tools/csv-to-json.html`，拖入 CSV，確認沒有警告後下載 JSON，檔名改成對應的 `A.json`、`B.json`、`C.json`、`P.json` 或 `G.json`（綜合測驗母檔會自動預設為 G.json）。
 5. 在 GitHub 上傳新檔，取代 `data/` 裡的舊檔。
 6. 開啟網站上的 `tools/check.html`，按「檢查網站上的五份題庫」，確認沒有錯誤。
+7. 如果新增了單字或片語，或改了英文拼字，要補做發音音檔（見下一節）。沒補也不會壞，那個字會改用裝置的語音。
+
+## 發音音檔
+
+單字頁的發音優先播放 `audio/` 裡預錄的音檔，所有學生聽到的都是同一個聲音。找不到音檔、或直接在電腦上雙擊開啟 HTML 時，改用瀏覽器內建的語音。
+
+補做音檔（需要「開口說」專案裡裝好的 Kokoro 環境和 ffmpeg），在本資料夾執行：
+
+```
+C:/cowork/kaikou-project/.tts/venv/Scripts/python.exe tools/make_audio.py
+```
+
+只會補做還沒有的音檔。改了某個字的拼字時，舊的音檔要手動刪掉；要重做特定的字，加上 `--only conduct,permit`。
+
+名詞和動詞念法不同的字（例如 conduct、permit、import），依「中文（正解）的第一個字義」決定念法，設定在 `tools/make_audio.py` 的 `HETERONYMS`。新增這類字時要記得加進去。
 
 ## 題庫欄位
 
