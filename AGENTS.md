@@ -21,8 +21,10 @@ data/B.json            B 級重要 1032 字
 data/C.json            C 級補強 807 字（歷屆未考過的 L4–5 字 806 個＋人工補充 1 個，自編例句）
 data/P.json            高頻片語 130 個
 data/G.json            綜合測驗歷屆題庫 185 題
+audio/A|B|C|P/*.mp3    單字與片語發音（Kokoro af_heart），見 5-6
 tools/csv-to-json.html Excel 母檔（另存 CSV）轉 JSON，五份母檔都適用
 tools/check.html       題庫檢查工具
+tools/make_audio.py    產生 audio/ 的音檔（開發用，在本機執行）
 README.md              給人看的使用與上傳說明
 AGENTS.md              本檔
 CLAUDE.md              只指向本檔
@@ -142,6 +144,17 @@ Billy 的孩子反映作答不有趣，提議每 5 題放 K-pop 梗圖，因此�
   - 沒有圖片、或瀏覽器不允許 IndexedDB（例如無痕模式）時改用內建動畫。
   - **不在備份範圍**：圖片會讓備份檔太大，無法貼到 LINE。畫面上已提醒換裝置要重新選圖。網站無法過濾學生放的內容，但圖片只在學生自己的裝置上。
 
+## 5-6. 發音音檔（2026-11）
+
+瀏覽器內建語音的品質依裝置差異很大，所以改成預錄音檔。
+
+- 音檔：`audio/<題庫>/<檔名>.mp3`，檔名是單字轉小寫、空白換成 `-`（`vocab-quiz.html` 的 `audioURL()` 與 `tools/make_audio.py` 的 `slug()` 要一致）。單聲道 48 kbps，前後各留 0.15 秒靜音，一個約 6–10 KB。
+- 聲音固定用 Kokoro 的 `af_heart`（女聲）、速度 0.9。補做時不要換聲音，否則同一題庫會混用兩種聲音。
+- 產生方式：借用「開口說」專案（`C:\cowork\kaikou-project\.tts`）已裝好的 kokoro-onnx 0.6.1 環境與模型，需要 ffmpeg，指令見 `tools/make_audio.py` 開頭說明。只補做缺少的檔案；改拼字時要刪掉舊檔。
+- 播放：`speak()` 只在正式題庫（`BANKS`）而且經網頁伺服器開啟時播音檔，點到才下載；範例、上傳、`?src=` 題庫和本機 file:// 一律用裝置語音（`speakTTS()`）。音檔 404 或播放失敗也會自動改用裝置語音。發音按鈕和「聽發音」題型改看 `canSpeak()`（有音檔或有裝置語音）。
+- **不要做成 base64 內嵌**：全部約 20 MB，內嵌會讓頁面變大、用不到的也要下載。（「開口說」內嵌是因為 Artifact 只能有單一檔案。）
+- **名詞、動詞念法不同的字**：Kokoro 只念一個字時多半採名詞念法，所以 `HETERONYMS` 依「中文（正解）的第一個字義」以音標指定念法（例如 conduct v.、import n.、elaborate adj. -ət）。`DEFAULT_OK` 記錄已確認預設念法正確的字。新增這類字時用 `--list` 對照，再以 `--only` 重做。
+
 ## 6. 不可破壞的設計決策
 
 | 決策 | 理由 |
@@ -170,6 +183,7 @@ Billy 的孩子反映作答不有趣，提議每 5 題放 K-pop 梗圖，因此�
 4. 版面：手機寬度（約 390px）和桌機各看一次，含深色模式。
 5. 改了檢查規則或解析格式時，`vocab-quiz.html` 與 `tools/check.html` 的對應函式（`senses`、`overlaps`、`confusableMap`）要同步修改。
 6. 改了 A、B、C 級的單字資料（詞性、例句、中文等）之後，要同步舊站，見下一節。
+7. 新增單字、片語或改拼字後，執行 `tools/make_audio.py` 補做音檔（見 5-6），並確認 `audio/` 的檔案數和題庫字數相同。
 
 ## 7-2. 舊站 gsat-english-site 的同步
 
