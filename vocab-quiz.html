@@ -147,7 +147,8 @@ input[type=radio]{accent-color:var(--red);width:1.15rem;height:1.15rem;margin:.3
 .rw-wrap::before{content:"";position:absolute;inset:0;background:var(--paper);opacity:.88}
 .rw-card{position:relative;width:100%;background:var(--sheet);border:1px solid var(--line);border-top:4px solid var(--red);border-radius:2px 2px 14px 14px;padding:1.1rem 1.1rem 1.25rem;text-align:center;animation:rw-pop .3s ease-out}
 .rw-media{position:relative;aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:var(--paper)}
-.rw-media iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.rw-media iframe,.rw-media img{position:absolute;inset:0;width:100%;height:100%;border:0}
+.rw-media img{object-fit:contain}
 .rw-wait{position:absolute;inset:0;display:grid;place-items:center;margin:0;color:var(--muted);font-size:.9rem}
 .rw-fx{position:absolute;inset:0;overflow:hidden}
 .rw-fx i{position:absolute;top:-12%;left:var(--x);width:8px;height:14px;border-radius:2px;background:var(--c);transform:rotate(var(--r));animation:rw-fall 1.7s var(--d) ease-in forwards}
@@ -160,6 +161,14 @@ input[type=radio]{accent-color:var(--red);width:1.15rem;height:1.15rem;margin:.3
 .rw-go{width:100%;margin-top:1rem}
 .rw-combo{display:inline-block;margin-left:.6rem;padding:0 .65rem;border-radius:999px;background:var(--red);color:var(--sheet);font-size:.9rem;vertical-align:middle;animation:rw-pop .35s ease-out}
 .rw-hint{font-size:.82rem;color:var(--muted);margin:.4rem 0 0}
+.rw-mine{margin-top:.75rem;padding:.75rem;border:1.5px dashed var(--line);border-radius:10px}
+.rw-count{margin:0;font-size:.92rem}
+.rw-thumbs{list-style:none;margin:.6rem 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(72px,1fr));gap:.5rem}
+.rw-thumbs li{position:relative;aspect-ratio:1;border-radius:8px;overflow:hidden;background:var(--paper)}
+.rw-thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+.rw-del{position:absolute;top:2px;right:2px;width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:var(--sheet);color:var(--ink);font-size:1.1rem;line-height:1;display:grid;place-items:center;padding:0}
+.rw-msg{margin:.4rem 0 0;font-size:.88rem;color:var(--red);min-height:0}
+.rw-msg:empty{display:none}
 @keyframes rw-pop{from{transform:scale(.5);opacity:0}to{transform:scale(1);opacity:1}}
 @keyframes rw-fall{to{top:112%;transform:rotate(calc(var(--r) + 540deg))}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
@@ -265,14 +274,16 @@ function goalLine() {
 }
 
 /* ===== 每 5 題的小獎勵與連對特效（vocab-quiz.html、grammar-practice.html 各有一份相同程式） =====
-   設定存在 reward:prefs（{ style: 'builtin' | 'giphy' | 'off' }），兩頁共用。
+   設定存在 reward:prefs（{ style: 'builtin' | 'giphy' | 'mine' | 'off' }），兩頁共用。
    K-pop 動圖用 GIPHY 官方嵌入碼（iframe），只在跳出獎勵畫面時才連到 GIPHY；
-   先用 3 秒載入一張小縮圖測試連線，連不上（例如學校網路擋掉）就改用內建動畫。 */
+   先用 3 秒載入一張小縮圖測試連線，連不上（例如學校網路擋掉）就改用內建動畫。
+   「我的圖片」是學生從自己裝置選的圖，存在這個瀏覽器的 IndexedDB（reward-images），不會上傳，也不在備份範圍。 */
 const REWARD_EVERY = 5;
 const REWARD_KEY = 'reward:prefs';
 const REWARD_STYLES = [
   { id: 'builtin', label: '內建動畫' },
   { id: 'giphy', label: 'K-pop 動圖' },
+  { id: 'mine', label: '我的圖片' },
   { id: 'off', label: '不顯示' },
 ];
 // GIPHY 官方認證帳號的動圖編號（2026-11 挑選，GIPHY 分級皆為 G）。換圖時只改這裡。
@@ -290,10 +301,62 @@ const REWARD_GIFS = [
 ];
 const REWARD_STICKERS = ['🎉', '🌟', '💯', '👏', '🔥', '🏆', '💪', '✨'];
 const REWARD_CHEERS = ['太強了！', '繼續保持！', '手感正好！', '穩穩前進！', '越來越熟了！'];
+const MINE_MAX = 30;                 // 最多存幾張
+const MINE_SIDE = 640;               // 一般照片縮到長邊幾 px
+const MINE_GIF_MAX = 5 * 1024 * 1024; // GIF 不縮圖（縮了就不會動），單張上限 5MB
+
+/* 自訂圖片存放：IndexedDB reward-images／imgs，每筆 { id, buf: ArrayBuffer, type, added } */
+const MineDB = {
+  open() {
+    return new Promise((ok, bad) => {
+      if (!('indexedDB' in window)) { bad(new Error('no-idb')); return; }
+      const r = indexedDB.open('reward-images', 1);
+      r.onupgradeneeded = () => r.result.createObjectStore('imgs', { keyPath: 'id', autoIncrement: true });
+      r.onsuccess = () => ok(r.result);
+      r.onerror = () => bad(r.error);
+    });
+  },
+  async run(mode, fn) {
+    const db = await this.open();
+    return new Promise((ok, bad) => {
+      const tx = db.transaction('imgs', mode), req = fn(tx.objectStore('imgs'));
+      tx.oncomplete = () => { db.close(); ok(req && req.result); };
+      tx.onerror = tx.onabort = () => { db.close(); bad(tx.error); };
+    });
+  },
+  list() { return this.run('readonly', s => s.getAll()); },
+  add(rec) { return this.run('readwrite', s => s.add(rec)); },
+  del(id) { return this.run('readwrite', s => s.delete(id)); },
+};
+
+// 一般照片縮小後轉成 JPEG；GIF 保留原檔
+function shrinkImage(file) {
+  return new Promise((ok, bad) => {
+    if (file.type === 'image/gif') {
+      if (file.size > MINE_GIF_MAX) { bad(new Error('GIF 超過 5MB')); return; }
+      file.arrayBuffer().then(buf => ok({ buf, type: 'image/gif' }), bad);
+      return;
+    }
+    const url = URL.createObjectURL(file), img = new Image();
+    img.onload = () => {
+      URL.revokeObjectURL(url);
+      const k = Math.min(1, MINE_SIDE / Math.max(img.naturalWidth, img.naturalHeight));
+      const c = document.createElement('canvas');
+      c.width = Math.max(1, Math.round(img.naturalWidth * k)); c.height = Math.max(1, Math.round(img.naturalHeight * k));
+      const g = c.getContext('2d');
+      g.fillStyle = '#fff'; g.fillRect(0, 0, c.width, c.height); // 透明背景的 PNG 轉 JPEG 時墊白底
+      g.drawImage(img, 0, 0, c.width, c.height);
+      c.toBlob(b => b ? b.arrayBuffer().then(buf => ok({ buf, type: 'image/jpeg' }), bad) : bad(new Error('轉檔失敗')), 'image/jpeg', 0.85);
+    };
+    img.onerror = () => { URL.revokeObjectURL(url); bad(new Error('讀不懂這個圖檔')); };
+    img.src = url;
+  });
+}
+
 const Reward = {
-  open: false, combo: 0, bag: [],
+  open: false, combo: 0, bag: [], mineBag: [], thumbURLs: [],
   style() { const p = store.get(REWARD_KEY, {}); return REWARD_STYLES.some(s => s.id === p.style) ? p.style : 'builtin'; },
-  setStyle(v) { store.set(REWARD_KEY, { style: v }); },
+  setStyle(v) { store.set(REWARD_KEY, { style: v }); this.mount(); },
   reset() { this.combo = 0; },
   // 每答一題呼叫一次；連對 3、5、10、15……題時回傳一個小標籤
   answer(ok) {
@@ -303,14 +366,75 @@ const Reward = {
     return `<span class="rw-combo">連對 ${c} 題！</span>`;
   },
   due(done) { return this.style() !== 'off' && done > 0 && done % REWARD_EVERY === 0; },
-  // 洗牌後依序抽，30 張都出現過一輪才會重複
+  // 洗牌後依序抽，全部出現過一輪才會重複
   nextGif() { if (!this.bag.length) this.bag = shuffle(REWARD_GIFS); return this.bag.pop(); },
+  nextMine(recs) {
+    const ids = recs.map(r => r.id);
+    this.mineBag = this.mineBag.filter(id => ids.includes(id));
+    if (!this.mineBag.length) this.mineBag = shuffle(ids);
+    const id = this.mineBag.pop();
+    return recs.find(r => r.id === id);
+  },
+
+  /* ----- 設定畫面 ----- */
   settingHTML(wrapClass) {
     const cur = this.style();
     return `<fieldset><legend>每 ${REWARD_EVERY} 題的小獎勵</legend><div class="${wrapClass}">${REWARD_STYLES.map(s =>
       `<label class="chip"><input type="radio" name="reward" value="${s.id}"${cur === s.id ? ' checked' : ''}><span>${s.label}</span></label>`).join('')}</div>
-      <p class="rw-hint">K-pop 動圖來自 GIPHY 上的官方帳號，需要連到 GIPHY 網站；連不上時（例如學校網路）會自動改用內建動畫。</p></fieldset>`;
+      <p class="rw-hint">K-pop 動圖來自 GIPHY 上的官方帳號，需要連到 GIPHY 網站；連不上時（例如學校網路）會自動改用內建動畫。</p>
+      <div id="rwMine"></div></fieldset>`;
   },
+  // 畫面產生後呼叫：選了「我的圖片」才顯示圖片管理區
+  mount() {
+    const box = document.getElementById('rwMine');
+    this.thumbURLs.forEach(u => URL.revokeObjectURL(u)); this.thumbURLs = [];
+    if (!box) return Promise.resolve();
+    if (this.style() !== 'mine') { box.innerHTML = ''; return Promise.resolve(); }
+    if (!box.dataset.wired) {
+      box.dataset.wired = '1';
+      box.addEventListener('click', e => {
+        const b = e.target.closest('[data-rw]');
+        if (!b) return;
+        if (b.dataset.rw === 'pick') box.querySelector('#rwFile').click();
+        if (b.dataset.rw === 'del') MineDB.del(Number(b.dataset.id)).then(() => this.mount(), () => this.mount());
+      });
+      box.addEventListener('change', e => { if (e.target.id === 'rwFile') this.addFiles(e.target.files); });
+    }
+    box.innerHTML = '<p class="rw-hint">讀取中……</p>';
+    return MineDB.list().then(recs => {
+      const urls = recs.map(r => URL.createObjectURL(new Blob([r.buf], { type: r.type })));
+      this.thumbURLs = urls;
+      box.innerHTML = `<div class="rw-mine">
+        <p class="rw-count">已加入 ${recs.length}／${MINE_MAX} 張${recs.length ? '' : '，還沒有圖片時會先用內建動畫'}</p>
+        ${recs.length ? `<ul class="rw-thumbs">${recs.map((r, i) => `<li><img src="${urls[i]}" alt="">
+          <button type="button" class="rw-del" data-rw="del" data-id="${r.id}" aria-label="刪除這張圖片">×</button></li>`).join('')}</ul>` : ''}
+        <div class="actions" style="margin-top:.6rem"><button type="button" class="secondary" data-rw="pick"${recs.length >= MINE_MAX ? ' disabled' : ''}>選擇圖片</button></div>
+        <input type="file" id="rwFile" accept="image/*" multiple hidden>
+        <p class="rw-msg" id="rwMsg" aria-live="polite"></p>
+        <p class="rw-hint">圖片只存在這個瀏覽器，不會上傳，別人看不到。首頁的備份不包含這些圖片，換手機、換瀏覽器或清除瀏覽資料後要重新選。一般照片會自動縮小；GIF 動圖保留原檔才會動，單張限 5MB。</p></div>`;
+    }, () => {
+      box.innerHTML = '<p class="rw-msg">這個瀏覽器不允許儲存圖片（可能是無痕模式），獎勵畫面會改用內建動畫。</p>';
+    });
+  },
+  async addFiles(files) {
+    const list = [...(files || [])];
+    if (!list.length) return;
+    const msg = t => { const m = document.getElementById('rwMsg'); if (m) m.textContent = t; };
+    msg('處理中……');
+    let have = 0;
+    try { have = (await MineDB.list()).length; } catch (e) { msg('這個瀏覽器不允許儲存圖片（可能是無痕模式）。'); return; }
+    let added = 0; const skipped = [];
+    for (const f of list) {
+      if (have + added >= MINE_MAX) { skipped.push(`${f.name}（已達 ${MINE_MAX} 張上限）`); continue; }
+      if (!/^image\//.test(f.type)) { skipped.push(`${f.name}（不是圖片）`); continue; }
+      try { const r = await shrinkImage(f); await MineDB.add({ buf: r.buf, type: r.type, added: Date.now() }); added++; }
+      catch (e) { skipped.push(`${f.name}（${e && e.name === 'QuotaExceededError' ? '儲存空間不足' : (e && e.message) || '無法加入'}）`); }
+    }
+    await this.mount(); // 重畫管理區之後再顯示結果訊息
+    msg(`加入 ${added} 張${skipped.length ? `；略過：${skipped.join('、')}` : ''}`);
+  },
+
+  /* ----- 獎勵畫面 ----- */
   show(done, ok, onClose) {
     const pickOne = a => a[Math.floor(Math.random() * a.length)];
     const el = document.createElement('div');
@@ -324,7 +448,19 @@ const Reward = {
     document.body.appendChild(el);
     this.open = true;
     const media = el.querySelector('.rw-media'), credit = el.querySelector('.rw-credit');
-    if (this.style() === 'giphy') this.loadGif(media, credit); else this.builtin(media);
+    const st = this.style();
+    let mineURL = '';
+    if (st === 'giphy') this.loadGif(media, credit);
+    else if (st === 'mine') {
+      media.innerHTML = '<p class="rw-wait">載入中……</p>';
+      MineDB.list().then(recs => {
+        if (!this.open) return;
+        if (!recs.length) { this.builtin(media); credit.textContent = '還沒有加入圖片，先看內建動畫'; return; }
+        const r = this.nextMine(recs);
+        mineURL = URL.createObjectURL(new Blob([r.buf], { type: r.type }));
+        media.innerHTML = `<img src="${mineURL}" alt="">`;
+      }, () => { if (this.open) this.builtin(media); });
+    } else this.builtin(media);
     const opened = Date.now();
     const close = () => {
       // 剛跳出時忽略按鍵，避免按「下一題」的同一下就把獎勵關掉
@@ -332,6 +468,7 @@ const Reward = {
       this.open = false;
       document.removeEventListener('keydown', onKey);
       el.remove();
+      if (mineURL) URL.revokeObjectURL(mineURL);
       onClose();
     };
     const onKey = e => { if (e.key === 'Enter' || e.key === ' ' || e.key === 'Escape') { e.preventDefault(); close(); } };
@@ -608,6 +745,7 @@ function renderSetup() {
       <button class="secondary" data-act="book"${bookN ? '' : ' disabled'}>錯題本${bookN ? `（${bookN}）` : ''}</button>
     </div>
   </section>`;
+  Reward.mount();
 }
 
 function startQuiz(kind, list) {
