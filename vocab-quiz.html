@@ -142,6 +142,26 @@ input[type=radio]{accent-color:var(--red);width:1.15rem;height:1.15rem;margin:.3
 .wronglist li,.booklist li{display:flex;flex-wrap:wrap;gap:.2rem 1rem;align-items:baseline;padding:.6rem 0;border-bottom:1px solid var(--line)}
 .w{font-family:var(--read);font-weight:700;font-size:1.05rem;min-width:9rem}
 .cnt{margin-left:auto;font-size:.85rem;color:var(--red)}
+/* 每 5 題的小獎勵與連對特效（vocab-quiz.html、grammar-practice.html 各有一份相同樣式） */
+.rw-wrap{position:fixed;inset:0;z-index:50;display:grid;grid-template-columns:minmax(0,24rem);place-content:center;align-items:center;padding:16px}
+.rw-wrap::before{content:"";position:absolute;inset:0;background:var(--paper);opacity:.88}
+.rw-card{position:relative;width:100%;background:var(--sheet);border:1px solid var(--line);border-top:4px solid var(--red);border-radius:2px 2px 14px 14px;padding:1.1rem 1.1rem 1.25rem;text-align:center;animation:rw-pop .3s ease-out}
+.rw-media{position:relative;aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:var(--paper)}
+.rw-media iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.rw-wait{position:absolute;inset:0;display:grid;place-items:center;margin:0;color:var(--muted);font-size:.9rem}
+.rw-fx{position:absolute;inset:0;overflow:hidden}
+.rw-fx i{position:absolute;top:-12%;left:var(--x);width:8px;height:14px;border-radius:2px;background:var(--c);transform:rotate(var(--r));animation:rw-fall 1.7s var(--d) ease-in forwards}
+.rw-sticker{position:absolute;inset:0;display:grid;place-items:center;font-size:5.5rem;line-height:1;animation:rw-pop .5s ease-out}
+.rw-credit{margin:.3rem 0 0;min-height:1.2em;font-size:.75rem;color:var(--muted);text-align:right}
+.rw-credit a{color:var(--muted)}
+.rw-title{font-size:1.4rem;font-weight:700;margin:.4rem 0 .1rem}
+.rw-sub{margin:0;color:var(--muted)}
+.rw-goal{margin:.4rem 0 0;font-size:.9rem}
+.rw-go{width:100%;margin-top:1rem}
+.rw-combo{display:inline-block;margin-left:.6rem;padding:0 .65rem;border-radius:999px;background:var(--red);color:var(--sheet);font-size:.9rem;vertical-align:middle;animation:rw-pop .35s ease-out}
+.rw-hint{font-size:.82rem;color:var(--muted);margin:.4rem 0 0}
+@keyframes rw-pop{from{transform:scale(.5);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes rw-fall{to{top:112%;transform:rotate(calc(var(--r) + 540deg))}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -243,6 +263,108 @@ function goalLine() {
   const n = Object.values(store.get(LOG_KEY, {})[dayKey()] || {}).reduce((s, r) => s + r[0], 0);
   return n >= DAILY_GOAL ? `今天已練 ${n} 題，達成每日目標（${DAILY_GOAL} 題）` : `今天已練 ${n}／${DAILY_GOAL} 題，再 ${DAILY_GOAL - n} 題就達成每日目標`;
 }
+
+/* ===== 每 5 題的小獎勵與連對特效（vocab-quiz.html、grammar-practice.html 各有一份相同程式） =====
+   設定存在 reward:prefs（{ style: 'builtin' | 'giphy' | 'off' }），兩頁共用。
+   K-pop 動圖用 GIPHY 官方嵌入碼（iframe），只在跳出獎勵畫面時才連到 GIPHY；
+   先用 3 秒載入一張小縮圖測試連線，連不上（例如學校網路擋掉）就改用內建動畫。 */
+const REWARD_EVERY = 5;
+const REWARD_KEY = 'reward:prefs';
+const REWARD_STYLES = [
+  { id: 'builtin', label: '內建動畫' },
+  { id: 'giphy', label: 'K-pop 動圖' },
+  { id: 'off', label: '不顯示' },
+];
+// GIPHY 官方認證帳號的動圖編號（2026-11 挑選，GIPHY 分級皆為 G）。換圖時只改這裡。
+const REWARD_GIFS = [
+  'C2O6glQaWwY2aVGh3n', 'EnDxN2Esss3aboiI94', 'SazxQFuYr5N3T5zlfH', 'qW5dn7Ca43Za9fW6Oe', // Stray Kids
+  'anCoFlHS0wbt5aobOq', 'sXY3GLDYZGlX6aFW0R', 'yvU6VRZ1nVTEMsmyeS', '6N6e97G9HQnhuUwu7V', // BLACKPINK
+  'DCTrDC7s6NcerW0sVM', 'RJKtkigbxINrxh7CCN', '4L6tFo4UfLZMJTzJm2', 'o5Zh1dZbiS6cyMAsTb', // (G)I-DLE
+  'Qfaz9jMo30DdfySLmn', 'wL1Dvm9hbMj1ixTk0P', 'qxOE7R3mxcf3ncW6Wd', 'gIxqXyFKfdEcFmHV1U', // MONSTA X
+  'lPQNDMccgTBoA0C5OT', 'XytU44dZSDBvS3eCcf',                                             // CRAVITY
+  'ZaiP0md2QCxIH0rw9n', 'S6pxitwpBdJDXBqmsS', 'hrWfYIDUBOQWYSzQ3n', 'l3yeGZ5rggPh7wALWt',
+  'kG3aqHbevtdA2OyqAs', 'Ph6A5WjBAI3981PAsf', 'fu260PEyYzUKQz8hNR',                       // TWICE
+  'uJ5BfbogMEt7Qv7yFY', '3h9nvhAO2qFud09JPH', 'iVbgypv2I8BRxBQDBQ',                       // aespa
+  'KkaSMnv6q48mCWx0fg',                                                                   // ITZY
+  'mWyMCNZ7RRkS3rs1Ty',                                                                   // ENHYPEN
+];
+const REWARD_STICKERS = ['🎉', '🌟', '💯', '👏', '🔥', '🏆', '💪', '✨'];
+const REWARD_CHEERS = ['太強了！', '繼續保持！', '手感正好！', '穩穩前進！', '越來越熟了！'];
+const Reward = {
+  open: false, combo: 0, bag: [],
+  style() { const p = store.get(REWARD_KEY, {}); return REWARD_STYLES.some(s => s.id === p.style) ? p.style : 'builtin'; },
+  setStyle(v) { store.set(REWARD_KEY, { style: v }); },
+  reset() { this.combo = 0; },
+  // 每答一題呼叫一次；連對 3、5、10、15……題時回傳一個小標籤
+  answer(ok) {
+    this.combo = ok ? this.combo + 1 : 0;
+    const c = this.combo;
+    if (this.style() === 'off' || !(c === 3 || c === 5 || (c >= 10 && c % 5 === 0))) return '';
+    return `<span class="rw-combo">連對 ${c} 題！</span>`;
+  },
+  due(done) { return this.style() !== 'off' && done > 0 && done % REWARD_EVERY === 0; },
+  // 洗牌後依序抽，30 張都出現過一輪才會重複
+  nextGif() { if (!this.bag.length) this.bag = shuffle(REWARD_GIFS); return this.bag.pop(); },
+  settingHTML(wrapClass) {
+    const cur = this.style();
+    return `<fieldset><legend>每 ${REWARD_EVERY} 題的小獎勵</legend><div class="${wrapClass}">${REWARD_STYLES.map(s =>
+      `<label class="chip"><input type="radio" name="reward" value="${s.id}"${cur === s.id ? ' checked' : ''}><span>${s.label}</span></label>`).join('')}</div>
+      <p class="rw-hint">K-pop 動圖來自 GIPHY 上的官方帳號，需要連到 GIPHY 網站；連不上時（例如學校網路）會自動改用內建動畫。</p></fieldset>`;
+  },
+  show(done, ok, onClose) {
+    const pickOne = a => a[Math.floor(Math.random() * a.length)];
+    const el = document.createElement('div');
+    el.className = 'rw-wrap';
+    el.innerHTML = `<div class="rw-card" role="dialog" aria-modal="true" aria-labelledby="rwTitle">
+      <div class="rw-media"></div><p class="rw-credit"></p>
+      <p class="rw-title" id="rwTitle">${pickOne(REWARD_CHEERS)}</p>
+      <p class="rw-sub">已完成 ${done} 題，答對 ${ok} 題</p>
+      <p class="rw-goal">${esc(goalLine())}</p>
+      <button class="primary rw-go" type="button">繼續</button></div>`;
+    document.body.appendChild(el);
+    this.open = true;
+    const media = el.querySelector('.rw-media'), credit = el.querySelector('.rw-credit');
+    if (this.style() === 'giphy') this.loadGif(media, credit); else this.builtin(media);
+    const opened = Date.now();
+    const close = () => {
+      // 剛跳出時忽略按鍵，避免按「下一題」的同一下就把獎勵關掉
+      if (!this.open || Date.now() - opened < 400) return;
+      this.open = false;
+      document.removeEventListener('keydown', onKey);
+      el.remove();
+      onClose();
+    };
+    const onKey = e => { if (e.key === 'Enter' || e.key === ' ' || e.key === 'Escape') { e.preventDefault(); close(); } };
+    el.querySelector('.rw-go').addEventListener('click', close);
+    document.addEventListener('keydown', onKey);
+    el.querySelector('.rw-go').focus({ preventScroll: true });
+  },
+  loadGif(media, credit) {
+    const id = this.nextGif();
+    media.innerHTML = '<p class="rw-wait">載入中……</p>';
+    let settled = false;
+    const fail = () => {
+      if (settled) return; settled = true;
+      this.builtin(media);
+      credit.textContent = '連不上 GIPHY，先看內建動畫';
+    };
+    const timer = setTimeout(fail, 3000);
+    const probe = new Image();
+    probe.onload = () => {
+      if (settled) return; settled = true; clearTimeout(timer);
+      media.innerHTML = `<iframe src="https://giphy.com/embed/${id}" title="獎勵動圖" allow="autoplay"></iframe>`;
+      credit.innerHTML = `<a href="https://giphy.com/gifs/${id}" target="_blank" rel="noopener">via GIPHY</a>`;
+    };
+    probe.onerror = fail;
+    probe.src = `https://media.giphy.com/media/${id}/200_s.gif`;
+  },
+  builtin(media) {
+    const colors = ['--red', '--ok', '--focus', '--ink'];
+    const bits = Array.from({ length: 20 }, (_, i) =>
+      `<i style="--x:${(Math.random() * 96).toFixed(1)}%;--d:${(Math.random() * .6).toFixed(2)}s;--r:${Math.floor(Math.random() * 360)}deg;--c:var(${colors[i % 4]})"></i>`).join('');
+    media.innerHTML = `<div class="rw-fx" aria-hidden="true">${bits}<span class="rw-sticker">${REWARD_STICKERS[Math.floor(Math.random() * REWARD_STICKERS.length)]}</span></div>`;
+  },
+};
 
 /* ===== 掌握進度（vq:seen:<題庫id>，答對過的字，以小寫單字為索引） =====
    「已掌握」＝答對過至少一次，而且目前不在錯題本裡。index.html 用同樣的定義計算。 */
@@ -480,6 +602,7 @@ function renderSetup() {
       <label class="choice"><input type="radio" name="showZh" value="0"${S.showZh ? '' : ' checked'}><span>先隱藏，需要時再點開<small>建議：先自己讀懂英文，再對照中文</small></span></label>
       <label class="choice"><input type="radio" name="showZh" value="1"${S.showZh ? ' checked' : ''}><span>作答後直接顯示</span></label>
     </fieldset>` : ''}
+    ${Reward.settingHTML('row')}
     <div class="actions">
       <button class="primary" data-act="start">開始練習</button>
       <button class="secondary" data-act="book"${bookN ? '' : ' disabled'}>錯題本${bookN ? `（${bookN}）` : ''}</button>
@@ -490,6 +613,7 @@ function renderSetup() {
 function startQuiz(kind, list) {
   if (!list.length) return;
   S.kind = kind; S.queue = list; S.idx = 0; S.score = 0; S.wrong = [];
+  Reward.reset();
   const seen = new Set(S.items.map(keyOf));
   S.pool = S.items.concat(list.filter(it => !seen.has(keyOf(it))));
   showQuestion();
@@ -545,6 +669,7 @@ function pick(i) {
   const ok = S.opts[i] === S.correct;
   if (ok) S.score += 1; else S.wrong.push(item);
   const msg = recordResult(item, ok);
+  const combo = Reward.answer(ok);
   if (BANKS.some(b => b.id === S.bank.id)) {
     logAnswers(S.bank.id, 1, ok ? 1 : 0);
     if (ok) markSeen(S.bank.id, keyOf(item));
@@ -561,7 +686,7 @@ function pick(i) {
   $app.querySelector('.progress span').style.width = ((S.idx + 1) / S.queue.length * 100) + '%';
   const meta = [item.pos, item.level ? `參考詞彙表第 ${item.level} 級` : ''].filter(Boolean).join('　');
   const after = $app.querySelector('#after');
-  after.innerHTML = `<div class="verdict ${ok ? 'is-ok' : 'is-bad'}">${ok ? '答對了' : `答錯了，正解是「${esc(S.correct)}」`}</div>
+  after.innerHTML = `<div class="verdict ${ok ? 'is-ok' : 'is-bad'}">${ok ? '答對了' : `答錯了，正解是「${esc(S.correct)}」`}${combo}</div>
     <div class="explain">
       ${meta ? `<p class="meta">${esc(meta)}</p>` : ''}
       ${item.explanation ? `<p>${rich(item.explanation)}</p>` : ''}
@@ -587,9 +712,9 @@ function toggleZh() {
 }
 
 function next() {
-  if (S.screen !== 'quiz' || !S.answered) return;
-  S.idx += 1;
-  if (S.idx >= S.queue.length) renderResult(); else showQuestion();
+  if (S.screen !== 'quiz' || !S.answered || Reward.open) return;
+  const go = () => { S.idx += 1; if (S.idx >= S.queue.length) renderResult(); else showQuestion(); };
+  if (Reward.due(S.idx + 1)) Reward.show(S.idx + 1, S.score, go); else go();
 }
 
 function quit() {
@@ -737,10 +862,11 @@ document.addEventListener('change', e => {
   if (e.target.name === 'mode') { S.mode = e.target.value; savePrefs(); }
   if (e.target.name === 'count') { S.count = Number(e.target.value); savePrefs(); }
   if (e.target.name === 'showZh') { S.showZh = e.target.value === '1'; savePrefs(); }
+  if (e.target.name === 'reward') Reward.setStyle(e.target.value);
 });
 
 document.addEventListener('keydown', e => {
-  if (S.screen !== 'quiz' || e.metaKey || e.ctrlKey || e.altKey) return;
+  if (S.screen !== 'quiz' || Reward.open || e.metaKey || e.ctrlKey || e.altKey) return;
   const k = e.key.toLowerCase();
   const onControl = e.target.closest && e.target.closest('button, a, input');
   const map = { '1': 0, '2': 1, '3': 2, '4': 3, a: 0, b: 1, c: 2, d: 3 };

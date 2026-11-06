@@ -86,7 +86,7 @@ Excel 母檔 →（另存 CSV UTF-8）→ tools/csv-to-json.html → data/*.json
 - `confusableMap()` 從 explanation 的易混字清單還原「中文選項→英文」，`addOptionLinks()` 在**作答後**於每個選項右側加劍橋字典連結。
 - `dictURL()`、`phraseSlug()`、`wordHTML()`、`exampleHTML()` 負責字典連結；例句中粗體的目標字會連到原形詞條。
 - 錯題本：`recordResult()`，連續答對 `STREAK_TO_CLEAR`（3）次移出。
-- localStorage 鍵：`vq:prefs`（題型、題數、中譯顯示）、`vq:book:<題庫id>`（錯題本，以小寫單字為索引）、`vq:seen:<題庫id>`（答對過的字，見 5-4）、`study:log`（每日題數，見 5-4）。**改鍵名或改 word 文字，學生既有的錯題紀錄會對不上。**
+- localStorage 鍵：`vq:prefs`（題型、題數、中譯顯示）、`vq:book:<題庫id>`（錯題本，以小寫單字為索引）、`vq:seen:<題庫id>`（答對過的字，見 5-4）、`study:log`（每日題數，見 5-4）、`reward:prefs`（獎勵畫面設定，見 5-5）。**改鍵名或改 word 文字，學生既有的錯題紀錄會對不上。**
 - 三種題型：`en2zh` 看英文選中文、`zh2en` 看中文選英文、`listen` 聽發音選中文。
 - 例句中譯預設隱藏，作答後可點「顯示中譯」或按 T；設定頁可改成自動顯示。
 
@@ -96,7 +96,7 @@ Excel 母檔 →（另存 CSV UTF-8）→ tools/csv-to-json.html → data/*.json
 - 載入 `data/G.json`，`validate()` 檢查基本格式。畫面：`renderHome`（模式切換、題型勾選、題數、各題型新制占比）、`showQuestion`／`pick`（練習）、`renderPracticeResult`、`renderTest`（測驗，一頁列出全部題目）、`renderTestResult`（各題型答對率、建議加強的題型、逐題檢討）。
 - 測驗模式：10 題 15 分鐘或 20 題 30 分鐘；`sampleTest()` 依學測 111–115 年各題型題數比例（最大餘數法）抽題；作答與截止時間存在 `gp:test`，重新整理可繼續，時間到自動交卷。不換算成 100 分，因為每次抽的題目不同，分數沒有可比性。
 - 練習模式答錯「連接詞／轉承語」題時，用 `transitionGroup()` 找出正解所屬的轉承語分組並顯示同組用語。
-- localStorage 鍵：`gp:prefs`、`gp:book`（錯題本，以題目 id 為索引）、`gp:test`（進行中的測驗）、`gp:seen`（答對過的題目，見 5-4）、`study:log`（每日題數）。
+- localStorage 鍵：`gp:prefs`、`gp:book`（錯題本，以題目 id 為索引）、`gp:test`（進行中的測驗）、`gp:seen`（答對過的題目，見 5-4）、`study:log`（每日題數）、`reward:prefs`（獎勵畫面設定，見 5-5）。
 - 題庫可手動上傳：首頁下方與載入失敗頁都有「上傳 JSON 題庫」（隱藏的 `#file` 輸入框）。`useData()` 是網站載入與上傳共用的入口，會先跑 `validate()`（含 `types`、`grammarTypes` 檢查）。上傳的檔案只在當次頁面有效；錯題本仍以題目 id 為索引，所以上傳同一份 G.json 時紀錄可以沿用。直接開本機檔案（file://）時讀不到 data 資料夾，就靠這個功能測試。
 
 ## 5-3. grammar-exam.html
@@ -124,11 +124,25 @@ Excel 母檔 →（另存 CSV UTF-8）→ tools/csv-to-json.html → data/*.json
 - 學測倒數：`index.html` 的 `GSAT`（名稱與第一天日期），**每年要改一次**。116 學測為 2027/1/22–24（依新聞轉述大考中心公告）。考試日當天及之後不顯示。
 - 備份的 `BACKUP_KEYS` 已包含 `vq:seen:*`、`gp:seen`，還原時取聯集。
 
+## 5-5. 每 5 題的小獎勵與連對特效（2026-11）
+
+Billy 的孩子反映作答不有趣，提議每 5 題放 K-pop 梗圖，因此加入。
+
+- 程式：`vocab-quiz.html` 與 `grammar-practice.html` 各有一份**相同的** `Reward` 物件與 `.rw-*` 樣式（放在 `goalLine()` 之後、`prefers-reduced-motion` 規則之前），改一邊要同步改另一邊。
+- 觸發：單字測驗與綜合測驗**練習模式**，每答完 5 題按「下一題」（或「看結果」）時跳出獎勵畫面，按「繼續」、Enter、空白鍵或 Esc 關閉後才換題。剛跳出的 0.4 秒內不接受關閉，避免按「下一題」的同一下就關掉。綜合測驗**測驗模式不顯示**（計時、模擬考試，不打斷）。
+- 連對特效：連續答對 3、5、10、15……題時，在「答對了」旁顯示「連對 N 題！」。換一回練習時歸零。
+- 設定：單字頁的設定頁、綜合測驗首頁（練習模式）有「每 5 題的小獎勵」：內建動畫／K-pop 動圖／不顯示。存在 `reward:prefs`（`{ style }`），兩頁共用，預設內建動畫。選「不顯示」時連對特效也不顯示。這是偏好設定，不在備份範圍。
+- 內建動畫：彩色紙片＋隨機表情貼紙，顏色用 `--red`、`--ok`、`--focus`、`--ink`，不連網。
+- K-pop 動圖：`REWARD_GIFS` 是 30 個 GIPHY 動圖編號，**全部來自 GIPHY 官方認證（藍勾勾）的韓國團體帳號、分級 G**，2026-11 由 Claude 挑選、Billy 確認。以 GIPHY 官方嵌入碼（`https://giphy.com/embed/<編號>` 的 iframe）顯示，旁邊附「via GIPHY」連結。洗牌後依序抽，30 張輪完一輪才重複。
+- 連不上 GIPHY 時：先用 `Image` 載入一張小縮圖（`media.giphy.com/media/<編號>/200_s.gif`）測試，3 秒內失敗或逾時就改顯示內建動畫，並註明「連不上 GIPHY」。平常不連 GIPHY，只在跳出獎勵畫面那一刻才連。
+- 換圖：只改 `REWARD_GIFS`（兩個檔案都要改）。新圖請沿用同樣標準：官方認證帳號、分級 G，不用網友上傳的梗圖（版權不清楚），也不用 GIPHY 的隨機或搜尋功能（內容無法控管）。
+- 第二階段待做：學生自選圖片（存在自己瀏覽器、不上傳），見與 Billy 的討論。
+
 ## 6. 不可破壞的設計決策
 
 | 決策 | 理由 |
 |---|---|
-| 不使用外部套件或 CDN | 學校網路常擋 CDN；舊版用 React＋Babel＋Tailwind 執行時編譯，手機載入很慢 |
+| 不使用外部套件或 CDN | 學校網路常擋 CDN；舊版用 React＋Babel＋Tailwind 執行時編譯，手機載入很慢。**唯一例外**是獎勵畫面的 GIPHY 動圖（見 5-5）：純裝飾、可關閉、連不上時自動改用內建動畫，不影響練習本身 |
 | 字型以 base64 內嵌在 `<style>` 開頭的 @font-face | 不需連外網。不要用格式化工具重排該段，也不要刪除；字型是 Atkinson Hyperlegible（SIL OFL 1.1），I/l/1、rn/m 外形明顯不同，適合形近字練習 |
 | 例句與英文選項用無襯線、非斜體；大題字用襯線 | Billy 反映原本襯線斜體在螢幕上不好讀 |
 | 作答**前**不顯示選項的英文或字典連結 | 四個選項中只有一個和題目拼字相同，等於洩漏答案 |
