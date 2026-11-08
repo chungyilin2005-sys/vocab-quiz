@@ -13,6 +13,7 @@
 
 ```
 index.html             首頁，分「單字與片語」「文法」兩區；上方是每日目標、連續天數、打卡日曆、學習週報與備份
+icon-192.png           加到手機主畫面時的捷徑圖示（各頁共用）
 vocab-quiz.html        單字／片語測驗（單一檔案，含 CSS、JS、內嵌字型）
 grammar-practice.html  綜合測驗歷屆題庫：練習模式＋測驗模式
 grammar-exam.html      文法專題測驗：50 題原創考卷（另一個對話製作後搬入）
