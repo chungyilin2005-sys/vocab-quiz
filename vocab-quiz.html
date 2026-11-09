@@ -125,6 +125,13 @@ input[type=radio]{accent-color:var(--red);width:1.15rem;height:1.15rem;margin:.3
 .example-zh{color:var(--muted)}
 .zh-toggle{font-size:.88rem;margin-top:.15rem}
 .example-zh strong{color:var(--red);font-weight:700}
+.ai{margin:.75rem 0 .25rem;display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .5rem}
+.ai-label{flex-basis:100%;font-size:.88rem;color:var(--muted)}
+.ai-text{display:block;width:100%;margin-top:.4rem;font:inherit;font-size:.85rem;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:6px;padding:.5rem}
+.ai-btn{font-size:.88rem;padding:.3rem .8rem;border:1px solid var(--muted);border-radius:999px;color:var(--ink);text-decoration:none}
+.ai-btn:hover{border-color:var(--focus);color:var(--focus)}
+.ai-msg{flex-basis:100%;font-size:.85rem;color:var(--muted);margin:0}
+.ai-msg:empty{display:none}
 .source{font-size:.88rem;color:var(--muted)}
 .bookmsg{font-size:.88rem;color:var(--red)}
 .next{width:100%}
@@ -854,7 +861,7 @@ function pick(i) {
     <div class="explain">
       ${meta ? `<p class="meta">${esc(meta)}</p>` : ''}
       ${item.explanation ? `<p>${rich(item.explanation)}</p>` : ''}
-      ${item.example ? `<p class="example" lang="en">${exampleHTML(item.example, item.word)}</p>${item.exampleZh ? `<button class="link zh-toggle" data-act="zh" aria-expanded="${S.showZh}" aria-controls="exZh">${S.showZh ? '隱藏中譯' : '顯示中譯'}</button><p class="example-zh" id="exZh"${S.showZh ? '' : ' hidden'}>${rich(item.exampleZh)}</p>` : ''}<p class="hint">點例句中的單字可查劍橋字典</p>` : ''}
+      ${item.example ? `<p class="example" lang="en">${exampleHTML(item.example, item.word)}</p>${item.exampleZh ? `<button class="link zh-toggle" data-act="zh" aria-expanded="${S.showZh}" aria-controls="exZh">${S.showZh ? '隱藏中譯' : '顯示中譯'}</button><p class="example-zh" id="exZh"${S.showZh ? '' : ' hidden'}>${rich(item.exampleZh)}</p>` : ''}<p class="hint">點例句中的單字可查劍橋字典</p>${aiHTML(item)}` : ''}
       ${item.source ? `<p class="source">出處：${esc(item.source)}</p>` : ''}
       ${msg ? `<p class="bookmsg">${esc(msg)}</p>` : ''}
     </div>
@@ -864,6 +871,59 @@ function pick(i) {
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   btn.scrollIntoView({ block: 'nearest', behavior: reduce ? 'auto' : 'smooth' });
   speak(plain(item.word));
+}
+
+/* ===== 例句文法解析：把句子和提示詞交給 AI =====
+   ChatGPT 可用網址 ?q= 直接帶入提示詞；Gemini 沒有這個功能，所以兩個都先複製到剪貼簿，
+   Gemini 那邊由學生自己貼上。Claude 只開放 18 歲以上使用，不放。 */
+function grammarPrompt(item) {
+  const sentence = plain(item.example.replace(/（[^（）]*）\s*$/, ''));
+  const hasWord = /\*\*/.test(item.example);   // 「本字為選項之一」的例句沒有目標字
+  const steps = [
+    '用斜線把句子切成意群，逐段翻譯',
+    '找出主要子句的主詞和動詞（句子主幹）',
+    '說明句中的子句、分詞、不定詞、倒裝等結構',
+    ...(hasWord ? [`說明「${plain(item.word)}」在這個句子裡的詞性和用法`] : []),
+    '列出值得記下來的句型或片語，各舉一個簡單的例句',
+  ];
+  return '我是台灣高中生，正在準備學測英文。下面這個句子我覺得很難懂，請用繁體中文、台灣用語幫我做文法解析：\n' +
+    steps.map((s, i) => `${i + 1}. ${s}`).join('\n') +
+    '\n請少用艱深的文法術語，說明簡短清楚。\n\n' +
+    `句子：${sentence}` + (item.exampleZh ? `\n參考中譯：${plain(item.exampleZh)}` : '');
+}
+function aiHTML(item) {
+  const q = encodeURIComponent(grammarPrompt(item));
+  return `<div class="ai"><span class="ai-label">看不懂這句？請 AI 做文法解析：</span>
+    <a class="ai-btn" data-act="ai" data-ai="gemini" href="https://gemini.google.com/app" target="_blank" rel="noopener">Gemini</a>
+    <a class="ai-btn" data-act="ai" data-ai="chatgpt" href="https://chatgpt.com/?q=${q}" target="_blank" rel="noopener">ChatGPT</a>
+    <p class="ai-msg" id="aiMsg" aria-live="polite"></p></div>`;
+}
+function copyText(text) {
+  const legacy = () => {
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    let ok = false; try { ok = document.execCommand('copy'); } catch (e) { /* 略過 */ }
+    ta.remove(); return ok;
+  };
+  if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text).then(() => true, legacy);
+  return Promise.resolve(legacy());
+}
+function askAI(which) {
+  const item = S.queue[S.idx], msg = document.getElementById('aiMsg');
+  const text = grammarPrompt(item);
+  copyText(text).then(ok => {
+    if (!msg) return;
+    if (!ok) {   // 瀏覽器不允許自動複製：把提示詞放在框裡讓學生自己複製
+      msg.innerHTML = `瀏覽器不允許自動複製。請長按（或全選）下面的文字複製，再貼到 ${which === 'gemini' ? 'Gemini' : 'ChatGPT'}：<textarea class="ai-text" readonly rows="6"></textarea>`;
+      const ta = msg.querySelector('textarea');
+      ta.value = text; ta.focus(); ta.select();
+      return;
+    }
+    msg.textContent = which === 'gemini'
+      ? '已複製句子和提示詞。到 Gemini 的輸入框貼上（電腦按 Ctrl＋V，手機長按選「貼上」），再送出。'
+      : '已在新分頁開啟 ChatGPT，提示詞會自動帶入。如果輸入框是空的，直接貼上（提示詞也已複製）。';
+  });
 }
 
 // 只切換這一題，不改變預設設定
@@ -1017,6 +1077,7 @@ document.addEventListener('click', e => {
     case 'quit': quit(); break;
     case 'speak': if (S.screen === 'quiz') speak(plain(S.queue[S.idx].word)); break;
     case 'zh': toggleZh(); break;
+    case 'ai': askAI(t.dataset.ai); break;
     case 'export': exportBook(); break;
     case 'clear': if (confirm('確定清空錯題本？這個動作無法復原。')) { saveBook({}); renderBook(); } break;
   }
