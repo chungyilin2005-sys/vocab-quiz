@@ -92,6 +92,7 @@ Excel 母檔 →（另存 CSV UTF-8）→ tools/csv-to-json.html → data/*.json
 - localStorage 鍵：`vq:prefs`（題型、題數、中譯顯示）、`vq:book:<題庫id>`（錯題本，以小寫單字為索引）、`vq:seen:<題庫id>`（答對過的字，見 5-4）、`study:log`（每日題數，見 5-4）、`reward:prefs`（獎勵畫面設定，見 5-5）。**改鍵名或改 word 文字，學生既有的錯題紀錄會對不上。**
 - 三種題型：`en2zh` 看英文選中文、`zh2en` 看中文選英文、`listen` 聽發音選中文。
 - 例句中譯預設隱藏，作答後可點「顯示中譯」或按 T；設定頁可改成自動顯示。
+- 例句文法解析（2026-11）：作答後例句下方有「Gemini」「ChatGPT」兩個連結。`grammarPrompt()` 產生提示詞（去掉出處括號與 `**`，附中譯；「本字為選項之一」的例句沒有目標字，就不問該字用法）。ChatGPT 用 `https://chatgpt.com/?q=` 直接帶入；Gemini 沒有官方的帶入網址，所以按下時 `askAI()` 先把提示詞複製到剪貼簿，由學生自己貼上。複製失敗時改顯示文字框讓學生手動複製。**不放 Claude**：claude.ai 只開放 18 歲以上使用。
 
 ## 5-2. grammar-practice.html 架構
 
