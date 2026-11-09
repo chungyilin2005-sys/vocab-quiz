@@ -262,8 +262,9 @@ const S = {
   mode: MODES.some(m => m.id === prefs.mode) ? prefs.mode : 'en2zh',
   count: typeof prefs.count === 'number' ? prefs.count : 20,
   showZh: prefs.showZh === true,   // 例句中譯預設隱藏
+  claude: prefs.claude === true,   // Claude 文法解析按鈕（限 18 歲以上），預設不顯示
 };
-const savePrefs = () => store.set('vq:prefs', { mode: S.mode, count: S.count, showZh: S.showZh });
+const savePrefs = () => store.set('vq:prefs', { mode: S.mode, count: S.count, showZh: S.showZh, claude: S.claude });
 
 /* ===== 每日學習紀錄（study:log，index.html、vocab-quiz.html、grammar-practice.html 共用同一格式） =====
    { "YYYY-MM-DD": { 題庫代號: [作答題數, 答對題數] } }，日期用裝置的本地時間。 */
@@ -772,6 +773,9 @@ function renderSetup() {
       <label class="choice"><input type="radio" name="showZh" value="0"${S.showZh ? '' : ' checked'}><span>先隱藏，需要時再點開<small>建議：先自己讀懂英文，再對照中文</small></span></label>
       <label class="choice"><input type="radio" name="showZh" value="1"${S.showZh ? ' checked' : ''}><span>作答後直接顯示</span></label>
     </fieldset>` : ''}
+    ${S.items.some(it => it.example) ? `<fieldset><legend>例句文法解析</legend>
+      <label class="choice"><input type="checkbox" name="claude"${S.claude ? ' checked' : ''}><span>另外顯示 Claude 按鈕<small>Claude 限 18 歲以上使用，只有勾選的這台裝置會顯示</small></span></label>
+    </fieldset>` : ''}
     ${Reward.settingHTML('row')}
     <div class="actions">
       <button class="primary" data-act="start">開始練習</button>
@@ -875,7 +879,9 @@ function pick(i) {
 
 /* ===== 例句文法解析：把句子和提示詞交給 AI =====
    ChatGPT 可用網址 ?q= 直接帶入提示詞；Gemini 沒有這個功能，所以兩個都先複製到剪貼簿，
-   Gemini 那邊由學生自己貼上。Claude 只開放 18 歲以上使用，不放。 */
+   Gemini 那邊由學生自己貼上。Claude 只開放 18 歲以上使用，預設不顯示，
+   設定頁勾選後（存在 vq:prefs 的 claude）才出現，用 claude.ai/new?q= 帶入。 */
+const AI_NAME = { gemini: 'Gemini', chatgpt: 'ChatGPT', claude: 'Claude' };
 function grammarPrompt(item) {
   const sentence = plain(item.example.replace(/（[^（）]*）\s*$/, ''));
   const hasWord = /\*\*/.test(item.example);   // 「本字為選項之一」的例句沒有目標字
@@ -896,6 +902,7 @@ function aiHTML(item) {
   return `<div class="ai"><span class="ai-label">看不懂這句？請 AI 做文法解析：</span>
     <a class="ai-btn" data-act="ai" data-ai="gemini" href="https://gemini.google.com/app" target="_blank" rel="noopener">Gemini</a>
     <a class="ai-btn" data-act="ai" data-ai="chatgpt" href="https://chatgpt.com/?q=${q}" target="_blank" rel="noopener">ChatGPT</a>
+    ${S.claude ? `<a class="ai-btn" data-act="ai" data-ai="claude" href="https://claude.ai/new?q=${q}" target="_blank" rel="noopener">Claude</a>` : ''}
     <p class="ai-msg" id="aiMsg" aria-live="polite"></p></div>`;
 }
 function copyText(text) {
@@ -915,14 +922,14 @@ function askAI(which) {
   copyText(text).then(ok => {
     if (!msg) return;
     if (!ok) {   // 瀏覽器不允許自動複製：把提示詞放在框裡讓學生自己複製
-      msg.innerHTML = `瀏覽器不允許自動複製。請長按（或全選）下面的文字複製，再貼到 ${which === 'gemini' ? 'Gemini' : 'ChatGPT'}：<textarea class="ai-text" readonly rows="6"></textarea>`;
+      msg.innerHTML = `瀏覽器不允許自動複製。請長按（或全選）下面的文字複製，再貼到 ${AI_NAME[which]}：<textarea class="ai-text" readonly rows="6"></textarea>`;
       const ta = msg.querySelector('textarea');
       ta.value = text; ta.focus(); ta.select();
       return;
     }
     msg.textContent = which === 'gemini'
       ? '已複製句子和提示詞。到 Gemini 的輸入框貼上（電腦按 Ctrl＋V，手機長按選「貼上」），再送出。'
-      : '已在新分頁開啟 ChatGPT，提示詞會自動帶入。如果輸入框是空的，直接貼上（提示詞也已複製）。';
+      : `已在新分頁開啟 ${AI_NAME[which]}，提示詞會自動帶入。如果輸入框是空的，直接貼上（提示詞也已複製）。`;
   });
 }
 
@@ -1087,6 +1094,7 @@ document.addEventListener('change', e => {
   if (e.target.name === 'mode') { S.mode = e.target.value; savePrefs(); }
   if (e.target.name === 'count') { S.count = Number(e.target.value); savePrefs(); }
   if (e.target.name === 'showZh') { S.showZh = e.target.value === '1'; savePrefs(); }
+  if (e.target.name === 'claude') { S.claude = e.target.checked; savePrefs(); }
   if (e.target.name === 'reward') Reward.setStyle(e.target.value);
 });
 
