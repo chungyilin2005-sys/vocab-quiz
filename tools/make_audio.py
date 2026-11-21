@@ -52,6 +52,22 @@ HETERONYMS = {
     "elaborate":  ("ᵻlˈæbɚɹət",      "adj. 精心的"),
 }
 
+# 不是名詞動詞之分，而是 Kokoro 自動轉的音標本身念錯的字（2026-11 Billy 試聽確認）
+PHONEME_FIX = {
+    "exclaim": ("ᵻksklˈeɪm",  "預設 ɛks- 字首太重，改成弱化的 ɪk-"),
+    "species": ("spˈiːʃiz",   "預設把中間念成 s，應為 ʃ"),
+}
+
+# Kokoro 會在 s 開頭的字前面多念一小段像「ㄜ」的有聲音。
+# 這些字產生後，把第一個摩擦音之前的部分剪掉（見 trim_to_fricative）。
+TRIM_TO_FRICATIVE = {"species"}
+
+# Kokoro 怎麼調都念不好、改用 Billy 手動提供音檔的字。程式一律不重做（--force、--only 也跳過），
+# 要換掉時直接取代 audio/ 裡的檔案。
+# pea：Kokoro 尾音會拖出「ㄜ」，2026-11 改用 Billy 以 Edge TTS 產生的檔案（聲音和其他字不同），
+#      已剪成前後各 0.15 秒靜音、音量 +4 dB、單聲道 48 kbps。
+MANUAL_AUDIO = {"pea"}
+
 # 預設念法已經正確、不必指定的字（供 --list 對照，也提醒以後不要重複檢查）
 DEFAULT_OK = {
     "abstract": "adj.", "abuse": "n. /s/", "advocate": "v. -eɪt", "associate": "v. -eɪt",
@@ -71,6 +87,19 @@ def plain(word):
 
 def slug(word):
     return re.sub(r"\s+", "-", plain(word).lower())
+
+
+def trim_to_fricative(samples, rate):
+    """剪掉第一個摩擦音（過零率高的噪音段）之前的聲音，開頭 8 毫秒淡入，避免爆音。"""
+    f = int(rate * 0.01)
+    for i in range(0, len(samples) - f, f):
+        x = samples[i:i + f]
+        if np.sqrt((x ** 2).mean()) > 0.005 and (np.abs(np.diff(np.sign(x))) > 0).mean() > 0.25:
+            out = samples[i:].copy()
+            n = int(rate * 0.008)
+            out[:n] *= np.linspace(0, 1, n)
+            return out
+    return samples
 
 
 def to_mp3(samples, rate, out):
@@ -99,6 +128,8 @@ def main():
     if a.list:
         for w, (ph, note) in sorted(HETERONYMS.items()):
             print(f"{w:12} 指定 {ph:16} 預設 {kokoro.tokenizer.phonemize(w):16} {note}")
+        for w, (ph, note) in sorted(PHONEME_FIX.items()):
+            print(f"{w:12} 指定 {ph:16} 預設 {kokoro.tokenizer.phonemize(w):16} {note}")
         return
 
     only = {w.strip().lower() for w in a.only.split(",")} if a.only else None
@@ -110,14 +141,23 @@ def main():
             if only is not None and plain(it["word"]).lower() not in only:
                 continue
             out = ROOT / "audio" / bank / f"{key}.mp3"
+            if text.lower() in MANUAL_AUDIO:
+                if not out.exists():
+                    print(f"缺少手動提供的音檔：{out}")
+                skipped += 1
+                continue
             if out.exists() and not a.force and only is None:
                 skipped += 1
                 continue
             low = text.lower()
             if low in HETERONYMS:
                 samples, rate = kokoro.create(HETERONYMS[low][0], voice=VOICE, speed=SPEED, is_phonemes=True)
+            elif low in PHONEME_FIX:
+                samples, rate = kokoro.create(PHONEME_FIX[low][0], voice=VOICE, speed=SPEED, is_phonemes=True)
             else:
                 samples, rate = kokoro.create(text, voice=VOICE, speed=SPEED, lang="en-us")
+            if low in TRIM_TO_FRICATIVE:
+                samples = trim_to_fricative(samples, rate)
             to_mp3(samples, rate, out)
             made += 1
             if made % 100 == 0:
