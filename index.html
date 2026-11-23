@@ -70,11 +70,13 @@ button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px soli
 .cal .d{aspect-ratio:1;border-radius:6px;border:1.5px solid var(--line);display:grid;place-items:center;font-size:.75rem;color:var(--muted)}
 .cal .d.part{background:var(--red-soft);border-color:var(--red-soft);color:var(--ink)}
 .cal .d.done{background:var(--red);border-color:var(--red);color:var(--sheet);font-weight:700}
+.cal .d.used{border-style:dashed;border-color:var(--red);color:var(--ink)}
 .cal .d.today{outline:2px solid var(--focus);outline-offset:1px}
 .cal .d.fut{visibility:hidden}
 .legend{display:flex;flex-wrap:wrap;gap:.3rem 1rem;font-size:.78rem;color:var(--muted);margin:.5rem 0 0}
 .legend i{display:inline-block;width:.8rem;height:.8rem;border-radius:3px;border:1.5px solid var(--line);vertical-align:-.1rem;margin-right:.3rem}
 .legend i.done{background:var(--red);border-color:var(--red)}
+.legend i.used{border-style:dashed;border-color:var(--red)}
 .legend i.part{background:var(--red-soft);border-color:var(--red-soft)}
 /* 週報、備份畫面：只顯示這一區，方便截圖 */
 .sheet.solo>:not(#study){display:none}
@@ -94,6 +96,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px soli
 .week div b{display:block;font-size:1rem;font-family:var(--en)}
 .week div.done{background:var(--red);border-color:var(--red);color:var(--sheet)}
 .week div.part{background:var(--red-soft);border-color:var(--red-soft)}
+.week div.used{border-style:dashed;border-color:var(--red)}
 .week div.fut{color:var(--muted);border-style:dashed}
 .rep table{width:100%;border-collapse:collapse;font-size:.92rem}
 .rep th,.rep td{border-bottom:1px solid var(--line);padding:.35rem .25rem;text-align:left}
@@ -151,7 +154,8 @@ footer a{color:var(--muted)}
    紀錄由 vocab-quiz.html 與 grammar-practice.html 的 logAnswers() 寫入 localStorage 的 study:log：
    { "YYYY-MM-DD": { 題庫代號: [作答題數, 答對題數] } }，日期用裝置的本地時間。 */
 const DAILY_GOAL = 20;   // 每日目標題數；改這裡時另外兩頁的 DAILY_GOAL 要一起改
-const REST_GAP = 7;      // 每 7 天內可以休息 1 天，連續天數不中斷
+const CARD_EVERY = 7;    // 每連續達標 7 天得 1 張休息卡
+const MAX_CARDS = 2;     // 休息卡最多存 2 張
 const LOG_KEY = 'study:log', NAME_KEY = 'study:name';
 const SRC = [['A', 'A 級單字'], ['B', 'B 級單字'], ['C', 'C 級單字'], ['P', '高頻片語'], ['G', '綜合測驗']];
 const BOOK_KEYS = { A: 'vq:book:A', B: 'vq:book:B', C: 'vq:book:C', P: 'vq:book:P', G: 'gp:book' };
@@ -183,27 +187,27 @@ function dayTotal(log, k) {
   return Object.values(log[k] || {}).reduce((s, r) => [s[0] + (+r[0] || 0), s[1] + (+r[1] || 0)], [0, 0]);
 }
 
-// 由最早的紀錄往後掃：達標的日子 +1；沒達標的日子算休息，
-// 兩個休息日相距不到 7 天就中斷。今天還沒達標時不算休息（今天還沒過完）。
+// 由最早的紀錄往後掃：達標的日子連續天數 +1，每連續達標 CARD_EVERY 天得 1 張休息卡（最多 MAX_CARDS 張）。
+// 沒達標的日子：連續中而且有休息卡就自動用掉一張（那天不加天數、也不中斷），沒卡就歸零。
+// 今天還沒過完，沒達標不算斷。休息卡不另外儲存，每次從 study:log 重新算出來。
 function streakInfo(log) {
   const today = new Date(), tk = dayKey(today);
-  const keys = Object.keys(log).filter(k => DAY_RE.test(k)).sort();
-  let cur = 0, best = 0, lastRest = null;
+  const keys = Object.keys(log).filter(k => DAY_RE.test(k) && dayTotal(log, k)[0] > 0).sort();
+  let cur = 0, best = 0, cards = 0, run = 0;
+  const restDays = new Set();
   if (keys.length) {
     for (let d = parseDay(keys[0]); dayKey(d) <= tk; d = addDays(d, 1)) {
       const k = dayKey(d);
-      if (dayTotal(log, k)[0] >= DAILY_GOAL) cur++;
-      else if (k !== tk) {
-        if (cur === 0) lastRest = null;
-        else if (lastRest && Math.round((d - lastRest) / 864e5) < REST_GAP) { cur = 0; lastRest = null; }
-        else lastRest = d;
-      }
+      if (dayTotal(log, k)[0] >= DAILY_GOAL) {
+        cur++; run++;
+        if (run % CARD_EVERY === 0 && cards < MAX_CARDS) cards++;
+      } else if (k === tk) break;
+      else if (cur > 0 && cards > 0) { cards--; restDays.add(k); }
+      else { cur = 0; run = 0; }
       best = Math.max(best, cur);
     }
   }
-  // 休息日用掉後，到哪一天之前不能再休息
-  const restUntil = cur && lastRest && Math.round((today - lastRest) / 864e5) < REST_GAP ? addDays(lastRest, REST_GAP) : null;
-  return { cur, best, restUntil };
+  return { cur, best, cards, restDays };
 }
 
 // 已掌握＝答對過至少一次、而且目前不在錯題本裡
@@ -232,15 +236,15 @@ function render() {
 
 function dashHTML(log) {
   const today = new Date(), tk = dayKey(today);
-  const n = dayTotal(log, tk)[0], { cur, best, restUntil } = streakInfo(log);
+  const n = dayTotal(log, tk)[0], { cur, best, cards, restDays } = streakInfo(log);
   const left = DAILY_GOAL - n;
   // 日曆：最近 5 週，週一開頭
   const start = addDays(mondayOf(today), -28);
   let cells = '';
   for (let i = 0; i < 35; i++) {
     const d = addDays(start, i), k = dayKey(d), c = dayTotal(log, k)[0];
-    const cls = k > tk ? 'fut' : c >= DAILY_GOAL ? 'done' : c ? 'part' : '';
-    cells += `<span class="d ${cls}${k === tk ? ' today' : ''}" title="${md(d)}：${c} 題"${k > tk ? ' aria-hidden="true"' : ` aria-label="${md(d)} 練了 ${c} 題"`}>${d.getDate()}</span>`;
+    const rest = restDays.has(k), cls = k > tk ? 'fut' : c >= DAILY_GOAL ? 'done' : rest ? 'used' : c ? 'part' : '';
+    cells += `<span class="d ${cls}${k === tk ? ' today' : ''}" title="${md(d)}：${rest ? '用了休息卡' : c + ' 題'}"${k > tk ? ' aria-hidden="true"' : ` aria-label="${md(d)} ${rest ? '用了休息卡' : '練了 ' + c + ' 題'}"`}>${rest ? '休' : d.getDate()}</span>`;
   }
   const exam = parseDay(GSAT.date), left2 = Math.round((exam - parseDay(tk)) / 864e5);
   return `
@@ -253,9 +257,9 @@ function dashHTML(log) {
         <p class="streak">連續達標 <b>${cur}</b> 天${best > cur ? `・最長 ${best} 天` : ''}</p>
       </div>
     </div>
-    ${restUntil ? `<p class="rest">這 7 天內已休息過一天，${md(addDays(restUntil, -1))} 以前每天都要達標，連續天數才不會中斷。</p>` : ''}
+    <p class="rest">休息卡 <b>${cards}</b> 張（每連續達標 ${CARD_EVERY} 天得 1 張，最多 ${MAX_CARDS} 張）。沒達標的日子，有卡就自動用掉一張，連續天數不會中斷。</p>
     <div class="cal" aria-label="最近 5 週練習日曆">${[...'一二三四五六日'].map(w => `<span class="h" aria-hidden="true">${w}</span>`).join('')}${cells}</div>
-    <p class="legend"><span><i class="done"></i>達成 ${DAILY_GOAL} 題</span><span><i class="part"></i>有練習</span><span><i></i>沒練習</span></p>
+    <p class="legend"><span><i class="done"></i>達成 ${DAILY_GOAL} 題</span><span><i class="part"></i>有練習</span><span><i class="used"></i>用休息卡</span><span><i></i>沒練習</span></p>
     <div class="actions">
       <button class="secondary" data-act="report">給老師的學習週報</button>
       <button class="link" data-act="backup">備份／還原紀錄</button>
@@ -269,7 +273,7 @@ function weekData(log) {
   let n = 0, ok = 0, doneDays = 0, activeDays = 0;
   for (let i = 0; i < 7; i++) {
     const d = addDays(mon, i), k = dayKey(d), t = dayTotal(log, k);
-    days.push({ d, k, n: t[0], fut: k > tk });
+    days.push({ d, k, n: t[0], fut: k > tk, rest: false });
     n += t[0]; ok += t[1];
     if (t[0] >= DAILY_GOAL) doneDays++;
     if (t[0]) activeDays++;
@@ -277,9 +281,11 @@ function weekData(log) {
       const b = bySrc[src] || (bySrc[src] = [0, 0]); b[0] += +r[0] || 0; b[1] += +r[1] || 0;
     }
   }
+  const info = streakInfo(log);
+  days.forEach(x => { x.rest = info.restDays.has(x.k); });
   const books = SRC.map(([id, name]) => [name, Object.keys(store.get(BOOK_KEYS[id], {})).length]).filter(x => x[1]);
   const mast = SRC.map(([id, name]) => [name, mastered(id), TOTALS[id]]).filter(x => x[1]);
-  return { mon, sun: addDays(mon, 6), days, bySrc, n, ok, doneDays, activeDays, books, mast, ...streakInfo(log) };
+  return { mon, sun: addDays(mon, 6), days, bySrc, n, ok, doneDays, activeDays, books, mast, ...info };
 }
 
 function reportText(w, name) {
@@ -289,7 +295,7 @@ function reportText(w, name) {
     `期間：${mdw(w.mon)}–${mdw(w.sun)}`,
     `達成每日目標（${DAILY_GOAL} 題）：${w.doneDays}／7 天`,
     `本週共練 ${w.n} 題，正確率 ${pct(w.ok, w.n)}`,
-    `目前連續達標 ${w.cur} 天（最長 ${w.best} 天）`,
+    `目前連續達標 ${w.cur} 天（最長 ${w.best} 天）；本週用休息卡 ${w.days.filter(x => x.rest).length} 天，剩 ${w.cards} 張`,
     `每日題數：${w.days.map(x => `${WD[x.d.getDay()]} ${x.fut ? '—' : x.n}`).join('、')}`,
     `各題庫：${SRC.filter(([id]) => w.bySrc[id]).map(([id, nm]) => `${nm} ${w.bySrc[id][0]} 題（${pct(w.bySrc[id][1], w.bySrc[id][0])}）`).join('、') || '無'}`,
     `掌握進度：${w.mast.map(([nm, m, t]) => `${nm} ${m}／${t}`).join('、') || '尚無'}`,
@@ -315,8 +321,8 @@ function reportHTML(log) {
       <div><b>${w.n}</b><small>本週題數</small></div>
       <div><b>${pct(w.ok, w.n)}</b><small>正確率</small></div>
     </div>
-    <div class="week">${w.days.map(x => `<div class="${x.fut ? 'fut' : x.n >= DAILY_GOAL ? 'done' : x.n ? 'part' : ''}">${WD[x.d.getDay()]}<b>${x.fut ? '—' : x.n}</b></div>`).join('')}</div>
-    <p>每日目標 ${DAILY_GOAL} 題・目前連續達標 <b>${w.cur}</b> 天（最長 ${w.best} 天）</p>
+    <div class="week">${w.days.map(x => `<div class="${x.fut ? 'fut' : x.n >= DAILY_GOAL ? 'done' : x.rest ? 'used' : x.n ? 'part' : ''}">${WD[x.d.getDay()]}<b>${x.fut ? '—' : x.rest ? '休' : x.n}</b></div>`).join('')}</div>
+    <p>每日目標 ${DAILY_GOAL} 題・目前連續達標 <b>${w.cur}</b> 天（最長 ${w.best} 天）・休息卡剩 ${w.cards} 張</p>
     ${rows ? `<table><thead><tr><th>題庫</th><th class="n">題數</th><th class="n">正確率</th></tr></thead><tbody>${rows}</tbody></table>` : '<p>這週還沒有練習紀錄。</p>'}
     <p>掌握進度：${w.mast.map(([nm, m, t]) => `${esc(nm)} ${m}／${t}`).join('、') || '尚無'}</p>
     <p>目前錯題本：${w.books.map(([nm, c]) => `${esc(nm)} ${c} 題`).join('、') || '無'}</p>
